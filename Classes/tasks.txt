@@ -1,0 +1,95 @@
+Assignmets:-
+D:java\test
+-----------
+26-7-18:
+Program 1: PrintNameUsingIf
+write below program using if else:
+String name ="Sudha";
+
+sudha: 27
+mural: 21
+venky 24
+ashok: 27
+prasad: 21
+
+if( name =="sudha"){
+
+}else if(..){
+
+}
+
+
+Program: 2 PrintNameUsingSwitch
+write below program using switch:
+String name ="Sudha";
+
+sudha: 27
+mural: 21
+venky 24
+ashok: 27
+prasad: 21
+
+switch(name){
+}
+
+Program: 3 SwapNumbers
+	Swap 2 numbers
+
+Program: 4	PrintNumbersInAsending
+ Print numbers from 50 to 100
+ 
+Program: 5 PrintEvenNumbersInAsending
+ Print numbers from 20 to 800 only even numbers
+ 
+Program: 6 PrintOddNumbersInAsending
+ Print numbers from 501 to 22669 only odd numbers
+ 
+Program: 7 PrintNumbersInDecending
+ Print numbers from 100 to 0
+	int i = 100;  i < 100 ; i--
+ 
+Program: 8 PrintEvenNumbersInDecending
+ Print numbers from 288980 to 800 only even numbers
+ 
+Program: 9 PrintOddNumbersInDecending
+ Print numbers from 22669 to 200 only odd numbers
+---------------------------------------------------------
+27-7-18
+
+Program: 10	PrintNumbersInAsendingUsingWhile
+ Print numbers from 50 to 100
+ 
+Program: 11 PrintEvenNumbersInAsendingWhile
+ Print numbers from 20 to 800 only even numbers
+ 
+Program: 12 PrintOddNumbersInAsendingWhile
+ Print numbers from 501 to 22669 only odd numbers
+ 
+Program: 13 PrintNumbersInDecendingWhile
+ Print numbers from 100 to 0
+	int i = 100;  i < 100 ; i--
+ 
+Program: 14 PrintEvenNumbersInDecendingWhile
+ Print numbers from 288980 to 800 only even numbers
+ 
+Program: 15 PrintOddNumbersInDecendingWhile
+ Print numbers from 22669 to 200 only odd numbers
+
+ Program: 16	PrintNumbersInAsendingUsingDoWhile
+ Print numbers from 50 to 100
+ 
+Program: 17 PrintEvenNumbersInAsendingDoWhile
+ Print numbers from 20 to 800 only even numbers
+ 
+Program: 18 PrintOddNumbersInAsendingDoWhile
+ Print numbers from 501 to 22669 only odd numbers
+ 
+Program: 19 PrintNumbersInDecendingDoWhile
+ Print numbers from 100 to 0
+	int i = 100;  i < 100 ; i--
+ 
+Program: 20 PrintEvenNumbersInDecendingDoWhile
+ Print numbers from 288980 to 800 only even numbers
+ 
+Program: 21 PrintOddNumbersInDecendingDoWhile
+ Print numbers from 22669 to 200 only odd numbers

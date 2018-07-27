@@ -1,0 +1,18 @@
+class ElseIfExample{
+	public static void main(String args[]){
+		int mangocount=150;
+		int applecount=150;
+		if(mangocount>applecount)
+		{
+			System.out.println("mango is more"+mangocount);
+		} 
+		else if(applecount>mangocount)
+		{
+			System.out.println("apple is more"+applecount);
+		}
+		else {
+			System.out.println("apple and mango equal");
+		}
+	}
+}
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body onload="myFunction()">
+
+<h1>Hello World!</h1>
+
+<script>
+function myFunction() {
+    var n=parseInt(prompt("enter how many number","a"));
+	var a = [];
+	for(i=0;i<n;i++){
+		a[i]= parseInt(prompt("enter" +(i+1)+ "number","0"))
+		document.writeln("original list:"+a.join());
+		a.sort();
+		document.writeln("<br>"+"sortedlist:"+a.join());
+	}
+}
+</script>
+
+</body>
+</html>

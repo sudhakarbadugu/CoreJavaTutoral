@@ -1,0 +1,28 @@
+Pending things:
+---------------
+1. Java features
+---------------------------
+1. Java installation
+	1.1 Verify java installation.
+2. What is java?
+	2.1. Program
+	2.2. Objects
+	2.3. API
+	2.4. Open source
+3. What are java editons?
+	3.1 JSE
+	3.2 J2EE
+	3.3 J2ME
+	3.4 JavaFx
+4. What are the java versions and History?
+5. What we can do with Java?
+6. What are the features?
+7. Class
+8. Variables
+9. Identifiers
+10. control statements.
+	1. if 
+	2. else
+	3. else if	
+	4. nested/inner if
+	5. switch
