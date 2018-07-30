@@ -350,6 +350,7 @@ Identifiers Naming rules:-
 	int $age = 60;
 	
 3. should not use reserved words.
+4. Name should not contain any white spaces
 ----------------------------------------------------------------
 Control statements:
 if
@@ -497,5 +498,153 @@ syntax;
 	}while(condition);
 	
 - do will execute atleast once even if condition wrong.
-
 - break - we can use in loops also.
+
+--------------------------------------------
+29-07-18	Operators
+--------------------------------------------
+1. Unary Operator,
+2. Arithmetic Operator,
+3. Shift Operator,
+4. Relational Operator,
+5. Bitwise Operator,
+6. Logical Operator,
+7. Ternary Operator and
+8. Assignment Operator.
+
+Unary Operator:
+	1. pre increment
+	2. pre decrement
+	3. post increment
+	4. post decrement
+	5. ~
+	6. !
+
+1. pre increment: First increment will happen
+	++x;
+	 int x = 10;
+	 
+	 ++x; //11
+	 
+2. pre decrement: First decrement will happen
+	--x;
+	int y = 20;
+	--y; //19
+
+3. post increment: It will not increment in the current line, incrment will happen in second.
+	 int x = 10;
+	 Sop(x++); 10
+	 Sop(x); 11
+	 
+	 
+4. pre decrement: It will not decrement in the current line, decrement will happen in second.
+	int y = 10;
+	 Sop(y--); 10
+	 Sop(y); 9
+	 
+5. not operator (!)
+- It applialbe for only boolean type.
+	Eg. boolean b = false;
+	boolean c = !b;	//true
+	int i = 10;
+	int j = !i; //ce: \UnaryOperatorsDemo.java:21: error: bad operand type int for unary operator '!'
+                System.out.println(!c);
+
+6. ~ tilde operator:
+- Only number types
+	E.g: int y = 20;
+		int z = ~y; //-21
+		int x = ~z; //20
+		boolean a = ~true; ce: .\UnaryOperatorsDemo.java:21: error: bad operand type boolean for unary operator '~'
+                System.out.println(~value);
+				
+
+2.1 Arithmetic operators
+	int a = 10;
+	int b = 3;
+	+	= a + b; 13
+	-   = a -b; 7
+	*   = a * b; 30
+	/	= a/b; 3
+	%	= a%b; 1
+	
+3. Relational operators
+	int a = 20;
+	int b = 30;
+	<	==> a < b == true
+	>	=> a> b	==false
+	<=	=> a <=b == true
+	>=	=> a >= b = false 
+	==	=> a == b == false 
+	!=	=> a != b == true
+	
+4. Logical operatos:
+	Double AND &&
+	doble OR || 
+	
+	&& -> if both conditions are true then only it will be true.
+		- If first condition is true then only second condition will be executed.
+		
+		int x = 30;
+		
+		if( x > 20 && x < 30){	//total result false. 1st condition is true but second condition is false so result is false.
+			System.out.println("more than 20 and less then 30");
+		}
+		
+	|| -> if both conditions are false then only it will be false, in all other scenarios it will be true.
+		- If first condition is true then second condion will not be execued.
+		int x = 25;
+		if( x > 20 || x < 30){
+			System.out.println("or operator more than 20 or less then 30");
+		}
+		
+Ternary operator;
+	?:
+E.g:
+	int y = 1;
+	
+	int age = y <0 ? 0 : y;
+	System.out.println(age);
+	
+Bitwise operators:
+&	- true & true = true 
+	- true & false = false
+	- false & false = false
+	
+|	- true | true = true 
+	- true | false = true
+	- false | false = false
+	
+^ 
+- this is applicable only for numbers
+-----------------------------------------------------------
+30-7-18 Arrays
+-----------------------------------------------------------
+int r1 = 1;
+int r2 = 2;
+int r3 = 3;
+int r4 = 4;
+.
+.
+int r100 = 100;
+
+Array:
+- To store group of homogenious (same type) values.
+- Size/length is fixed.
+- Array is index based. the index starts 0 and last index is size-1.
+
+	syntax: array declaration:
+	int[] rollNos = new int[size];
+size -- always integer
+Steps:
+1. array declaration.
+	int[] rollnos = new int[30];
+
+2. array initilization
+	rollnos[0] = 100;
+	rollnos[29] = 130;
+	
+3. Display the array data
+	for(int i = 0; i < rollnos.length ; i++){
+		Sop(rollnos[i])
+	}

@@ -26,3 +26,15 @@ Pending things:
 	3. else if	
 	4. nested/inner if
 	5. switch
+11. looping statemets
+	1. for
+	2. while
+	3. do while
+12.Operators.
+	1. Unary oper
+	2. Arthemetic
+	3. Bitwise
+	4. Logical
+	5. Ternary
+	6. Assignmet
+	

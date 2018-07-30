@@ -93,3 +93,39 @@ Program: 20 PrintEvenNumbersInDecendingDoWhile
  
 Program: 21 PrintOddNumbersInDecendingDoWhile
  Print numbers from 22669 to 200 only odd numbers
+----------------------------------------------------
+Arrays:
+ 
+Program: 22 ArraysByteExample
+ Take array size as 10 and print values.
+ byte[] b = new byte[10]
+ 
+Program: 23 ArraysShortExample
+ Take array size as 10 and print values.
+ short[] b = new short[10] 
+
+Program: 24 ArraysIntExample
+ Take array size as 10 and print values.
+ int[] b = new int[10]
+ 
+Program: 25 ArraysLongExample
+ Take array size as 10 and print values.
+ long[] b = new long[10]
+ 
+Program: 26 ArraysFloatExample
+ Take array size as 10 and print values.
+ float[] b = new float[10]
+ 
+Program: 27 ArraysDoubleExample
+ Take array size as 10 and print values.
+ double[] b = new double[10]
+ 
+Program: 28 ArraysCharExample
+ Take array size as 10 and print values.
+ char[] b = new char[10]
+ b[1] = 'c';
+ 
+Program: 29 ArraysStringExample
+ Take array size as 10 and print values.
+ String[] b = new String[10]
+ b[1] = "sudha";
