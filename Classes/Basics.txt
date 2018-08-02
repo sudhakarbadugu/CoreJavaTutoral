@@ -1,6 +1,6 @@
----------------------------------------------------------------------
+-------------------------------------------------------------
 03-07-2018 Tuesday
----------------------------------------------------------------------
+-------------------------------------------------------------
 1. Install java
 	
 2. Verify java installation
@@ -205,7 +205,7 @@ how to declare a java class?
 ------------------------------------------------------
 09-07-2018 Monday
 ------------------------------------------------------
-Identifiers: A name of class or variable or a method name.
+Identifiers: A name of class or variable or a method name called identifier.
 	class Test {
 	}
 	
@@ -223,6 +223,17 @@ Identifiers: A name of class or variable or a method name.
 	--------
 	main - name of a method.
 	args - variable - identifier
+
+Identifier naming rules:
+class:
+	- It should start capital letter and camel case.
+		MethodExample
+
+Method/variable:
+	- It should start small letter and came case
+		int length;
+		methodOne(){}
+		int a[]; a.length
 -------------------------------------------------------------
 Data types:
 Pre defined data type or primitive data types.
@@ -632,6 +643,7 @@ Array:
 - To store group of homogenious (same type) values.
 - Size/length is fixed.
 - Array is index based. the index starts 0 and last index is size-1.
+- If we are trying to get the value from array where index is greater than size, then ArrayIndexOutOfBoundsexception will occur.
 
 	syntax: array declaration:
 	int[] rollNos = new int[size];
@@ -648,3 +660,71 @@ Steps:
 	for(int i = 0; i < rollnos.length ; i++){
 		Sop(rollnos[i])
 	}
+
+--------------------
+int a;
+a = 20;
+
+- Array can initilized in 2 lines as give below.
+int[] a;
+
+a = new int[10];
+a[0] = 1;
+
+
+- Array declaration and initilization in one line
+	int[] numbers = {1,5,7,5,5,5,6};
+--------------------
+
+foreach loop:
+--------------------
+
+for(datatype identifier: arrayName){
+  Sop(identifier);
+}
+
+----------------------------------------------|
+ OOPS 01-08-2018
+----------------------------------------------|
+methods:
+-------
+- A group of statements which does a task.
+
+public void m1(){
+}
+
+public - access specfier
+void - return type - returns nothing.
+m1 - method name 
+--------------------------------
+java 2 types:
+1. Instance method.
+2. static method.
+
+1. Instance method:
+	A method which is not declared with static keyword called instance method.
+	public void m1(){}
+
+
+	Steps:
+	1. Declare a method in a class.
+		public void m1(){
+			Sop("m1");
+		}
+	2. Calling m1 method.
+		1. Create a object for that class where method exist.
+			MethodExample object = new MethodExample();
+		2. Call the method using object.
+			object.m1();
+		
+2. Static method:
+	A method which is declared with static keyword called static method.
+	public static void m1(){}
+	
+	1. Declare a static method in a class.
+		public static void m2(){
+			Sop("m2 static");
+		}
+	2. Calling m1 method.
+		1. Using Class.methodname we can call static method.
+		MethodExample.m2();
