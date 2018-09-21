@@ -6,7 +6,7 @@ class OddNumberInDowhile{
 			System.out.println(i);
 		}
 		i++;
-	}while(i<100);
+	while(i<100);
 	
 	}
 }

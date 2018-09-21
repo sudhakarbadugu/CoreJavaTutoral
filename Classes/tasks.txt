@@ -7,7 +7,7 @@ write below program using if else:
 String name ="Sudha";
 
 sudha: 27
-mural: 21
+murali: 21
 venky 24
 ashok: 27
 prasad: 21
@@ -69,7 +69,10 @@ Program: 13 PrintNumbersInDecendingWhile
  Print numbers from 100 to 0
 	int i = 100;  i < 100 ; i--
  
-Program: 14 PrintEvenNumbersInDecendingWhile
+Program: 14 
+	public static String getName(){
+		return "sudhakar"
+		
  Print numbers from 288980 to 800 only even numbers
  
 Program: 15 PrintOddNumbersInDecendingWhile
@@ -138,32 +141,165 @@ Program: 30 ArraysStringInitExample
  byte[] b = {}
 foreach
  
-Program: 23 ArraysShortExample
+Program: 32 ArraysShortExample
  Take array size as 10 and print values.
  short[] b = new short[10] 
 
-Program: 24 ArraysIntExample
+Program: 33 ArraysIntExample
  Take array size as 10 and print values.
  int[] b = new int[10]
  
-Program: 25 ArraysLongExample
+Program: 34 ArraysLongExample
  Take array size as 10 and print values.
  long[] b = new long[10]
  
-Program: 26 ArraysFloatExample
+Program: 35 ArraysFloatExample
  Take array size as 10 and print values.
  float[] b = new float[10]
  
-Program: 27 ArraysDoubleExample
+Program: 36 ArraysDoubleExample
  Take array size as 10 and print values.
  double[] b = new double[10]
  
-Program: 28 ArraysCharExample
+Program: 37 ArraysCharExample
  Take array size as 10 and print values.
  char[] b = new char[10]
  b[1] = 'c';
  
-Program: 29 ArraysStringExample
+Program: 38 ArraysStringExample
  Take array size as 10 and print values.
  String[] b = new String[10]
  b[1] = "sudha";
+------------------------------------------
+Methods:
+Program: 39 InstanceMethodExample 
+declare below methods:
+1. addition
+2. substraction
+3. division
+4. multiply
+5. remainder
+
+Program: 40 StaticMethodExample 
+declare below methods:
+1. addition
+2. substraction
+3. division
+4. multiply
+5. remainder
+
+Program: 41 InstanceMethodParamExample 
+declare below methods:
+1. addition(int a, int b)
+2. substraction(float a, float b)
+3. division(int c, byte b)
+4. multiply(double d, byte b)
+5. remainder(double d, float f)
+6. printName(String name, int age);
+
+Program: 42 StaticMethodParamExample 
+declare below methods:
+1. addition(int a, int b)
+2. substraction(float a, float b)
+3. division(int c, byte b)
+4. multiply(double d, byte b)
+5. remainder(double d, float f)
+6. printName(String name, int age)
+
+Program 43 Print numbers from 59 to 19
+
+Program 44 Arrayexample
+	int[] a = {12,45,4,76,6,9895545,45};
+	print array values in reverse.
+	for(int i =a.length -1 ; i>= 0 ; i--){
+		sop(a[i])
+	}
+
+Program 45: MethodCallingPractise
+	m1,	m2 are instance methods 
+	m3, m4 m5 are static methods.
+main -> m3 -> m2 -> m1 -> m4 -> m5
+
+
+Program 46: MethodCallingPractise2
+	m1,	m2 are instance methods 
+	m3, m4 m5 are static methods.
+main -> m2 -> m3 -> m1 -> m4 -> m5
+
+Program 47: MethodCallingPractise3
+	m1,	m2 are instance methods 
+	m3, m4 m5 are static methods.
+main -> m4 -> m3 -> m1 -> m2 -> m5
+
+Program 48: MethodReturnTypeMath
+	public int add(int a, int b){}
+	public double sub(double a, double b){}
+	public long multiply(short a, short b){}
+	public double division(float a, float b){}
+	public void m1(){sopln('m1');}
+	
+Program 49: MethodReturnTypeDto
+	public String getName(){}
+	public int getAge(){}
+	public long getSalary(){}
+	public void m1(){sopln('m1');}
+
+22-08-2018
+-----------------------------------------	
+Program 50: InstanceMethodCallingPractise
+	public int a = 10; //instance var
+	public void m1(){ sop("m1"); sop(a);}
+	public void m2(){}
+	public void m3(){}
+	public void m4(){}
+	main -> m1 -> m2 -> m4 -> m3
+	
+Program 51: StaticMethodCallingPractise
+	public static int a = 10; //instance var
+	public static void m1(){ sop(a);}
+	public static void m2(){}
+	public static void m3(){}
+	public static void m4(){}
+	main -> m1 -> m2 -> m4 -> m3
+	
+Program 52: InstanceAndStaticMethodCallingPractise
+	public static int a = 10; //static var
+	public int b = 20; //instance var
+	
+	public void m1(){ sop(a); sop(b);}
+	public static void m2(){}
+	public void m3(){}
+	public static void m4(){}
+	main -> m1 -> m2 -> m4 -> m3
+	
+Program 53: InstanceAndStaticMethodParamCallingPractise
+	public static int a = 10; //static var
+	public int b = 20; //instance var
+	
+	public void m1(int c){ sop(a); sop(b);}
+	public static void m2(float f){}
+	public void m3(InstanceAndStaticMethodParamCallingPractise f){}
+	public static void m4(){}
+	main -> m1 -> m2 -> m4 -> m3
+	
+	
+Program 54: InstanceAndStaticMethodReturnPractise
+	public static int a = 10; //static var
+	public int b = 20; //instance var
+	
+	public int m1(int c){ sop(a); sop(b);}
+	public static int m2(float f){}
+	public void m3(InstanceAndStaticMethodParamCallingPractise f){}
+	public static boolean m4(){}
+	main -> m1 -> m2 -> m4 -> m3
+	
+Program 55: Person
+	private int age;
+	private String name;
+	private String fatherName;
+	private String motherName;
+	
+	public static String villageName;
+	
+
+	//create 5  objects and set values and display them
