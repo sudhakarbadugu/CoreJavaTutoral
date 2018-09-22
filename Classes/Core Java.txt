@@ -109,15 +109,18 @@ What we can do with Java?
 
 What are the features?
 -- Once learn the basic programs
--------------------------------------------------------------Basics
+-------------------------------------------------------------
+Basics
+--------------------------------------------------------------
 - Simple java program
 
 Reserved/keyword words: 51
-	- It has some meaning to java compiler. All reserved words in small letters only.
+	- It has some meaning to java compiler. 
+	- All reserved words in small letters only.
 1. class - to declare a class.
 2. public - 
 3. static - 
-4. void - 
+4. void - It returns nothing. 
 
 5. byte - 1byte -127 to 127
 6. short	- 2bytes 
@@ -244,16 +247,17 @@ Identifiers Naming rules:-
 	int man age = 50; //invalid: Space should not be there in identifier
 				//Error: 
 	
-2. Name should not start with numbers.
+2. Identifier name should not start with numbers.
 	int sno1 = 20;
 	int sno2 = 30;
 	int 1sno = 10;	//invalid
 	int man_age = 20;
 	int $age = 60;
+	int class = 20; //invalid
 	
 3. should not use reserved words.
 4. Name should not contain any white spaces
-
+	int a b = 30; //invalid
 -------------------------------------------------------------
 Data types:
 Pre defined data type or primitive data types.
@@ -752,7 +756,9 @@ Steps:-
 Accessing methods:
 -----------------
 Can we call instace method from static method?
-ans: yes, we can call using object. here m2 is instance method. m1 is static method. m1 method is calling m2 method.
+ans: yes, we can call using object. here m2 is instance method. m1 is static method. 
+m1 method is calling m2 method.
+
 	public void m2(){
 		System.out.println("m2");
 	}
@@ -776,6 +782,7 @@ yes, we can call using methodname directly or using Classname.methodname. here m
 		System.out.println("m3");
 		m1();
 	}
+	
 Can we call static method from instance method?
 yes, we call call using methodname or using Class.methodname. Here m2 is instance mehtod, m4 is static method. m2 is calling m4 method using classname.methodname.
 
@@ -791,7 +798,7 @@ yes, we call call using methodname or using Class.methodname. Here m2 is instanc
 Can we access instace method from instance method?
 yes, we can call. here m2, m5 are instances methods. m2 method is calling m5(). 
 
-public void m2(){
+	public void m2(){
 		System.out.println("m2");
 		m5();
 	}
@@ -800,14 +807,14 @@ public void m2(){
 		System.out.println("m5");
 	}
 -----------------------------------------	
-method type | instance method	|static |
-------------|-------------------|-------|
-instance    | yes,eg: m1()      |yes, e.g, m2()|
-------------|-------------------|-------|
-static 		 no, using object   |yes. eg:m2()|
+method type | instance method	|static 		|
+------------|-------------------|-------		|
+instance    | yes,eg: m1()      |yes, e.g, m2()	|
+------------|-------------------|-------		|
+static 		 no, using object   |yes. eg:m2()	|
 			  we can call. 
-			  eg: obj.m1()      |    |
-------------|-----------|-------|-------|
+			  eg: obj.m1()      |    			|
+------------|-----------|-------|--------------	|
 	
 Note:
 1. If a method is calling itself then StackOverflowError will come.
@@ -833,7 +840,7 @@ Note:
 	}
 	Here: c & a are called method parameters.
 	
-- While declaration of method parameter, should not initilize the value for method parameters.
+- While declaration of method parameters, should not initilize the value for method parameters.
 	E.g: public void add(int i = 20, int c) - X 
 		 public void add(int i = 20, int c = 0) - X 
 		 public void add(int i, int c) - ok 
@@ -857,6 +864,14 @@ Note:
 	
 3. Method parameter - scope
 	We can access only with in the declared method.
+		here: 
+		public void m2(int a){
+			System.out.println(a);			
+		}
+		
+		public void m3(){
+			System.out.println(a); -X //a is not declard in thi method. it is avaialbe only in m2 method.			
+		}
 --------------------------------------------------
 Method return types:
 1. Each method must have a return type before the method name.
