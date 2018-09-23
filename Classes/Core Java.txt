@@ -821,6 +821,7 @@ Note:
 	public void m1(){
 		mce.m1();
 	}
+	
 2. If 2 methods are calling each other, then StackOverflowError will come.
 	p v m1(){
 		m2();
@@ -836,8 +837,9 @@ Note:
 -----------------------------------------------
 1. Method params.
 	Varibles which are declared inside method brackets called method parameter/variables.
-	E.g: public void add(int c, int a){
-	}
+	E.g: 
+		public void add(int c, int a){
+		}
 	Here: c & a are called method parameters.
 	
 - While declaration of method parameters, should not initilize the value for method parameters.
@@ -874,6 +876,18 @@ Note:
 		}
 --------------------------------------------------
 Method return types:
+---------------------------
+public int m1(int a) {
+}
+public - access specifier/modifier
+int - return type - date type is int
+	- any data type is possible here.
+	eg. int 
+		float
+		boolean
+		void
+		MethoOne
+		
 1. Each method must have a return type before the method name.
 	public void m1(){}
 	Here, void is the return type.
@@ -890,8 +904,9 @@ Method return types:
 		public int m2(){return 1;}	Ok
 		public int m3(){}	X //CE: return type is missing.
 		public int m4(){return true;}	X //CE: return type is wrong.
-		public int m4(){return int a;}	X //CE: return type is wrong.
-
+		public int m4(){return int a;}	X //CE: return type is wrong. we should not declare
+		public int m4(){return a;}	Ok 
+		
 4. If any method return type is otherthan void, then while calling we may store the value. storing the value is not always required.
 	class A {
 	
@@ -899,6 +914,7 @@ Method return types:
 			A a = new A()
 			int c = a.m2(); // when we required
 			a.m2(); // when we don't want the value.
+			
 			//int  a =a.m1(); X 
 			//int a = MethodReturnTypeExample.m1(); ce:MethodReturnTypeExample.java:10: error: incompatible types: void cannot be converted to int
 			
@@ -916,6 +932,19 @@ Method return types:
 5. If return type is void, we should not store that to a variable.
 		p v m2(){};
 		int a = m2(); X//CE error: incompatible types: void cannot be converted to int
+		
+6. return statement should be the last line of a method. Otherwise we will get compile time error as unreachable statement.
+	p int m1(){
+		return 0;
+		int a = 20;	- X; unreachable statement
+	}
+	
+7. If method return type is a class name, then we should return that class object in that method.
+	public static MethodReturnTypeDemo getObject(){
+		MethodReturnTypeDemo m = new MethodReturnTypeDemo();
+		return m;
+	}
+
 ------------------------------------------------------------
 Variables:
 which holds/stores some value.
@@ -1027,12 +1056,10 @@ If we chage the static variable using any object, it will change to all other ob
 	}
 - We can't access the local variables of a method in another method.
 - For local variables default value shall not provide by jvm.
------------------------------------------	
-variable type | instance method	|static method|
-------------|-------------------|-------|
+-----------------------------------------------------|	
+variable type | instance method	|static method       |
+------------|-------------------|--------------------|
 instance var| yes,eg: sop(a)    |no, e.g, sop(obj.a);
-------------|-------------------|-------|
+------------|-------------------|--------------------|
 static 	var | yes,eg: sop(a)    |yes,eg: sop(a)
-------------|-----------|-------|-------|
-
-
+------------|-----------|-------|--------------------|
