@@ -748,7 +748,7 @@ Steps:-
 			Sop("m2 static");
 		}
 	2. Calling m1 method.
-		Using Class.methodname we can call static method.
+		Using Class.methodname, we can call static method.
 		E.g 
 			MethodExample.m2();
 
@@ -929,7 +929,7 @@ int - return type - date type is int
 		}
 	}
 
-5. If return type is void, we should not store that to a variable.
+5. If return type is void, we should not store that to a variable in caller method.
 		p v m2(){};
 		int a = m2(); X//CE error: incompatible types: void cannot be converted to int
 		
@@ -949,6 +949,12 @@ int - return type - date type is int
 Variables:
 which holds/stores some value.
 int i = 20;
+
+Here:
+int - datatype
+a - identifier - variable name
+= - operator
+30 - value/literal
 
 3 types:
 --------
@@ -1056,6 +1062,10 @@ If we chage the static variable using any object, it will change to all other ob
 	}
 - We can't access the local variables of a method in another method.
 - For local variables default value shall not provide by jvm.
+	p v m1(){
+		int l;
+		sop(l); //CE: can't initilize, jvn not providing the default value.
+	}
 -----------------------------------------------------|	
 variable type | instance method	|static method       |
 ------------|-------------------|--------------------|

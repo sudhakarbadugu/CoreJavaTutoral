@@ -258,13 +258,13 @@ main -> getMethodReturnTypeClassDemo
 Program 51: InstanceMethodCallingPractise
 	public int a = 10; //instance var
 	public void m1(){ sop("m1"); sop(a);}
-	public void m2(){}
+	public void m2(){sop("m2"); sop(a);}
 	public void m3(){}
 	public void m4(){}
 	main -> m1 -> m2 -> m4 -> m3
 	
 Program 52: StaticMethodCallingPractise
-	public static int a = 10; //instance var
+	public static int a = 10; //static var
 	public static void m1(){ sop(a);}
 	public static void m2(){}
 	public static void m3(){}
