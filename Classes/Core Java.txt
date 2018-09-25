@@ -830,8 +830,6 @@ Note:
 	p v m2(){
 		m1();
 	}
-
-
 -----------------------------------------------
 03-08-2018 method params
 -----------------------------------------------
@@ -1022,7 +1020,7 @@ a - identifier - variable name
 			int z = 30;
 		}
 	}
-- If more than 2 or more methods uses same variable then we can declared that variable as static variable.
+- If more than 2 or more methods uses same variable then we can declare that variable as static variable.
 
 - static variables can be directly used instance methods as well as static methods.
  	
@@ -1066,10 +1064,10 @@ If we chage the static variable using any object, it will change to all other ob
 		int l;
 		sop(l); //CE: can't initilize, jvn not providing the default value.
 	}
------------------------------------------------------|	
-variable type | instance method	|static method       |
-------------|-------------------|--------------------|
-instance var| yes,eg: sop(a)    |no, e.g, sop(obj.a);
-------------|-------------------|--------------------|
-static 	var | yes,eg: sop(a)    |yes,eg: sop(a)
-------------|-----------|-------|--------------------|
+-----------------------------------------------------  |	
+variable type | instance method	  |static method         |
+--------------|-------------------|--------------------|
+instance var  | yes,eg: sop(a)    |no, e.g, sop(obj.a);
+------------- |-------------------|--------------------|
+static 	var   | yes,eg: sop(a)    |yes,eg: sop(a)
+------------- |------------------|--------------------|

@@ -1,19 +1,52 @@
-class Person{
-	private int age;
-    private String name;
-	private String collegeName;
+class Person {
+	String name;
+	int age;
+	String fatherName;
+	String motherName;
 	
-	public static void main(String args[]){
-		System.out.println("main" + collegeName);
-		Person p1=new Person();
-		p1.age=22;
-		p1.name="murali";
-		p1.collegeName="narayana";
-		Person p2=new Person();
-		System.out.println("p1" +p1.collegeName);
-		p1();
+	static String villageName ="karuru";
+	
+	//getter method
+	public String getName(){
+		return name;
 	}
-		public static void p1(){
-			System.out.println("p1: "+ collegeName);
-		}
+	
+	public int getAge(){
+		return age;
 	}
+	
+	public String getFatherName(){
+		return fatherName;
+	}
+	
+	public static void main(String[] args){
+		Person p1 = new Person();
+		printValues(p1);
+		
+		System.out.println("****************");
+		
+		p1.name = "Sudhakar";
+		p1.motherName = "lakshmi";
+		p1.age = 30;
+		p1.age = 35;
+		p1.villageName ="chennai";
+		
+		printValues(p1);
+		
+		System.out.println("****************");
+		Person p2 = new Person();
+		p2.name ="Venky";
+		p2.fatherName= "Venkat";
+		p2.motherName="ademma";
+		
+		printValues(p2);
+	}
+	
+	public static void printValues(Person p){
+		System.out.println(p.name);
+		System.out.println(p.age);
+		System.out.println(p.fatherName);
+		System.out.println(p.motherName);
+		System.out.println(villageName);
+	}
+}
