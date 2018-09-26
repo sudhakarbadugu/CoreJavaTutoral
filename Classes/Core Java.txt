@@ -876,6 +876,7 @@ Note:
 Method return types:
 ---------------------------
 public int m1(int a) {
+	return 0;
 }
 public - access specifier/modifier
 int - return type - date type is int
@@ -1001,7 +1002,7 @@ a - identifier - variable name
 - For instance varibles jvm will provide default values.
 	default values for instance variable:
 	primitive data types:-
-		byte, short, int, long ==> 0
+		byte, char, short, int, long ==> 0
 		boolean => false 
 		float, double => 0.0
 
@@ -1071,3 +1072,37 @@ instance var  | yes,eg: sop(a)    |no, e.g, sop(obj.a);
 ------------- |-------------------|--------------------|
 static 	var   | yes,eg: sop(a)    |yes,eg: sop(a)
 ------------- |------------------|--------------------|
+
+- Getter:
+- For each property, we should have getter.
+- getter method return type is as same as property type.
+- getter should not take any method parameter.
+- property should be declared as private.
+- getter method should return property.
+- getter method access specifier should be public.
+
+	class Person{
+		private String name;
+		
+		public String getName(){
+			return name;
+		}
+	}
+
+	
+- Setter:
+- For each property, we should have setter.
+- setter method return type is void. It should not return any value.
+- setter should take one parameter and parameter type is same as instance variable.
+- property should be declared as private.
+- setter method should not return any value.
+- setter method access specifier should be public.
+- When method parameter name and property name are same, then we should specify the instance variable name with this keyword. Otherwise value will not set to instance variale.
+
+	class Person{
+		private String name;
+		
+		public void setName(String name){
+			this.name = name;
+		}
+	}

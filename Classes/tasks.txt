@@ -292,7 +292,7 @@ Program 54: InstanceAndStaticMethodParamCallingPractise
 	main -> m1 -> m2 -> m4 -> m3
 	
 	
-Program 54: InstanceAndStaticMethodReturnPractise
+Program 55: InstanceAndStaticMethodReturnPractise
 	public static int a = 10; //static var
 	public int b = 20; //instance var
 	
@@ -302,7 +302,7 @@ Program 54: InstanceAndStaticMethodReturnPractise
 	public static boolean m4(){}
 	main -> m1 -> m2 -> m4 -> m3
 	
-Program 55: Person
+Program 56: Person
 	private int age;
 	private String name;
 	private String fatherName;
@@ -312,4 +312,5 @@ Program 55: Person
 	
 
 //create 5  objects and set values and display them
+//Use setter and getters
 	
