@@ -1073,12 +1073,13 @@ instance var  | yes,eg: sop(a)    |no, e.g, sop(obj.a);
 static 	var   | yes,eg: sop(a)    |yes,eg: sop(a)
 ------------- |------------------|--------------------|
 
+26-09-2018
 - Getter:
-- For each property, we should have getter.
-- getter method return type is as same as property type.
+- For each instance variable, we should have getter.
+- getter method return type is as same as instance variable data type.
 - getter should not take any method parameter.
-- property should be declared as private.
-- getter method should return property.
+- instance variable should be declared as private.
+- getter method should return instance variable.
 - getter method access specifier should be public.
 
 	class Person{
@@ -1091,12 +1092,12 @@ static 	var   | yes,eg: sop(a)    |yes,eg: sop(a)
 
 	
 - Setter:
-- For each property, we should have setter.
+- For each instance variable, we should have setter.
+- setter method access specifier should be public.
 - setter method return type is void. It should not return any value.
 - setter should take one parameter and parameter type is same as instance variable.
-- property should be declared as private.
+- instance variable should be declared as private.
 - setter method should not return any value.
-- setter method access specifier should be public.
 - When method parameter name and property name are same, then we should specify the instance variable name with this keyword. Otherwise value will not set to instance variale.
 
 	class Person{
@@ -1106,3 +1107,34 @@ static 	var   | yes,eg: sop(a)    |yes,eg: sop(a)
 			this.name = name;
 		}
 	}
+
+	
+27-09-18
+Constructor:
+- Constructor is like a method. 
+- Constructor name should be as same as class name.
+- constructor should not have any return type.
+- When ever we create an object for a class then immediately constructor will be executed.
+- A constructor which is not having any parameter called default constructor.
+	class Movie {
+		public Movie(){	//default
+		}
+		
+		public Movie(int a){	//parameterized
+		}
+	}
+- types:
+	1. default constructor:
+		A constructor which does not have any parameter
+		If no constructors are avaialbe in our class, then jvm will provide the default constructor.
+		
+			public Movie(){}
+			
+	2. parameterized constructor:
+		A constructor which has parameters.
+			public Movie(int a){}
+			
+			
+- If we add return type to constructor, then it will be considered as a method. It is no more a constructor.
+- if developer is not writing any constructor in a class then jvm will provider default consutor.
+- In one class we can have more than one constructor also.

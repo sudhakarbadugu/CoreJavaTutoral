@@ -313,4 +313,20 @@ Program 56: Person
 
 //create 5  objects and set values and display them
 //Use setter and getters
+
+Program 57: Movie
+	private String hero;
+	private String heroin;
+	private float payment;
+	private int shootingdays;
+	
+
+	//default constructor
+		- should print defaut constructor
+		
+	//parameterized constructor
+		- should print param constructor
+		
+	//all variable setters and getters
+	// print the values.
 	
