@@ -330,3 +330,28 @@ Program 57: Movie
 	//all variable setters and getters
 	// print the values.
 	
+Program 58: User
+	String username;
+	String password;
+	String dob;
+	int age;
+	int id;
+	String firstname;
+	String lastname;
+	String address;
+	float salary;
+	
+	//parameterized constructor
+	User(....){}
+	
+	public void initValues(){sop("values initilized");}
+	
+	public Strig toString(){
+		username + " "+ password+" "+.....;
+	}
+	
+- Write a constructor with all values above and set the values in constructor.
+- call initValues method from constructor.
+- write setter and getter for all above properties.
+- write toString();
+	

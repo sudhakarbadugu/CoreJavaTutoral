@@ -1,9 +1,17 @@
 class Movie {
 	private String hero;
 	private String heroin;
+	private int shootingDays;
+		
+	private static int movieCount;
 	
-	public Movie(String a, String b){
+	public Movie(String a, String heroin){
 		System.out.println("Movie constructor");
+		hero = a;
+		this.heroin = heroin;
+		
+		//we can instance as well static.
+		this.init();
 	}
 	
 	public String getHero(){
@@ -23,16 +31,26 @@ class Movie {
 	
 	public static void main(String args[]){
 		Movie m = new Movie("Sudhakar", "Suma");
-		m.setHero("Prabhas");
-		m.setHeroin("Tam");
-
-		Movie m1 = new Movie("Sudhakar2", "Suma3");
-		m1.setHero("Mahesh");
-		m1.setHeroin("Anu");
+		
+		m.setHero("Murali");
+		m.setHeroin("Kajal");
+		
+		Movie m1 = new Movie("Sudhakar2", "Suma3");	
 		
 		Movie m2 = new Movie("Sudhakar1", "Suma2");
 		
-		System.out.println(m.getHero());
-		System.out.println(m.getHeroin());
+		Movie m3 = new Movie("Sudhakar1", "Suma2");
+		
+		System.out.println(m.toString());		
+		System.out.println(m1.toString());		
+		System.out.println(m2.toString());
+	}
+	
+	public void init(){
+		System.out.println("taking rest");
+	}
+	
+	public String toString(){
+		return this.hero + " "+ this.heroin + " "+ this.shootingDays;
 	}
 }

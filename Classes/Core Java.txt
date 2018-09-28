@@ -233,7 +233,7 @@ class:
 		MethodExample
 
 Method/variable:
-	- It should start small letter and came case
+	- It should start small letter and camel case
 		int length;
 		methodOne(){}
 		int a[]; a.length
@@ -1092,10 +1092,10 @@ static 	var   | yes,eg: sop(a)    |yes,eg: sop(a)
 
 	
 - Setter:
-- For each instance variable, we should have setter.
+- For each instance variable, we should have setter method.
 - setter method access specifier should be public.
 - setter method return type is void. It should not return any value.
-- setter should take one parameter and parameter type is same as instance variable.
+- setter should take one parameter and parameter data type is same as instance variable.
 - instance variable should be declared as private.
 - setter method should not return any value.
 - When method parameter name and property name are same, then we should specify the instance variable name with this keyword. Otherwise value will not set to instance variale.
@@ -1138,3 +1138,82 @@ Constructor:
 - If we add return type to constructor, then it will be considered as a method. It is no more a constructor.
 - if developer is not writing any constructor in a class then jvm will provider default consutor.
 - In one class we can have more than one constructor also.
+- From construcor we can call instance methods as well static methods.
+- In construcor we can use 
+instance variables as well static variables.
+
+
+what is the use of constructor?
+- To perform the initilization for the instance variables.
+- If we want to call any method which has to be executed only once for object, we should call from construcor.
+
+How many times constructor will be executed?
+For each object 1 time constructor will be executed. if we create 10 objects, 10 times will be execued.
+
+If we set value from construcor as well as from settter, which will take highest precedense?
+	- Setter method value will be availabe, because it is overriding the constructor value.
+	eg
+		Movie m = new Movie("Sudhakar", "Suma");
+		
+		m.setHero("Murali");
+		m.setHeroin("Kajal");
+		
+		op: Murali, Kajal
+-------------------------- Constructor example --------------------------------------------------
+		class Movie {
+			private String hero;
+			private String heroin;
+			private int shootingDays;
+				
+			private static int movieCount;
+			
+			public Movie(String a, String heroin){
+				System.out.println("Movie constructor");
+				hero = a;
+				this.heroin = heroin;
+				
+				//we can instance as well static.
+				this.init();
+			}
+			
+			public String getHero(){
+				return hero;
+			}
+			public void setHero(String hero){
+				this.hero = hero;
+			}
+			
+			public String getHeroin(){
+				return heroin;
+			}
+			
+			public void setHeroin(String heroin){
+				this.heroin = heroin;
+			}
+			
+			public static void main(String args[]){
+				Movie m = new Movie("Sudhakar", "Suma");
+				
+				m.setHero("Murali");
+				m.setHeroin("Kajal");
+				
+				Movie m1 = new Movie("Sudhakar2", "Suma3");	
+				
+				Movie m2 = new Movie("Sudhakar1", "Suma2");
+				
+				Movie m3 = new Movie("Sudhakar1", "Suma2");
+				
+				System.out.println(m.toString());		
+				System.out.println(m1.toString());		
+				System.out.println(m2.toString());
+			}
+			
+			public void init(){
+				System.out.println("taking rest");
+			}
+			
+			public String toString(){
+				return this.hero + " "+ this.heroin + " "+ this.shootingDays;
+			}
+		}		
+----------------------------------------------------------------------------------------------
