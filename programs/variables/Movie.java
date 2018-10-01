@@ -5,10 +5,26 @@ class Movie {
 		
 	private static int movieCount;
 	
-	public Movie(String a, String heroin){
-		System.out.println("Movie constructor");
-		hero = a;
+	public Movie(){
+		this("gdsfgd","ssfsdfsd");
+		System.out.println("Default constructor");
+	}
+	
+	public Movie(String fgdfgdgsdfg, String heroin){
+		//this();
+		System.out.println("Movie param constructor");
+		hero = fgdfgdgsdfg;
 		this.heroin = heroin;
+		
+		//we can instance as well static.
+		this.init();
+	}
+	
+	public Movie(String a, int b){
+		//this();
+		System.out.println("Movie param with int constructor");
+		hero = a;
+		this.shootingDays = b;
 		
 		//we can instance as well static.
 		this.init();
@@ -30,6 +46,9 @@ class Movie {
 	}
 	
 	public static void main(String args[]){
+		Movie m4 = new Movie();
+		System.out.println("m4"+ m4);
+		
 		Movie m = new Movie("Sudhakar", "Suma");
 		
 		m.setHero("Murali");

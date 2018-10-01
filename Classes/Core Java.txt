@@ -1136,7 +1136,7 @@ Constructor:
 			
 			
 - If we add return type to constructor, then it will be considered as a method. It is no more a constructor.
-- if developer is not writing any constructor in a class then jvm will provider default consutor.
+- if developer is not writing any constructor in a class then jvm will provider default constructor.
 - In one class we can have more than one constructor also.
 - From construcor we can call instance methods as well static methods.
 - In construcor we can use 
@@ -1159,6 +1159,83 @@ If we set value from construcor as well as from settter, which will take highest
 		m.setHeroin("Kajal");
 		
 		op: Murali, Kajal
+	
+1-10-2018
+- The parameter order is very important.
+E.g: Movie(1, 1);
+	Error: incompatible types.
+	
+- We can have any number of constructors in our class. But we can't have 2 constructors with same type order and same number of parameters.
+	Eg : 1 - Compile time error, construcor already defined.
+		
+		public Movie(String fgdfgdgsdfg, String heroin){
+		}
+		
+		public Movie(String a, String b){
+		}
+	
+	Eg : 2 Valid. It works
+		public Movie(String fgdfgdgsdfg, String heroin){
+		}
+		
+		public Movie(String a, int b){
+		}
+	
+	Eg : 3 Valid. It works
+		public Movie(int a, String heroin){
+		}
+		
+		public Movie(String a, int b){
+		}
+		
+	Eg : 4 Compile time error:Constructor already defined.
+		public Movie(){
+		}
+		
+		public Movie(){
+		}
+	
+- One construcor can call another construcor using this(). But it should be first line in the construcor.
+	E.g:1 Works fine.
+		public Movie(){
+			this(1);
+		}
+		
+		public Movie(int a){
+		
+		}
+		
+	E.g:2 Compile time error: this() should first line of a construcor.
+		public Movie(){
+			System.out.print("Defalut");
+			this(1);	//CE
+		}
+		
+		public Movie(int a){
+		
+		}
+	
+- Recursive construcor calling is not possible in java
+	E.g: Compile time error: Recursive calling of constructor.
+		public Movie(){
+			this(1);	
+		}
+		
+		public Movie(int a){
+			this();
+		}
+
+- Constructor overloading: 2 constructors having different  type of parameters or different number of parameter called construcor overloading.
+	
+	Eg : 2 Valid. It works
+		public Movie(String fgdfgdgsdfg, String heroin){
+		}
+		
+		public Movie(String a, int b){
+		}
+		
+		public Movie(String a, int b, int c){
+		}
 -------------------------- Constructor example --------------------------------------------------
 		class Movie {
 			private String hero;
@@ -1166,6 +1243,10 @@ If we set value from construcor as well as from settter, which will take highest
 			private int shootingDays;
 				
 			private static int movieCount;
+			
+			public Movie(){
+				this("b", "a");
+			}
 			
 			public Movie(String a, String heroin){
 				System.out.println("Movie constructor");

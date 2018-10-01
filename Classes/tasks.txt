@@ -355,3 +355,40 @@ Program 58: User
 - write setter and getter for all above properties.
 - write toString();
 	
+Program: 59 ConstructorWithThisFirstLine
+	Write a program for first line of this() call
+		A(){
+			//call another constructor
+		}
+		
+		A(int i){
+		}
+		
+	
+Program: 60 ConstructorOverloading
+	Write a program for first line of this() call
+		
+		int age;
+		Abc(){
+			
+		}
+		
+		Abc(int i){
+			age = i
+		}
+	- Write in main method, create a object and print the value.
+	
+Program: 61 ConstructorRecursive
+	Write a program for first line of this() call
+		
+		int age;
+		Abc(){
+			call another constructor
+		}
+		
+		Abc(int i){
+			call another constructor
+			age = i
+		}
+	- Write in main method, create a object and print the value.
+	
