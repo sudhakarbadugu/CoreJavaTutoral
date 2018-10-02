@@ -188,8 +188,13 @@ Building blocks:
 	1. instace 
 	2. static
 4. constructors.
+	1. default
+	2. parameter
+	
 5. blocks.
-
+	1. instance
+	2. static
+	
 how to declare a java class?
 1. Class:
 	- using class keyword we can declare a class.
@@ -1298,3 +1303,151 @@ E.g: Movie(1, 1);
 			}
 		}		
 ----------------------------------------------------------------------------------------------
+02-10-18 OOPS
+-------------
+- Object
+- class 
+- method - behivour/actions
+- variables. - state/properties
+
+Features:-
+	- Encapsualation	
+	- Inheritance
+	- Abstraction
+	- Polimorphism	
+
+1.Data hiding:
+		Declare all instance variables as private called data hiding. From outside class, can't change these value.
+		E.g:
+		class Person {
+			//hiding our instance variables.
+			private int age;
+			private String name;
+		}
+		
+2. Abstraction
+	Providing some service and hiding the internal implementation is called abstraction.
+	E.g Atm is providing some service, we don't know it is working, means we dont know internal implementation.
+		
+		public void setAge(int age){}
+		
+3. Encapsualation:
+		Data hiding + abstraction 
+		E.g:
+	--------------------------------------------------------------------------------------------
+	class Person {
+		//hiding our instance variables.
+		private int age;
+		private String name;
+		
+		public void setAge(int age){
+			this.age = age;
+		}
+		
+		public int getAge(){
+			return age;
+		}
+		
+		public void setName(String name){
+			this.name = name;
+		}
+		
+		public String getName(){
+			return this.name;
+		}
+	}
+	
+	class PersonDemo {
+		
+		public static void main(String... args){
+			Person p = new Person();
+			p.setName("Sud");
+			//p.age = 40;//invalid
+			p.setAge(20);
+			System.out.println(p.getName());
+			System.out.println(p.getAge());
+			
+		}
+	}
+-----------------------------------------------------------------------------------------------
+
+4.Inheritance
+	- Acquiring parent properties and methods.
+	- Code reusability.
+	- Reduce the code amount
+	
+- Using 'extends' keyword, we can achive the inheritance.
+	class A extends B {
+	}
+	Here B - parent
+		A - Child
+		
+	----------------------------------------------------------------------------------
+	class Parent{
+		int property = 100000;
+		static int cash = 1000000;
+		
+		public String toString(){
+			return "property "+ property;
+		}
+	}
+
+	class Child extends Parent {
+	
+	public static void main(String... args){
+		Child c = new Child();
+		System.out.println(c.property);
+		System.out.println(c.cash);
+			System.out.println(c.toString());
+		}
+	}
+	----------------------------------------------------------------------------------
+
+Pojo: Plain Old Java Object:
+	- Only instance variables
+	- only setter and getters will avaiable.
+	- constructor.
+	
+	-----------------------------------------------------------------------------------
+	class Person {
+		//hiding our instance variables.
+		private int age;
+		private String name;
+		
+		public void setAge(int age){
+			this.age = age;
+		}
+		
+		public int getAge(){
+			return age;
+		}
+		
+		public void setName(String name){
+			this.name = name;
+		}
+		
+		public String getName(){
+			return this.name;
+		}
+	}
+	-----------------------------------------------------------------------------------
+	
+Access modifier/specfier: Which specify the access from other classes.
+1. public 
+2. protected
+3. default
+4. private
+
+1. public 
+	We can access from anywhere
+	
+2. protected
+	We can access with in the class, with in the curret package  and with in the child classes from outside package.
+	
+3. default
+	We can access with in the class and with in the curret package (folder).
+
+4. private
+	Only with in the class
+	
+	
