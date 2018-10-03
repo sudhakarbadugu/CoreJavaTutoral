@@ -1177,6 +1177,7 @@ E.g: Movie(1, 1);
 		}
 		
 		public Movie(String a, String b){
+		public Movie(String a, String b){
 		}
 	
 	Eg : 2 Valid. It works
@@ -1369,8 +1370,7 @@ Features:-
 			
 		}
 	}
------------------------------------------------------------------------------------------------
-
+------------------------------------------------------------------------------------------
 4.Inheritance
 	- Acquiring parent properties and methods.
 	- Code reusability.
@@ -1402,6 +1402,98 @@ Features:-
 		}
 	}
 	----------------------------------------------------------------------------------
+Inheritance types:
+1. Single Inheritance
+2. Multiple Inheritance
+3. Multi level Inheritance
+
+	
+1. Single Inheritance
+	A class which extends only one class, it is called single inheritance.
+--------------------------------------------------------
+		class A {
+	int cash = 20;
+	
+	public int getCash(){
+		return cash;
+		}
+	}
+	//single inheritance
+	class B extends A{
+		
+		String property = "5 hecres";
+	}
+----------------------------------------------------
+2. Multiple Inheritance:
+- A class which extending more than one class is called multiple inheritance.
+- This is not possible in java
+
+Why multiple inheritance is not possible in java?
+If one is extending more than one class, if same method is avaiable in both parents, then compiler doesn't to which method it has call from which parent.
+1
+Eg: In the below C class, 	When calling c.getCash() method, getCash method is available in both parent classes, compiler doesn't from which class, it has call. that's why in java multiple inheritance is not possible.
+-------------------------------------------------
+class A {
+	int cash = 20;
+	
+	public int getCash(){
+		return cash;
+	}
+}
+class B {
+	int cash = 20;
+	
+	public int getCash(){
+		return cash;
+	}
+
+}
+//multiple inheritance
+class C extends A, B{
+	
+	String property = "5 hecres";
+	public static void main(){
+		C c = new C();
+		c.getCash();
+	}
+}
+-------------------------------------------------
+3. Multi level Inheritance
+- One class having more than 1 parent ansisters called multilevel inheritance.
+	A  - grand parent
+	|
+	B  - parent
+	|
+	C  - child
+
+
+	
+Object:
+-------
+- It is avaiable in java.lang package
+- It is super class for all classes in java.
+- If any class is not extending any other class, jvm will extends Object class by default.
+	- 11 methods.
+
+https://docs.oracle.com/javase/8/docs/api/
+
+Method calling in inheritance:
+1. We can create object child class and refer as child class
+	C object = new C();
+	- Using child class reference, we can call all child class methods and all its parent class methods and variables also.
+
+2. We can use parent class reference to hold the child class object.
+	B object = new C();
+	
+	- When ever we holding child class object using parent class reference, we can't call the child class methods or variables using parent class reference.
+	object.printMyValues(); gives error because parent class reference is hold child
+	
+
+- overloading
+- overriding
+- polymorphism
+- typecasting
+-----------------------------------------------------------------
 
 Pojo: Plain Old Java Object:
 	- Only instance variables

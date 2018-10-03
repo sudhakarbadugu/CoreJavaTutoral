@@ -392,3 +392,9 @@ Program: 61 ConstructorRecursive
 		}
 	- Write in main method, create a object and print the value.
 	
+Program 62: SingleInheritanceExample
+Program 62: MultipleInheritanceExample
+Program 62: MultiLevelInheritanceExample
+Program 62: ParentClassRefExample
+	A c = new C();
+	
