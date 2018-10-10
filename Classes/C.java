@@ -16,9 +16,14 @@ class B extends A{
 class C extends B {
 	public static void main(String args[]){
 	
-		A  object = new C();
+		B object = new C();
 		System.out.println(object.getCash());
 		System.out.println(object.hashCode());
+		
+		//type cast
+		// A obj1 = object;
+		 C obj1 = (C)object;
+		obj1.printMyPropery();
 		
 	}
 	

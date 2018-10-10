@@ -1380,7 +1380,7 @@ Features:-
 	class A extends B {
 	}
 	Here B - parent
-		A - Child
+		 A - Child
 		
 	----------------------------------------------------------------------------------
 	class Parent{
@@ -1486,10 +1486,106 @@ Method calling in inheritance:
 	B object = new C();
 	
 	- When ever we holding child class object using parent class reference, we can't call the child class methods or variables using parent class reference.
-	object.printMyValues(); gives error because parent class reference is hold child
+	object.printMyValues(); gives error because parent class reference is hold child object.
 	
+3. If we want to call child class metods using parent class reference, we need to do type casting.
+Type casting:
+	Casting the type(Changing the type)
+	B objecct = new C();
+	C obj1 = (C) object;
+	
+	obj1.printMyValues();
 
+	-----------------------------------------------------------------
+	
+	class A {
+	int cash = 20;
+	
+	public int getCash(){
+		return cash;
+	}
+}
+
+//single inheritance
+class B extends A{
+	
+	String property = "5 hecres";
+}
+
+
+class C extends B {
+	public static void main(String args[]){
+	
+		B object = new C();
+		System.out.println(object.getCash());
+		System.out.println(object.hashCode());
+		
+		//type cast
+		// A obj1 = object;
+		 C obj1 = (C)object;
+		obj1.printMyPropery();
+		
+	}
+	
+	public void printMyPropery(){
+		System.out.println("property:"+ property);
+	}
+}
+-----------------------------------------------------------------
 - overloading
+	public void m1(int a){}
+
+m1(int a)
+--------- -> method signature: method name and method parameters.
+	- Return type and access specifier are not part of method signature.
+
+
+Methods which have same name but with different signature.
+1. same method name but different nubmer of parameters
+	class OverloadingExample {
+		
+		public void m1(int a){
+		}
+		
+		public void m1(){
+		}
+	}
+
+2. same method name but parameter type order is different.
+		class OverloadingExample {
+		
+		public void m1(int a){
+		}
+		
+		public void m1(String a){
+		}
+	}
+
+
+class OverloadingExample {
+	
+	public void m1(int a, String b){
+		System.out.println(" int string");
+	}
+	
+	public void m1(String a, int b){
+	System.out.println(" string int");
+	}
+	
+	public int m2(int a, String b){
+		return 1;
+	}
+	
+	public static void main(String[] args){
+		OverloadingExample a = new OverloadingExample();
+		a.m1(10, "10");
+	}
+}
+
+- Mehtod overloading is early bindng or compile time binding or static binding.
+
+
+
 - overriding
 - polymorphism
 - typecasting
