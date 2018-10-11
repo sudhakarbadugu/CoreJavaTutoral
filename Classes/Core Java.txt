@@ -1541,7 +1541,7 @@ m1(int a)
 
 
 Methods which have same name but with different signature.
-1. same method name but different nubmer of parameters
+1. same method name but different numbmer of parameters
 	class OverloadingExample {
 		
 		public void m1(int a){
@@ -1582,11 +1582,129 @@ class OverloadingExample {
 	}
 }
 
+Static binding:- 
+Compiler knows which method to call based on the code, it is called static binding or compile time binding.
+
 - Mehtod overloading is early bindng or compile time binding or static binding.
 
+- We can achive the same funtionality.
+- we can increase the readability.
+- In single class we can achive overloading.
 
+Overriding:
+----------
+- When we are not satisfied with the super class method implementation, we should go for overidding.
 
-- overriding
+- With same method name, same return type and same access specifier in the child class as same as parent class is called overriding.
+
+- In a single class we can't achive overidding.
+
+------------------------------------------------------
+class Parent {
+	int cash = 200000;
+	
+	public void marry(){
+		System.out.println("marry subbalaxi");
+	}
+	
+}
+
+class Child extends Parent{
+
+	public static void main(String args[]){
+		Child c = new Child();
+		System.out.println(c.cash);
+		c.marry();		
+	}
+		
+	public void marry(){
+		System.out.println("I want to maryy Tamanna");
+	}	
+}
+------------------------------------------------------
+- Even though we are holding a Child class object with parent class reference, overidding method will be called always.
+------------------------------------------------
+class Parent {
+	int cash = 200000;
+	
+	public void marry(){
+		System.out.println("marry subbalaxi");
+	}
+	
+}
+
+class Child extends Parent{
+
+	public static void main(String args[]){
+		Parent c = new Child();
+		System.out.println(c.cash);
+		c.marry();		
+	}
+		
+	public void marry(){
+		System.out.println("I want to maryy Tamanna");
+	}	
+}
+--------------------------------------------------
+
+Runtime Binding:
+When override any methods, compiler doesn't know to which method it has call, so JVM will identify that in runtime, so it called Runtime Binding.
+- overriding is runtime binding example.
+
+- final methods we can't override.
+-------------------------------------------
+	E.g:
+	class Parent {
+	int cash = 200000;
+	
+	public final void marry(){
+		System.out.println("marry subbalaxi");
+	}
+	
+}
+
+class Child extends Parent{
+
+	public static void main(String args[]){
+		Parent c = new Child();
+		System.out.println(c.cash);
+		c.marry();		
+	}	
+}
+----------------------
+- for private methods overidding is not possible.
+- While overidding, we can increase access specfier scope but we should not decrease it's scope.
+
+access specfier order
+public > procted > default > private
+
+working eg: Here we are increasing access specfier scope in child,
+---------------------------
+class P {
+	void m1(){}
+}
+class C {
+	void m1(){}
+	
+	//or
+	procted void m1(){}
+	
+	//or
+	public void m1(){}
+}
+---------------------------
+	
+Not	working eg: Here we are decreasing access specfier scope in child
+---------------------------
+class P {
+	public void m1(){}
+}
+class C {
+	void m1(){}
+	procted void m1(){}
+}
+---------------------------
+	
 - polymorphism
 - typecasting
 -----------------------------------------------------------------
