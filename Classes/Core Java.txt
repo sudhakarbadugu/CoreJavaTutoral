@@ -1312,13 +1312,15 @@ E.g: Movie(1, 1);
 - variables. - state/properties
 
 Features:-
+	- Data hiding
 	- Encapsualation	
 	- Inheritance
 	- Abstraction
 	- Polimorphism	
 
 1.Data hiding:
-		Declare all instance variables as private called data hiding. From outside class, can't change these value.
+		Declare all instance variables as private called data hiding. 
+		From outside class, can't change these value.
 		E.g:
 		class Person {
 			//hiding our instance variables.
@@ -1335,7 +1337,7 @@ Features:-
 3. Encapsualation:
 		Data hiding + abstraction 
 		E.g:
-	--------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
 	class Person {
 		//hiding our instance variables.
 		private int age;
@@ -1382,7 +1384,7 @@ Features:-
 	Here B - parent
 		 A - Child
 		
-	----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 	class Parent{
 		int property = 100000;
 		static int cash = 1000000;
@@ -1401,7 +1403,7 @@ Features:-
 			System.out.println(c.toString());
 		}
 	}
-	----------------------------------------------------------------------------------
+----------------------------------------------------------------------------------
 Inheritance types:
 1. Single Inheritance
 2. Multiple Inheritance
@@ -1411,7 +1413,7 @@ Inheritance types:
 1. Single Inheritance
 	A class which extends only one class, it is called single inheritance.
 --------------------------------------------------------
-		class A {
+class A {
 	int cash = 20;
 	
 	public int getCash(){
@@ -1466,7 +1468,14 @@ class C extends A, B{
 	|
 	C  - child
 
-
+-----------------------------------------
+class A{
+}
+class B extends A {
+}
+class C extends B{
+}
+-----------------------------------------
 	
 Object:
 -------
@@ -1489,6 +1498,7 @@ Method calling in inheritance:
 	object.printMyValues(); gives error because parent class reference is hold child object.
 	
 3. If we want to call child class metods using parent class reference, we need to do type casting.
+
 Type casting:
 	Casting the type(Changing the type)
 	B objecct = new C();
@@ -1532,7 +1542,7 @@ class C extends B {
 	}
 }
 -----------------------------------------------------------------
-- overloading
+overloading:-method signature: method name and method parameters
 	public void m1(int a){}
 
 m1(int a)
@@ -1770,21 +1780,173 @@ class Child extends Parent{
 -----------------------------------------------------
 - We can achive abstraction. 
 
+14-10-2018
 Typecasting:
 -----------
-byte b = 10;
-int a = 20;
-b = a;
 
+Casting the one type data to another.
+--------------------
+Eg:
+class TypeCasting {
+	public static void main(String[] args){
+		int a = 1;
+		byte b = (byte)a;
+		
+		System.out.println(a);
+		
+		TypeCasting c = new TypeCasting();
+		
+		A obj = new B();
+		c.display(obj);
+		
+	}
+	
+	public void display(A a){
+		System.out.println(a);
+	}
+}
 
------------------------------------------------------------------
+E.g:
+class TypeCasting {
+	public static void main(String[] args){
+		TypeCasting t = new TypeCasting();
+		
+		A a = new B();
+		a.m1();
+		
+		B b = (B) a;
+		b.m2();	//ce
+		
+		A a1 = new C();
+		C c = (C) a1;
+		
+		a1.m1();
+		c.m3(); //ce
+		
+		A a3 = new A();
+		a3.m1();
+	}
+}
 
+class A {
+	public void m1(){
+		System.out.println("m1");
+	}
+}
+
+class B extends A {
+	public void m2(){
+		System.out.println("m2");
+	}
+}
+
+class C extends A {
+	public void m3(){
+		System.out.println("m3");
+	}
+}
+-------------------------
+	A a = new B();
+	B b = (B) a;
+	
+1 - B - class/interface
+2 - b - reference variable/ object reference
+3 - B - class/interface
+4 - a - reference variable/object reference
+
+Compiler rules:
+1. Is there a relationship between 3 & 4. Either parent to child or child to parent. Otherwise it gives a compile time error
+
+2. 3rd should be either same type or its child of 1st.
+	As per example, B should be same as B or its child.
+ ---------------------------------
+ 		A a = new B();
+		a.m1();
+		
+		B b = (A) a;
+ ---------------------------------
+ 
+Runtime rules
+3. 3rd type and 4th type object should be same. Otherwise we will get ClassCastException.
+
+------------------------------
+		A a = new B();
+		a.m1();
+		
+		B b = (B) a;
+		// B b = (A) a;
+		
+		b.m2();
+		
+		A a1 = new C();
+		C c = (C) a;	//RE: CCE
+		
+------------------------------
+instanceof:
+- To avoid the ClassCastException, we should use 'instanceof' keyword.
+- instanceof returns true only when reference is not null and object type is same.
+- To use the instanceof operator, there should be relation either parent to child or child to parent.
+Case 1:		
+		A a1 = new C();
+		
+		//a1 = null;
+		if(a1 instanceof C){
+		}
+
+	Here:	
+		a1 instanceof C	returns true. Because a1 object is C.
+
+Case 2:		
+		A a1 = new B();
+		
+		//a1 = null;
+		if(a1 instanceof C){
+		}
+
+	Here:	
+		a1 instanceof C	returns false. Because a1 object is B.
+Case 3:		
+		A a1 = null;
+		if(a1 instanceof C){
+		}
+
+	Here:
+		a1 instanceof C	returns false. Because a1 is null.
+Note: null is not any type.
+	
+Case 4:		
+		C c = new C();
+		if(c instanceof A){
+		}
+
+	Here:	
+		c instanceof A - returns true. Because c is child of A
+		
+Case 5:		
+		A a= new A();
+		if(a instanceof C){
+		}
+
+	Here:	
+		c instanceof A - returns false. Because a is not child of C. 
+		
+		
+Summary:
+	x intanceof y
+		true	
+			- x and y should be same
+			- x is child and y is parent
+		false
+			- x is null
+			- x is parent and y is child 
+	
+-----------------------------------------------------------------------------------------
 Pojo: Plain Old Java Object:
 	- Only instance variables
 	- only setter and getters will avaiable.
 	- constructor.
 	
-	-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 	class Person {
 		//hiding our instance variables.
 		private int age;
@@ -1806,7 +1968,7 @@ Pojo: Plain Old Java Object:
 			return this.name;
 		}
 	}
-	-----------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------
 	
 Access modifier/specfier: Which specify the access from other classes.
 1. public 
@@ -1826,4 +1988,6 @@ Access modifier/specfier: Which specify the access from other classes.
 4. private
 	Only with in the class
 	
-	
+------------------------------------------------------------------------
+15-10-2018
+interface:

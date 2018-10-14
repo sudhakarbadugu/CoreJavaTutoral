@@ -2,6 +2,8 @@ Pending things:
 ---------------
 1. Java features
 2. 2D arrays
+3. static flow
+4. instance flow
 ---------------------------
 1. Java installation
 	1.1 Verify java installation.
@@ -39,3 +41,4 @@ Pending things:
 	5. Ternary
 	6. Assignmet
 	
+13. OOPS
