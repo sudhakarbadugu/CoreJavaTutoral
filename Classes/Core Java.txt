@@ -1591,6 +1591,7 @@ Compiler knows which method to call based on the code, it is called static bindi
 - we can increase the readability.
 - In single class we can achive overloading.
 
+
 Overriding:
 ----------
 - When we are not satisfied with the super class method implementation, we should go for overidding.
@@ -1660,7 +1661,7 @@ When override any methods, compiler doesn't know to which method it has call, so
 	public final void marry(){
 		System.out.println("marry subbalaxi");
 	}
-	
+	 
 }
 
 class Child extends Parent{
@@ -1673,6 +1674,7 @@ class Child extends Parent{
 }
 ----------------------
 - for private methods overidding is not possible.
+
 - While overidding, we can increase access specfier scope but we should not decrease it's scope.
 
 access specfier order
@@ -1701,12 +1703,80 @@ class P {
 }
 class C {
 	void m1(){}
-	procted void m1(){}
+	procted int m1(){}
 }
 ---------------------------
+Differencs between Overriding and Overriding
+------------------------------------------------------------------------------------
+points						Overridig					Overloading
+------------------------------------------------------------------------------------
+1. Method signature			should be same				method signature should be different.
+2. can we change return		can't change return type 	can change return type.
+
+3. Can we change acces		We can the access specific 	we can change
+	specifier				but we should increase.
 	
-- polymorphism
-- typecasting
+4. Single class				No, we need inheritance		Yes,it is possible.
+
+5. Binding 					Runtime binding				Static Binding
+
+------------------------------------------------------------------------------------
+Polymorphism:-
+- Same object is behavihing differently at differnt times.
+
+-----------------------------------------------------
+class Parent {
+	int cash = 200000;
+	
+	void marry(){
+		System.out.println("marry subbalaxi");
+	}
+	
+}
+
+
+class Child2 extends Parent {
+
+}
+
+
+class Child extends Parent{
+
+	public static void main(String args[]){
+		Parent c = new Child();
+		System.out.println(c.cash);
+		c.marry();
+		
+		Parent p = new Child2();
+		System.out.println(p.cash);
+		p.marry();
+		
+		p = new Child();
+		System.out.println(p.cash);
+		p.marry();
+				
+		int a = 20;
+		System.out.println(a);
+		
+		a = a + 5;
+		a = a + 15;
+		System.out.println(a);
+	}
+		
+	protected void marry(){
+		System.out.println("I want to maryy Tamanna");
+	}	
+}
+-----------------------------------------------------
+- We can achive abstraction. 
+
+Typecasting:
+-----------
+byte b = 10;
+int a = 20;
+b = a;
+
+
 -----------------------------------------------------------------
 
 Pojo: Plain Old Java Object:
