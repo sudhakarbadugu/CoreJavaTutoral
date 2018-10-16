@@ -1842,7 +1842,7 @@ class B extends A {
 
 class C extends A {
 	public void m3(){
-		System.out.println("m3");
+		Sys tem.out.println("m3");
 	}
 }
 -------------------------
@@ -1933,6 +1933,9 @@ Case 5:
 		
 Summary:
 	x intanceof y
+	x - object reference
+	y - Class/interface name
+	
 		true	
 			- x and y should be same
 			- x is child and y is parent
@@ -1989,5 +1992,99 @@ Access modifier/specfier: Which specify the access from other classes.
 	Only with in the class
 	
 ------------------------------------------------------------------------
-15-10-2018
+16-10-2018
 interface:
+- Interface also like a class. It has methods and static variables.
+- interface should not have construcors, blocks and instance varaibles.
+- we can't create objects for interfaces. so instance variables are not allowed.
+- untill java 1.7 static methods should not write interfaces.
+
+- all variables in interface are "public static final". If developer is not adding them, compiler will add these for all variables in interface.
+
+- Final variables must be initilized.
+	public static final int personalLoanRate; //CE: must be init
+	public static final int personalLoanRate = 20; //Ok
+
+- final variables can't be changed.
+- final variables can be accessed through class.variablename
+
+- in interface, only public access modifier is allowed for variable. private and protected are not allowed. 
+-----------------------------------------------------
+interface Loan {
+	public static final int carLoanRate = 15;
+	int peronalLoanRate = 20;
+	static int houseLoanRate = 25;
+	//private static int houseLoanRate = 25; //CE
+	//protected static int houseLoanRate = 25; //CE
+}
+
+
+class LoanTest {
+	static int a;
+	public static void main(String[] args){
+		LoanTest.a = 25;
+		// Loan.peronalLoanRate = 30;
+		System.out.println(Loan.carLoanRate);
+		System.out.println(Loan.peronalLoanRate);
+		System.out.println(LoanTest.a);
+	}
+	
+	
+}
+----------------------------------------------------------
+abstract methods:
+ - A method which doesn't have any body is called abstract methods.
+ - by using 'abstract' keyword in the method, we can abstract method.
+ 
+- By default all metods in interface are abstract methods.
+
+- If developer explicitly declared method abstract then compiler will not add.
+- if developer is not adding 'public abstract', then compiler will add them for each method.
+- private and protected are not allowed for methods in interface.
+
+- By using 'implements' keyword , A class can implement an interface.
+E.g:
+
+	interface Loan {}
+	class PLoan extends Loan {} //CE
+	class PLoan implements Loan {} //OK
+	
+- If any class is implementing an interface, then that class must provide the implementation (body for methods) for all abstrct methods.otherwise we will get comile time error.
+
+--------------------------------------
+interface Loan {
+	public static final int carLoanRate = 15;
+	int peronalLoanRate = 20;
+	static int houseLoanRate = 25;
+	
+	void calculateIntrest();
+	public abstract void calculatePersonalIntrest();
+}
+
+class PersonalLoan implements Loan{
+
+	public void calculateIntrest(){
+		System.out.println("Calcaulate intrest");
+	}
+	
+	public void calculatePersonalIntrest(){
+		System.out.println("Calcaulate personal intrest");
+	}
+}
+
+class LoanTest {
+	static int a;
+	public static void main(String[] args){
+		LoanTest.a = 25;
+		// Loan.peronalLoanRate = 30;
+		System.out.println(Loan.carLoanRate);
+		System.out.println(Loan.peronalLoanRate);
+		System.out.println(LoanTest.a);
+		
+		Loan p = new PersonalLoan();
+		p.calculateIntrest();
+		p.calculatePersonalIntrest();
+		
+	}
+}
+-------------------------------------
