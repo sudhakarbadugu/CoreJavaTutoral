@@ -18,6 +18,15 @@ class PersonalLoan implements Loan{
 	}
 }
 
+abstract class CarLoan implements Loan{
+
+	public void calculateIntrest(){
+		System.out.println("Calcaulate intrest");
+	}
+	
+}
+
+
 class LoanTest {
 	static int a;
 	public static void main(String[] args){

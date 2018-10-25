@@ -2088,3 +2088,96 @@ class LoanTest {
 	}
 }
 -------------------------------------
+25-10-2018 Abstract classes
+
+- A class which is declared with abstract keyword.
+- abstract keyword can be used only to methods and classes but not for variables.
+- abstract keyword should be before class keyword.
+- for abstract classes we can't create a object.
+- If atleast one abstract method is there in a class then that class must be declared as abstract class. otherwise we will get compile time error.
+- We can have any number of concreate methods and abstract methods.
+- even if there is no abstract method in a class still we can declare that class as abstract.
+-----------------------------------
+abstract class AbstractExample {
+	
+	public void m1(){
+		System.out.println("m1");
+	}
+
+}
+-----------------------------------
+
+methods:-
+1. concreate methods
+	A method which has method body.
+2. abstract methods
+	A method which doesn't have a body.
+	
+- When ever we are extending any abstract class, then child class must provide the body for all parent class abstract methods. otherwise we have to declare child class as abstract. 
+- In abstract class we can have instance variables, static variables, instance methods, static method and construcors.
+----------------------------------------------------
+abstract class AbstractExample {
+	int a = 20;
+	
+	public abstract void calculateIntrest();
+	public void m1(){
+		System.out.println("m1");
+	}
+
+}
+
+class AbChild extends AbstractExample {
+	public void calculateIntrest(){
+		System.out.println("child cal");
+	}
+}
+
+
+class AbstractDemo {
+	public static void main(String[] args){
+		AbstractExample a = new AbChild();
+		a.calculateIntrest();
+		System.out.println(a);
+		
+	}
+}
+----------------------------------------------------
+
+
+interface -> interface => extends
+-------------------------
+interface A {
+}
+interface B extends A {
+}
+---------------------------
+
+class => class => extends
+-------------------------
+class A {
+}
+class B extends A {
+}
+---------------------------
+
+
+interface => childClass => implements
+-------------------------
+class A {
+}
+class B implements A {
+}
+---------------------------
+
+class => interface ==> This is not possible in java
+-------------------------
+class A {
+}
+interface B extends A {
+}
+---------------------------
+
+- One class can implement any number of interface at same time. So we can achive multiple inheritance through interfaces.
+
+Question: how multiple inheritance is possible in java?
+Yes, multiple inheritance is possible only through the interfaces but not with classes.
