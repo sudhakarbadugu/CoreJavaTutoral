@@ -2181,3 +2181,169 @@ interface B extends A {
 
 Question: how multiple inheritance is possible in java?
 Yes, multiple inheritance is possible only through the interfaces but not with classes.
+
+--------------------------------------------------------------
+interface A {
+	void m1();
+	
+}
+
+interface B {
+	void m1();
+}
+
+class C implements A, B {
+	public void m1(){
+		System.out.println("c m1");
+	}
+}
+
+class InterfaceTest {
+	public static void main(String[] b){
+		A a = new C();
+		a.m1();
+		
+		B b = new C();
+		b.m1();
+		
+		C c = new C();
+		c.m1();
+		
+	}
+}
+--------------------------------------------------------------
+final:
+------
+final is a keyword. it can be used for below 
+1. variables
+2. methods
+3. classes
+
+Final variables
+- Final variables must be initilized.
+	final int a =10; //OK
+	final int b; //CE
+	
+- final variables can't be changed.
+	final int a = 20;
+	a = 50; //CE:
+	
+Final metods:
+- final methods we can't override.
+-------------------------------------------
+	E.g:
+	class Parent {
+	int cash = 200000;
+	
+	public final void marry(){
+		System.out.println("marry subbalaxi");
+	}
+	 
+}
+
+class Child extends Parent{
+
+	public static void main(String args[]){
+		Parent c = new Child();
+		System.out.println(c.cash);
+		c.marry();		
+	}	
+}
+------------------------------------------
+Final class
+- Final classes we can't extend.
+------------------------------
+final class Parent {
+	public void cal(){
+		System.out.println("Subbamma");
+	}
+	
+}
+
+class Child extends Parent {
+public void marry(){
+		
+	}
+}
+
+- We can't use final keyword with abstract keyword. Where abstract refers inheritance and final refers no inheritance.
+
+abstract final class A {
+}	//CE
+------------------------------
+
+Packages:
+--------
+https://www.javatpoint.com/package
+What is package?
+- package is a group of classes or interfaces.
+
+
+Why we should use package? 
+- For easy maintainance
+- readability
+- we can avoid name collusion.
+
+- It should 1st statement.
+- package name should be like this: com.companyname.packagename 
+	com.ss.math;
+	
+Compilation:
+Without package:
+	javac A.java
+	
+With package
+	javac -d . A.java
+	javac -d b A.java
+	javac 	- javac compiler
+	-d 		- directroy (destination folder)
+	. 		- current folder
+	b 		- folder name
+	
+Running:
+Without package:
+	java A
+	
+With package
+	java com.ss.pack.A
+	java 	- To call the jvm to execute our program
+
+package types:
+1. Built in packages
+	The already defined packages in java
+		java.lang
+		java.math
+		java.utils
+		java.io
+	
+2. user defined packages:
+	- packages which are created by us.
+	
+	
+	
+import:
+-------
+-To use from other package classes in our class, we have to import that class first.
+- compiler tries to check the class is available in current package, if it is not avaibabl,it gives compiler time error.
+- import statement specifies to compiler to check the class in other package.
+- import should be after package statement.
+
+Order: order of apperance
+	pacage
+		|
+	import
+		|
+	class
+	
+- If any class is public, then file name should be same.
+- In one file, only class can declare as public
+
+absolute class name:
+a class name with package name	
+	com.ss.pack1.StringUtil
+
+There are three ways to access the package from outside the package.
+
+1. import package.*;
+2. import package.classname;
+3. fully qualified name.
