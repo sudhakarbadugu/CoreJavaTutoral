@@ -1971,26 +1971,6 @@ Pojo: Plain Old Java Object:
 			return this.name;
 		}
 	}
------------------------------------------------------------------------------------
-	
-Access modifier/specfier: Which specify the access from other classes.
-1. public 
-2. protected
-3. default
-4. private
-
-1. public 
-	We can access from anywhere
-	
-2. protected
-	We can access with in the class, with in the curret package  and with in the child classes from outside package.
-	
-3. default
-	We can access with in the class and with in the curret package (folder).
-
-4. private
-	Only with in the class
-	
 ------------------------------------------------------------------------
 16-10-2018
 interface:
@@ -2345,5 +2325,131 @@ a class name with package name
 There are three ways to access the package from outside the package.
 
 1. import package.*;
+	- All classes will imported.
+	
 2. import package.classname;
+	- Only specified class will be imported.
+	
 3. fully qualified name.
+	- Only specified class.
+----------------------------------------------------------------
+30-10-2018	
+Access modifier/specfier: Which specify the access from other classes.
+1. public 
+2. protected
+3. default
+4. private
+
+1. public 
+	We can access from anywhere
+	
+2. protected
+	We can access with in the class, with in the curret package  and with in the child classes from outside package.
+	
+3. default
+	We can access with in the class and with in the curret package (folder).
+
+4. private
+	Only with in the class. From outside class can't call private methods.
+
+------------------------------------------------------------
+package com.ss.pack;
+
+public class A {
+	public static void main(String[] a){
+		System.out.println("Hello package");
+		a1();
+		a2();
+	}
+	
+	
+	private static void a1(){
+		System.out.println("a1 private method");
+	}
+	
+	static void a2(){
+		System.out.println("a2 default method");
+	}
+
+	protected static void a3(){
+		System.out.println("a2 public method");
+	}
+	
+	public static void a4(){
+		System.out.println("a2 public method");
+	}
+}
+
+
+
+package com.ss.pack;
+
+import com.ss.pack1.MathUtil;
+// import com.ss.pack1.*;
+
+class B {
+	public static void main(String[] a){
+		System.out.println("Hello package B");
+		
+		int val = MathUtil.squre(10);
+		System.out.println(val);
+		
+		int val1 = com.ss.pack1.StringUtil.squre(10);
+		System.out.println(val1);
+		
+		//A.a1();
+		A.a2();
+		A.a3();
+	}
+}
+
+
+package com.ss.pack1;
+import com.ss.pack.A;
+
+public class C extends A{
+	public static void main(String[] a){
+		System.out.println("Hello package C");
+		//A.a2(); can't call because it default.
+		//A.a3();
+		
+		C c = new C();
+		// d.a1();
+		// d.a2();
+		c.a3();//C is child of A
+		c.a4();
+		
+	}
+}
+
+class D{
+	public static void main(String[] a){
+		System.out.println("Hello package C");
+		//A.a2(); can't call because it default.
+		//A.a3();
+		
+		D d = new D();
+		// d.a1();
+		// d.a2();
+		d.a3();//CE: D is not a child of A
+		d.a4();
+		
+	}
+}
+------------------------------------------------------------
+Class:
+- For class only applicable modifier are:
+	1 - public 
+	2 - default 
+	3 - static 
+	4 - abstract
+	5 - final 
+	
+	public class A{}	//OK
+	protected class A{} //CE
+	public abstract class A{}	//OK
+	public abstract final class A{}	//CE abstract and final combination wrong.
+	
+-------------------------------------------------------------
+java lang package:
+https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/package-summary.html
