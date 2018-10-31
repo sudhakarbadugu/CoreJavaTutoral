@@ -2451,5 +2451,77 @@ Class:
 	public abstract final class A{}	//CE abstract and final combination wrong.
 	
 -------------------------------------------------------------
+31-10-208
 java lang package:
 https://docs.oracle.com/javase/8/docs/api/index.html?java/lang/package-summary.html
+
+interfaces:
+	Appendable
+	AutoCloseable
+	CharSequence
+	Cloneable
+	Comparable
+	Iterable
+	Runnable
+
+Classes:
+	Boolean
+	Byte
+	Character
+	Class
+	Double
+	Enum
+	Float
+	Integer
+	Long
+	Math
+	Number
+	Object
+	Runtime
+	Short
+	String
+	StringBuffer
+	StringBuilder
+	System
+	Thread
+	ThreadGroup
+	ThreadLocal
+	Throwable
+	Void
+	
+	
+1. String
+2. StringBuffer
+3. StringBuilder
+4. Object
+5. Math
+
+----------------------------
+Math	
+	1. min
+	2. max
+	3. abs
+	4. random
+	5. round
+	6. ceil
+	7. floor
+	
+	
+String
+- String is a final class. So we can't extend String class.
+
+Constructors:
+	String()
+	String(char[] a)
+	String(String s)
+	String(StringBuffer buffer)
+	String(StringBuilder builder)
+
+Methods:
+
+
+how to instantiate string?
+String a = "Sudha";
+String b = new String("Sudhakar");
+
+------------------------------------
