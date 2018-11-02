@@ -1716,7 +1716,7 @@ class C {
 	procted int m1(){}
 }
 ---------------------------
-Differencs between Overriding and Overriding
+Differencs between Overriding and Overloading
 ------------------------------------------------------------------------------------
 points						Overridig					Overloading
 ------------------------------------------------------------------------------------
@@ -2509,7 +2509,19 @@ Math
 	
 String
 - String is a final class. So we can't extend String class.
+- String is a immutability class.
 
+What is immutability?
+When ever we are trying to change anything in the object, it will create a new object with modifications. The existing object will not change.
+	E.g:
+		String s = "Sudha";
+		
+	When we are calling concat method, it will create a new string as 'sudhakar' but in the s it will not change.
+		s.concat("kar");
+
+	If we want to hold the changed object then 
+	s = s.concat("kar");
+	
 Constructors:
 	String()
 	String(char[] a)
@@ -2518,10 +2530,12 @@ Constructors:
 	String(StringBuilder builder)
 
 Methods:
-
+	1. length()
+	2. isEmpty()
 
 how to instantiate string?
 String a = "Sudha";
 String b = new String("Sudhakar");
 
+a.isEmpty();	//false
 ------------------------------------
