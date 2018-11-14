@@ -25,7 +25,8 @@ Opening cmd promps
 	1. win + type cmd 
 	2. win+R and type cmd
 	3. shift + right click -> Open powershell window option here.
--------------------------------------------------------------1. All files must end with .java extension.
+-------------------------------------------------------------
+1. All files must end with .java extension.
 -------------------------------------------------------------04-07-2018	Wednesday
 -------------------------------------------------------------What is Java?
 
@@ -139,6 +140,11 @@ Reserved/keyword words: 51
 17. switch
 18. case
 19. break
+
+20. extends
+21. implements
+22. this
+22. super
 
 
 how to compile
@@ -318,7 +324,7 @@ which type of data it is.
 5. float
 	4 bytes = 32 bits.
 	up to 7 points it can store.
-	float f  23.011232323232323234545f;
+	float f  = 23.011232323232323234545f;
 	float f1 = 220.2; //invalid, decimal values always referred as double value.
 	
 	
@@ -377,6 +383,7 @@ Control statements:
 if
 if else
 else if
+switch
 
 1. if 
 	If we have only one condition, then should go for if case.
@@ -385,7 +392,41 @@ else if
 		}
 xx - only boolean type or boolean result
 	if(i % 2 == 0){}	//
-			
+	
+- brackets optional
+- If no brackets are there, then only one line is in if block
+- always boolean type is required 
+	- boolean expression
+	 1 == 2 ==> false
+	 1 == 1 ==> true
+	 1 != 1 => false
+	 int i = 10 ==> ce	
+---------------------------------------------------------------
+class IfExample {
+	public static void main(String args[]){
+		int i = 10;
+		boolean b = false;
+		
+		if(b){
+			System.out.println("Boolean value is true");
+		}	
+		
+		if( i == 10){
+			System.out.println("I value is "+ i);
+		}
+		
+		if(i % 2 == 0){
+			System.out.println("Even number");
+		}
+		
+		if(b)
+		System.out.println("First line");
+		
+		System.out.println("second line");	
+	}
+}
+
+---------------------------------------------------------------
 2. if else
 	If we want show something when if condition is failed, means we have 2 condtions. 
 		if(age > 18){
@@ -394,6 +435,8 @@ xx - only boolean type or boolean result
 		else{
 			//you are not elegible
 		}
+
+- If if condition is failed then only else will be execued.
 		
 3. else if
 	If we have more than 2 condions , then we should go for else if.
@@ -407,6 +450,60 @@ xx - only boolean type or boolean result
 		}else {	//optional
 		
 		}
+-------------------------------------------------------------
+class IfExample {
+	public static void main(String args[]){
+		int marks = 25;
+		
+		if(marks >= 60 && marks < 70){
+			System.out.println("first class");
+		}		
+		else if(marks >= 70 && marks < 80 ){
+			System.out.println("Distinction");
+		}
+		else if(marks >= 80 ){
+			System.out.println("Topper");
+		}
+		else if(marks < 35){
+			System.out.println("Failed");
+		}		
+		else {
+			System.out.println(" Just Pass");
+		}
+	
+		System.out.println("End");
+	}
+}
+
+//should not write like this.
+//because it executes all if statements in the program.
+class IfExample {
+	public static void main(String args[]){
+		int marks = 25;
+		
+		if(marks >= 60 && marks < 70){
+			System.out.println("first class");
+		}
+		
+		if(marks >= 70 && marks < 80 ){
+			System.out.println("Distinction");
+		}
+		
+		if(marks >= 80 ){
+			System.out.println("Topper");
+		}
+		
+		if(marks < 35){
+			System.out.println("Failed");
+		}		
+		else {
+			System.out.println(" Just Pass");
+		}
+	
+		System.out.println("End");
+	}
+}
+
 -------------------------------------------------------------
 3. switch
 	If we have more than 2 condions , then we should go for switch.
@@ -1304,6 +1401,24 @@ E.g: Movie(1, 1);
 			}
 		}		
 ----------------------------------------------------------------------------------------------
+
+this - current class 
+	- to call instnace methods and instnace variables.
+	this.m1();
+	this.age = age;
+	
+this()	- to call another constructor
+	this();
+	
+super - super class 
+	- to call instnace methods and instnace variables from super class.
+	super.m1()l
+	
+	
+super()	- to call another constructor
+	super(1);
+	
+	
 02-10-18 OOPS
 -------------
 - Object

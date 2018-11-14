@@ -1,20 +1,26 @@
 class IfExample {
 	public static void main(String args[]){
-		int age = 23;
-		int val = 2;
-		int remainder = age % val;
+		int marks = 25;
 		
-		if(remainder == 0){
-			System.out.println("Even number");
+		if(marks >= 60 && marks < 70){
+			System.out.println("first class");
 		}
+		
+		if(marks >= 70 && marks < 80 ){
+			System.out.println("Distinction");
+		}
+		
+		if(marks >= 80 ){
+			System.out.println("Topper");
+		}
+		
+		if(marks < 35){
+			System.out.println("Failed");
+		}		
 		else {
-			System.out.println("Odd number");
+			System.out.println(" Just Pass");
 		}
-		
-		// if(age % 2 == 0) {
-			// System.out.println("Even number");
-		// }else{
-			// System.out.println("Even number");
-		// }
+	
+		System.out.println("End");
 	}
 }
