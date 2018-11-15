@@ -506,15 +506,18 @@ class IfExample {
 
 -------------------------------------------------------------
 3. switch
-	If we have more than 2 condions , then we should go for switch.
+
+- If we have more than 2 condions , then we should go for switch.
 	
+syntax:
 	switch(xx){	//
 	}
 xx - should be byte, short, int, char, String, boolean, enum.
 		int i = 10;
 		switch(i){
 		}
-Not allowed in case arguments - float, long, double.
+		
+- Not allowed in case arguments - float, long, double.
 
 case: each condition is called as case.
 
@@ -542,11 +545,11 @@ points:
 1. xx - byte, short, int , String, enum and boolean
 2. cases are optional. even default also optional.
 3. case can be in any order. e.g: case 3: case 2: default
-4. case label duplicates not allowed.
-5. default optional.
+4. case label duplicates are not allowed.
+5. default case also optional.
 6. arguments (xx) and case lables (1, 2) must be same type. 
 7. break - to stop the next case execution. break optional.
-8. Between 2 cases nothing is allowed. 
+8. Between 2 cases nothing is allowed. we should not write even SOP also.
 9. break should be used only in switch.
 
 Assignment
@@ -561,6 +564,51 @@ prasad: 21
 
 switch(name){
 }
+
+-------------------------------------------------------------------------------------------
+class SwitchDemo {
+	
+	static public void main(String[] a){
+		
+		int age = 6;
+		String s = "1";
+		
+		switch(age){
+			case 1: {
+				System.out.println("Baby");
+				break;
+			}
+			
+			case 2: {
+				System.out.println("Pre class");
+				break;
+			}
+			
+			case 3: {
+				System.out.println("LKG");
+				break;
+			}
+			
+			case 5: {
+				System.out.println("UKG");
+				break;
+			}
+			// System.out.println("middle");
+			case 6: {
+				int ab = 20;
+				System.out.println("First");
+				
+			System.out.println("middle");
+			
+				break;
+			}
+						
+			default: {
+				System.out.println("Big man");
+			}
+		}
+	}
+}
 ---------------------------------------------------
 26-7-18 Iterative statements or loops
 -------------------------------
@@ -572,16 +620,19 @@ Syntax:
 	for(i;c;id){
 		body
 	}
-	i -- init:
+	
+	i -- initilization:
 		int i = 1;
-	c -- condition  always true/false
-		i < 10 --> true/false
+		
+	c -- condition  - always true/false
+		i < 10 --> true
+		
 	id -- increment/decrement
 		i++	/ ++i / i = i+1
 		i--	/ --i
 
 1. init - optional
-2. condition - optional -- true
+2. condition - optional -- by default value is true
 3. incr/decrement - optional
 
 flow:
@@ -595,6 +646,33 @@ flow:
 	2 - conditon
 	3 - body
 	4 - increment
+
+- for loop open and close {} brackets are optional.
+
+------------------------------------------------------------
+class PrintNumbers {
+	public static void main(String[] args){
+
+		for(int i=50; i> 0; i--){
+			
+			if(i % 2 == 0){
+				System.out.println("Even number" + i);
+			}
+		}		
+	}
+}
+
+class PrintNumbers {
+	public static void main(String[] args){
+
+		for(int i=0; i< 50; i++){
+			
+			if(i % 2 == 0){
+				System.out.println("Even number" + i);
+			}
+		}		
+	}
+}
 -----------------------------------------
 27-07-18 while
 -----------------------------------------
