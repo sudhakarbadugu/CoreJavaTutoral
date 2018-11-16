@@ -648,7 +648,11 @@ flow:
 	4 - increment
 
 - for loop open and close {} brackets are optional.
-
+- if for is true always and if there are any statements below the while loop then compile time error will show as unreachable statement.
+	eg.
+		for(; true ;){
+		}
+		System.out.println("End");
 ------------------------------------------------------------
 class PrintNumbers {
 	public static void main(String[] args){
@@ -676,16 +680,39 @@ class PrintNumbers {
 -----------------------------------------
 27-07-18 while
 -----------------------------------------
+- When we don't know the how many iteration we want then we should go for while loop.
 Syntax:
 	while(conidtion){
 		//body
 	}
 	
-	condition: alwasys boolean value/expression.
+- condition: always boolean value/expression.
 - if condition is true, while body will be executed.
 - while - condition is mandatory.
 - while will not execute if condition is wrong.
 
+- if while is true always and if there are any statements below the while loop then compile time error will show as unreachable statement.
+	eg.
+		while(true){
+		}
+		System.out.println("End");
+-------------------------------------------------------
+class WhileExample {
+	static public void main(String[] args){
+
+		
+		int j = 90;
+		while(j > 100){
+			if(j % 2 == 0){
+				System.out.println(j);
+			}		
+			
+			j = j -1;
+		}
+		
+	}
+}
+---------------------------------------------------------------
 do while:
 ---------
 syntax;
@@ -695,7 +722,17 @@ syntax;
 	
 - do will execute atleast once even if condition wrong.
 - break - we can use in loops also.
-
+----------------------------------------------------------
+class DoWhileExample {
+	static public void main(String[] args){
+		int i = 100;
+		do {
+			if(i % 2 == 0)
+			System.out.println(i);
+			i = i -1;
+		}while( i > 50);
+	}
+}
 --------------------------------------------
 29-07-18	Operators
 --------------------------------------------
