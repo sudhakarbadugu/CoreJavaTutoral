@@ -1497,7 +1497,7 @@ Method calling in inheritance:
 	- When ever we holding child class object using parent class reference, we can't call the child class methods or variables using parent class reference.
 	object.printMyValues(); gives error because parent class reference is hold child object.
 	
-3. If we want to call child class metods using parent class reference, we need to do type casting.
+3. If we want to call child class methods using parent class reference, we need to do type casting.
 
 Type casting:
 	Casting the type(Changing the type)
@@ -2491,8 +2491,8 @@ Classes:
 	
 	
 1. String
-2. StringBuffer
-3. StringBuilder
+2. StringBuffer - 1.0
+3. StringBuilder - 1.5
 4. Object
 5. Math
 
@@ -2510,7 +2510,7 @@ Math
 String
 - String is a final class. So we can't extend String class.
 - String is a immutability class.
-
+- It is not a thread safe. 
 What is immutability?
 When ever we are trying to change anything in the object, it will create a new object with modifications. The existing object will not change.
 	E.g:
@@ -2530,8 +2530,11 @@ Constructors:
 	String(StringBuilder builder)
 
 Methods:
-	1. length()
-	2. isEmpty()
+	1. length(): return no of characters
+	2. isEmpty(): true/false 
+	3. contains()
+	4. concat();
+	5. 
 
 how to instantiate string?
 String a = "Sudha";
@@ -2539,3 +2542,135 @@ String b = new String("Sudhakar");
 
 a.isEmpty();	//false
 ------------------------------------
+class StringTest {
+
+	public static void main(String[] args){
+		String s = "Sudha"; 
+		System.out.println(s);
+		
+		s = s.concat("kar");
+		System.out.println(s);
+		
+		int index = s.indexOf("b");
+		if(index != -1){
+			System.out.println("available "+ index);
+		}else{
+			System.out.println("not available" + index);
+		}
+		
+		boolean b = s.contains("k");
+		System.out.println(b);
+		
+		char c = s.charAt(3);
+		System.out.println(c);
+		
+		int compare = s.compareTo("Sudhakar1");
+		System.out.println(compare);
+		
+		boolean eq = s.equals("sudhakar");
+		System.out.println(eq);
+		
+		eq = s.equalsIgnoreCase("sudhakar");
+		System.out.println(eq);
+		
+		boolean startWith = s.startsWith("Su");
+		System.out.println(startWith);
+		
+		boolean endsWith = s.endsWith("Su");
+		 System.out.println(endsWith);
+		
+		s = s.replace("kar", "Badugu");
+		System.out.println(s);
+		
+		String name = " Murali ";
+		System.out.println(name.trim());
+		System.out.println(name.toUpperCase());
+		System.out.println(name.toLowerCase());
+		
+		char[] chArray = name.toCharArray();
+		for(int i=0 ;i<chArray.length; i++){
+			System.out.println(chArray[i]);
+		}
+		
+		StringBuffer sb = new StringBuffer(name);
+		boolean res = name.contentEquals(sb);
+		System.out.println(res);
+		System.out.println(name.hashCode());
+		
+		String village = "karuru yes ra";
+		System.out.println(village.indexOf('r', 6));
+		System.out.println(village.lastIndexOf('r'));
+		System.out.println(village.substring(0, 5));
+		System.out.println(village.substring(5));
+		
+		String names = "ram,sham,mam";
+		System.out.println(names);
+		
+		String[] nameArr = names.split(",");
+		for(String s1 : nameArr){
+			System.out.println(s1);
+		}
+		
+		// String[] s2Arr = s.split("");
+		// int count = 0;
+		// for(String s3: s2Arr){
+			// if("a".equalsIgnoreCase(s3)){
+				// count++;
+			// }
+		// }
+		char[] s2Arr = s.toCharArray();
+		int count = 0;
+		for(char s3: s2Arr){
+			if('a' == s3){
+				count++;
+			}
+		}
+		
+		// for(int i=s2Arr.length - 1; i>=0 ; i--){
+			// System.out.println(s2Arr[i]);
+		// }
+		
+		
+		for(int i=s.length() - 1; i>=0 ; i--){
+			System.out.println(s.charAt(i));
+		}
+		
+		System.out.println(count);
+	}
+}
+----------------------------------------------
+StringBuffer
+- It is not a immutability/mutabile class.
+- It is a thread safe. Will cause performance problem.
+- reverse()
+
+class StringBufferTest {
+
+	public static void main(String[] args){
+		StringBuffer s = new StringBuffer("Sudha"); 
+		s.append("kar");
+		System.out.println(s.toString());
+		
+		
+	}
+}
+
+
+---------------------------------------------
+StringBuilder
+- It is a mutabile class.
+- It is not a thread safe. 
+- Improves the performance
+- reverse()
+
+class StringBuilderTest {
+
+	public static void main(String[] args){
+		StringBuilder s = new StringBuilder("Sudha"); 
+		s.append("kar");
+		System.out.println(s.toString());
+		
+		
+	}
+}
+
