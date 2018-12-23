@@ -25,7 +25,8 @@ Opening cmd promps
 	1. win + type cmd 
 	2. win+R and type cmd
 	3. shift + right click -> Open powershell window option here.
--------------------------------------------------------------1. All files must end with .java extension.
+-------------------------------------------------------------
+1. All files must end with .java extension.
 -------------------------------------------------------------04-07-2018	Wednesday
 -------------------------------------------------------------What is Java?
 
@@ -139,6 +140,11 @@ Reserved/keyword words: 51
 17. switch
 18. case
 19. break
+
+20. extends
+21. implements
+22. this
+22. super
 
 
 how to compile
@@ -318,7 +324,7 @@ which type of data it is.
 5. float
 	4 bytes = 32 bits.
 	up to 7 points it can store.
-	float f  23.011232323232323234545f;
+	float f  = 23.011232323232323234545f;
 	float f1 = 220.2; //invalid, decimal values always referred as double value.
 	
 	
@@ -377,6 +383,7 @@ Control statements:
 if
 if else
 else if
+switch
 
 1. if 
 	If we have only one condition, then should go for if case.
@@ -385,7 +392,41 @@ else if
 		}
 xx - only boolean type or boolean result
 	if(i % 2 == 0){}	//
-			
+	
+- brackets optional
+- If no brackets are there, then only one line is in if block
+- always boolean type is required 
+	- boolean expression
+	 1 == 2 ==> false
+	 1 == 1 ==> true
+	 1 != 1 => false
+	 int i = 10 ==> ce	
+---------------------------------------------------------------
+class IfExample {
+	public static void main(String args[]){
+		int i = 10;
+		boolean b = false;
+		
+		if(b){
+			System.out.println("Boolean value is true");
+		}	
+		
+		if( i == 10){
+			System.out.println("I value is "+ i);
+		}
+		
+		if(i % 2 == 0){
+			System.out.println("Even number");
+		}
+		
+		if(b)
+		System.out.println("First line");
+		
+		System.out.println("second line");	
+	}
+}
+
+---------------------------------------------------------------
 2. if else
 	If we want show something when if condition is failed, means we have 2 condtions. 
 		if(age > 18){
@@ -394,6 +435,8 @@ xx - only boolean type or boolean result
 		else{
 			//you are not elegible
 		}
+
+- If if condition is failed then only else will be execued.
 		
 3. else if
 	If we have more than 2 condions , then we should go for else if.
@@ -408,16 +451,73 @@ xx - only boolean type or boolean result
 		
 		}
 -------------------------------------------------------------
-3. switch
-	If we have more than 2 condions , then we should go for switch.
+class IfExample {
+	public static void main(String args[]){
+		int marks = 25;
+		
+		if(marks >= 60 && marks < 70){
+			System.out.println("first class");
+		}		
+		else if(marks >= 70 && marks < 80 ){
+			System.out.println("Distinction");
+		}
+		else if(marks >= 80 ){
+			System.out.println("Topper");
+		}
+		else if(marks < 35){
+			System.out.println("Failed");
+		}		
+		else {
+			System.out.println(" Just Pass");
+		}
 	
+		System.out.println("End");
+	}
+}
+
+//should not write like this.
+//because it executes all if statements in the program.
+class IfExample {
+	public static void main(String args[]){
+		int marks = 25;
+		
+		if(marks >= 60 && marks < 70){
+			System.out.println("first class");
+		}
+		
+		if(marks >= 70 && marks < 80 ){
+			System.out.println("Distinction");
+		}
+		
+		if(marks >= 80 ){
+			System.out.println("Topper");
+		}
+		
+		if(marks < 35){
+			System.out.println("Failed");
+		}		
+		else {
+			System.out.println(" Just Pass");
+		}
+	
+		System.out.println("End");
+	}
+}
+
+-------------------------------------------------------------
+3. switch
+
+- If we have more than 2 condions , then we should go for switch.
+	
+syntax:
 	switch(xx){	//
 	}
 xx - should be byte, short, int, char, String, boolean, enum.
 		int i = 10;
 		switch(i){
 		}
-Not allowed in case arguments - float, long, double.
+		
+- Not allowed in case arguments - float, long, double.
 
 case: each condition is called as case.
 
@@ -445,11 +545,11 @@ points:
 1. xx - byte, short, int , String, enum and boolean
 2. cases are optional. even default also optional.
 3. case can be in any order. e.g: case 3: case 2: default
-4. case label duplicates not allowed.
-5. default optional.
+4. case label duplicates are not allowed.
+5. default case also optional.
 6. arguments (xx) and case lables (1, 2) must be same type. 
 7. break - to stop the next case execution. break optional.
-8. Between 2 cases nothing is allowed. 
+8. Between 2 cases nothing is allowed. we should not write even SOP also.
 9. break should be used only in switch.
 
 Assignment
@@ -464,6 +564,51 @@ prasad: 21
 
 switch(name){
 }
+
+-------------------------------------------------------------------------------------------
+class SwitchDemo {
+	
+	static public void main(String[] a){
+		
+		int age = 6;
+		String s = "1";
+		
+		switch(age){
+			case 1: {
+				System.out.println("Baby");
+				break;
+			}
+			
+			case 2: {
+				System.out.println("Pre class");
+				break;
+			}
+			
+			case 3: {
+				System.out.println("LKG");
+				break;
+			}
+			
+			case 5: {
+				System.out.println("UKG");
+				break;
+			}
+			// System.out.println("middle");
+			case 6: {
+				int ab = 20;
+				System.out.println("First");
+				
+			System.out.println("middle");
+			
+				break;
+			}
+						
+			default: {
+				System.out.println("Big man");
+			}
+		}
+	}
+}
 ---------------------------------------------------
 26-7-18 Iterative statements or loops
 -------------------------------
@@ -475,16 +620,19 @@ Syntax:
 	for(i;c;id){
 		body
 	}
-	i -- init:
+	
+	i -- initilization:
 		int i = 1;
-	c -- condition  always true/false
-		i < 10 --> true/false
+		
+	c -- condition  - always true/false
+		i < 10 --> true
+		
 	id -- increment/decrement
 		i++	/ ++i / i = i+1
 		i--	/ --i
 
 1. init - optional
-2. condition - optional -- true
+2. condition - optional -- by default value is true
 3. incr/decrement - optional
 
 flow:
@@ -498,19 +646,73 @@ flow:
 	2 - conditon
 	3 - body
 	4 - increment
+
+- for loop open and close {} brackets are optional.
+- if for is true always and if there are any statements below the while loop then compile time error will show as unreachable statement.
+	eg.
+		for(; true ;){
+		}
+		System.out.println("End");
+------------------------------------------------------------
+class PrintNumbers {
+	public static void main(String[] args){
+
+		for(int i=50; i> 0; i--){
+			
+			if(i % 2 == 0){
+				System.out.println("Even number" + i);
+			}
+		}		
+	}
+}
+
+class PrintNumbers {
+	public static void main(String[] args){
+
+		for(int i=0; i< 50; i++){
+			
+			if(i % 2 == 0){
+				System.out.println("Even number" + i);
+			}
+		}		
+	}
+}
 -----------------------------------------
 27-07-18 while
 -----------------------------------------
+- When we don't know the how many iteration we want then we should go for while loop.
 Syntax:
 	while(conidtion){
 		//body
 	}
 	
-	condition: alwasys boolean value/expression.
+- condition: always boolean value/expression.
 - if condition is true, while body will be executed.
 - while - condition is mandatory.
 - while will not execute if condition is wrong.
 
+- if while is true always and if there are any statements below the while loop then compile time error will show as unreachable statement.
+	eg.
+		while(true){
+		}
+		System.out.println("End");
+-------------------------------------------------------
+class WhileExample {
+	static public void main(String[] args){
+
+		
+		int j = 90;
+		while(j > 100){
+			if(j % 2 == 0){
+				System.out.println(j);
+			}		
+			
+			j = j -1;
+		}
+		
+	}
+}
+---------------------------------------------------------------
 do while:
 ---------
 syntax;
@@ -520,7 +722,17 @@ syntax;
 	
 - do will execute atleast once even if condition wrong.
 - break - we can use in loops also.
-
+----------------------------------------------------------
+class DoWhileExample {
+	static public void main(String[] args){
+		int i = 100;
+		do {
+			if(i % 2 == 0)
+			System.out.println(i);
+			i = i -1;
+		}while( i > 50);
+	}
+}
 --------------------------------------------
 29-07-18	Operators
 --------------------------------------------
@@ -1304,6 +1516,24 @@ E.g: Movie(1, 1);
 			}
 		}		
 ----------------------------------------------------------------------------------------------
+
+this - current class 
+	- to call instnace methods and instnace variables.
+	this.m1();
+	this.age = age;
+	
+this()	- to call another constructor
+	this();
+	
+super - super class 
+	- to call instnace methods and instnace variables from super class.
+	super.m1()l
+	
+	
+super()	- to call another constructor
+	super(1);
+	
+	
 02-10-18 OOPS
 -------------
 - Object

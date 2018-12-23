@@ -25,6 +25,7 @@ class SwitchDemo {
 				System.out.println("UKG");
 				break;
 			}
+			// System.out.println("middle");
 			case 6: {
 				int ab = 20;
 				System.out.println("First");

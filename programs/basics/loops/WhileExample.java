@@ -1,23 +1,15 @@
 class WhileExample {
 	static public void main(String[] args){
+
 		
-		int i = 1;
-		
-		while(i <= 1000){
-			System.out.println(i);
-			i = i + 1;
+		int j = 90;
+		while(j > 100){
+			if(j % 2 == 0){
+				System.out.println(j);
+			}		
 			
-			if(i == 100){
-				break;
-			}
+			j = j -1;
 		}
 		
-		System.out.println("********************");
-		
-		// int b = 100;
-		// while(b > 0){
-			// System.out.println(b);
-			// b = b-1;
-		// }
 	}
 }
