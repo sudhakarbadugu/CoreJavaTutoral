@@ -1713,6 +1713,41 @@ Object:
 - It is super class for all classes in java.
 - If any class is not extending any other class, jvm will extends Object class by default.
 	- 11 methods.
+	notify() - 2 
+	wait() - 3
+	toString()
+	hashCode()
+	clone()
+	equals()
+	getClass()
+	finalize()
+	
+== operator always check for reference comparision. Even though same content, it will return false.
+
+public class ObjectTest {
+	public static void main(String... arg){
+		String s = "Test";
+		String s1 = new String("Test");
+		String s2 = "Test";
+		
+		System.out.println(s1 == s);
+		System.out.println(s == s2);
+		// System.out.println(s1.equals(s));
+	}
+}
+
+equals() method check for content comparision.
+- String and all wrapper classes are overriden.
+	primitives 	- 
+	byte 		Byte
+	short		Short
+	int 		Integer
+	long		Long
+	float		Float
+	double		Double
+	char		Character
+	boolean		Boolean
+- StringBuffer and StringBuilder doesn't overidding equals method.
 
 https://docs.oracle.com/javase/8/docs/api/
 
@@ -2741,6 +2776,8 @@ String
 - String is a final class. So we can't extend String class.
 - String is a immutability class.
 - It is not a thread safe. 
+- equals method override.
+
 What is immutability?
 When ever we are trying to change anything in the object, it will create a new object with modifications. The existing object will not change.
 	E.g:
@@ -2873,6 +2910,7 @@ StringBuffer
 - It is not a immutability/mutabile class.
 - It is a thread safe. Will cause performance problem.
 - reverse()
+- equals method doesn't override.
 
 class StringBufferTest {
 
@@ -2891,7 +2929,8 @@ StringBuilder
 - It is a mutabile class.
 - It is not a thread safe. 
 - Improves the performance
-- reverse()
+- reverse() method available.
+- equals method doesn't override.
 
 class StringBuilderTest {
 
@@ -2904,3 +2943,120 @@ class StringBuilderTest {
 	}
 }
 
+-----------------------------------------------------------
+Wrapper classes:
+- String and all wrapper classes are equals() overriden.
+- String and all wrapper classes are toString() overriden.
+	primitives 	- Wrapper class
+	byte 		Byte
+	short		Short
+	int 		Integer
+	long		Long
+	float		Float
+	double		Double
+	char		Character
+	boolean		Boolean
+
+- for primitives no methods are avaiable. to create objects, we have wrapper classes. To achieve OOPS concepts.
+
+int i = 0;
+int i1 = 0;
+i == i1;
+
+1. parseXxx	- string to number
+2. toString - number to string
+3. xxxValue	- wrapper to primitives
+4. valueOf	- primitive to wrapper
+
+- how to create wrapper object
+	Byte(String x);
+	Short(String x);
+	Long(String x);
+	Double(String x);
+
+- how to convert string to number
+	1. By using construcor
+		String s1 = "10";
+		Short s = new Short(s1);
+		
+		
+	2. By using parseXxx() methods
+		Integer.parseInt(s1);
+		Float.parseFloat(s1);
+
+- If parseXxx method not able to convert the string to number then exception will occur: NumberFormatException
+
+- how to convert number to string - toString
+		Integer i = 26;
+		String is = i.toString();
+		
+		
+- how to convert one value type to another value. eg. int to float or float to long
+	xxxValue() - Wrapper to primitive
+	- byteValue()
+	- shortValue()
+	- intValue()
+	- LongValue()
+	- floatValue()
+	- DoubleValue()
+	
+
+- Primitive to wrapper 
+	valueOf(primitiveValue)
+	
+
+public class WrapperTest {
+	public static void main(String... arg){
+		WrapperTest.stringToNumber();
+		
+		// int i = 20;
+		int i1 = 25;
+		
+		//convert number to string
+		Integer i = 26;
+		String is = i.toString();
+		System.out.println(is.contains("5"));
+		
+		//convert one datatype to another xxValue
+		byte b = i.byteValue();
+		
+		Integer ig = Integer.valueOf(i);
+		System.out.println(ig);
+		
+	}
+	
+	private static void stringToNumber(){
+		int i = 20;
+		Integer i1 = 20;
+		Integer i2 = new Integer(130);
+		Integer i3 = 130;
+		
+		System.out.println(i2 == i3);
+		System.out.println(i2.equals(i3));
+		
+		String s = "10";
+		String s1 = "20";
+		
+		//
+		Integer i4 = new Integer(s);
+		Integer i5 = new Integer(s);
+		
+		//alwasys recomened to use parseInt
+		int i6 = Integer.parseInt(s);
+		int i7 = Integer.parseInt(s1);
+		
+		System.out.println(i4 + i5);
+		System.out.println(i5 + i6);
+		
+		String s2 = "10.23";
+		// Double d = new Double(s2);
+		Double d = Double.parseDouble(s2);
+		int val = d.intValue();
+		System.out.println(d+10);
+	}
+}
+
+
+-----------------------------------------------------------
+Exception handling:
+------------------
