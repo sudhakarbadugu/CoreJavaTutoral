@@ -2945,6 +2945,9 @@ class StringBuilderTest {
 
 -----------------------------------------------------------
 Wrapper classes:
+
+- for primitives no methods are avaiable. to create objects, we have wrapper classes. To achieve OOPS concepts.
+
 - String and all wrapper classes are equals() overriden.
 - String and all wrapper classes are toString() overriden.
 	primitives 	- Wrapper class
@@ -2957,12 +2960,7 @@ Wrapper classes:
 	char		Character
 	boolean		Boolean
 
-- for primitives no methods are avaiable. to create objects, we have wrapper classes. To achieve OOPS concepts.
-
-int i = 0;
-int i1 = 0;
-i == i1;
-
+main methods:
 1. parseXxx	- string to number
 2. toString - number to string
 3. xxxValue	- wrapper to primitives
@@ -3060,3 +3058,95 @@ public class WrapperTest {
 -----------------------------------------------------------
 Exception handling:
 ------------------
+- Exceptions occur at runtime. 
+- In run time, an unexpected event which stops our program execution is called exception.
+- abnormal termination of a program called exception.
+- handling the exception is called exception handling.
+
+- key words
+	1. try
+	2. catch
+	3. finally
+
+- Inside try block, we should write risky code.
+- Always try and catch blocks both should be there. 
+- try alone or catch alone is wrong.
+	try{	//CE
+	
+	}
+	
+	catch(){}//ce
+	catch(Exception e){}//ce
+- finally is optional.
+- we can have any number of try/catch blocks.
+- Only when error occurred in try block then only catch will execute.
+- When there are no exception inside the try block, then catch will never execue.
+- There should not be any lines between try and catch blocks.
+	try{
+	}
+	Sop("hi");		//CE
+	catch(Exception e){}
+	
+syntax1:
+try {
+	//risky code
+} catch(Exception e) {
+
+}
+finally {
+	//optional
+}	
+
+syntax2:
+try {
+
+} catch(Exception e) {
+
+}
+	
+-----------------------------------------
+class ExceptionTest {
+	public static void main(String... ar){
+		int i = 10;
+		int b = 0;
+
+		try{
+			int c = i/b;
+			System.out.println("First");	
+		} catch(Exception e){
+			System.out.println("error handled 1 " + e);
+		}
+		
+		try{
+			int c = i/1;
+			System.out.println("Second");	
+		} catch(Exception e){
+			System.out.println("error handled 2" + e);
+		}
+		
+		System.out.println("transfer to youth");	
+	}
+}
+---------------------------------------------------------
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+        at ExceptionTest.main(ExceptionTest.java:5)
+E.g:
+
+hierarchy:
+- Throwable is root exception.
+	
+					   Throwable
+					   -----------		
+			\\\\\\\\			\\\\\
+		Exception					Error
+			|
+		RuntimeException
+			|
+		ArithmeticException
+
+
+1. Exception
+2. ArithmeticException
+2. NumberFormatException
+3. ArrayIndexOutOfBoundsexception
+4. StringIndexOutOfBoundsException
