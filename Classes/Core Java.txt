@@ -3062,11 +3062,13 @@ Exception handling:
 - In run time, an unexpected event which stops our program execution is called exception.
 - abnormal termination of a program called exception.
 - handling the exception is called exception handling.
+- Exception mush be a child of Throwable class.
 
 - key words
 	1. try
 	2. catch
 	3. finally
+	4. throw
 
 - Inside try block, we should write risky code.
 - Always try and catch blocks both should be there. 
@@ -3150,3 +3152,37 @@ hierarchy:
 2. NumberFormatException
 3. ArrayIndexOutOfBoundsexception
 4. StringIndexOutOfBoundsException
+
+
+
+throw:
+-----
+- throw should be used to rise an exception.
+- throw is a keyword.
+- throw should alwasy throw a Throwable object or it's child objects.
+	eg: throw new RuntimeException();
+	eg: throw new Exception();
+
+- If throw keyword throws a any class object which is not a child Throwable then compiler will give the following error.
+	e.g: throw new ExceptionThrowTest();
+	
+ExceptionThrowTest.java:16: error: incompatible types: ExceptionThrowTest cannot be converted to Throwable
+                        throw new ExceptionThrowTest();
+						
+- throw should in a last line. means: after throw statement no other statements are allowed. Compiler will give error 
+			throw new RuntimeException("Lessthan 18 is not allowed");
+			System.out.println("exception raised");	//CE
+			
+ExceptionThrowTest.java:23: error: unreachable statement
+                        System.out.println("exception raised");
+						
+						
+						
+Exception types:
+1. checked exception
+2. unchecked exception
+
+1. checked exception:
+
+
+user defined exception:
