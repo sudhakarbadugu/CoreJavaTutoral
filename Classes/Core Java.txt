@@ -3069,6 +3069,7 @@ Exception handling:
 	2. catch
 	3. finally
 	4. throw
+	5. throws
 
 - Inside try block, we should write risky code.
 - Always try and catch blocks both should be there. 
@@ -3081,7 +3082,7 @@ Exception handling:
 	catch(Exception e){}//ce
 - finally is optional.
 - we can have any number of try/catch blocks.
-- Only when error occurred in try block then only catch will execute.
+- Only when exception occurred in try block then only catch will execute.
 - When there are no exception inside the try block, then catch will never execue.
 - There should not be any lines between try and catch blocks.
 	try{
@@ -3183,6 +3184,122 @@ Exception types:
 2. unchecked exception
 
 1. checked exception:
+---------------------
+- Exceptions which are checked by compiler at compile time called checked exceptions.
+	E.g: IOException
+	
+- What are the checked exception?
+- Which are direct child of Exception but not RuntimeException and its child.
+	Exception
+	 - SQLException
+	 - IOException
+	    - FileNotFoundException
+	 
+	 
+- Always checked exception must be handled in try/catch block. otherwise compile time error occurs.
+CheckedExceptionTest.java:11: error: unreported exception FileNotFoundException; must be caught or declared to be thrown
+                                throw new FileNotFoundException("File is not available");
+-----------------------------------------CE program---------
+import java.io.*;
+
+class CheckedExceptionTest {
+	public static void main(String... ar){
+
+	
+		// try{			
+			System.out.println("hello");
+			String file = null;
+			if(file == null){
+				throw new FileNotFoundException("File is not available");
+			}
+		// }
+		// catch(IOException e){
+			// System.out.println(e);
+		// }
+	}	
+}
+-----------------------------------------CE program---------
+
+------------------------------------Working program ---------
+import java.io.*;
+
+class CheckedExceptionTest {
+	public static void main(String... ar){
+
+	
+		try{			
+			System.out.println("hello");
+			String file = null;
+			if(file == null){
+				throw new FileNotFoundException("File is not available");
+				// throw new RuntimeException("File is not available");
+			}
+		}
+		catch(IOException e){
+			System.out.println(e);
+		}
+	}	
+}
+------------------------------------Working program ---------
+								
+
+
+- a checked exception should not handle if try never throws that exception. else compile time below error occurs.
+
+D:\Java\CoreJavaTutoral\programs\exceptions>javac CheckedExceptionTest.java
+CheckedExceptionTest.java:11: error: exception SQLException is never thrown in body of corresponding try statement
+                catch(java.sql.SQLException e){
+				
+-------------------------CE---------------------
+import java.io.IOException;
+
+class CheckedExceptionTest {
+	public static void main(String... ar){
+
+	
+		try{			
+			System.out.println("hello");
+		}
+		catch(java.sql.SQLException e){
+
+		}
+	}
+	
+	static void checkNumber(int num){
+		if(num < 10){
+			throw new RuntimeException("number lesstan 10");
+		}
+	}	
+}				
+--------------------------CE--------------------				
+
+2. unchecked exception:
+---------------------
+- Exceptions which are not checked by compiler at compile time called unchecked exceptions.
+	E.g: RuntimeException
+	
+RuntimeException and all its childs called unchecked exception.
+
+- for unchecked exception try and catch are optional. If we want to handle these we can write try/catch.
+-------------------------------------------
+import java.io.*;
+
+class CheckedExceptionTest {
+	public static void main(String... ar){			
+			System.out.println("hello");
+			String file = null;
+			if(file == null){
+				throw new RuntimeException("File is not available");
+			}
+		
+	}	
+}
+--------------------------------------------
+
+
+
+throws:
+-------
 
 
 user defined exception:
