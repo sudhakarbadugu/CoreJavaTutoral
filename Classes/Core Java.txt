@@ -3062,7 +3062,7 @@ Exception handling:
 - In run time, an unexpected event which stops our program execution is called exception.
 - abnormal termination of a program called exception.
 - handling the exception is called exception handling.
-- Exception mush be a child of Throwable class.
+- Exception must be a child of Throwable class.
 
 - key words
 	1. try
@@ -3243,7 +3243,6 @@ class CheckedExceptionTest {
 ------------------------------------Working program ---------
 								
 
-
 - a checked exception should not handle if try never throws that exception. else compile time below error occurs.
 
 D:\Java\CoreJavaTutoral\programs\exceptions>javac CheckedExceptionTest.java
@@ -3296,10 +3295,76 @@ class CheckedExceptionTest {
 }
 --------------------------------------------
 
-
-
 throws:
 -------
+- throws mainly used for checked Exceptions.
+- throws should be used when we are not handling the checked exception and inform caller method to handle this.
+- throws followed by Exception class name.
+	e.g:	throws FileNotFoundException
+- throws should in the last of method signature.
+		void m1() throws FileNotFoundException {} 
+		void m1 throws FileNotFoundException () {} //CE
+		void m1() throws new FileNotFoundException() {} //CE
+- when we are throws, try is optional.
+
+-------------------------------------
+import java.io.*;
+
+class ThrowsExceptionTest {
+	public static void main(String... ar) {
+		try{
+			m2();
+		}catch(FileNotFoundException e){
+			System.out.println(e);
+		}
+		
+		System.out.println("transfer");
+	}
+
+	static void m2() throws FileNotFoundException{
+		System.out.println("m2");
+		m1();
+	}
+	static void m1() throws FileNotFoundException{
+		System.out.println("m1");
+		String file = null;
+		if(file == null){
+			throw new FileNotFoundException("File is not available");
+		}
+	}
+	
+	
+}
+-----------------------------------------------------------
 
 
+finally:
+-------
+- if we want to execute some code regardless of whether exception is raised or not, then we should add that code in finally block.
+- finally will be executed always.
+- finally should after catch statement.
+
+import java.io.*;
+
+class FinallyTest {
+	int i = 10;
+	public static void main(String... ar) {
+		System.out.println("register");
+		try{
+			// FinallyTest s = new FinallyTest();			
+			FinallyTest s = null;			
+			System.out.println(s.i);
+			
+		}catch(NullPointerException e){
+			System.out.println(e);	
+		}
+		finally {
+			System.out.println("transfer");
+		}
+	}	
+}
+----------------------------------------------------------------
+try with different catch blocks
+try with different catch order
+try with finally without catch
 user defined exception:
