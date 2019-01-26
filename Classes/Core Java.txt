@@ -3160,7 +3160,7 @@ throw:
 -----
 - throw should be used to rise an exception.
 - throw is a keyword.
-- throw should alwasy throw a Throwable object or it's child objects.
+- throw should always throw a Throwable object or it's child objects.
 	eg: throw new RuntimeException();
 	eg: throw new Exception();
 
@@ -3365,6 +3365,116 @@ class FinallyTest {
 }
 ----------------------------------------------------------------
 try with different catch blocks
+----------------------------------
+- one try, we can multiple catch blocks. finally is optional.
+- only one finally block should be there.
+	try{
+		int i = 10;
+		i /0;
+	}
+	catch(NumberFormatException nfe){
+	}
+	catch(ArithmeticException ar){
+	}
+
+class MultipleCatchTest{
+	
+	public static void main(String... ar) {
+		try{
+			String s = "10";
+			int b = Integer.parseInt(s) /1;
+		}
+		catch(NumberFormatException nfe){
+			System.out.println("Error" + nfe.getMessage());
+		}
+		catch(ArithmeticException are){
+			System.out.println("Error" + ar.getMessage());
+		}
+		finally{
+			System.out.println("Finally");
+		}	//only finally
+		
+		System.out.println("multiple catches");
+	}	
+}
+
 try with different catch order
+-----------------------------
+- catch order is very important.
+- catch order should be child --> parent
+
+class CatchOrderTest{
+	
+	public static void main(String... ar) {
+		try{
+			String s = "10";
+			int b = Integer.parseInt(s) /1;
+		}
+		catch(Exception nfe){
+			System.out.println("Error in exception catch");
+		}
+		catch(Throwable are){
+			System.out.println("Error in run catch");
+		}
+		finally{
+			System.out.println("Finally");
+		}	//only finally
+		
+		System.out.println("catches order");
+	}	
+}
+-------------------------------------------------------
+
+- if we write parent exception in fist catch and child in second catch, compile time errror will occur. already parent catched the exception and child catch will not executed because of that compile will give error.
+------------------Wrong example ------------
+class CatchOrderTest{
+	
+	public static void main(String... ar) {
+		try{
+			String s = "10";
+			int b = Integer.parseInt(s) /1;
+		}
+		catch(Exception nfe){
+			System.out.println("Error in exception catch");
+		}
+		catch(RuntimeException are){
+			System.out.println("Error in run catch");
+		}
+		finally{
+			System.out.println("Finally");
+		}	//only finally
+		
+		System.out.println("catches order");
+	}	
+}
+---------------------------------------
 try with finally without catch
-user defined exception:
+------------------
+- finally should be there with try block.
+possible scenarios:
+	1. try, catch 
+	2. try, finally
+	3. try, catch, catch, finally
+	
+Not possible scenarios. Compile time error will occur.
+	4. try --> CE
+	4. catch --> CE
+	4. finally --> CE
+	4. catch, finally --> CE
+
+class TryWithFinally{
+	
+	public static void main(String... ar) {
+		try{
+			String s = "10";
+			int b = Integer.parseInt(s) /1;
+		}
+		finally{
+			System.out.println("Finally");
+		}	//only finally
+		
+		System.out.println("Only with finally block");
+	}	
+}
+-------------------------------------------------------
+User defined exception:

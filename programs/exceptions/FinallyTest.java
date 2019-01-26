@@ -15,8 +15,5 @@ class FinallyTest {
 		finally {
 			System.out.println("transfer");
 		}
-		
-		
-		
 	}	
 }
