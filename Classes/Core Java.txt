@@ -2281,7 +2281,7 @@ abstract methods:
  - A method which doesn't have any body is called abstract methods.
  - by using 'abstract' keyword in the method, we can abstract method.
  
-- By default all metods in interface are abstract methods.
+- By default all methods in interface are abstract methods.
 
 - If developer explicitly declared method abstract then compiler will not add.
 - if developer is not adding 'public abstract', then compiler will add them for each method.
@@ -2359,7 +2359,7 @@ methods:-
 	A method which doesn't have a body.
 	
 - When ever we are extending any abstract class, then child class must provide the body for all parent class abstract methods. otherwise we have to declare child class as abstract. 
-- In abstract class we can have instance variables, static variables, instance methods, static method and construcors.
+- In abstract class we can have instance variables, static variables, instance methods, static method and constructors.
 ----------------------------------------------------
 abstract class AbstractExample {
 	int a = 20;
@@ -3425,7 +3425,7 @@ class CatchOrderTest{
 }
 -------------------------------------------------------
 
-- if we write parent exception in fist catch and child in second catch, compile time errror will occur. already parent catched the exception and child catch will not executed because of that compile will give error.
+- if we write parent exception in first catch and child in second catch, compile time errror will occur. already parent catched the exception and child catch will not executed because of that compile will give error.
 ------------------Wrong example ------------
 class CatchOrderTest{
 	
@@ -3478,3 +3478,66 @@ class TryWithFinally{
 }
 -------------------------------------------------------
 User defined exception:
+-------------
+- custom exception.
+- Our own exeptions, which exception classes are created by user called user defined exception.
+
+Steps:-
+1. create a class with default and parameterized construcor.
+2. extend this class to any child of Throwable. eg: RuntimeException
+3. To print the reason, in parameterized construcor, call super class construcor with reason.
+4. Always exception class names should be end with Exception. This is not a rule. It gives more readability.
+ 
+Note:- 
+	1. If our class extends RuntimeException, then our class is unchecked exception. so no need to maintain try,catch/throws keyw
+	2. If our class extends Exception, then our class is checked exception. so need to maintain try,catch/throws keyword
+
+	
+----------------------------------------
+class UserDefinedExceptionTest {
+	public static void main(String... ar){
+		int age = 25;
+		
+		if(isElible(age)){
+			System.out.println("transfer to youth " + age);	
+		}
+		
+		try{
+			int age1 = 20;
+			if(isElible(age1)){
+				System.out.println("transfer to youth "+ age1);	
+			}
+		}catch(UserValidationException uve){
+			System.out.println(uve);
+		}
+	
+
+		int age2 = 30;
+		if(isElible(age2)){
+			System.out.println("transfer to youth "+ age2);	
+		}
+
+		
+		System.out.println("For all transferred");	
+	}
+	
+	private static boolean isElible(int age){
+		if(age >= 22 && age <= 35){
+			return true;
+		}
+		
+		throw new UserValidationException("He is not eligle by age "+ age);
+	}	
+}
+
+public class UserValidationException extends RuntimeException{
+
+	public UserValidationException(){
+	}
+	
+	public UserValidationException(String reason){
+		super(reason);//we are calling super class constructor.	
+	}	
+}	
+-----------------------------------------
+https://www.javatpoint.com/exception-handling-in-java
