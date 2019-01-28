@@ -867,12 +867,14 @@ Array:
 - Array is index based. the index starts 0 and last index is size-1.
 - If we are trying to get the value from array where index is greater than size, then ArrayIndexOutOfBoundsexception will occur.
 
-	syntax: array declaration:
+syntax: array declaration:
 	int[] rollNos = new int[size];
+	
 size -- always integer
-Steps:
+
+Steps:-
 1. array declaration.
-	int[] rollnos = new int[30];
+	int[] rollnos = new int[9];
 
 2. array initilization
 	rollnos[0] = 100;
@@ -883,6 +885,51 @@ Steps:
 		Sop(rollnos[i])
 	}
 
+	class ArraysDemo {
+	public static void main(String[] args){
+		
+		//declaration
+		int[] a = new int[5];
+		
+		// value initilization.
+		a[0] = 100;
+		a[2] = 200;
+		a[1] = 300;
+		a[3] = 400;
+		a[4] = 500;
+		a[4] = 350;
+		// a[5] = 600; //ArrayIndexOutOfBoundsException
+		
+		System.out.println(a);
+		
+		
+		//value printing
+		System.out.println(a[0]);
+		// System.out.println(a[1]);
+		// System.out.println(a[2]);
+		// System.out.println(a[3]);
+		// System.out.println(a[4]);
+		
+
+		for(int i = 0; i < a.length ;i++){
+			System.out.println(a[i]);
+		}
+
+		System.out.println("reverse array");
+		for(int i = a.length - 1; i >=0  ;i--){
+			System.out.println(a[i]);
+		}
+		
+		String[] names = new String[4];
+		names[0] ="Sudhakar";
+		names[1] = "venky";
+		names[3] = "murali";
+		
+		for(int j = 0; j < names.length ; j++){
+			System.out.println(names[j]);
+		}
+	}
+}
 --------------------
 int a;
 a = 20;
@@ -896,12 +943,81 @@ a[0] = 1;
 
 - Array declaration and initilization in one line
 	int[] numbers = {1,5,7,5,5,5,6};
+	
+	
 --------------------
 foreach loop:
 --------------------
+- Only for arrays an collections.
+- we can't reverse elememets.
+
 
 for(datatype identifier: arrayName){
   Sop(identifier);
+}
+
+
+class ArraysDemo {
+	public static void main(String[] args){
+		
+		//declaration
+		int[] a = new int[5];
+		
+		// value initilization.
+		a[0] = 100;
+		a[2] = 200;
+		a[1] = 300;
+		a[3] = 400;
+		a[4] = 500;
+		a[4] = 350;
+		// a[5] = 600; //ArrayIndexOutOfBoundsException
+		
+		System.out.println(a);
+		
+		
+		//value printing
+		System.out.println(a[0]);
+		// System.out.println(a[1]);
+		// System.out.println(a[2]);
+		// System.out.println(a[3]);
+		// System.out.println(a[4]);
+		
+
+		for(int i = 0; i < a.length ;i++){
+			System.out.println(a[i]);
+		}
+
+		System.out.println("reverse array");
+		for(int i = a.length - 1; i >=0  ;i--){
+			System.out.println(a[i]);
+		}
+		
+		String[] names = new String[4];
+		names[0] ="Sudhakar";
+		names[1] = "venky";
+		names[3] = "murali";
+		for(String name : names){
+			System.out.println(name);
+		}
+		
+		for(int j = 0; j < names.length ; j++){
+			System.out.println(names[j]);
+		}
+		
+		int[] marks = {60, 60, 70, 35, 90, 54}; //declaration and initilization
+		for(int k = 0; k < marks.length; k++){
+			System.out.println(marks[k]);
+		}
+		
+		
+		//for each only for arrays and collections
+		for(int x: marks){
+			System.out.println(x);
+		}
+		// int[] abc;
+		// abc = {34,22};	//CE
+		
+	}
 }
 
 ----------------------------------------------|
@@ -1443,7 +1559,7 @@ E.g: Movie(1, 1);
 			this();
 		}
 
-- Constructor overloading: 2 constructors having different  type of parameters or different number of parameter called construcor overloading.
+- Constructor overloading: 2 constructors having different  type of parameters or different number of parameter called constructor overloading.
 	
 	Eg : 2 Valid. It works
 		public Movie(String fgdfgdgsdfg, String heroin){
@@ -3541,3 +3657,6 @@ public class UserValidationException extends RuntimeException{
 }	
 -----------------------------------------
 https://www.javatpoint.com/exception-handling-in-java
+
+Collections:-
+-----------
