@@ -860,6 +860,7 @@ int r4 = 4;
 .
 .
 int r100 = 100;
+https://www.javatpoint.com/array-in-java
 
 Array:
 - To store group of homogenious (same type) values.
@@ -3660,3 +3661,48 @@ https://www.javatpoint.com/exception-handling-in-java
 
 Collections:-
 -----------
+
+
+Arrays :-
+
+- We can store Objects as well as primitives datatypes(byte, short, int, long, char, boolean, float and double) in array.
+
+drawbacks:-
+- Array is size fixed, once we create, we can't increase or decrease it's size.
+- Array doesn't provide any implementation methods for dynamic size addition/remove.
+- We can't store heterogenious (different types) data. e.g: we can't store string and int in a single array.
+	int[] rollno = {123, 34, "Sudhakar"}; 
+
+------------------------------------------------------------------------------------
+29-01-2019	
+Collection frameworks:-
+---------------------
+
+- If we want to store multiple elements to a single object, then we should go for Collection.
+- collection framework is avaiable in java.util package.
+
+Advantages:-
+- We can any number of elements dynamically. Size is growable.
+- Collection frameworks supports inbuilt methods for dynamic purpose.
+- We can store heterogenious (different types ) data in Collection.
+
+drawbacks:-
+- We can store only Objects to collections but not primitives datatypes(byte, short, int, long, char, boolean, float and double) upto 1.5 version.
+
+Collection frameworks api:-
+
+									Iterable	(interface)
+									   |
+									Collection	(interface)
+									   |
+				--------------------------------------------------------------
+				|							|								|			
+				List					    Set								Queue		(interface)
+	------------------------------   -------------------------------  ------------------------- (class)
+    - ArrayList							- HashSet						- ArrayDeque
+    - LinkedList						- LinkedHashSet					- LinkedList
+	- Vector							- TreeSet						- PriorityQueue
+	- Stack								- EnumSet						- ArrayBlockingQueue
+		
+		
+---------------------------------------------------------------------------------------------------------
