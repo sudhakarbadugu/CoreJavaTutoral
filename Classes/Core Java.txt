@@ -3661,8 +3661,6 @@ https://www.javatpoint.com/exception-handling-in-java
 
 Collections:-
 -----------
-
-
 Arrays :-
 
 - We can store Objects as well as primitives datatypes(byte, short, int, long, char, boolean, float and double) in array.
@@ -3706,3 +3704,50 @@ Collection frameworks api:-
 		
 		
 ---------------------------------------------------------------------------------------------------------
+
+Collection:-
+- A collection represents a group of objects, known as its elements
+- Collection interface has common metods which are required for all sub classes.
+	1. add
+	2. addAll
+	3. contains
+	4. isEmpty
+	5. remove
+	6. clear
+	7. removeAll
+	8. toArray
+	
+	
+1. List
+-------
+- Allow duplicates in collection.
+- Store elements in give order. Order is important.
+
+1. ArrayList:-
+-------------
+- ArrayList allows dupliate elements in the list.
+- ArrayList preserves order. Store elements in give order. Order is important.
+- ArrayList implements RandomAccess, Cloneable and Serializable
+- Arraylist is faster in iteration because of RandomAccess.
+- Algorithm supported by Growable Array
+- Default size in arraylist is 10
+- ArrayList is index based.
+
+
+Drawback:-
+- arraylist is slower in adding elements. Internally ArrayList creates an Array and once it is filled, it will create a new arary and copy elements from old array. Because of this reason it is slow
+
+RandomAccess:-
+-----------
+- It is a marker interface. 
+- A interface which doesn't have any methods and gives some addditional ability to our class called marker interface.
+- Marker interface used by List implementations to indicate that they support fast (generally constant time) random access. The primary purpose of this interface is to allow generic algorithms to alter their behavior to provide good performance when applied to either random or sequential access lists.
+
+
+
+
+
+2. Set
+-------
+- Set not allows duplicates.
+- order is not important.

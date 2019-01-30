@@ -13,9 +13,7 @@ public static void main(String args[]){
 	value[9]=10;
 for(byte i=1;i<value.length;i++){
 	System.out.println(value[i]);
+
 }
-
-int[] a = {1,34,56,5,67,67,67,67};
-
 }
 }

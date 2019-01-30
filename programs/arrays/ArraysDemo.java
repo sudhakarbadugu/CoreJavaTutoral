@@ -58,6 +58,6 @@ class ArraysDemo {
 		// int[] abc;
 		// abc = {34,22};	//CE
 		
-		int[] rollno = {123, 34, "Sudhakar"};
+		
 	}
 }
