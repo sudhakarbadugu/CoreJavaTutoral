@@ -3707,7 +3707,7 @@ Collection frameworks api:-
 
 Collection:-
 - A collection represents a group of objects, known as its elements
-- Collection interface has common metods which are required for all sub classes.
+- Collection interface has common methods which are required for all sub classes.
 	1. add
 	2. addAll
 	3. contains
