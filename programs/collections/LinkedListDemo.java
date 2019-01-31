@@ -1,18 +1,19 @@
 import java.util.*;
 
-public class ArrayListDemo {
+public class LinkedListDemo {
 	public static void main(String[] args){
-		List l = new ArrayList();
+		List l = new LinkedList();
+		
 		l.add(60);
 		l.add(90);
-		 l.add(60);
-		 l.add(70);
-		 l.add(56);
-		 l.add(45);
-	 l.add(45);
-		 l.add(45);
-		 l.add(45);
-		 l.add(34);
+		l.add(60);
+		l.add(70);
+		l.add(56);
+		l.add(45);
+		l.add(45);
+		l.add(45);
+		l.add(45);
+		l.add(34);
 		
 		l.add(11);
 		System.out.println(l);
@@ -27,7 +28,7 @@ public class ArrayListDemo {
 		 
 		 System.out.println(l);
 		
-		ArrayList l2 = new ArrayList();
+		LinkedList l2 = new LinkedList();
 		l2.addAll(l);
 		System.out.println(l2);
 	 
@@ -44,8 +45,12 @@ public class ArrayListDemo {
 		System.out.println(l2);
 		System.out.println(l);
 
+		l2.addFirst("Sudhakar");
+		l2.addLast("Sudhakar");
+		
 		Object[] obj = l.toArray();
-		System.out.println(obj);
+		l2.removeFirstOccurrence("Sudhakar");
+		System.out.println(l2);
 		
 		for(Object o : obj){
 			System.out.println(o);
