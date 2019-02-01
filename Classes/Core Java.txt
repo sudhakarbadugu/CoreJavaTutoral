@@ -1884,6 +1884,7 @@ Method calling in inheritance:
 Type casting:
 	Casting the type(Changing the type)
 	B objecct = new C();
+	
 	C obj1 = (C) object;
 	
 	obj1.printMyValues();
@@ -3732,7 +3733,7 @@ Collection:-
 - Algorithm supported by Growable Array
 - Default size in arraylist is 10
 - ArrayList is index based.
-
+- ArrayList is not synchronized. It is not thread safe and faster.
 
 Drawback:-
 - arraylist is slower in adding elements. Internally ArrayList creates an Array and once it is filled, it will create a new arary and copy elements from old array. Because of this reason it is slow
@@ -3810,6 +3811,7 @@ LinkedList:-
 - LinkedList is slower in iteration because it doesn't implement RandomAccess. 
 - Algorithm supported by Double ended List
 - it is very fast when adding elements.
+- LinkedList is not synchronized. It is not thread safe and faster.
 
 Drawback:-
 - LinkedList is slower in iteration elements. 
@@ -3873,6 +3875,88 @@ public class LinkedListDemo {
 		}
 	}
 }
+
+3. Vector:-
+----------
+- Vector allows dupliate elements in the list.
+- Vector preserves order. Store elements in give order. Order is important.
+- Vector implements RandomAccess, Cloneable and Serializable
+- Vector is faster in iteration because of RandomAccess.
+- Algorithm supported by Growable Array
+- Default size in Vector is 10
+- Vector is index based.
+- Vector is sychronized. It is thread safe and it is slower than arraylist when comparing with multiple threads.
+
+Drawback:-
+- Vector is slower in adding elements. Internally Vector creates an Array and once it is filled, it will create a new arary and copy elements from old array. Because of this reason it is slow.
+
+Vector v = new Vector();
+Vector v = new Vector(collection);
+Vector v = new Vector(int capacity);
+Vector v = new Vector(int capacity, int increment);
+
+
+import java.util.*;
+
+public class VectorDemo {
+	public static void main(String[] args){
+		List l = new Vector(30);
+		 l.add(45);
+		 l.add(45);
+		 l.add(34);
+		
+		 System.out.println(l.size());
+		 System.out.println(l.isEmpty());
+		
+		 l.set(0, 90);
+		Vector v = (Vector) l;
+		v.addElement("Sudhakar");
+		v.insertElementAt("Ram", 3);
+		
+		v.setElementAt(90, 1);
+		
+		System.out.println(v.capacity());
+		System.out.println(v.elementAt(1));
+		System.out.println(v);
+		
+		List subList = v.subList(3, 5);
+		System.out.println(subList);
+	}
+}
+
+4. Stack
+--------
+- The Stack class represents a last-in-first-out (LIFO) stack of objects. It extends class Vector.
+
+
+peek(): - returns first element but will not remove it.
+pop(): - returns first element but will remove it.
+push():- add element at top position
+
+import java.util.*;
+
+public class StackDemo {
+	public static void main(String[] args){
+		List l = new Stack();
+		 l.add(45);
+		 l.add(45);
+		 l.add(34);
+		
+		 System.out.println(l.size());
+		 System.out.println(l.isEmpty());
+		
+		 l.set(0, 90);
+		Stack v = (Stack) l;
+		v.addElement("Sudhakar");
+		
+		v.push("Push");
+		
+		System.out.println(v.peek());
+		System.out.println(v);
+		
+	}
+} 
+
 
 2. Set
 -------
