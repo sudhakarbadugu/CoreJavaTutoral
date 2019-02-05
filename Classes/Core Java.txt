@@ -3723,7 +3723,7 @@ Collection:-
 -------
 - Allow duplicates in collection.
 - Store elements in give order. Order is important.
-
+- null values are allowed.
 1. ArrayList:-
 -------------
 - ArrayList allows dupliate elements in the list.
@@ -3958,7 +3958,123 @@ public class StackDemo {
 } 
 
 
-2. Set
+2. Set (interface)
 -------
 - Set not allows duplicates.
 - order is not important.
+- Duplicate objects are not allowed. If we are trying to insert duplicate object we won’t get any compile time error or Run time error, add method simply returns false.
+
+
+1. HashSet:-
+-----------
+- HashSet will not allow dupliates.
+- insertion order is not preserved.
+- null values are allowed. But only once because it is not allowed dupliates.
+- Algorithm backed by hashtable.
+- Default capacity is 16.
+- loadFactor is 0 to 1
+- HashSet is not synchronized. It is not thread safe and faster.
+- It is faster in searching the elements.
+
+Constructor:-
+	HashSet()
+	HashSet(Collection<? extends E> c)
+	HashSet(int initialCapacity)
+	HashSet(int initialCapacity, float loadFactor)
+	
+	
+--------------------------------------------
+import java.util.*;
+class HashSetDemo{
+	public static void main(String[] args){
+
+		// interview logic to avoid duplicates
+		int[] arr = {1,23, 34, 22, 22, 34, 45, 56, 34};
+		HashSet h = new HashSet();
+		for(int a : arr){
+			h.add(a);
+		}
+		
+		List li = new ArrayList();
+		li.add(1);
+		li.add(12);
+		li.add(1);
+		li.add(1);
+		li.add(1);
+		li.add(1);
+		li.add(null);
+		li.add(null);
+		li.add(null);
+		System.out.println(li);
+		
+		
+		// h.add(34);
+		// h.add(35);
+		// h.add(37);
+		// h.add(34);
+		// h.add(35);
+		// h.add(null);
+		// h.add(null);
+		// h.add(null);
+		
+		System.out.println(h);
+		
+	}
+}
+---------------------------------------------------
+
+2. LinkedHashSet:-
+- LinkedHashSet is child of HashSet.
+- LinkedHashSet will not allow dupliates.
+- insertion order is preserved.
+- null values are allowed. But only once because it is not allowed dupliates.
+- Algorithm backed by hashtable and linked list.
+- LinkedHashSet is not synchronized. It is not thread safe and faster.
+
+Note:- For implementing caching application the best suitable Data structure is LinkedHashSet and
+LinkedHashMap where duplicate objects are not allowed and insertion order Must be preserved
+
+import java.util.*;
+class LinkedHashSetDemo{
+	public static void main(String[] args){
+
+		// interview logic to avoid duplicates
+		int[] arr = {1,23, 34, 22, 22, 34, 45, 56, 34};
+		Set h = new LinkedHashSet();
+		for(int a : arr){
+			h.add(a);
+		}
+		
+		List li = new ArrayList();
+		li.add(1);
+		li.add(12);
+		li.add(1);
+		li.add(1);
+		li.add(1);
+		li.add(1);
+		li.add(null);
+		li.add(null);
+		li.add(null);
+		System.out.println(li);
+		
+		
+		h.add(34);
+		h.add(35);
+		h.add(37);
+		h.add(34);
+		h.add(35);
+		h.add(null);
+		h.add(null);
+		h.add(null);
+		
+		System.out.println(h);
+		
+	}
+}
+
+------------------------------------------------
+3. TreeSet
+- The underlying Data structure for the TreeSet is Balanced tree.
+- Duplicate objects are not allowed. If we are trying to insert duplicate object we won’t get any compile time error or Run time error, add method simply returns false.
+- Insertion order is not preserved but all the elements are inserted according to some sorting order.
+- Heterogeneous objects are not allowed, violation leads to Run time error saying class cast Exception.
