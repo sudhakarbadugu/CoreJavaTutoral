@@ -3812,6 +3812,8 @@ LinkedList:-
 - Algorithm supported by Double ended List
 - it is very fast when adding elements.
 - LinkedList is not synchronized. It is not thread safe and faster.
+- Heterogeneous objects allowed.
+- null values are allowed.
 
 Drawback:-
 - LinkedList is slower in iteration elements. 
@@ -3886,6 +3888,7 @@ public class LinkedListDemo {
 - Default size in Vector is 10
 - Vector is index based.
 - Vector is sychronized. It is thread safe and it is slower than arraylist when comparing with multiple threads.
+- Heterogeneous objects allowed.
 
 Drawback:-
 - Vector is slower in adding elements. Internally Vector creates an Array and once it is filled, it will create a new arary and copy elements from old array. Because of this reason it is slow.
@@ -3967,14 +3970,16 @@ public class StackDemo {
 
 1. HashSet:-
 -----------
-- HashSet will not allow dupliates.
+- HashSet will not allow duplicates.
 - insertion order is not preserved.
-- null values are allowed. But only once because it is not allowed dupliates.
+- null values are allowed. But only once because it is not allowed duplicates.
 - Algorithm backed by hashtable.
 - Default capacity is 16.
-- loadFactor is 0 to 1
+- loadFactor is 0 to 1.
 - HashSet is not synchronized. It is not thread safe and faster.
 - It is faster in searching the elements.
+- Heterogeneous objects allowed.
+
 
 Constructor:-
 	HashSet()
@@ -4030,6 +4035,7 @@ class HashSetDemo{
 - null values are allowed. But only once because it is not allowed dupliates.
 - Algorithm backed by hashtable and linked list.
 - LinkedHashSet is not synchronized. It is not thread safe and faster.
+- Heterogeneous objects allowed.
 
 Note:- For implementing caching application the best suitable Data structure is LinkedHashSet and
 LinkedHashMap where duplicate objects are not allowed and insertion order Must be preserved
@@ -4078,3 +4084,91 @@ class LinkedHashSetDemo{
 - Duplicate objects are not allowed. If we are trying to insert duplicate object we won’t get any compile time error or Run time error, add method simply returns false.
 - Insertion order is not preserved but all the elements are inserted according to some sorting order.
 - Heterogeneous objects are not allowed, violation leads to Run time error saying class cast Exception.
+- null is not allowed. if we are trying to add null then NullPointerException will occur.
+
+- We can add any elements only which are comparable (Child of comparable objects)
+- String, All wrapper classes Integer, Byte, Short .. are implemented Comparable interface.
+
+- If we are trying add any elements which are not comparable then below exception will occur. StringBuffer and StringBuilder are not comparable.
+- Exception in thread "main" java.lang.ClassCastException: java.lang.Object cannot be cast to java.lang.Comparable
+
+
+	Collection
+	  | 
+	 Set (i)
+      | 
+	SortedSet (i)
+	  |
+	NavigableSet (i)
+	  |
+	TreeSet (c)
+	
+Constructor:-
+TreeSet()
+TreeSet(Collection<? extends E> c)
+TreeSet(Comparator<? super E> comparator)
+TreeSet(SortedSet<E> s)
+
+import java.util.*;
+class TreeSetDemo{
+	public static void main(String[] args){
+
+		TreeSet t = new TreeSet();
+		t.add("Anand");
+		t.add("Sudha");
+		t.add("Murali");
+		t.add("Prasad");
+		t.add("Prasad");
+		
+		//t.add(12); ClassCastException
+		//t.add(null); //NullPointerException
+		System.out.println(t);
+		
+		int[] arr = {23, 2, 34, 56, 677, 86, 23, 2};
+		System.out.println(Arrays.toString(arr));		
+		Arrays.sort(arr);
+		System.out.println(Arrays.toString(arr));
+		System.out.println(arr[0]);
+		System.out.println(arr[arr.length-1]);
+		
+		Set t1 = new HashSet();
+		int count = 0;
+		for(int a : arr){
+			boolean isAdded = t1.add(a);
+			
+			if(isAdded == false){
+				System.out.println("Duplicte "+ a);
+				count = count + 1;
+			}
+		}
+		
+		System.out.println(t1);
+		System.out.println("Duplicate count:" + count);
+		
+		
+		
+	}
+}
+---------------------------------------------
+4. EnumSet:
+- A specialized Set implementation for use with enum types.
+- duplicate are not allowed.
+- heterogenious objects are not allowed.
+- It is not a thread safe.
+
+---------------------------------------------------------------------------
+07-02-19
+Queue:
+-----
+
+
+08-02-19
+Iterator
+ListIterator
+Enumeration
+
+09-02-19
+Comparable
+Comparator
+
+Map
