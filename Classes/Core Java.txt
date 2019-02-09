@@ -4456,8 +4456,195 @@ class ListIteratorDemo {
  }
 ----------------------------------------------------------
 09-02-19
-Comparable
+Comparable (interface)
+----------
+- It is availabe in java.lang package.
+- compareTo(T o) only method is available. return type is int.
+- To acheive natural sorting order in TreeSet and PriorityBlockingQueue.
+- Already implemented classes are String, Byte, Short, Integer, Long, Float, Double, Character and Boolean.
+
+Comparable implementation should be as shown below:
+object1 and object2
+return 0: If both are equal
+return 1: If object1 is greater than object 2
+return -1: If Object1 is lessthan object 2
+
+import java.util.*;
+
+public class ComparableDemo {
+
+	public static void main(String s[]){
+		Student s1 = new Student(5, "Sudha");
+		Student s2 = new Student(2, "Ram");
+		Student s3 = new Student(7, "Midhun");
+		Student s4 = new Student(10, "Brand");
+		Student s5 = new Student(1, "Karthik");
+		
+		List list = new ArrayList();
+		list.add(s1);
+		list.add(s2);
+		list.add(s3);
+		list.add(s4);
+		list.add(s5);
+		
+		int r1 = s1.compareTo(s2);
+		System.out.println(r1);
+		
+		int r2 = s1.compareTo(s4);
+		System.out.println(r2);
+		
+		int r3 = s1.compareTo(new Student(5, "Ab"));
+		System.out.println(r3);
+		
+		
+		TreeSet ts = new TreeSet(list);
+		System.out.println(ts);
+	}
+}
+
+class Student implements Comparable{
+	int rollNo;
+	String name;
+	
+	Student(int rollNo, String name){
+		this.rollNo = rollNo;
+		this.name = name;
+	}
+	
+	public String toString(){
+		return "rollNo:"+ rollNo + " name:"+ name;
+	}
+	
+	// public int compareTo(Object o){
+		// Student s1 = (Student) o;
+		// int rollNo1 = s1.rollNo;
+		// //return Integer.valueOf(rollNo).compareTo(s.rollNo);
+		
+		// int result = 0;
+		// if(rollNo == rollNo1){
+			// result = 0;
+		// }
+		// else if(rollNo > rollNo1){
+			// result = 1;
+		// }
+		// else if(rollNo < rollNo1) {
+			// result = -1;
+		// }
+		
+		// return result;
+	// }
+	public int compareTo(Object o){
+		Student s1 = (Student) o;
+		String name1 = s1.name;
+		return name.compareTo(name1);
+	}
+}
+
+-----------------------------------------------
 Comparator
+----------
+- To achieve the custom sorting order.
+- It is availabe in java.util package.
+- compare(o1, o2) method and return int value.
+
+For natural sorting order:
+object1 and object2
+return 0: If both are equal
+return 1: If object1 is greater than object 2
+return -1: If Object1 is lessthan object 2
+
+
+
+For decending sorting order:
+object1 and object2
+return 0: If both are equal
+return -1: If object1 is greater than object 2
+return 1: If Object1 is lessthan object 2
+
+
+import java.util.*;
+
+public class ComparatorDemo {
+
+	public static void main(String s[]){
+		StringBuilderComparator sc = new StringBuilderComparator();
+		TreeSet ts = new TreeSet(sc);
+		ts.add(new StringBuilder("bb"));
+		ts.add(new StringBuilder("xb"));
+		ts.add(new StringBuilder("Ab"));
+		ts.add(1);	//because comparator 
+		
+		System.out.println(ts);
+		
+		EmployeeSalaryComparator ec = new EmployeeSalaryComparator();
+		EmployeeNameComparator en = new EmployeeNameComparator();
+		TreeSet ts2 = new TreeSet(en);
+		
+		Employee e1 = new Employee("Ab", 200);
+		Employee e2 = new Employee("zd", 2000);
+		Employee e3 = new Employee("ch", 1000);
+		
+		ts2.add(e1);
+		ts2.add(e2);
+		ts2.add(e3);
+		
+		System.out.println(ts2);
+	}
+}
+
+class StringBuilderComparator implements Comparator {
+
+	public int compare(Object o1, Object o2){
+		String s1 = o1.toString();
+		String s2 = o2.toString();
+		
+		return s1.compareTo(s2); //normal order
+		// return s2.compareTo(s1); //reverse order
+	}
+}
+
+class EmployeeSalaryComparator implements Comparator {
+
+	public int compare(Object o1, Object o2){
+		Employee e1 = (Employee) o1;
+		Employee e2 = (Employee) o2;
+		
+		int salary1 = e1.salary;
+		int salary2 = e2.salary;
+		
+		if(salary1 == salary2){
+			return 0;
+		} else if(salary1 > salary2){
+			return 1;
+		}else {
+			return -1;
+		}
+	}
+}
+
+class EmployeeNameComparator implements Comparator {
+
+	public int compare(Object o1, Object o2){
+		Employee e1 = (Employee) o1;
+		Employee e2 = (Employee) o2;
+		
+		return e1.name.compareTo(e2.name);
+	}
+}
+
+class Employee {
+	String name;
+	int salary;
+	
+	Employee(String name, int salary){
+		this.name = name;
+		this.salary = salary;
+	}
+	
+	public String toString(){
+		return "name="+name + " salary="+salary;
+	}
+}
 
 Map:
 HashMap

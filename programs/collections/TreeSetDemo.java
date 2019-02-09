@@ -52,5 +52,3 @@ class TreeSetDemo{
 		System.out.println(t3);
 	}
 }
-
--------------------------------------------
