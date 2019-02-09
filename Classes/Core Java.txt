@@ -2733,7 +2733,7 @@ Access modifier/specfier: Which specify the access from other classes.
 	We can access with in the class and with in the curret package (folder).
 
 4. private
-	Only with in the class. From outside class can't call private methods.
+	Only with in th2e class. From outside class can't call private methods.
 
 ------------------------------------------------------------
 package com.ss.pack;
@@ -4030,7 +4030,7 @@ class HashSetDemo{
 
 2. LinkedHashSet:-
 - LinkedHashSet is child of HashSet.
-- LinkedHashSet will not allow dupliates.
+- LinkedHashSet will not allow duplicates.
 - insertion order is preserved.
 - null values are allowed. But only once because it is not allowed dupliates.
 - Algorithm backed by hashtable and linked list.
@@ -4072,7 +4072,7 @@ class LinkedHashSetDemo{
 		h.add(null);
 		h.add(null);
 		h.add(null);
-		
+			
 		System.out.println(h);
 		
 	}
@@ -4158,17 +4158,324 @@ class TreeSetDemo{
 
 ---------------------------------------------------------------------------
 07-02-19
-Queue:
+Queue: (interface)
 -----
+- First in First Out order (FIFO)
+- duplicate allow
+- not thread safe.
+
+						Queue
+						  |
+				-------- ------------------------- ---------------
+				|					| 					| 
+				BlockingQueue	BlockingDeque			Deque (interface)
+				|					|
+				ArrayBlockingQueue	ArrayBlockingDeque	ArrayDeque
+		
+1. ArrayBlockingQueue
+
+2. PriorityBlockingQueue
+
+3. ArrayDeque
+
+------------------------------------------
+1. ArrayBlockingQueue: class
+- fifo order 
+- it is fixed in size. so dynamically if user adds any elements greater size, it throws exception.
+- duplicate are allowed.
+- heterogenious objects are allowed.
+- Backed algorithms by arraylist.
+- iteration is faster.
+- null is not allowed.
 
 
-08-02-19
-Iterator
-ListIterator
-Enumeration
+ArrayBlockingQueue(int capacity)
+ArrayBlockingQueue(int capacity, boolean fair)
 
+import java.util.concurrent.*;
+class ArrayBlockingQueueDemo {
+	public static void main(String[] args){
+		ArrayBlockingQueue ab = new ArrayBlockingQueue(100);
+		ab.add("Sudha");
+		ab.add("Sudhakar");
+		ab.add(2);
+		ab.add(23);
+		//ab.add(null);
+		
+		System.out.println(ab.peek());
+		System.out.println(ab);
+		
+		System.out.println(ab.poll());
+		System.out.println(ab.poll());
+		System.out.println(ab);
+		
+	}
+ }
+
+
+2. PriorityBlockingQueue
+------------------------
+- It doesn't follow fifo order. Order is based prorioty. It follows natural sorting order.
+- it is fixed in size. so dynamically if user adds any elements greater size, it throws exception.
+- duplicate are allowed.
+- heterogenious objects are allowed.
+- Backed algorithms by arraylist.
+- iteration is faster.
+- null is not allowed.
+
+import java.util.concurrent.*;
+class PriorityBlockingQueueDemo {
+	public static void main(String[] args){
+		PriorityBlockingQueue ab = new PriorityBlockingQueue(100);
+		ab.add("Sudha");
+		ab.add("Sudhakar");
+		ab.add("MLA");
+		ab.add("CM");
+		ab.add("A");
+		//ab.add(null);
+		
+		System.out.println(ab.peek());
+		System.out.println(ab);
+		
+		System.out.println(ab.poll());
+		System.out.println(ab.poll());
+		System.out.println(ab);
+		
+	}
+ }
+
+3. ArrayDeque
+-------------
+- It follows FIFO order.
+- It is not in fixed size.
+- we can add elements at both sides.
+
+- addFirst()
+- addLast()
+- peekFirst()
+- peekLast()
+
+import java.util.*;
+class ArrayDequeDemo {
+	public static void main(String[] args){
+		ArrayDeque ab = new ArrayDeque(100);
+		ab.add("Sudha");
+		ab.add("Sudhakar");
+		ab.add("MLA");
+		ab.add("CM");
+		ab.addFirst("A");
+		//ab.add(null);
+		
+		System.out.println(ab.peekFirst());
+		System.out.println(ab);
+		
+		System.out.println(ab.pollLast());
+		System.out.println(ab);
+		
+	}
+ }
+ 
+ArrayBlockingDeque:-
+-----------------
+- Size is fixed.
+- It follows FIFO order.
+- we can add elements at both sides.
+ 
+------------------------------------------------------------------------
+09-02-19
+Enumeration:
+- The first cursor availabe in collections.
+- elements() availabe in vector class. Stack also can call this method.
+- we can iterator collection elements.
+- It is a legacy class 
+- One directional cursor 
+
+Object creation:
+	Vector v = new Vector();
+	Enumeration e = v.elements();
+	
+	
+methods:
+hasMoreElements()
+nextElement()
+
+drawbacks:-
+- we can't remove any elements.
+- we can't add any elements.
+- we can't iterator previous elements.
+- we can't replace any elements.
+
+
+import java.util.*;
+class EnumenrationDemo {
+	public static void main(String[] args){
+		Vector ab = new Vector(100);
+		ab.add("Sudha");
+		ab.add("MLA");
+		ab.add("CM");
+		
+		System.out.println("Before:" + ab);		
+		Enumeration li = ab.elements();
+		
+		while(li.hasMoreElements()){
+			
+			Object o = li.nextElement();
+			System.out.println(o);
+		}
+
+		System.out.println("After:" + ab);
+		
+	}
+ }
+
+----------------------------------------------------------
+
+
+Iterator (interface)
+--------
+- An iterator over a collection. 
+- iterator() method is available in Collection. List, Set and Queue can be used this method.
+- Universal cursor.
+- One directional cursor forward direction.
+
+Object creation:
+	Arraylist a = new Arraylist();
+	Iterator it = a.iterator();
+
+Method names have been improved.
+	hasNext()
+	next()
+	remove()	- java 8
+
+Drawbacks:
+- we can't add any elements.
+- we can't iterator previous elements.
+- we can't replace any elements.
+	
+- While iterating the elements using the for each loop if we are adding/deleting then ConcurrentModificationException occurs.
+		for(Object o : ab){	//only fo reading purpose
+			if("Sudha".equals(o)){
+			//	ab.remove(o);
+			}
+			
+			ab.add(null);
+			System.out.println(o);
+		}
+
+import java.util.*;
+class IteratorDemo {
+	public static void main(String[] args){
+		ArrayList ab = new ArrayList(100);
+		ab.add("Sudha");
+		ab.add("MLA");
+		ab.add("CM");
+		//ab.add(null);
+
+		// for(Object o : ab){	//only fo reading purpose
+			// if("Sudha".equals(o)){
+			// //	ab.remove(o);
+			// }
+			
+			// //ab.add(null);
+			// System.out.println(o);
+		// }
+		
+		
+		System.out.println("Before delete:" + ab);		
+		Iterator it = ab.iterator();
+		
+		boolean b = it.hasNext();
+		System.out.println(b);
+		
+		while(it.hasNext()){
+			Object o = it.next();
+			if("Sudha".equals(o)){
+				it.remove();
+			}			
+		}
+	
+
+		System.out.println("After delete:" + ab);
+		
+	}
+ }		
+-------------------------------------------------------------------
+ListIterator: interface
+------------
+- ListIterator extends Iterator interface
+- we add or remove any elements.
+- we iterator next or previous elements.
+- we replace any elements.
+- listIterator method is availabe in List interface. Only ArrayList, LinkedList, Vector and Stack can use this method.
+-  it is bidirectional cursor.
+
+Create object:-
+	ListIterator li = al.listIterator();
+
+metods:
+------
+hasNext
+hasPrevious
+next
+previous
+remove
+add
+set
+
+	import java.util.*;
+class ListIteratorDemo {
+	public static void main(String[] args){
+		ArrayList ab = new ArrayList(100);
+		ab.add("Sudha");
+		ab.add("MLA");
+		ab.add("CM");
+		
+		System.out.println("Before delete:" + ab);		
+		ListIterator li = ab.listIterator();
+		
+		while(li.hasNext()){
+			
+			Object o = li.next();
+			if("Sudha".equals(o)){
+				li.set("Sudhakar");
+			}
+
+			if("CM".equals(o)){
+				li.add("Chandrababu");
+			}
+				
+			if("MLA".equals(o)){
+				li.remove();
+			}
+			
+		}
+
+		System.out.println("After delete:" + ab);
+		
+	}
+ }
+----------------------------------------------------------
 09-02-19
 Comparable
 Comparator
 
-Map
+Map:
+HashMap
+LinkedHashMap
+TreeMap
+
+
+--------
+10-02-2019
+11-020-2019
+Thread
+- create thread
+- runnable
+- life cycle
+
+
+IO package:
+
+
+
+

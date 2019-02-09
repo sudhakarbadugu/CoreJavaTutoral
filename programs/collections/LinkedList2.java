@@ -20,8 +20,8 @@ import java.util.*;
 		// System.out.println(k);
 		k.clear();
 		System.out.println(k);
-		k.removeFirstOccurance();
-		System.out.println(k);
+		// k.removeFirstOccurance();
+		// System.out.println(k);
 		
 	}
 	}
