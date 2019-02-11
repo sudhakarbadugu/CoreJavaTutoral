@@ -4191,7 +4191,7 @@ Queue: (interface)
 
 ArrayBlockingQueue(int capacity)
 ArrayBlockingQueue(int capacity, boolean fair)
-
+ 
 import java.util.concurrent.*;
 class ArrayBlockingQueueDemo {
 	public static void main(String[] args){
@@ -4403,7 +4403,7 @@ class IteratorDemo {
 ListIterator: interface
 ------------
 - ListIterator extends Iterator interface
-- we add or remove any elements.
+- we can add or remove any elements.
 - we iterator next or previous elements.
 - we replace any elements.
 - listIterator method is availabe in List interface. Only ArrayList, LinkedList, Vector and Stack can use this method.
@@ -4554,7 +4554,6 @@ return 1: If object1 is greater than object 2
 return -1: If Object1 is lessthan object 2
 
 
-
 For decending sorting order:
 object1 and object2
 return 0: If both are equal
@@ -4646,10 +4645,204 @@ class Employee {
 	}
 }
 
-Map:
+Drawbacks:
+- we can't store key and value pairs in collection,
+- we can't store primitive types.
+
+Map: (interface)
+----
+- java.util package
+- Map supports Key and value pairs.
+- We can store group of key and value pair objects to map.
+- It is not a child of Collection.
+- Heterogenious objects are allowed.
+
+
 HashMap
 LinkedHashMap
 TreeMap
+Hashtable
+Properties
+IdentityHashMap
+
+1. HashMap
+- We can store group of key and value pair objects to map.
+- Heterogenious objects are allowed.
+- Insertion order is not preserved.
+- Duplicate keys are now allowed.
+- Duplicte values are allowed.
+- When we try set with same key again, value will be updated and it will no throw any error.
+- We can store null as key or value.
+- default loadFactor is 0.75
+- Backed algorithm by hashtable.
+- When we are deleting key then automatically value will be deleted from map.
+- When a key is not available in map and if user tries to get value for that then map will return null value.
+
+Constructor:
+HashMap()
+HashMap(int capacity)
+HashMap(int initialCapacity, float loadFactor)
+HashMap(Map<? extends K,? extends V> m)
+
+import java.util.*;
+
+class HashMapDemo {
+	public static void main(String[] args){
+		HashMap map = new HashMap(10);
+		
+		map.put("Telugu", 70);
+		map.put("English", 80);
+		map.put("Math", 70);
+		map.put("Sci", 60);
+		map.put("Social", 90);
+		map.put("Social", 95);
+		map.put("a", null);
+		map.put(null, null);
+		map.putIfAbsent(null, 1); 
+		
+		
+		HashMap map1 = new HashMap(map);
+		
+		map1.remove(null);
+		map1.put("a", 50);
+		
+		boolean isExist = map1.containsKey("a");
+		System.out.println(isExist);
+		
+		boolean valueExist = map1.containsValue(150);
+		System.out.println(valueExist);
+		
+		Object value = map1.get("Telugu");
+		System.out.println("Telugu " +value);
+		
+		Object value1 = map1.get("Phy");
+		System.out.println("Phy " + value1);		
+
+		value1 = map1.getOrDefault("Phy", 35);
+		System.out.println("Default Phy " + value1);
+		
+		Collection c = map1.values();
+		
+		Set set = map1.keySet();
+		Iterator i = set.iterator();
+		
+		while(i.hasNext()){
+			String subject = (String)i.next();
+			Object subjectValue = map1.get(subject);
+			System.out.println("Subject: "+ subject + " value:"+ subjectValue);
+		}
+		
+		
+		System.out.println(c);
+		System.out.println(set);
+		
+		System.out.println(map);
+		System.out.println(map1);
+	}
+}
+
+
+2. LinkedHashMap:
+- It is a child of HashMap
+- We can store group of key and value pair objects to map.
+- Heterogenious objects are allowed.
+- Insertion order is preserved.
+- Duplicate keys are now allowed.
+- Duplicte values are allowed.
+- When we try set with same key again, value will be updated and it will no throw any error.
+- We can store null as key or value.
+- default loadFactor is 0.75
+- Backed algorithm by hashtable.
+- When we are deleting key then automatically value will be deleted from map.
+- When a key is not available in map and if user tries to get value for that then map will return null value.
+
+import java.util.*;
+
+class LinkedHashMapDemo {
+	public static void main(String[] args){
+		HashMap map = new LinkedHashMap(10);
+		
+		map.put("Telugu", 70);
+		map.put("English", 80);
+		map.put("Math", 70);
+		map.put("Sci", 60);
+		map.put("Social", 90);
+		map.put("Social", 95);
+		map.put("a", null);
+		map.put(null, null);
+		map.putIfAbsent(null, 1); 
+		
+		
+		HashMap map1 = new LinkedHashMap(map);
+		
+		map1.remove(null);
+		map1.put("a", 50);
+		
+		boolean isExist = map1.containsKey("a");
+		System.out.println(isExist);
+		
+		boolean valueExist = map1.containsValue(150);
+		System.out.println(valueExist);
+		
+		Object value = map1.get("Telugu");
+		System.out.println("Telugu " +value);
+		
+		Object value1 = map1.get("Phy");
+		System.out.println("Phy " + value1);		
+
+		value1 = map1.getOrDefault("Phy", 35);
+		System.out.println("Default Phy " + value1);
+		
+		Collection c = map1.values();
+		
+		Set set = map1.keySet();
+		Iterator i = set.iterator();
+		
+		while(i.hasNext()){
+			String subject = (String)i.next();
+			Object subjectValue = map1.get(subject);
+			System.out.println("Subject: "+ subject + " value:"+ subjectValue);
+		}
+		
+		
+		System.out.println(c);
+		System.out.println(set);
+		
+		System.out.println(map);
+		System.out.println(map1);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 --------
