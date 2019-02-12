@@ -4669,7 +4669,7 @@ IdentityHashMap
 - We can store group of key and value pair objects to map.
 - Heterogenious objects are allowed.
 - Insertion order is not preserved.
-- Duplicate keys are now allowed.
+- Duplicate keys are not allowed.
 - Duplicte values are allowed.
 - When we try set with same key again, value will be updated and it will no throw any error.
 - We can store null as key or value.
@@ -4812,41 +4812,167 @@ class LinkedHashMapDemo {
 		System.out.println(map1);
 	}
 }
+-----------------------------------------------------------------
+3. TreeMap
+- We can store group of key and value pair objects to map.
+- Heterogenious objects are not allowed when TreeMap follows natual sorting order.
+- Heterogenious objects are allowed only when TreeMap uses custom comparator.
+- Insertion order is not preserved. Byfault it follows natural sorting order bydefault.
+- Duplicate keys are now allowed.
+- Duplicte values are allowed.
+- When we try set with same key again, value will be updated and it will no throw any error.
+- We can store null as value only.
+- Backed algorithm by Balanced tree.
+- When we are deleting key then automatically value will be deleted from map.
+- When a key is not available in map and if user tries to get value for that then map will return null value.
+- All keys has be Comparable.
+
+import java.util.*;
+
+class TreeMapDemo {
+	public static void main(String[] args){
+		StringComparator scm = new StringComparator();
+		Comparator normal = String.CASE_INSENSITIVE_ORDER;
+		Comparator reversed = String.CASE_INSENSITIVE_ORDER.reversed();
+		TreeMap map = new TreeMap(normal);
+		
+		map.put("Telugu", 70);
+		map.put("English", 80);
+		map.put("math", 70);
+		map.put("Sci", 60);
+		map.put("Social", 90);
+		map.put("Social", 95);
+		map.put("a", null);
+		// map.put(null, null);
+		// map.putIfAbsent(null, 1); 
+		
+		
+		TreeMap map1 = new TreeMap(map);
+
+		map1.put("a", 50);
+		
+		boolean isExist = map1.containsKey("a");
+		System.out.println(isExist);
+		
+		boolean valueExist = map1.containsValue(150);
+		System.out.println(valueExist);
+		
+		Object value = map1.get("Telugu");
+		System.out.println("Telugu " +value);
+		
+		Object value1 = map1.get("Phy");
+		System.out.println("Phy " + value1);		
+
+		value1 = map1.getOrDefault("Phy", 35);
+		System.out.println("Default Phy " + value1);
+		
+		Collection c = map1.values();
+		
+		Set set = map1.keySet();
+		Iterator i = set.iterator();
+		
+		while(i.hasNext()){
+			String subject = (String)i.next();
+			Object subjectValue = map1.get(subject);
+			System.out.println("Subject: "+ subject + " value:"+ subjectValue);
+		}
+		
+		
+		System.out.println(c);
+		System.out.println(set);
+		
+		System.out.println(map);
+		System.out.println(map1);
+	}
+}
+
+class StringComparator implements Comparator {
+	public int compare(Object o1, Object o2){
+		String s1 = o1.toString();
+		String s2 = o2.toString();
+		
+		return s1.compareToIgnoreCase(s2);
+	}
+}
+
+
+-----------------------------------
+
+
+4. Hashtable:
+- We can store group of key and value pair objects to map.
+- Heterogenious objects are not allowed.
+- Insertion order is not preserved.
+- Duplicate keys are not allowed.
+- Duplicte values are allowed.
+- When we try set with same key again, value will be updated and it will no throw any error.
+- null values are not allowed for key and values also.
+- Backed algorithm by hash algorithm.
+- When we are deleting key then automatically value will be deleted from map.
+- When a key is not available in map and if user tries to get value for that then map will return null value.
+- Default loadfactor is 0.75
+- Hashtable is sychronized. It is thread safe. It is slow when comparing with HashMap.
+- If a thread-safe implementation is not needed, it is recommended to use HashMap in place of Hashtable.
 
 
 
+import java.util.*;
+
+class HashtableDemo {
+	public static void main(String[] args){
+		Hashtable map = new Hashtable();
+		
+		map.put("Telugu", 70);
+		map.put("English", 80);
+		map.put("math", 70);
+		map.put("Sci", 60);
+		map.put("Social", 90);
+		map.put("Social", 95);
+		// map.put(50, 95);
+		// map.put("a", null);		
+		
+		Hashtable map1 = new Hashtable(map);
+
+		map1.put("a", 50);
+		
+		boolean isExist = map1.containsKey("a");
+		System.out.println(isExist);
+		
+		boolean valueExist = map1.containsValue(150);
+		System.out.println(valueExist);
+		
+		Object value = map1.get("Telugu");
+		System.out.println("Telugu " +value);
+		
+		Object value1 = map1.get("Phy");
+		System.out.println("Phy " + value1);		
+
+		value1 = map1.getOrDefault("Phy", 35);
+		System.out.println("Default Phy " + value1);
+		
+		Collection c = map1.values();
+		
+		Set set = map1.keySet();
+		Iterator i = set.iterator();
+		
+		while(i.hasNext()){
+			String subject = (String)i.next();
+			Object subjectValue = map1.get(subject);
+			System.out.println("Subject: "+ subject + " value:"+ subjectValue);
+		}
+		
+		
+		System.out.println(c);
+		System.out.println(set);
+		
+		System.out.println(map);
+		System.out.println(map1);
+	}
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
---------
-10-02-2019
+Properties:
+----------
 11-020-2019
 Thread
 - create thread
