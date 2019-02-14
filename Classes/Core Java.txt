@@ -4747,7 +4747,7 @@ class HashMapDemo {
 - We can store group of key and value pair objects to map.
 - Heterogenious objects are allowed.
 - Insertion order is preserved.
-- Duplicate keys are now allowed.
+- Duplicate keys are not allowed.
 - Duplicte values are allowed.
 - When we try set with same key again, value will be updated and it will no throw any error.
 - We can store null as key or value.
@@ -4818,7 +4818,7 @@ class LinkedHashMapDemo {
 - Heterogenious objects are not allowed when TreeMap follows natual sorting order.
 - Heterogenious objects are allowed only when TreeMap uses custom comparator.
 - Insertion order is not preserved. Byfault it follows natural sorting order bydefault.
-- Duplicate keys are now allowed.
+- Duplicate keys are not allowed.
 - Duplicte values are allowed.
 - When we try set with same key again, value will be updated and it will no throw any error.
 - We can store null as value only.
@@ -4973,6 +4973,157 @@ class HashtableDemo {
 
 Properties:
 ----------
+- To avoid the hardcoding from java file.
+- Properties class is used for storing key and value pairs.
+- It is extended Hasttable.
+- we can modify and key and value pairs and  no need to recompile the program.
+
+
+
+Steps for reading:-
+1. object create for propeties
+2. read the properties file using file reader.
+3. load reader to properties.
+4. Get property from properties
+
+
+Constructor:
+Properties()
+Properties(Properties p)
+
+methods:-
+load(Reader r)
+load(InputStream is)
+
+//To store values to properties file.
+store(OutputStream out, String comments)
+store(Writer writer, String comments)
+
+getProperty(String key)
+getProperty(String key, String defaultValue)	
+
+
+
+
+import java.util.*;
+import java.io.*;
+
+class PropertiesDemo{
+    public static void main(String...q) {
+		 String user = "Suda";
+		 
+		 //1. object create for propeties
+		 Properties p = new Properties();
+		 
+		
+		 
+		try{
+			//read the properties file
+			Reader r = new FileReader("sample.properties");
+		 
+			//load reader to properties.
+			p.load(r);
+		}catch(IOException e){}
+	
+		 p.setProperty("lenovo", "70000");
+		 System.out.println(p);
+		 System.out.println(p.getProperty("lenovo", "6000"));
+		 
+		 //Get property from properties
+		 String userFromProp = p.getProperty("username");
+		 
+		 if("Sudha".equals(userFromProp)){
+			System.out.println("Successfully logged in");
+		 }else {
+			System.out.println("Failed to loggin");
+		 }
+	}
+}
+
+import java.util.*;
+import java.io.*;
+
+class PropertiesWritingDemo{
+    public static void main(String...q) {
+		 String user = "Suda";
+		 
+		 //1. object create for propeties
+		 Properties p = new Properties();
+		 
+		
+		 
+		try{
+			//read the properties file
+			Reader r = new FileReader("sample.properties");
+		 
+			//load reader to properties.
+			p.load(r);
+		}catch(IOException e){}
+	
+		 p.setProperty("lenovo", "70000");
+		 System.out.println(p);
+		 System.out.println(p.getProperty("lenovo", "6000"));
+		 
+		 String userFromProp = p.getProperty("username");
+		 
+		 if("Sudha".equals(userFromProp)){
+			System.out.println("Successfully logged in");
+		 }else {
+			System.out.println("Failed to loggin");
+		 }
+		 
+		 
+		 try{
+		 
+		 Writer w = new FileWriter("sample.properties");
+		 p.store(w, "store lenovo value");
+		 }
+		 catch(Exception e){}
+		 
+	}
+}
+
+------------------------------------------------------------------------
+Collections:- 
+- It is a utility class.
+
+synchronizedList(List<T> list): To get the synchronized list. Thread safe list.
+sort(List)
+sort(List, Comparator)
+
+
+Arrays:
+- It is utility class
+
+sort()
+
+import java.util.*;
+
+class CollectionsDemo {
+	public static void main(String args[]){
+		List l = new ArrayList();
+		l.add(10);
+		l.add(1);
+		l.add(25);
+		l.add(40);
+		
+		System.out.println(l);
+		
+		List synchronizedList = Collections.synchronizedList(l);
+		System.out.println(synchronizedList);
+		
+		Collections.sort(l);
+		Collections.sort(l, new NumComparator());
+		System.out.println(l);
+	}
+}
+
+class NumComparator implements Comparator<Integer> {
+	public int compare(Integer i1, Integer i2){
+		return i2.compareTo(i1);
+	}
+}
+-----------------------------
 11-020-2019
 Thread
 - create thread
@@ -4982,6 +5133,8 @@ Thread
 
 IO package:
 
+
+Java Generics:
 
 
 
