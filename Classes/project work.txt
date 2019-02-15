@@ -1,0 +1,47 @@
+Project work:-
+
+1. DTO
+	
+- Data Transfer Object.
+- It should have default constructor.
+- Have only properties (instance variables) and setter and getters
+
+
+Project:
+- create a folder
+	
+- create a package for dto
+	com.sudhasoft.dto
+	com.sudhasoft.comparator
+	com.sudhasoft
+	
+StockAlertDto {
+    private Long id;
+    private String stockName;
+    private String strategyAction;
+    private String strategyName;
+    private Double stopLoss;
+    private Double target1;
+    private Double target2;
+    private Double target3;
+    private Double target4;
+    private Double currentPrice;
+    private Double openPrice;
+    private Double profitOrLoss;
+    private String result;
+	
+	
+}
+
+
+StockAlertTest {
+	main() {
+		StockAlertDto obj = new com.sudhasoft();
+		obj.setid(1);
+		
+		
+		System.out.print(obj);
+	}
+	
+}
+main()

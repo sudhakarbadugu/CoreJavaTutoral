@@ -4975,7 +4975,7 @@ Properties:
 ----------
 - To avoid the hardcoding from java file.
 - Properties class is used for storing key and value pairs.
-- It is extended Hasttable.
+- It is extended Hastable.
 - we can modify and key and value pairs and  no need to recompile the program.
 
 
@@ -5129,6 +5129,132 @@ Thread
 - create thread
 - runnable
 - life cycle
+
+Multi tasking:
+1. Process based
+
+2. Thread based
+
+Process based Multi Tasking
+Executing several tasks simultaneously where each task is a separate independent process is
+called ‘Process based Multitasking’.
+Ex:
+	While writing java program in the editor we can run MP3 player. At the same time we
+	can download a file from the net. All these tasks are executing simultaneously and
+	independent of each other. Hence it is process based Multitasking. Process based
+	Multitasking is best suitable at O.S level.
+
+
+Thread based Multi Tasking
+
+Executing several tasks simultaneously where each task is a separate independent part of the
+same program is called Thread based Multitasking. This type of multitasking is best suitable
+at programmatic level.
+Java provides in built support for thread based multitasking by providing rich library (Thread,
+ThreadGroup, Runnable ..etc)
+Whether it is Processbased or Threadbased the main objective of multitasking is to reduce
+response time and improve performance of the system.
+
+
+important:
+Runnable - I
+  |
+Thread	- C
+ThreadGroup - C
+
+How to create Thread?
+1. By extending Thread class
+2. By implement Runnable interface.
+
+
+Thread:-
+- Direct or indirect child of Runnable called Thread.
+- A thread is a thread of execution in a program. The Java Virtual Machine allows an application to have multiple threads of execution running concurrently.
+
+Constructor:
+
+Thread() :Allocates a new Thread object.
+
+Thread(Runnable target): Allocates a new Thread object.
+
+Thread(Runnable target, String name): Allocates a new Thread object.
+
+Thread(String name): Allocates a new Thread object.
+
+Thread(ThreadGroup group, Runnable target)
+Allocates a new Thread object.
+
+Thread(ThreadGroup group, Runnable target, String name)
+Allocates a new Thread object so that it has target as its run object, has the specified name as its name, and belongs to the 
+thread group referred to by group.
+
+Thread(ThreadGroup group, Runnable target, String name, long stackSize)
+Allocates a new Thread object so that it has target as its run object, has the specified name as its name, and belongs to the thread group referred to by group, and has the specified stack size.
+
+Thread(ThreadGroup group, String name)
+Allocates a new Thread object.
+
+Methods:
+run():	Work has be to defined in this method
+start(): To start the new thread
+static currentThread():	Returns current thread.
+getId():	returns id 
+getName()	: returns thread name
+setName():
+getPriority(): Allowed priority is 1-10. Default priority 5
+setPriority(int)
+
+interrupt()
+isDaemon()
+join()
+join(long mill)
+sleep(long millis)
+yield()	
+	
+	
+Steps:-
+1. Create a class which extends Thread
+	//1 create class
+	class HelloThread extends Thread {
+		
+	}
+	
+2. Override the run method in newly created class.
+
+	//1 create class
+	class HelloThread extends Thread {
+		
+		//override 
+		public void run(){
+			System.out.println("Hello thread");
+		}
+	}
+
+3. Create Object for our thread class
+	HelloThread ht = new HelloThread();
+
+4. Invoke start method.
+	ht.start();
+	
+- When ever we call start() method, automatically Thread class will invoke our run() method. No need to call run method directly.	
+	
+	
+- Main thread is start by JVM. by default main thread priorty 5
+- By default child thread start by main thread.
+- By default all child thread get priority from parent so default priority is 5.
+- we can set priority by using setPriority().
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 IO package:
