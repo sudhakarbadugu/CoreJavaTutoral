@@ -1,4 +1,4 @@
-package com.sudhasoft.dto;
+// package com.sudhasoft.dto;
 
 class StockAlertDto{
     private int id;

@@ -5479,27 +5479,358 @@ public static void sleep(long millis) throws InterruptedException
 
 - static method can call using Thread.sleep()
 - InterruptedException - checked exception. 
+- for check exception we must handle in try/catch block.	
+
+class ThreadCaseDemo {
+	public static void main(String[] args){		
+		//3 create object for our thread class
+		HelloThread ht = new HelloThread();
+
+		System.out.println("main thread");
+		ht.start();
+	}
+	
+
+}
+
+//1 create class
+class HelloThread extends Thread {
+	public void run(){
+		System.out.println("Child thread");
+		
+		for(int i = 1; i< 10; i++){
+			
+			System.out.println(i);
+			
+			try{
+				Thread.sleep(3000);
+			}catch(InterruptedException e){
+			}
+		}
+	}
+}
+
+yield:
+public static void yield()
+
+The thread which is called yield() method temporarily pause the execution to give the chance for
+remaining threads of same priority. If there is no waiting thread or all waiting threads having low
+priority. Then the same thread will get the chance immediately for the execution.
+
+- whiel debugging we may use this.
+
+class YieldDemo {
+	public static void main(String[] args){	
+		HelloThread ht = new HelloThread();
+
+		System.out.println("main thread");
+		ht.start();
+		
+		for(int i = 50; i<60; i++){
+			System.out.println(i);
+		}
+	}
+}
+
+class HelloThread extends Thread {
+	public void run(){
+		System.out.println("Child thread");
+
+		Thread.yield();
+		for(int i = 1; i< 10; i++){
+			
+			System.out.println(i);
+		
+		}
+	}
+}
+
+join:- Overloading method
+public final void join(long millis) throws InterruptedException	
+public final void join(long millis, long nanoseconds) throws InterruptedException	
+public final void join() throws InterruptedException	
+	
+If a thread wants to wait until some other thread completion then we should go for join method.
+Ex:
+If a thread t1 executes t2.join(), then t1 will be entered into waiting state until t2 completion.
+
+- this method throws InterruptedException - checked exception. 
+- for check exception we must handle in try/catch block.	
+	
+class JoinDemo {
+	public static void main(String[] args){	
+		HelloThread ht = new HelloThread();
+
+		System.out.println("main thread");
+		ht.start();
+		
+		try{
+			ht.join(5000); //called by main thread
+		}catch(Exception e){
+		}
+		
+		for(int i = 50; i<60; i++){
+			System.out.println(i);
+		}
+	}
+}
+
+class HelloThread extends Thread {
+	public void run(){
+		System.out.println("Child thread");
+
+		try{
+			Thread.sleep(1000); //called by child thread
+		}catch(Exception e){
+		}
+		
+		for(int i = 1; i< 10; i++){			
+			System.out.println(i);		
+		}
+	}
+}	
+
 	
 	
+synchronization:-	
+---------------
+synchronized - is a keyword to avoid multi thread problem.
+- it can be used for only methods. Can't declare varaiables with synchronized keyword.
+
+- ‘synchronized’ is the keyword applicable for the methods and blocks.
+- We can’t apply this keyword for variables and classes. If a method declared as synchronized at a time only one thread is allowed to execute that method on the given object.
+- The main advantage of synchronized keyword is we can overcome data inconsistency problem. 
+- The main limitation of synchronized keyword is it may create performance problems.
+Hence if there is no specific requirement it’s not recommended to use synchronized keyword.
+
+Every object in java has a unique lock. When ever are using synchronized keyword then object level lock
+concept will come into picture. If a thread want to execute any synchronized method on the object first it
+should require the lock of that object. Once a thread got the lock then it is allowed to execute any
+synchronized method on that object.
+
+While a thread executing a synchronized method on the object, then the remaining threads are not allowed to
+execute any synchronized method on the same object. But the remaining threads are allowed to execute any
+non-synchronized method on the same object.
+
+Every object in java has unique lock but a thread can acquire more than one lock at a time.
+
+class SynchorizationDemo {
+	public static void main(String[] args){	
+		PrintText p = new PrintText();
+		HelloThread ht = new HelloThread(p);
+
+		//System.out.println("main thread");
+		ht.start();
+		
+		for(int i = 50; i<60; i++){
+			p.printName("Chiru");
+		}
+	}
+}
+
+class HelloThread extends Thread {
+	private PrintText p;
+	
+	HelloThread(PrintText p){
+		this.p = p;
+	}
+	
+	public void run(){
+		//System.out.println("Child thread");
+		// PrintText p11= new PrintText();
+		for(int i = 50; i<60; i++){
+			p.printName("Balaiah");
+		}
+	}
+}
+
+class PrintText {
+
+	public synchronized void printName(String name){
+		System.out.print("hello:.........");
+		
+		try{
+			Thread.sleep(1000);
+		}catch(Exception e){
+		}
+		System.out.println(name);
+	}
+}
+
+- synchronized block:-
+When we required only few lines on code synchronization then we should sychronized block.
+
+class SynchorizationDemo {
+	public static void main(String[] args){	
+		PrintText p = new PrintText();
+		HelloThread ht = new HelloThread(p);
+
+		//System.out.println("main thread");
+		ht.start();
+		
+		for(int i = 50; i<60; i++){
+			p.printName("Chiru");
+		}
+	}
+}
+
+class HelloThread extends Thread {
+	private PrintText p;
+	
+	HelloThread(PrintText p){
+		this.p = p;
+	}
+	
+	public void run(){
+		//System.out.println("Child thread");
+		// PrintText p11= new PrintText();
+		for(int i = 50; i<60; i++){
+			p.printName("Balaiah");
+		}
+	}
+}
+
+class PrintText {
+
+	public void printName(String name){
+		
+		synchronized(this){
+			System.out.print("hello:.........");
+			
+			try{
+				Thread.sleep(1000);
+			}catch(Exception e){
+			}
+			System.out.println(name);
+		}
+	}
+}
+
+Inter thread communication:-
+
+wait()
+wait(1000)
+notify()
+notifyAll()
+
+
+class WaitDemo {
+	public static void main(String[] args) throws Exception {	
+		HelloThread ht = new HelloThread();
+
+		//System.out.println("main thread");
+		ht.start();
+		
+		synchronized(ht){		
+			ht.wait();
+			System.out.println("Main got notification");
+			System.out.println(ht.getTotal());
+		}
+	}
+}
+
+class HelloThread extends Thread {
+	HelloThread(){
+	}
+	private int total;
+	
+	public void run(){
+		for(int i = 50; i<60; i++){
+			total = total + i;
+		}
+		
+		synchronized(this){
+			System.out.println("Notify to main");
+			this.notify();
+		}
+		
+	}
+	
+	public int getTotal(){
+		return this.total;
+	}
+}
+
+- Dead lock:-
+- wait t1 for t2 and t2 is waiting t1.
+- waiting 2 threads for each other.
+
+class WaitDemo {
+	public static void main(String[] args) throws Exception {	
+		HelloThread ht = new HelloThread();
+
+		//System.out.println("main thread");
+		ht.start();
+		
+		synchronized(ht){		
+			ht.wait();
+			System.out.println("Main got notification");
+			System.out.println(ht.getTotal());
+		}
+	}
+}
+
+class HelloThread extends Thread {
+	HelloThread(){
+	}
+	private int total;
+	
+	public void run() {
+		for(int i = 50; i<60; i++){
+			total = total + i;
+		}
+		
+		synchronized(this){
+			System.out.println("Notify to main");
+			
+			try{
+				this.wait();
+			}catch(Exception e){
+			}
+			
+		}
+		
+	}
+	
+	public int getTotal(){
+		return this.total;
+	}
+}
+
+Deamon thread:-
+The threads which hare running in the background to provide support for user defined threads are called
+“Daemon Thread”. Usually daemon thread are running with low priority but based on our requirement we
+can increase their priority also.
+We can check whether the given thread is daemon or not by using the following thread class thread.
+public boolean isDaemon()
+we can change the daemon nature of a thread by using setDaemon() method of thread class.
+public void setDaemon(Boolean b)
+
+
+class DeamonDemo {
+	public static void main(String[] args) throws Exception {	
+		HelloThread ht = new HelloThread();
+		
+		
+		ht.setDaemon(true);
+		
+		System.out.println(ht.isDaemon());
+		ht.start();
+		
+	}
+}
+
+class HelloThread extends Thread {
+	HelloThread(){
+	}
 	
 	
-	
-	
-	
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-
+	public void run() {
+		for(int i = 50; i<60; i++){
+			System.out.println(i);
+		}		
+	}
+}
 
 IO package:
 
