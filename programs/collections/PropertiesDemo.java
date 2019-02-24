@@ -22,6 +22,7 @@ class PropertiesDemo{
 		 System.out.println(p);
 		 System.out.println(p.getProperty("lenovo", "6000"));
 		 
+		 //Get property from properties
 		 String userFromProp = p.getProperty("username");
 		 
 		 if("Sudha".equals(userFromProp)){

@@ -2733,7 +2733,7 @@ Access modifier/specfier: Which specify the access from other classes.
 	We can access with in the class and with in the curret package (folder).
 
 4. private
-	Only with in th2e class. From outside class can't call private methods.
+	Only with in the class. From outside class can't call private methods.
 
 ------------------------------------------------------------
 package com.ss.pack;
@@ -3736,7 +3736,7 @@ Collection:-
 - ArrayList is not synchronized. It is not thread safe and faster.
 
 Drawback:-
-- arraylist is slower in adding elements. Internally ArrayList creates an Array and once it is filled, it will create a new arary and copy elements from old array. Because of this reason it is slow
+- arraylist is slower in adding elements. Internally ArrayList creates an Array and once it is filled, it will create a new arary and copy elements from old array. Because of this reason it is slow.
 
 RandomAccess:-
 -----------
@@ -5124,10 +5124,15 @@ class NumComparator implements Comparator<Integer> {
 	}
 }
 -----------------------------
-11-020-2019
+11-02-2019
 Thread
 - create thread
+	1. by extending Thread class 
+	2. By implements Runnable interface.
+
+- running multiple threads	
 - runnable
+
 - life cycle
 
 Multi tasking:
@@ -5156,7 +5161,7 @@ Whether it is Processbased or Threadbased the main objective of multitasking is 
 response time and improve performance of the system.
 
 
-important:
+important classes and interfaces:
 Runnable - I
   |
 Thread	- C
@@ -5204,15 +5209,15 @@ setName():
 getPriority(): Allowed priority is 1-10. Default priority 5
 setPriority(int)
 
-interrupt()
-isDaemon()
+
+sleep(long millis)
+yield()
 join()
 join(long mill)
-sleep(long millis)
-yield()	
+interrupt()
+isDaemon()	
 	
-	
-Steps:-
+Steps for creating a thread using Thread class.:-
 1. Create a class which extends Thread
 	//1 create class
 	class HelloThread extends Thread {
@@ -5239,11 +5244,250 @@ Steps:-
 - When ever we call start() method, automatically Thread class will invoke our run() method. No need to call run method directly.	
 	
 	
-- Main thread is start by JVM. by default main thread priorty 5
+- Main thread is start by JVM. By default main thread priorty 5
 - By default child thread start by main thread.
 - By default all child thread get priority from parent so default priority is 5.
 - we can set priority by using setPriority().
 
+
+2. How to create a Thread using Runnable interface
+
+1. Create a class which implements Runnable interface.
+	class ThreadDemo implements Runnable {
+	
+	}
+
+2. Override run method in our newly implemented class.
+	class NumberThread implements Runnable {
+
+		public void run(){//definition
+			
+			for(int i = 0; i< 10 ; i++){
+				System.out.println(i);
+			}
+		}
+	}
+	
+3. Create an object for our class.
+	NumberThread nt = new NumberThread();
+	
+4. Create object for Thread and pass our object to thread
+	Thread t = new Thread(nt);
+
+4. Invoke start method on thread object but not our runnable object.
+	t.start();
+
+ThreadScheduler:
+- When ever we have multiple threads, we can't predict output. Because we don't know thred execution order. 
+ThreadScheduler will manage these thread based on priority.
+
+- All operation system may not support thread priority.
+
+which is the best approch?
+
+	A	C
+	|	|
+	  B		- This is not possible throug classes. java is not supporting multiple inheritance.
+	  
+1. When we extends Thread class, only we can extend one class and we can't extend any other class because java wont suppot multiple inheritance.
+	 Thread
+	   |
+	DataStoreThread
+
+2. We are implementing Runnable interface so we can extend any other class also.
+	Runnable			BasicJob (class)
+	 |implements		| extends
+		DataStoreThread
+		
+
+Case:1 Call run method directly without calling start()
+	- New thread will not created unless we are calling start() method.
+	- run() method is called on main thred only. it is like normal method.
+	- Only main thread will be running.
+
+class ThreadCaseDemo {
+	public static void main(String[] args){		
+		//3 create object for our thread class
+		HelloThread ht = new HelloThread();
+
+		System.out.println("main thread");
+		// ht.start();
+		ht.run();
+		
+		for(int i = 100; i < 110; i++){
+			System.out.println(i);
+		}
+	}
+	
+
+}
+
+//1 create class
+class HelloThread extends Thread {
+	
+	//override 
+	public void run(){
+		Thread t = Thread.currentThread();
+		System.out.println("Child thread" );
+		System.out.println("Name:" + t.getName());
+		
+		for(int i = 0; i < 10; i++){
+			System.out.println(i);
+		}
+	}
+}
+	
+Case:2	When we are implementing Runnable interface, call run method directly without calling start method.
+	- New thread will not created unless we are calling start() method.
+	- run() method is called on main thread only. it is like normal method.
+	- Only main thread will be running.	
+	
+	class ThreadCaseDemo {
+	public static void main(String[] args){		
+		//3 create object for our thread class
+		HelloThread ht = new HelloThread();
+
+		System.out.println("main thread");
+		// ht.start();
+		ht.run();
+		
+		for(int i = 100; i < 110; i++){
+			System.out.println(i);
+		}
+	}
+	
+
+}
+
+//1 create class
+class HelloThread implements Runnable {
+	
+	//override 
+	public void run(){
+		Thread t = Thread.currentThread();
+		System.out.println("Child thread" );
+		System.out.println("Name:" + t.getName());
+		
+		for(int i = 0; i < 10; i++){
+			System.out.println(i);
+		}
+	}
+}
+
+Case:3 When we are implementing runnable interface, call start() directly using our object.
+	- We can't call start() directly using our object. because start() is availabe in Thread class only.
+	- It is a compile time error.
+class ThreadCaseDemo {
+	public static void main(String[] args){		
+		//3 create object for our thread class
+		HelloThread ht = new HelloThread();
+
+		System.out.println("main thread");
+		ht.start();
+		
+		for(int i = 100; i < 110; i++){
+			System.out.println(i);
+		}
+	}
+	
+
+}
+
+//1 create class
+class HelloThread implements Runnable {
+	
+	//override 
+	public void run(){
+		Thread t = Thread.currentThread();
+		System.out.println("Child thread" );
+		System.out.println("Name:" + t.getName());
+		
+		for(int i = 0; i < 10; i++){
+			System.out.println(i);
+		}
+	}
+}
+	
+Case:4	When we extend Thread class, not overriding run method. call start() method.
+- Thread class has run() method with empty implementation as shown below
+	public void run(){}
+
+- here 2 threads are there. 
+- When ever child thread doesn't have run(), then jvm will parent class (Thread) run method will be executed. we will not get any output for child because Thread class has run() method with empty implementation.	
+	
+class ThreadCaseDemo {
+	public static void main(String[] args){		
+		//3 create object for our thread class
+		HelloThread ht = new HelloThread();
+
+		System.out.println("main thread");
+		ht.start();
+		
+		for(int i = 100; i < 110; i++){
+			System.out.println(i);
+		}
+	}
+	
+
+}
+
+//1 create class
+class HelloThread extends Thread {
+	// public void run(){
+		// System.out.println("Child thread");
+	// }
+}
+
+Case:5 When we extend Thread class, not overriding run method. call run() method.				
+- New thread will not created.
+- Only main thread will be running.
+- We will not get any output because parent class run method with empty implementation. 
+
+
+- There is no use a class without overriding run method. Avoid this type of implementation. 
+class HelloThread extends Thread {
+}
+
+Thread lifecycle:-
+	
+man life cycle:
+Born -> grow -> old -> death
+	
+Normal life cycle:
+
+	create object                 call start() and wait schedule            run method will be executed
+New ------------------------> Ready ------------------------------> Running ---------------------------> Dead 
+	                                                    
+																	
+1. New  
+	When we create a thread object	
+		Thread t = new Thread();
+
+2. Ready
+	t.start()
+	
+3. Runnnig
+	- When scheuler gives permission to execute
+	
+4. Dead:-
+	- After run method is executed completely, it will be dead.
+	
+	
+
+sleep:
+public static void sleep(long millis) throws InterruptedException
+
+- static method can call using Thread.sleep()
+- InterruptedException - checked exception. 
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
 

@@ -1,20 +1,26 @@
 Project work:-
 
 1. DTO
-	
+StockAlertDto	
 - Data Transfer Object.
 - It should have default constructor.
 - Have only properties (instance variables) and setter and getters
+- don't write main method.
 
+
+2. Pojo/Model
+StockAlertModel
+- Plain old java object
+- It should have default constructor and param constructors.
+- Have only properties (instance variables) and setter and getters
+- don't write main method.
 
 Project:
 - create a folder
 	
 - create a package for dto
 	com.sudhasoft.dto
-	com.sudhasoft.comparator
-	com.sudhasoft
-	
+
 StockAlertDto {
     private Long id;
     private String stockName;
@@ -29,19 +35,49 @@ StockAlertDto {
     private Double openPrice;
     private Double profitOrLoss;
     private String result;
-	
-	
 }
+	
+- create a package for model
+	com.sudhasoft.model
 
+StockAlertModel {
+    private Long id;
+    private String stockName;
+    private String strategyAction;
+    private String strategyName;
+    private Double stopLoss;
+    private Double target1;
+    private Double target2;
+    private Double target3;
+    private Double target4;
+    private Double currentPrice;
+    private Double openPrice;
+    private Double profitOrLoss;
+    private String result;
+}
+	
+- create package for test
+	com.sudhasoft.test
+
+import com.sudhasoft.model;
+import com.sudhasoft.dto;
 
 StockAlertTest {
 	main() {
-		StockAlertDto obj = new com.sudhasoft();
+		StockAlertDto obj = new StockAlertDto();
 		obj.setid(1);
 		
 		
+		//copy the obj object to model
+		StockAlertModel model = new StockAlertModel();
+		model.setid(obj.getId());
+		
 		System.out.print(obj);
+		System.out.print(model);
 	}
 	
-}
-main()
+}	
+
+
+	
+
