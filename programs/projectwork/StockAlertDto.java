@@ -25,7 +25,7 @@ class StockAlertDto{
 		return stockName;
 	}
 	public void setstockName(String stockName){
-		this.stockName=stockName;;
+		this.stockName=stockName;
 	}
 	public String getstrategyAction(){
 		return strategyAction;
