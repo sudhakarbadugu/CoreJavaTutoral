@@ -1,5 +1,5 @@
-
-class StockAlertDto{
+// package com.sudhasoft.model;
+public class StockAlertModel{
     private int id;
     private String stockName;
     private String strategyAction;

@@ -1,7 +1,7 @@
-// package com.sudhasoft.dto;
+// package com.sudhasoft.Dto;
 
 class StockAlertDto{
-    private int id;
+    private long id;
     private String stockName;
     private String strategyAction;
     private String strategyName;
@@ -15,10 +15,10 @@ class StockAlertDto{
     private Double profitOrLoss;
     private String result1;
 
-	public int getId(){
+	public long getId(){
 		return id;
 	}
-	public void setId(int id ){
+	public void setId(long id ){
 		this.id=id;
 	}
 	public String getstockName(){
@@ -93,7 +93,10 @@ class StockAlertDto{
 	 public void setresult1(String result1){
 		 this.result1=result1;
 	  }
+	   public String toString(){
+				 return id+""+stockName+" "+stockName+" "+strategyAction+""+strategyName+stopLoss+target1+target2+target3+target4+currentPrice+openPrice+profitOrLoss+""+result1;
+			
 }
 	
 		
-	
+}	

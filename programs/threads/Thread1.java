@@ -13,7 +13,7 @@ class Thread1{
 	l.setId("98f547");
 	}
 }
-class family extends Thread{
+class family extends Thread{ 
 	public void run(){
 	System.out.println("relation");
 

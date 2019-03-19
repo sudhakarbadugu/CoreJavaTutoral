@@ -1432,7 +1432,7 @@ static 	var   | yes,eg: sop(a)    |yes,eg: sop(a)
 - setter should take one parameter and parameter data type is same as instance variable.
 - instance variable should be declared as private.
 - setter method should not return any value.
-- When method parameter name and property name are same, then we should specify the instance variable name with this keyword. Otherwise value will not set to instance variale.
+- When method parameter name and property name are same, then we should specify the instance variable name with 'this' keyword. Otherwise value will not set to instance variale.
 
 	class Person{
 		private String name;
@@ -5278,7 +5278,7 @@ Steps for creating a thread using Thread class.:-
 	t.start();
 
 ThreadScheduler:
-- When ever we have multiple threads, we can't predict output. Because we don't know thred execution order. 
+- When ever we have multiple threads, we can't predict output. Because we don't know thread execution order. 
 ThreadScheduler will manage these thread based on priority.
 
 - All operation system may not support thread priority.
@@ -5295,7 +5295,9 @@ which is the best approch?
 	DataStoreThread
 
 2. We are implementing Runnable interface so we can extend any other class also.
-	Runnable			BasicJob (class)
+	Runnable		
+
+	BasicJob (class)
 	 |implements		| extends
 		DataStoreThread
 		
@@ -5798,10 +5800,10 @@ class HelloThread extends Thread {
 }
 
 Deamon thread:-
-The threads which hare running in the background to provide support for user defined threads are called
+The threads which are running in the background to provide support for user defined threads are called
 “Daemon Thread”. Usually daemon thread are running with low priority but based on our requirement we
 can increase their priority also.
-We can check whether the given thread is daemon or not by using the following thread class thread.
+We can check whether the given thread is deamon or not by using the following thread class thread.
 public boolean isDaemon()
 we can change the daemon nature of a thread by using setDaemon() method of thread class.
 public void setDaemon(Boolean b)
@@ -5833,6 +5835,137 @@ class HelloThread extends Thread {
 }
 
 IO package:
+----------
+- All file related classes will be available in java.io package.
+
+interface:
+Closeable
+Externalizable
+FileFilter
+FilenameFilter
+Serializable
+
+Classes:
+File
+FileWriter
+FileReader
+BufferedReader
+BufferedWriter
+PrintWriter
+StringReader
+StringWriter
+
+Constructor:-
+File(File parent, String child):- Creates a new File instance from a parent abstract pathname and a child pathname string.
+
+File(String pathname):- Creates a new File instance by converting the given pathname string into an abstract pathname.
+
+File(String parent, String child):-Creates a new File instance from a parent pathname string and a child pathname string.
+
+
+
+Directory:- contains group of file.(folder)
+File
+A java file object represent just name of the file/directory.
+File f = new File(“abc.txt”);
+If ‘abc.txt’ is already available then ‘f’ will represent that physical file.
+If it is not already available, It won’t create any new file and ‘f’ simply represents the name of the file.
+
+A java file Object can represent directories also
+Ex:
+File f = new File("bbc");
+System.out.println(f.exists());
+f.mkdir();
+System.out.println(f.exists());
+
+Important methods of File Class
+1) boolean exists(): returns true if the physical file/directory presents other wise false.
+
+2) boolean createNewFile():
+returns ture if it creates a new file, if the required file is already available then
+it won’t create any new file and returns false.
+
+3) booelan mkdir(): For creation of directory.
+
+4) boolean isFile(): returns true if the java file object represents a file.
+
+5) boolean isDirectory():
+returns true if the java file object represents a directory.
+
+6) String [] list(): returns the names of files and directories present in the directories represented
+by the file object.
+If the java file object represents a file instead of directory this method returns
+null.
+
+7) Boolean delete(): for deleting the file or directory represented by java file object.
+write a program to create a file named with ‘xyz.txt’ in the current working directory.
+
+8) File[] listFiles()
+
+9) getName()
+
+10) 
+
+import java.io.*;
+
+
+class FileDemo {
+	public static void main(String args[]) throws IOException{
+		
+		File f = new File("test.txt");
+	
+		boolean isFileExist = f.exists();
+		System.out.println("File available: " + isFileExist);
+		
+		boolean create = f.createNewFile();
+		System.out.println("File created: " + create);
+		
+		File folder = new File("test");
+		boolean folderCreate = folder.mkdir();
+		System.out.println("folder created: " + folderCreate);
+		
+		File file = new File("test", "abc.txt");
+		boolean fileCreate = file.createNewFile();
+		System.out.println("file created: " + fileCreate);
+		
+		System.out.println(folder.isDirectory());
+		System.out.println(f.isFile());
+		
+		System.out.println("Iterating file names");
+		//iterate over file NAMES
+		String[] fileNames = folder.list();
+		for(String fileName : fileNames){
+			System.out.println(fileName);
+		}
+		
+		System.out.println("Iterating files");
+		//iterate over files
+		File[] files = folder.listFiles();
+		int count = 0, directoryCount = 0;
+		for(File folderFile : files){
+			System.out.println(folderFile.getName() + " - "+ folderFile.isDirectory() + " parent:"+ folderFile.getParent());
+			
+			if(folderFile.isFile()){
+				count++;
+			}
+			
+			
+			if(folderFile.isDirectory()){
+				directoryCount++;
+			}
+		}
+		
+		boolean d = f.delete();
+		System.out.println(f.getName() + " Delete file:"+ d);
+		
+		System.out.println(count);
+		System.out.println(directoryCount);
+	}
+}
+
+
+
+
 
 
 Java Generics:

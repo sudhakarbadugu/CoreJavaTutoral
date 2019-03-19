@@ -1,5 +1,5 @@
 class SynchorizationDemo {
-	public static void main(String[] args){	
+	 static public void  main(String[] args){	
 		PrintText p = new PrintText();
 		HelloThread ht = new HelloThread(p);
 
@@ -36,10 +36,11 @@ class PrintText {
 			System.out.print("hello:.........");
 			
 			try{
-				Thread.sleep(1000);
+				Thread.sleep(500);
 			}catch(Exception e){
 			}
 			System.out.println(name);
+			
 		}
 	}
 }
