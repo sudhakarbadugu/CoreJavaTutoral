@@ -5865,8 +5865,8 @@ File(String parent, String child):-Creates a new File instance from a parent pat
 
 
 Directory:- contains group of file.(folder)
-File
-A java file object represent just name of the file/directory.
+
+File:- A java file object represent just name of the file/directory.
 File f = new File(“abc.txt”);
 If ‘abc.txt’ is already available then ‘f’ will represent that physical file.
 If it is not already available, It won’t create any new file and ‘f’ simply represents the name of the file.
@@ -5963,11 +5963,84 @@ class FileDemo {
 	}
 }
 
+FileWriter:-
+	AutoCloseable, Flushable
+	  |
+	Writer
+	  |
+	 OutputStreamWriter
+	  |
+	  FileWriter
+	  
+	  
+- To write any content to the file.
+
+Constructors:-
+FileWriter(String fileName)
+FileWriter(String fileName, boolean append)
+FileWriter(File file, boolean append)
+FileWriter(File file)
 
 
+- FileWriter will create a file if not exist when we create an object for it.
+
+write(String s): It will content to the same line.
+- If we want write content to the new line then we have to use '\n'.
+
+import java.io.*;
+
+class FileWriterDemo {
+	public static void main(String args[]) throws IOException{
+		FileWriter fw = new FileWriter("server.log", true);
+		
+		fw.write("Server started successfully\n");
+		fw.write("Server restarting\n");
+		fw.write("Server restarting in 2 mins");
+		//fw.write(65);
+		
+		fw.flush();
+		
+		FileWriter fw1 = new FileWriter("server.log", true);
+		fw1.write("Server is down");		
+		fw1.flush();	
+		
+		
+		System.out.println(fw);
+	}
+}
+FileReader:-
+- To read any content from the file.
+
+Readable, Closeable
+      |
+	Reader
+	  |
+	 InputStreamReader
+	  |
+	  FileReader
 
 
+Constructors:
+FileReader(File file)
+FileReader(String file)
 
+import java.io.*;
+
+class FileReaderDemo {
+	public static void main(String args[]) throws IOException{
+		File f = new File("server.log");
+		FileReader fr = new FileReader(f);
+		
+		int length = (int)f.length();
+		char[] content = new char[length];
+		fr.read(content);
+
+		for(char c: content){
+			System.out.print(c);
+		}
+	}
+}
+	  
 Java Generics:
 
 

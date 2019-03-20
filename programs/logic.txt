@@ -1,0 +1,19 @@
+String name = "sudddhaaakarrrr";
+o/p: sudhakar
+
+toCharArray();
+charAt()
+
+-- interview:
+
+StringBuilder s =  new StringBuilder();
+s.append(name.charAt(0));
+
+for(int i=1; i<name.length(); i++){
+	char c = name.charAt(i);
+	char c1 = name.charAt(i-1);
+	if(c != c1){
+		s.append(c);
+	}
+
+}

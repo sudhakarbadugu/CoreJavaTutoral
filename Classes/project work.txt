@@ -65,7 +65,7 @@ import com.sudhasoft.dto;
 StockAlertTest {
 	main() {
 		StockAlertDto obj = new StockAlertDto();
-		obj.setid(1);
+		obj.setid();
 		
 		
 		//copy the obj object to model
