@@ -399,4 +399,32 @@ Program 62: ParentClassRefExample
 	A c = new C();
 	
 Program 63:TypeCastingExample for each rule
+
+
+21/3/2019
+Test
+ - abc.txt
+ - ab.txt
+ -servere.txt
+ - server2.txt
+ - servers.txt
+ -abs.txt
+ - badugus.txt
+ 
+Program 64: Find all file names with which are starting with A
+	
+Program 65: Find all file names with which are ends with S
+	abs, servers
+	
+Program 66: Find all file names with which are ends with S and starts with B
+	badugus.txt
+	
+Program 67: Find all file names with which are contains server
+	server2, servers
+
+program 68: write all io package programs with try and catch.
+	file
+	filewriter
+	filereader
+	bufferwriter
 	

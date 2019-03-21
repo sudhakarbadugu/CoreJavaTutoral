@@ -5894,6 +5894,7 @@ returns true if the java file object represents a directory.
 
 6) String [] list(): returns the names of files and directories present in the directories represented
 by the file object.
+
 If the java file object represents a file instead of directory this method returns
 null.
 
@@ -5982,6 +5983,28 @@ FileWriter(File file, boolean append)
 FileWriter(File file)
 
 
+This class can be used for writing character data to the file.
+Constructors
+1) FileWriter fw = new FileWriter(String fname)
+2) FileWriter fw = new FileWriter(File f);
+
+The above 2 constructors creates a file object to write character data to the file.
+If the file already contains some data it will overwrite with the new data.
+
+Instead of overriding if u have to perform append then we have to use the following constructors.
+FileWriter fw = new FileWriter(String name, boolean append);
+FileWriter fw = new FileWriter(File f, boolean append);
+
+If the underlying physical file is not already available then the above constructors will create the
+required file also.
+
+Important methods of FileWriter Class
+1) void write(int ch) throws IOException
+for writing single character to the file.
+2) void write(String s)throws IOException.
+3) void write(char [] ch) throws IOException.
+4) void flush():-To guaranteed that the last character of the data should be required to the file.
+
 - FileWriter will create a file if not exist when we create an object for it.
 
 write(String s): It will content to the same line.
@@ -6010,6 +6033,20 @@ class FileWriterDemo {
 }
 FileReader:-
 - To read any content from the file.
+
+This class can be used for reading character data from the file.
+Constructors
+1) FileReader fr = new FileReader(String name);
+2) FileReader fr = new FileReader(File f);
+
+Important methods of FileReader Class
+1) int read():
+for reading next character from the file. If there is no next character this method
+returns -1
+2) int read(char[] ch):
+to read data from the file into char array.
+3) void close():
+to close FileReader
 
 Readable, Closeable
       |
@@ -6040,6 +6077,98 @@ class FileReaderDemo {
 		}
 	}
 }
+
+The usage of FileReader and FileWriter is in efficient because
+ While writing the data by using FileWriter, program is responsible to insert line separators manually.
+
+ We can read the data character by character only by using FileReader. If increases the number of I/O
+operations and effect performance.
+
+To overcome these problems sun people has introduced BufferedReader and BufferedWriter classes.
+
+BufferedWriter:
+--------------
+Writes text to a character-output stream, buffering characters so as to provide for the efficient writing of single characters, arrays, and strings.
+- newLine(): to create a new line in the file.
+
+
+import java.io.*;
+
+class BufferedWriterDemo {
+	public static void main(String args[]) throws IOException{
+		Writer w = new FileWriter("buff.txt");
+		BufferedWriter bw = new BufferedWriter(w);
+		
+		bw.write("Server started successfully");
+		bw.newLine();
+		bw.write("Server restarting");
+		bw.newLine();
+		bw.write("Server restarting in 2 mins");
+		bw.flush();
+	
+		bw.close(); //finally
+		System.out.println(bw);
+	}
+}
+
+-------------------------------------------------------
+BufferedReader:
+Reads text from a character-input stream, buffering characters so as to provide for the efficient reading of characters, arrays, and lines.
+
+
+Constructor:
+BufferedReader(Reader in)
+Creates a buffering character-input stream that uses a default-sized input buffer.
+
+
+import java.io.*;
+
+class BufferedReaderDemo {
+	public static void main(String args[]){
+		BufferedReader br = null;
+		try{
+			Reader r = new FileReader("buff.txt");
+			br = new BufferedReader(r);
+		
+			String line = br.readLine();
+			while(line != null ){
+				System.out.println(line);
+				line = br.readLine();
+			}
+			
+			//Char by char
+			// int c =  br.read();
+			// while(c >= 0 ){
+				// System.out.println((char)c);
+				// c = br.read();
+			// }
+			
+		}
+		catch(FileNotFoundException f){
+			System.out.println("Error occurred");
+		}
+		catch( IOException ioe){
+			System.out.println("Error occurred" + ioe);
+		}
+		finally {
+			if(br != null){
+				try{
+					br.close(); //finally
+				}catch(IOException e){
+					
+				}
+			}
+			
+		}
+				
+		System.out.println("Close");
+	}
+}
+
+Serialization:
+-------------
+
+
 	  
 Java Generics:
 

@@ -1,0 +1,5 @@
+1)basic knwlodge of html 
+2)bsic knlowdge of css
+3)strong knlowdge of javascript
+
+4)how to create react app
