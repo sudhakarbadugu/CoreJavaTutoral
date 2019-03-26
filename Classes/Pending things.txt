@@ -1,22 +1,51 @@
 Pending things:
 ---------------
 1. Java features
-2. 2D arrays
-3. static flow
-4. instance flow
----------------------------
+2. 2D arrays - 1 day
+3. static flow - 1 day
+4. instance flow - 1 day
+5. String SCP and Object methods - 1 day
+
+19. Serialization - 2 days
+	
+20. Inner classes - 2 days
+	1) Normal/Regular inner classes
+	2) Method local inner classes
+	3) Anonymous inner classes
+	4) static nested classes
+	
+21. Generics:- 2 days
+	1. Generic Classes
+	2. BoundedTypes
+	3. Generic Methods
+	4. Communication with legacy non-generic code
+	
+22. GARBAGE COLLECTION - 1 day
+	1. Introduction
+	2. The ways to make an object eligible for Garbage Collector
+	3. The methods to request JVM to run Garbage Collector
+	4. finalization
+	
+23. Internationalization - 2 days
+
+24. 1.5, 1.6, 1.7 new features - 1 day
+
+--------------Core Java-------------
 1. Java installation
 	1.1 Verify java installation.
+	
 2. What is java?
 	2.1. Program
 	2.2. Objects
 	2.3. API
 	2.4. Open source
+	
 3. What are java editons?
 	3.1 JSE
 	3.2 J2EE
 	3.3 J2ME
 	3.4 JavaFx
+	
 4. What are the java versions and History?
 5. What we can do with Java?
 6. What are the features?
@@ -33,17 +62,67 @@ Pending things:
 	1. for
 	2. while
 	3. do while
-12.Operators.
-	1. Unary oper
-	2. Arthemetic
-	3. Bitwise
-	4. Logical
-	5. Ternary
-	6. Assignmet
-	
-13. OOPS
 
-14. Java lang
+12.Operators.
+	1) increment & decrement operators.
+	2) arithmetic operators.
+	3) string concatenation operators.
+	4) Relational operators
+	5) Equality operators
+	6) Bitwise operators
+	7) Short circuit operators
+	8) instance of operators
+	9) type cast operators
+	10) assignment operator
+	11) conditional operator
+	12) new operator
+	13) [] operator
+	14) Precedence of java operators
+	15) Evaluation order of java operands
+
+	
+13. Language fundamentals
+	1) Identifiers
+	2) Keywords
+	3) Datatypes
+	4) Literals
+	5) Arrays
+	6) Types of variables
+	7) var – arg methods
+	8) command line arguments & main method
+	9) java coding standards
+
+14. Declaration and Access control:
+	1) Java Source File Structure
+	2) Class Modifiers
+	3) Member Modifiers
+	4) Interface
+	
+15. OOPS
+	1) Data hiding
+	2) Abstraction
+	3) Encapsulation
+	4) Tightly Encapsulated class
+	5) Is – A Relation Ship
+	6) HAS – A Relation ship
+	7) method signature
+	8) overloading
+	9) overriding
+	10) method hiding
+	11) static control flow
+	12) instance control flow
+	13) constructors
+	14) coupling
+	15) cohesion
+	16) typecasting
+	
+14. Java lang and fundamental
+	1. Object
+	2. String
+	3. StringBuilder
+	4. StringBuffer
+	5. Math
+	6. Wrapper classes
 
 15. Exception handling
 	1. try
@@ -54,3 +133,93 @@ Pending things:
 	6. multiple catch blocks
 	7. finally alone
 	8. custom exception
+	
+16. Collection framework
+	1. List
+		1. ArrayList
+		2. LinkedList
+		3. Vector
+		4. Stack
+		
+	2. Set
+		1. HashSet
+		2. LinnkedHashSet
+		3. TreeSet
+		4. EnumSet
+	
+	3. Queue
+		1. Deque
+		2. ArrayDeque
+		3. PriorityBlockingQueue
+		4. LinkedList
+		
+	4. Map
+		1. HashMap
+		2. LinkedHashMap
+		3. TreeMap
+		4. Hashtable
+		5. Properties
+		
+	5. Iterator
+	6. ListIterator
+	7. Enumerator
+	8. Collections
+		sort
+		synchronizedList
+		synchronizedSet
+	9. Comparator
+		compare
+	10. Comparable
+		compareTo
+	
+17. Threads
+	1. Thread
+	2. Runnable
+	3. Introduction
+	4. Defining Instantiating, Starting the Thread
+	5. setting and getting the name of a Thread
+	6. Thread Priorities
+	7. Preventing Thread from execution
+		1. yield
+		2. join
+		3. sleep
+	8. Synchronization
+	9. Inter Thread Communication
+	10. Deadlock
+	11. deamon thread
+	
+18. IO package
+	1. File
+	2. FileReader
+	3. FileWriter
+	4. BufferedReader
+	5. BufferedWriter
+	6. PrintWriter
+
+19. Serialization
+	1. Serialization
+	2. Deserialization
+	
+20. Inner classes
+	1) Normal/Regular inner classes
+	2) Method local inner classes
+	3) Anonymous inner classes
+	4) static nested classes
+	
+21. Generics:-
+	1. Generic Classes
+	2. BoundedTypes
+	3. Generic Methods
+	4. Communication with legacy non-generic code
+	
+22. GARBAGE COLLECTION
+	1. Introduction
+	2. The ways to make an object eligible for Garbage Collector
+	3. The methods to request JVM to run Garbage Collector
+	4. finalization
+	
+23. Internationalization
+
+24. 1.5, 1.6, 1.7 new features
+
+-----------------------------------------------------------------------------------------------

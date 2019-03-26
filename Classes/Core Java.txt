@@ -1667,23 +1667,39 @@ Features:-
 
 1.Data hiding:
 		Declare all instance variables as private called data hiding. 
-		From outside class, can't change these value.
+		From outside classes, can't change these value.
+		- These variables should access only through setters and getters.
 		E.g:
 		class Person {
 			//hiding our instance variables.
 			private int age;
 			private String name;
+			
+			//getter and setters only
 		}
 		
 2. Abstraction
 	Providing some service and hiding the internal implementation is called abstraction.
 	E.g Atm is providing some service, we don't know it is working, means we dont know internal implementation.
 		
-		public void setAge(int age){}
+		public void setAge(int age){
+			
+		}
 		
 3. Encapsualation:
 		Data hiding + abstraction 
+		
 		E.g:
+		class Person {
+			//hiding our instance variables.
+			private int age;
+			private String name;
+			
+			//getter and setters only
+			public void setAge(int age){
+			
+			}
+		}
 ------------------------------------------------------------------------------------------
 	class Person {
 		//hiding our instance variables.
@@ -1723,7 +1739,7 @@ Features:-
 4.Inheritance
 	- Acquiring parent properties and methods.
 	- Code reusability.
-	- Reduce the code amount
+	- Reduce the code amount.
 	
 - Using 'extends' keyword, we can achive the inheritance.
 	class A extends B {
@@ -1743,11 +1759,11 @@ Features:-
 
 	class Child extends Parent {
 	
-	public static void main(String... args){
-		Child c = new Child();
-		System.out.println(c.property);
-		System.out.println(c.cash);
-			System.out.println(c.toString());
+		public static void main(String... args){
+			Child c = new Child();
+			System.out.println(c.property);
+			System.out.println(c.cash);
+				System.out.println(c.toString());
 		}
 	}
 ----------------------------------------------------------------------------------
@@ -1760,13 +1776,14 @@ Inheritance types:
 1. Single Inheritance
 	A class which extends only one class, it is called single inheritance.
 --------------------------------------------------------
-class A {
-	int cash = 20;
-	
-	public int getCash(){
-		return cash;
-		}
+	class A {
+		int cash = 20;
+		
+		public int getCash(){
+			return cash;
+			}
 	}
+
 	//single inheritance
 	class B extends A{
 		
@@ -1779,7 +1796,7 @@ class A {
 
 Why multiple inheritance is not possible in java?
 If one is extending more than one class, if same method is avaiable in both parents, then compiler doesn't to which method it has call from which parent.
-1
+
 Eg: In the below C class, 	When calling c.getCash() method, getCash method is available in both parent classes, compiler doesn't from which class, it has call. that's why in java multiple inheritance is not possible.
 -------------------------------------------------
 class A {
@@ -1797,13 +1814,14 @@ class B {
 	}
 
 }
+
 //multiple inheritance
 class C extends A, B{
 	
 	String property = "5 hecres";
 	public static void main(){
 		C c = new C();
-		c.getCash();
+		c.getCash();	//jvm ambugity 
 	}
 }
 -------------------------------------------------
@@ -1832,10 +1850,11 @@ Object:
 	- 11 methods.
 	notify() - 2 
 	wait() - 3
+	
 	toString()
 	hashCode()
 	clone()
-	equals()
+	equals(): Always reference comparision.
 	getClass()
 	finalize()
 	
@@ -1847,9 +1866,9 @@ public class ObjectTest {
 		String s1 = new String("Test");
 		String s2 = "Test";
 		
-		System.out.println(s1 == s);
+		System.out.println(s1 == s); //false
 		System.out.println(s == s2);
-		// System.out.println(s1.equals(s));
+		// System.out.println(s1.equals(s));	//true
 	}
 }
 
@@ -1925,15 +1944,18 @@ class C extends B {
 	}
 }
 -----------------------------------------------------------------
-overloading:-method signature: method name and method parameters
-	public void m1(int a){}
+overloading:-
+	method signature: method name and method parameters
+		public void m1(int a){}
 
 m1(int a)
---------- -> method signature: method name and method parameters.
+--------- -> 
+method signature: method name and method parameters.
 	- Return type and access specifier are not part of method signature.
 
 
-Methods which have same name but with different signature.
+Methods which have same name but with different signature is called overloading.
+
 1. same method name but different numbmer of parameters
 	class OverloadingExample {
 		
@@ -2096,7 +2118,7 @@ class P {
 }
 class C {
 	void m1(){}
-	procted int m1(){}
+	procted int m1(){}	//X error, we can't decrease the scope.
 }
 ---------------------------
 Differencs between Overriding and Overloading
@@ -2168,6 +2190,10 @@ Typecasting:
 -----------
 
 Casting the one type data to another.
+- converting one data type to another data type is called type casting.
+
+1. implicit type casting
+2. explict type casting
 --------------------
 Eg:
 class TypeCasting {
@@ -2237,7 +2263,8 @@ class C extends A {
 3 - B - class/interface
 4 - a - reference variable/object reference
 
-Compiler rules:
+Compiler rules:-
+--------------
 1. Is there a relationship between 3 & 4. Either parent to child or child to parent. Otherwise it gives a compile time error
 
 2. 3rd should be either same type or its child of 1st.
@@ -2356,7 +2383,8 @@ Pojo: Plain Old Java Object:
 	}
 ------------------------------------------------------------------------
 16-10-2018
-interface:
+interface:-
+- Interface is a specification.
 - Interface also like a class. It has methods and static variables.
 - interface should not have construcors, blocks and instance varaibles.
 - we can't create objects for interfaces. so instance variables are not allowed.
@@ -2395,7 +2423,8 @@ class LoanTest {
 	
 }
 ----------------------------------------------------------
-abstract methods:
+abstract methods:-
+----------------
  - A method which doesn't have any body is called abstract methods.
  - by using 'abstract' keyword in the method, we can abstract method.
  
@@ -6165,11 +6194,201 @@ class BufferedReaderDemo {
 	}
 }
 
+26-03-2019
+PrintWriter:
+The most enhanced writer for writing character data to the file is PrintWriter()
+
+Constructors
+	1) PrintWriter pw = new PrintWriter(String fname)
+	2) PrintWriter pw = new PrintWriter(File f);
+	3) PrintWriter pw = new PrintWriter(Writer w);
+
+Important methods
+	1) write(int ch)
+	2) write(char [] ch)
+	3) write(String s)
+	4)  print(int i)
+		print(double d)
+		print(char ch)
+		print(Boolean b)
+		print(char ch[])
+	5) 	append(char c)
+		append(CharSequence csq)
+	6)	println()
+		println(boolean x)
+		println(String x)
+	5) void flush()
+	6) close()
+--------------------------------------------------
+import java.io.*;
+class PrintWriterDemo{
+	public static void main(String...a){
+		PrintWriter pw = null;
+		try{
+			pw = new PrintWriter("E:\\Test\\abc.java");		
+			
+			pw.println("class Test {");
+			pw.println("public void m1(){}");
+			pw.println("}");
+
+			pw.flush();
+		}
+		catch(IOException e){
+			 System.out.println("exception" + e);
+		}
+		finally{
+			if(pw != null){
+				pw.close();
+			}
+			
+		}
+	}
+}
+
+26-03-2019	
 Serialization:
 -------------
+1. Serialization 
+2. Deserialization
+
+Serialization: 
+--------------
+The Process of Saving an object to a file is called “serialization”. But strictly speaking
+serialization is the process of converting an object from java supported format to network or file supported format.
+
+Mainly below classes will be used for serialization.
+1. FileOutPutStream
+2. ObjectOutPutStream
+		writeObject(Object obj)
+
+By using FileOutPutStream, ObjectOutPutStream classes we can achieve serialization
+
+Steps:-
+// convertig java object to file or network supportted format called serialization
+1. Create an object for fileOutputstream
+FileOutputStream fos = new FileOutputStream("person.ser");
+
+2. Create an object for ObjectOutputStream
+ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+3. call the writeObject method of oos.
+oos.writeObject(p);
 
 
+Deserialization: 
+----------------
+The process of reading an object from a file is called deserialization. But strictly speaking it
+is the process of Converting an object from network supported format or file supported format to java
+supported format.
+By using FileInputStream, ObjectInputStream we can achieve deserialization.
+
+Steps:-
+//converting file or network supportted format to java object called deserialization
+
+1. Crate an object for FileInputStream
+FileInputStream fis = new FileInputStream("person.ser");
+
+2. Create an Object for ObjectInputStream
+ObjectInputStream ois = new ObjectInputStream(fis);
+
+3. Get the object by calling readObject method.
+Object o = ois.readObject();
 	  
+----------------------------------------------------------
+import java.io.*;
+
+class SerializationDemo {
+	
+	public static void main(String args[]){
+		Person p = new Person("Sudhakar", 29);
+		System.out.println(p.getName());
+		System.out.println(p.getAge());
+		
+		try{
+			// convertig java object to file or network supportted format called serialization
+			//Create an object for fileOutputstream
+			FileOutputStream fos = new FileOutputStream("person.ser");
+
+			//Create an object for ObjectOutputStream
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			
+			//Call the writeObject method of oos.
+			oos.writeObject(p);
+			
+			//converting file or network supportted format to java object called deserialization
+			
+			// Crate an object for FileInputStream
+			FileInputStream fis = new FileInputStream("person.ser");
+			
+			// Create an Object for ObjectInputStream
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			
+			//Get the object by calling readObject method.
+			Object o = ois.readObject();
+			
+			Person p1 = (Person) o;
+			
+			System.out.println("After deserialization");
+			System.out.println(p1.getName());
+			System.out.println(p1.getAge());
+			
+			
+		}catch(IOException ioe){
+			System.out.println("Exception"+ ioe);
+		}catch(ClassNotFoundException cle){
+			System.out.println("Exception"+ cle);
+		}
+	}
+}
+
+
+import java.io.Serializable;
+
+class Person implements Serializable {
+	String name;
+	int age;
+	
+	Person(String name, int age){
+		this.name = name;
+		this.age = age;
+	}
+	
+	public void setAge(int age){
+		this.age = age;
+	}
+	
+	public void setName(String name){
+		this.name = name;
+	}
+	
+	public int getAge(){
+		return this.age;
+	}
+	
+	public String getName(){
+		return this.name;
+	}	
+}
+------------------------------------------------------	 
+
+We can perform serialization only for serialization objects.
+
+An Object is said to be serializable if and only if the corresponding class should implement serializable
+interface. serializable interface present in java.io package and doesn’t contain any method, it is marker
+interface.
+
+If u r trying to perform serialization of a non serialization Object. we will get runtime exception saying
+NonSerializableException.
+
+If we don’t want to Serialize the value of a particular variable (To meet security constraints) we should
+declare those variables as transient. While performing serialization
+	  
+	  
+	  
+	  
+	  
+	  
+
 Java Generics:
 
 

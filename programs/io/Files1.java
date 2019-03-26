@@ -1,6 +1,7 @@
 import java.io.*;
 class Files1{
-	public static void main(String...a)throws IOException{
+	public static void main(String...a){
+	try{	
 	File n=new File("test1.txt");
 	boolean ab=n.exists();
 	System.out.println(ab);
@@ -23,5 +24,11 @@ class Files1{
 			 }
 		 
 		   }
-		
+		   catch(IOException c){
+			   System.out.println("haiii heloo");
+		   }
 	}
+}
+		   
+		   
+		

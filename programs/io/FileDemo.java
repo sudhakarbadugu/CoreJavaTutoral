@@ -24,10 +24,26 @@ class FileDemo {
 		System.out.println(f.isFile());
 		
 		System.out.println("Iterating file names");
-		//iterate over file NAMES
+
 		String[] fileNames = folder.list();
 		for(String fileName : fileNames){
-			System.out.println(fileName);
+			 System.out.println(fileName);
+			
+			if(fileName.startsWith("A")){
+				System.out.println("A - " + fileName);
+			}
+			
+			if(fileName.endsWith("S")){
+				System.out.println("S - " + fileName);
+			}
+			
+			if(fileName.startsWith("A") && fileName.endsWith("S")){
+				System.out.println("Starts with A - endsWith S" + fileName);
+			}
+			
+			if(fileName.contains("S")){
+				System.out.println("contains s - " + fileName);
+			}
 		}
 		
 		System.out.println("Iterating files");
