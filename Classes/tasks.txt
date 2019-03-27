@@ -428,3 +428,17 @@ program 68: write all io package programs with try and catch.
 	filereader
 	bufferwriter
 	
+program:69 String s = "Sudhakar from karuru" using map
+	Find how many times each character is available.
+	 s = 1
+	 u = 3
+	 d = 1
+	 h = 1
+	 a = 3
+	 
+	 - get the char array using toCharArray
+	 - loop thoruh the array
+	 - create a map and initilize it.
+	 - 
+	
+	

@@ -3746,6 +3746,7 @@ Collection:-
 	6. clear
 	7. removeAll
 	8. toArray
+	9. retainAll()
 	
 	
 1. List
@@ -3753,6 +3754,7 @@ Collection:-
 - Allow duplicates in collection.
 - Store elements in give order. Order is important.
 - null values are allowed.
+
 1. ArrayList:-
 -------------
 - ArrayList allows dupliate elements in the list.
@@ -3771,7 +3773,12 @@ RandomAccess:-
 -----------
 - It is a marker interface. 
 - A interface which doesn't have any methods and gives some addditional ability to our class called marker interface.
-- Marker interface used by List implementations to indicate that they support fast (generally constant time) random access. The primary purpose of this interface is to allow generic algorithms to alter their behavior to provide good performance when applied to either random or sequential access lists.
+E.g: 
+	RandomAccess
+	Serializable
+
+- Marker interface used by List implementations to indicate that they support fast (generally constant time) random access.
+ The primary purpose of this interface is to allow generic algorithms to alter their behavior to provide good performance when applied to either random or sequential access lists.
 
 
 
@@ -3787,7 +3794,7 @@ public class ArrayListDemo {
 		 l.add(70);
 		 l.add(56);
 		 l.add(45);
-	 l.add(45);
+		 l.add(45);
 		 l.add(45);
 		 l.add(45);
 		 l.add(34);
@@ -3933,14 +3940,14 @@ import java.util.*;
 public class VectorDemo {
 	public static void main(String[] args){
 		List l = new Vector(30);
-		 l.add(45);
-		 l.add(45);
-		 l.add(34);
+		l.add(45);
+		l.add(45);
+		l.add(34);
 		
-		 System.out.println(l.size());
-		 System.out.println(l.isEmpty());
+		System.out.println(l.size());
+		System.out.println(l.isEmpty());
 		
-		 l.set(0, 90);
+		l.set(0, 90);
 		Vector v = (Vector) l;
 		v.addElement("Sudhakar");
 		v.insertElementAt("Ram", 3);
@@ -3987,13 +3994,23 @@ public class StackDemo {
 		System.out.println(v);
 		
 	}
-} 
+}
+ 
+-----------------------------------------------------------------------------------------------
+Differencs						List											Set
+-----------------------------------------------------------------------------------------------
+
+
+
+
+
+-----------------------------------------------------------------------------------------------
 
 
 2. Set (interface)
 -------
 - Set not allows duplicates.
-- order is not important.
+- order is not maintained.
 - Duplicate objects are not allowed. If we are trying to insert duplicate object we won’t get any compile time error or Run time error, add method simply returns false.
 
 
@@ -4107,6 +4124,14 @@ class LinkedHashSetDemo{
 	}
 }
 
+
+-----------------------------------------------------------------------------------------------
+Differencs						HashSet											LInkedHashSet
+-----------------------------------------------------------------------------------------------
+1. Order					Hashset doesn’t maintain order				Maintains orders.
+
+-----------------------------------------------------------------------------------------------
+
 ------------------------------------------------
 3. TreeSet
 - The underlying Data structure for the TreeSet is Balanced tree.
@@ -4121,6 +4146,7 @@ class LinkedHashSetDemo{
 - If we are trying add any elements which are not comparable then below exception will occur. StringBuffer and StringBuilder are not comparable.
 - Exception in thread "main" java.lang.ClassCastException: java.lang.Object cannot be cast to java.lang.Comparable
 
+- If we are using our own comparator, then all classes are allowed.
 
 	Collection
 	  | 
@@ -4178,6 +4204,18 @@ class TreeSetDemo{
 		
 	}
 }
+
+
+-----------------------------------------------------------------------------------------------
+Differencs						HashSet											TreeSet
+-----------------------------------------------------------------------------------------------
+1. insert Order					Doesn’t maintain order						Doesn’t maintain order
+2. null							null values are allowed						null values are not allowed.
+3. Sorting order				No sorting by default						By default natural sorting order
+4. Heterogeneous objects		allowed										not allowed; CCE will occur.
+
+-----------------------------------------------------------------------------------------------
+
 ---------------------------------------------
 4. EnumSet:
 - A specialized Set implementation for use with enum types.
@@ -4190,8 +4228,8 @@ class TreeSetDemo{
 Queue: (interface)
 -----
 - First in First Out order (FIFO)
-- duplicate allow
-- not thread safe.
+- duplicates are allowed.
+- It is not thread safe.
 
 						Queue
 						  |
@@ -4209,13 +4247,13 @@ Queue: (interface)
 
 ------------------------------------------
 1. ArrayBlockingQueue: class
-- fifo order 
+- fifo order. 
 - it is fixed in size. so dynamically if user adds any elements greater size, it throws exception.
 - duplicate are allowed.
 - heterogenious objects are allowed.
 - Backed algorithms by arraylist.
 - iteration is faster.
-- null is not allowed.
+- null value is not allowed.
 
 
 ArrayBlockingQueue(int capacity)
@@ -4237,6 +4275,7 @@ class ArrayBlockingQueueDemo {
 		System.out.println(ab.poll());
 		System.out.println(ab.poll());
 		System.out.println(ab);
+		
 		
 	}
  }
@@ -4272,6 +4311,17 @@ class PriorityBlockingQueueDemo {
 		
 	}
  }
+
+ 
+-----------------------------------------------------------------------------------------------
+Differencs						ArrayBlockingDeque							PriorityBlockingQueue
+-----------------------------------------------------------------------------------------------
+1. insert Order					FIFO order									Doesn’t maintain FIFO order. follow Natural sorting
+2. null							null values are not allowed					null values are not allowed.
+3. Sorting order				No sorting by default						By default natural sorting order
+4. Heterogeneous objects		allowed										allowed.
+5. size							fixed										fixed
+-----------------------------------------------------------------------------------------------
 
 3. ArrayDeque
 -------------
@@ -4315,9 +4365,9 @@ ArrayBlockingDeque:-
 Enumeration:
 - The first cursor availabe in collections.
 - elements() availabe in vector class. Stack also can call this method.
-- we can iterator collection elements.
+- we can iterate collection elements.
 - It is a legacy class 
-- One directional cursor 
+- It is one directional cursor 
 
 Object creation:
 	Vector v = new Vector();
@@ -4362,9 +4412,9 @@ class EnumenrationDemo {
 
 Iterator (interface)
 --------
-- An iterator over a collection. 
+- An iterator iterate over a collection. 
 - iterator() method is available in Collection. List, Set and Queue can be used this method.
-- Universal cursor.
+- Universal cursor. It can be used for all collections elements.
 - One directional cursor forward direction.
 
 Object creation:
@@ -4378,7 +4428,7 @@ Method names have been improved.
 
 Drawbacks:
 - we can't add any elements.
-- we can't iterator previous elements.
+- we can't iterate previous elements.
 - we can't replace any elements.
 	
 - While iterating the elements using the for each loop if we are adding/deleting then ConcurrentModificationException occurs.
@@ -4427,7 +4477,19 @@ class IteratorDemo {
 		System.out.println("After delete:" + ab);
 		
 	}
- }		
+ }
+
+
+-----------------------------------------------------------------------------------------------
+Differencs						Enumeration									Iterator
+-----------------------------------------------------------------------------------------------
+1. univeral cursor				No, only for legacy classes like stack		yes, can used for all colletion elements.
+2. remove						no, we can't remove elements				yes
+3. previous elements			No, only forwarding cursor 					No, only forwarding cursor
+4. add							we can't add any elements.					we can't add any elements.
+5. replace						No											we can't replace any elements.
+-----------------------------------------------------------------------------------------------
+ 
 -------------------------------------------------------------------
 ListIterator: interface
 ------------
@@ -4441,7 +4503,7 @@ ListIterator: interface
 Create object:-
 	ListIterator li = al.listIterator();
 
-metods:
+methods:
 ------
 hasNext
 hasPrevious
@@ -4451,8 +4513,8 @@ remove
 add
 set
 
-	import java.util.*;
-class ListIteratorDemo {
+import java.util.*;
+    class ListIteratorDemo {
 	public static void main(String[] args){
 		ArrayList ab = new ArrayList(100);
 		ab.add("Sudha");
@@ -4464,18 +4526,18 @@ class ListIteratorDemo {
 		
 		while(li.hasNext()){
 			
-			Object o = li.next();
-			if("Sudha".equals(o)){
-				li.set("Sudhakar");
-			}
+		Object o = li.next();
+		if("Sudha".equals(o)){
+		li.set("Sudhakar");
+		}
 
-			if("CM".equals(o)){
-				li.add("Chandrababu");
-			}
+		if("CM".equals(o)){
+		li.add("Chandrababu");
+		}
 				
-			if("MLA".equals(o)){
-				li.remove();
-			}
+		if("MLA".equals(o)){
+		li.remove();
+		}
 			
 		}
 
@@ -4483,6 +4545,17 @@ class ListIteratorDemo {
 		
 	}
  }
+ 
+-------------------------------------------------------------------------------------------------
+Differencs						ListIterator								Iterator
+-----------------------------------------------------------------------------------------------
+1. univeral cursor				No, only for List classes					yes, can used for all colletion elements.
+2. remove						yes											yes
+3. previous elements			yes, it is bidirectional cursor 			No, only forwarding cursor
+4. add							we can add any elements.					we can't add any elements.
+5. replace						yes											we can't replace any elements.
+-----------------------------------------------------------------------------------------------
+
 ----------------------------------------------------------
 09-02-19
 Comparable (interface)
@@ -4494,9 +4567,9 @@ Comparable (interface)
 
 Comparable implementation should be as shown below:
 object1 and object2
-return 0: If both are equal
-return 1: If object1 is greater than object 2
-return -1: If Object1 is lessthan object 2
+return 0: If both are equal. (E.g: 1-1 = 0)
+return 1: If object1 is greater than object 2 (E.g: 2-1 = 1)
+return -1: If Object1 is lessthan object 2		(E.g: 1-2 = -1)
 
 import java.util.*;
 
@@ -4532,18 +4605,18 @@ public class ComparableDemo {
 }
 
 class Student implements Comparable{
-	int rollNo;
-	String name;
-	
-	Student(int rollNo, String name){
-		this.rollNo = rollNo;
-		this.name = name;
-	}
-	
-	public String toString(){
-		return "rollNo:"+ rollNo + " name:"+ name;
-	}
-	
+		int rollNo;
+		String name;
+		
+		Student(int rollNo, String name){
+			this.rollNo = rollNo;
+			this.name = name;
+		}
+		
+		public String toString(){
+			return "rollNo:"+ rollNo + " name:"+ name;
+		}
+		
 	// public int compareTo(Object o){
 		// Student s1 = (Student) o;
 		// int rollNo1 = s1.rollNo;
@@ -4578,16 +4651,16 @@ Comparator
 
 For natural sorting order:
 object1 and object2
-return 0: If both are equal
-return 1: If object1 is greater than object 2
-return -1: If Object1 is lessthan object 2
+return 0: If both are equal. 	(E.g: 1-1 = 0)
+return 1: If object1 is greater than object 2		(E.g: 2-1 = 1)
+return -1: If Object1 is lessthan object 2			(E.g: 1-2 = -1)
 
 
 For decending sorting order:
 object1 and object2
-return 0: If both are equal
-return -1: If object1 is greater than object 2
-return 1: If Object1 is lessthan object 2
+return 0: If both are equal		(E.g: 1-1 = 0)
+return -1: If object1 is greater than object 2	(E.g: 2-1 = -1)
+return 1: If Object1 is lessthan object 2		(E.g: 1-2 = 1)
 
 
 import java.util.*;
@@ -4674,7 +4747,17 @@ class Employee {
 	}
 }
 
-Drawbacks:
+-------------------------------------------------------------------------------------------------
+Differencs						Comparable									Comparator
+-----------------------------------------------------------------------------------------------
+1. package						It is available in java.lang				It is available in java.util
+2. purpose						For natural sorting order					For custom sorting order.
+3. implemented classes			String, All wrapper classes 				Collator
+4. method						compareTo(Object o)							compare(Object o1, Object o2)
+-----------------------------------------------------------------------------------------------
+
+
+Drawbacks of Collection:
 - we can't store key and value pairs in collection,
 - we can't store primitive types.
 
@@ -4841,6 +4924,7 @@ class LinkedHashMapDemo {
 		System.out.println(map1);
 	}
 }
+
 -----------------------------------------------------------------
 3. TreeMap
 - We can store group of key and value pair objects to map.
@@ -4925,10 +5009,18 @@ class StringComparator implements Comparator {
 }
 
 
------------------------------------
+-----------------------------------------------------------------------------------------------
+Differencs						HashMap										TreeMap
+-----------------------------------------------------------------------------------------------
+1. insert Order					Doesn’t maintain order						Doesn’t maintain order
+2. null							null values are allowed						null values are not allowed.
+3. Sorting order				No sorting by default						By default natural sorting order
+4. Heterogeneous objects		allowed										not allowed; CCE will occur.
 
+-----------------------------------------------------------------------------------------------
 
 4. Hashtable:
+-------------
 - We can store group of key and value pair objects to map.
 - Heterogenious objects are not allowed.
 - Insertion order is not preserved.
@@ -5010,7 +5102,7 @@ Properties:
 
 
 Steps for reading:-
-1. object create for propeties
+1. Create an Object for Propeties
 2. read the properties file using file reader.
 3. load reader to properties.
 4. Get property from properties
@@ -6263,8 +6355,12 @@ Mainly below classes will be used for serialization.
 
 By using FileOutPutStream, ObjectOutPutStream classes we can achieve serialization
 
+-------------------------------------------------------------------------
+				Serialization
+	Java Object =================> File or Network supportted format 
+-------------------------------------------------------------------------	
 Steps:-
-// convertig java object to file or network supportted format called serialization
+// converting java object to file or network supportted format called serialization
 1. Create an object for fileOutputstream
 FileOutputStream fos = new FileOutputStream("person.ser");
 
@@ -6281,6 +6377,12 @@ The process of reading an object from a file is called deserialization. But stri
 is the process of Converting an object from network supported format or file supported format to java
 supported format.
 By using FileInputStream, ObjectInputStream we can achieve deserialization.
+
+-------------------------------------------------------------------------
+
+										Deserialization
+	File or Network supportted format  ================> Java Object 
+-------------------------------------------------------------------------	
 
 Steps:-
 //converting file or network supportted format to java object called deserialization
@@ -6373,23 +6475,348 @@ class Person implements Serializable {
 
 We can perform serialization only for serialization objects.
 
-An Object is said to be serializable if and only if the corresponding class should implement serializable
-interface. serializable interface present in java.io package and doesn’t contain any method, it is marker
-interface.
+An Object is said to be serializable if and only if the corresponding class should implement Serializable interface. 
+Serializable interface present in java.io package and doesn’t contain any method, it is marker interface.
 
 If u r trying to perform serialization of a non serialization Object. we will get runtime exception saying
-NonSerializableException.
+NotSerializableException.
 
-If we don’t want to Serialize the value of a particular variable (To meet security constraints) we should
-declare those variables as transient. While performing serialization
+transient:
+- value will not participate in serialization process.
+- If we don’t want to Serialize the value of a particular variable (To meet security constraints) we should declare those variables as transient keyword. While performing serialization JVM ignores the value of transient variables and saves default values instead of original values.
+
+- static variables are not part of object state and hence they won’t participate in serialization process.
+- Declaring static variables as transient there is no impact similarly declaring final variables as transient creates no impact.	  
 	  
+
+	  import java.io.*;
+
+class SerializationDemo {
+	
+	public static void main(String args[]){
+		Person p = new Person("Sudhakar", 29, 50000);
+		p.address1 = "karuru1";
+		
+		System.out.println(p.getName());
+		System.out.println(p.getAge());
+		System.out.println(p.salary);
+		System.out.println(p.address);
+		System.out.println(p.address1);
+		
+		try{
+			// convertig java object to file or network supportted format called serialization
+			//Create an object for fileOutputstream
+			FileOutputStream fos = new FileOutputStream("person.ser");
+
+			//Create an object for ObjectOutputStream
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			
+			//Call the writeObject method of oos.
+			oos.writeObject(p);
+			
+			//converting file or network supportted format to java object called deserialization
+			
+			// Crate an object for FileInputStream
+			FileInputStream fis = new FileInputStream("person.ser");
+			
+			// Create an Object for ObjectInputStream
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			
+			//Get the object by calling readObject method.
+			Object o = ois.readObject();
+			
+			Person p1 = (Person) o;
+			
+			System.out.println("After deserialization");
+			System.out.println(p1.getName());
+			System.out.println(p1.getAge());
+			System.out.println(p1.salary);			
+			System.out.println(p.address);
+			System.out.println(p.address1);
+			
+		}catch(IOException ioe){
+			ioe.printStackTrace();
+			System.out.println("Exception: "+ ioe);
+		}catch(ClassNotFoundException cle){
+			cle.printStackTrace();
+			System.out.println("Exception: "+ cle);
+		}
+	}
+}
+
+import java.io.Serializable;
+
+class Person implements Serializable {
+	String name;
+	int age;
+	transient int salary; //this value will not participate in serialization process.
+	transient final String address = "Karur";	//no impact
+	transient static String address1 = "Karur";	//no impact
+	
+	
+	
+	Person(String name, int age, int sal){
+		this.name = name;
+		this.age = age;
+		salary = sal;
+	}
+	
+	public void setAge(int age){
+		this.age = age;
+	}
+	
+	public void setName(String name){
+		this.name = name;
+	}
+	
+	public int getAge(){
+		return this.age;
+	}
+	
+	public String getName(){
+		return this.name;
+	}	
+}
+----------------------------------------------
+Serialization in the case of Object Graphs:-
+-----------------------------------------
+- When ever we are saving an object to a file all the objects which are reachable from that object will be saved
+by default. This group of objects is called ‘Object Graph’.
+
+E.g: When ever we are saving an Person object to a file all the objects (Mobile, Telephone) which are reachable from that object will be saved by default. This group of objects (Person -> Mobile -> Telephone) is called ‘Object Graph’.
+
+In the Object Graph if any Object is non-Serialzable we will get runtime Exception saying not- serializable Exception.	  
+
+E.g: In the below example, if Telephone is not serializable then we will get runtime Exception saying not- serializable Exception.	 
+
+--------------------------------------------------------
+import java.io.*;
+
+class SerializationDemo {
+	
+	public static void main(String args[]){
+		Person p = new Person("Sudhakar", 29, 50000);
+		p.address1 = "karuru1";
+		
+		Mobile m = new Mobile();
+		m.phoneNumber = 94919191;
+		
+		Telephone t = new Telephone();
+		t.telephoneNumber = 91213939;
+		m.tele = t;
+		
+		p.phone = m;
+		
+		System.out.println(p.getName());
+		System.out.println(p.getAge());
+		System.out.println(p.salary);
+		System.out.println(p.address);
+		System.out.println(p.address1);
+		System.out.println(p.phone.phoneNumber);
+		
+		try{
+			// convertig java object to file or network supportted format called serialization
+			//Create an object for fileOutputstream
+			FileOutputStream fos = new FileOutputStream("person.ser");
+
+			//Create an object for ObjectOutputStream
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			
+			//Call the writeObject method of oos.
+			oos.writeObject(p);
+			
+			//converting file or network supportted format to java object called deserialization
+			
+			// Crate an object for FileInputStream
+			FileInputStream fis = new FileInputStream("person.ser");
+			
+			// Create an Object for ObjectInputStream
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			
+			//Get the object by calling readObject method.
+			Object o = ois.readObject();
+			
+			Person p1 = (Person) o;
+			
+			System.out.println("After deserialization");
+			System.out.println(p1.getName());
+			System.out.println(p1.getAge());
+			System.out.println(p1.salary);			
+			System.out.println(p.address);
+			System.out.println(p.address1);
+			
+		System.out.println(p.phone.phoneNumber);
+		}catch(IOException ioe){
+			ioe.printStackTrace();
+			System.out.println("Exception: "+ ioe);
+		}catch(ClassNotFoundException cle){
+			cle.printStackTrace();
+			System.out.println("Exception: "+ cle);
+		}
+	}
+}
+
+
+
+import java.io.Serializable;
+
+class Person implements Serializable {
+	String name;
+	int age;
+	transient int salary; //this value will not participate in serialization process.
+	Mobile phone;
+	
+	transient final String address = "Karur";	//no impact
+	transient static String address1 = "Karur";	//no impact
+	
+	Person(String name, int age, int sal){
+		this.name = name;
+		this.age = age;
+		salary = sal;
+	}
+	
+	public void setAge(int age){
+		this.age = age;
+	}
+	
+	public void setName(String name){
+		this.name = name;
+	}
+	
+	public int getAge(){
+		return this.age;
+	}
+	
+	public String getName(){
+		return this.name;
+	}	
+}
+
+class Mobile implements Serializable {
+	long phoneNumber;
+	Telephone tele;
+}
+
+class Telephone implements Serializable {
+	long telephoneNumber;
+}
+
+Custom serialization/ Externalization:-
+-----------------------
+During default Serialization there may be a chance of loss of information because of transient variables.
+
+
+For custom serialization, we need to implement below methods. These method will be called automatically by Jvm while serialization and deserialization.
+
+private void writeObject(ObjectOutputStream os)throws Exception {
+}
+
+private void readObject(ObjectInputStream is)throws Exception {
+
+}
+
+- We need to implemet these methods in which class we want to do custom serialization process.
+----------------------------------------------------------
+import java.io.*;
+
+class CustomSerializationDemo {
+	
+	public static void main(String args[]){
+		Order o = new Order();
+		
+		BuyOrder bo = new BuyOrder();
+		bo.orderNo = 1;
+		
+		o.buy = bo;
+		
+		System.out.println(o.buy.orderNo);
+					
+		try{
+			// convertig java object to file or network supportted format called serialization
+			//Create an object for fileOutputstream
+			FileOutputStream fos = new FileOutputStream("order.ser");
+
+			//Create an object for ObjectOutputStream
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			
+			//Call the writeObject method of oos.
+			oos.writeObject(o);
+			
+			//converting file or network supportted format to java object called deserialization
+			
+			// Crate an object for FileInputStream
+			FileInputStream fis = new FileInputStream("order.ser");
+			
+			// Create an Object for ObjectInputStream
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			
+			//Get the object by calling readObject method.
+			Object obj = ois.readObject();
+			
+			Order p1 = (Order) obj;
+			
+			System.out.println("After deserialization");
+			System.out.println(p1.buy.orderNo);
+			
+		}catch(IOException ioe){
+			ioe.printStackTrace();
+			System.out.println("Exception: "+ ioe);
+		}catch(ClassNotFoundException cle){
+			cle.printStackTrace();
+			System.out.println("Exception: "+ cle);
+		}
+	}
+}
+
+
+
+
+import java.io.*;
+
+class Order implements Serializable{
+	transient BuyOrder buy;
+
+	private void writeObject(ObjectOutputStream os)throws Exception {
+		System.out.println("custom writeObject");
+		os.writeInt(buy.orderNo);
+	}
+	
+	private void readObject(ObjectInputStream is)throws Exception {
+		System.out.println("custom readObject");
+		
+		is.defaultReadObject();
+		
+		BuyOrder b = new BuyOrder();
+		int orderNo = is.readInt();
+		b.orderNo = orderNo;
+		
+		this.buy = b;
+	}
+	
+}
+
+class BuyOrder {
+	int orderNo;
+}
+
+Inheritance in Serialization:-
+-----------------------------
+If the parent class is Serializable bydefault all the child classes also Serializable. i.e Serializable nature is
+inherited from parent to child.	  
 	  
+class Mobile implements Serializable {
+	long phoneNumber;
+	Telephone tele;
+}
+
+class Telephone extends Mobile {
+	long telephoneNumber;
+}
 	  
-	  
-	  
-	  
+E.g: Mobile is Serializable so all its child classes will be Serializable.
+
 
 Java Generics:
-
+-----------------
 
 

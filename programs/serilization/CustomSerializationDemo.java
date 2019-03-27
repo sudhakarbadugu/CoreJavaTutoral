@@ -1,59 +1,44 @@
 import java.io.*;
 
-class SerializationDemo {
+class CustomSerializationDemo {
 	
 	public static void main(String args[]){
-		Person p = new Person("Sudhakar", 29, 50000);
-		p.address1 = "karuru1";
+		Order o = new Order();
 		
-		Mobile m = new Mobile();
-		m.phoneNumber = 94919191;
+		BuyOrder bo = new BuyOrder();
+		bo.orderNo = 1;
 		
-		Telephone t = new Telephone();
-		t.telephoneNumber = 91213939;
-		m.tele = t;
+		o.buy = bo;
 		
-		p.phone = m;
-		
-		System.out.println(p.getName());
-		System.out.println(p.getAge());
-		System.out.println(p.salary);
-		System.out.println(p.address);
-		System.out.println(p.address1);
-		System.out.println(p.phone.phoneNumber);
-		
+		System.out.println(o.buy.orderNo);
+					
 		try{
 			// convertig java object to file or network supportted format called serialization
 			//Create an object for fileOutputstream
-			FileOutputStream fos = new FileOutputStream("person.ser");
+			FileOutputStream fos = new FileOutputStream("order.ser");
 
 			//Create an object for ObjectOutputStream
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			
 			//Call the writeObject method of oos.
-			oos.writeObject(p);
+			oos.writeObject(o);
 			
 			//converting file or network supportted format to java object called deserialization
 			
 			// Crate an object for FileInputStream
-			FileInputStream fis = new FileInputStream("person.ser");
+			FileInputStream fis = new FileInputStream("order.ser");
 			
 			// Create an Object for ObjectInputStream
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			
 			//Get the object by calling readObject method.
-			Object o = ois.readObject();
+			Object obj = ois.readObject();
 			
-			Person p1 = (Person) o;
+			Order p1 = (Order) obj;
 			
 			System.out.println("After deserialization");
-			System.out.println(p1.getName());
-			System.out.println(p1.getAge());
-			System.out.println(p1.salary);			
-			System.out.println(p1.address);
-			System.out.println(p1.address1);
+			System.out.println(p1.buy.orderNo);
 			
-		System.out.println(p.phone.phoneNumber);
 		}catch(IOException ioe){
 			ioe.printStackTrace();
 			System.out.println("Exception: "+ ioe);
