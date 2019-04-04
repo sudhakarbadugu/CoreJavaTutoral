@@ -37,6 +37,6 @@ class Mobile implements Serializable {
 	Telephone tele;
 }
 
-class Telephone implements Serializable {
+class Telephone extends Mobile {
 	long telephoneNumber;
 }

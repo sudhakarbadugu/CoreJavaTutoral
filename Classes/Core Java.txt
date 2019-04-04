@@ -2919,18 +2919,60 @@ Math
 	7. floor
 	
 	
-String
-- String is a final class. So we can't extend String class.
-- String is a immutability class.
-- It is not a thread safe. 
-- equals method override.
+String:-
+------
+- String is a final class. So we can't extend String class. 
+- String is a immutability class. Once we create a String object, we can't change it. if we try to change then it will new create new object.
+- It is not a thread safe so it is faster than StringBuffer. 
+- String overrides the equals, hashCode, clone and compareTo methods override.
+
+Importance of String Constant Pool(SCP)
+- In our program if any string object is repeatedly going to use, we can create only one object in the
+string constant pool and shared by several required references.
+
+- Instead of creating several string objects with the same content creating only one object improves
+performance of the system and memory utilization also. This is biggest advantage of SCP.
+
+- As the Several references pointing to the same object in SCP by using one reference if u r allowed to
+change the content the remaining references may be effected. Hence once we created a String object.
+We r not allowed to change it’s content. If u r trying to change with those changes a new object will
+be created and there is no impact on the remaining references. This behavior is nothing but
+immutability of the string objects.
+
+- SCP is the only reason why the String Objects are immutable.
+------------------------------------------
+class StringScpDemo {
+	
+	public static void main(String args[]){
+		String s = "Sudha";	//only in scp
+		s.concat("kar");
+		
+		String s2 = s.concat("kar");	//heap
+		
+		String s1 = new String("Sudhakar");	//scp and heap. s1 object points to heap
+		
+		
+		String s3 = "Sudhakar"; //scp
+		String s4 = "Sudhakar";
+		
+		//s3 = s3.concat("b");
+		
+		System.out.println(s2 == s3);
+		System.out.println(s2.equals(s3));
+		System.out.println(s3);
+		
+		
+	}
+}
+------------------------------------------
+
 
 What is immutability?
 When ever we are trying to change anything in the object, it will create a new object with modifications. The existing object will not change.
 	E.g:
 		String s = "Sudha";
 		
-	When we are calling concat method, it will create a new string as 'sudhakar' but in the s it will not change.
+	When we are calling concat method, it will create a new string as 'sudhakar' but in the s it will not change the s value.
 		s.concat("kar");
 
 	If we want to hold the changed object then 
@@ -5420,7 +5462,7 @@ which is the best approch?
 
 	BasicJob (class)
 	 |implements		| extends
-		DataStoreThread
+xx		DataStoreThread
 		
 
 Case:1 Call run method directly without calling start()
@@ -5640,7 +5682,7 @@ The thread which is called yield() method temporarily pause the execution to giv
 remaining threads of same priority. If there is no waiting thread or all waiting threads having low
 priority. Then the same thread will get the chance immediately for the execution.
 
-- whiel debugging we may use this.
+- while debugging we may use this.
 
 class YieldDemo {
 	public static void main(String[] args){	
@@ -5922,7 +5964,8 @@ class HelloThread extends Thread {
 
 Deamon thread:-
 The threads which are running in the background to provide support for user defined threads are called
-“Daemon Thread”. Usually daemon thread are running with low priority but based on our requirement we
+“Daemon Thread”. 
+Usually daemon thread are running with low priority but based on our requirement we
 can increase their priority also.
 We can check whether the given thread is deamon or not by using the following thread class thread.
 public boolean isDaemon()
