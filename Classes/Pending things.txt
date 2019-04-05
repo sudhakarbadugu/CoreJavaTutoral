@@ -4,13 +4,6 @@ Pending things:
 2. 2D arrays - 1 day
 3. static flow - 1 day
 4. instance flow - 1 day
-5. String SCP and Object methods - 1 day
-
-20. Inner classes - 2 days
-	1) Normal/Regular inner classes
-	2) Method local inner classes
-	3) Anonymous inner classes
-	4) static nested classes
 	
 21. Generics:- 2 days
 	1. Generic Classes

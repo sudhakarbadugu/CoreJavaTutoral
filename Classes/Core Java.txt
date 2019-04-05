@@ -5283,7 +5283,7 @@ class CollectionsDemo {
 
 class NumComparator implements Comparator<Integer> {
 	public int compare(Integer i1, Integer i2){
-		return i2.compareTo(i1);
+		return i2.compa reTo(i1);
 	}
 }
 -----------------------------
@@ -6857,6 +6857,193 @@ class Telephone extends Mobile {
 }
 	  
 E.g: Mobile is Serializable so all its child classes will be Serializable.
+
+
+
+Inner classes:-
+-------------
+- Declaring a class inside the another class is called inner class. There are 4 types of inner classes are available.
+- We can declare inner class as private/protected but we can't declare outer class as private/protected.
+- Outer classes valid accesss specifiers are: public, final, abstract, default
+- Inner classes valid accesss specifiers are: private,  default, protected, default, public, final, abstract, static,
+- For every inner class java file, a separate .class file will be created with name like OuterclassName$innerClass.class
+
+Eg:
+	class A {
+		class B {
+		}
+	}
+	
+	Here: A$B.class is generated while compiling the A.java file.
+ 
+Advantages:-
+	- Inner classes can access private members of outer class
+	- group the relate functionlity classes into one class.
+
+	1) Normal/Regular inner classes
+	2) Method local inner classes
+	3) Anonymous inner classes
+	4) static nested classes
+
+	
+
+1. Normal/Regular inner (non static) classes:-
+------------------------------
+- Declaring a class inside the another class is called inner class.
+- It can access all members (static and non static variables) of outer class.
+- It can call outer class methods directly.
+- based on the access specifier, inner class can be used.
+
+public class OuterClass {
+	private int age =5;
+	static String name = "Sudhakar";
+
+	
+	public static void main(String[] args){
+		//1st way
+		OuterClass oc = new OuterClass();
+		OuterClass.Wheel ic = oc.new Wheel();
+		
+		//2nd way
+		OuterClass.Wheel ic1 = new OuterClass().new Wheel();
+		
+		ic.m1();
+		ic1.m1();
+	}
+	
+	public void outerM1(){
+		System.out.println("Outer m1");
+	}
+
+
+	class Wheel {
+		
+		public void m1() {
+			outerM1();
+			System.out.println("age: "+ age + " name: " + name);
+		}
+	}
+
+}
+
+
+2. Method local inner class:-
+----------------------------
+- A class with in a method is called Method local inner class.
+- If any class is needed only inside a method then we can declare a class inside method. method local classes visibility is only within the method. Hence we can't use method local classes in anywhere.
+- We no need to create the outer class object for creating method local inner class object.
+
+public class MethodOuterClass {
+	private int age =5;
+	static String name = "Sudhakar";
+
+	
+	public static void main(String[] args){
+		MethodOuterClass oc = new MethodOuterClass();
+		
+		oc.outerM1();
+	}
+	
+	public void outerM1(){
+		class MethodWheel {
+			public void m1() {
+				System.out.println("Method inner class op: age: "+ age + " name: " + name);
+			}
+		}
+		
+		MethodWheel mw = new MethodWheel();
+		mw.m1();
+		
+		System.out.println("Outer m1");
+		
+	}
+}
+
+3. Anonymous inner class:-
+--------------------------
+- A class without any name is called anonymous inner class.
+- if we are going to only once then insteadof createing a class for that we can go for anonymous inner class.
+- we no need to declare any additional class as given below example.
+ 
+ class AnonymousInnerClassDemo {
+	
+	
+	public static void main(String[] args){
+		System.out.println("Thread name: " + Thread.currentThread().getName());
+		//Regular way of creating thread.
+		ThreadA t = new ThreadA();
+		Thread th1 = new Thread(t);
+		th1.start();
+		
+		//By usin anonymous inner classes.
+		Thread th = new Thread(new Runnable(){
+			public void run() {
+				System.out.println("Thread name: " + Thread.currentThread().getName());
+				for(int i=0; i<10; i++){
+					System.out.println(i);
+				}
+				System.out.println("Task completed");
+			}
+		});
+		th.setName("child");
+		th.start();
+	}
+
+}
+
+class ThreadA implements Runnable {
+
+	public void run() {
+		System.out.println("Thread name: " + Thread.currentThread().getName());
+		for(int i=0; i<10; i++){
+			System.out.println(i);
+		}
+		System.out.println("Task completed");
+	}
+}
+
+4. Static inner class:-
+- A class inside the another class with static keyword called static inner class.
+- Without creating outer class object, we can create static inner class object.
+- static inner class can't access the outer class instance varaibles and instance methods directly. 
+- It can access only static methods and variables of outer class.
+- Even outside of this class also we can use the static inner class.
+
+
+class StaticOuterClass {
+	private int age =5;
+	static String name = "Sudhakar";
+
+
+	
+	public void outerM1(){
+		System.out.println("StaticOuterClass Outer m1");
+	}
+
+
+	static class StaticInnerWheel {
+		
+		public void m1() {
+			StaticOuterClass o = new StaticOuterClass();
+			o.outerM1();
+			
+			System.out.println("StaticOuterClass name: " + name);
+		}
+		
+		public static void main(String[] args){
+
+			StaticInnerWheel siw = new StaticInnerWheel();
+			siw.m1();
+		}
+	}
+
+}
+
+compiling:
+	javac StaticOuterClass.java
+	
+run:
+java StaticOuterClass$StaticInnerWheel
 
 
 Java Generics:
