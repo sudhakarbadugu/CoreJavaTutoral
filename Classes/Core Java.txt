@@ -5251,8 +5251,8 @@ Collections:-
 - It is a utility class.
 
 synchronizedList(List<T> list): To get the synchronized list. Thread safe list.
-sort(List)
-sort(List, Comparator)
+sort(List): To get the sorted list`
+sort(List, Comparator): sort based on comparator.
 
 
 Arrays:
@@ -5286,6 +5286,291 @@ class NumComparator implements Comparator<Integer> {
 		return i2.compa reTo(i1);
 	}
 }
+
+-----------------------------------------------------------------------------------------------
+Differencs						array										Collection
+-----------------------------------------------------------------------------------------------
+1. type							homogenious elements are allowed.			heterogenious elements are allowed.
+2. primitives					primitive values are allowed				not allowed.
+3. Size							Fixed										Growable.
+4. In built methods		 		No											Yes
+
+-----------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------
+Differencs						Collection										Collections
+-----------------------------------------------------------------------------------------------
+1. class						It is an interface							It is a Utitility class
+-----------------------------------------------------------------------------------------------
+
+
+
+Java Generics:
+-----------------
+Generics:-
+Generics are introduced in java 1.5 version.
+To fix the type safety and type casting in Collections, generics concept introduced.
+
+Generics Introduction
+- Array objects are by default typesafe. i.e we declare String Array we can insert only String Objects. By Mistake if we r trying to insert any other elements we will get compile time error.
+Ex:
+	String [] s = new String[100];
+	s[0] = "raju";
+	s[1] = 10; C.E
+	
+Eg:2
+	int[] a = new int[5];
+	a[0] = 10;
+	a[1] ="Sudhaar";	//CE type safe
+
+	
+- But Collection objects are not typesafe by default. If our requirement is to add only integer objects to the
+ArrayList , By mistake if we r trying to insert any other element we won’t get any compile time error.
+		
+		ArrayList l = new ArrayList();
+		l.add(10);
+		l.add("Sudha");	//no type safe
+		
+- While retrieving Array elements there is no need to perform typecasting.
+	int x = a[i];  No typecasting required here.
+
+- But while retrieving the elements from ArrayList compulsory we should perform typecasting
+	int y =  l.get(j);	  C.E: Object can't convert to int
+	int y = (Integer) l.get(j);	//CCE
+--------------------------------------------------
+import java.util.*;
+
+class GenericsDemo {
+
+	public static void main(String[] args){
+		int[] a = new int[5];
+		
+		a[0] = 10;
+		//a[1] ="Sudhaar";	//type safe
+		
+		for(int i=0; i<a.length; i++) {
+			int x = a[i];
+			System.out.println(x * x);	
+		}
+
+		ArrayList l = new ArrayList();
+		l.add(10);
+		l.add("Sudha");
+		
+		for(int j=0; j<l.size(); j++) {
+			int y = (Integer) l.get(j);	//type cast and cce
+			System.out.println(y * y);
+		}
+		
+	}
+}
+--------------------------------------------------
+
+- To resolve the above 2 problems (typesafety, typecasting) sun people introduced generics concept in the 1.5 version. If we want to create ArrayList object to hold any String Objects we have to define as follows.
+
+	ArrayList<String> l = new ArrayList<String>();
+
+For this ArrayList we have to add only String objects. By mistake if we r trying to add any other type we will get compile time error.
+
+	l.add(“valid”);
+	l.add(new Integer(10)); //CE:- can’t find the symbol add(Integer)
+
+At the time of retrieval no need to perform any typecasting.
+String name = l.get(0);	// No typecasting is required.
+
+- Hence by using generics we can provide typesafety and we can resolve typecasting problems.
+- By using generics we can define parameter for the collection. These parameterized collection classes are
+nothing but “Generic collection classes”.
+
+1. Generic Classes:
+------------------
+Until 1.4 version we have ArrayList class with the declarations as follows.
+	class ArrayList
+	{
+		add(Object o);
+		Object get(int index);
+	}
+	
+- add method contain Object as argument, hence we can add any kind of object.
+- As a result we can’t get any type safety. The return type of get() method is object hence at the time of retrieval we should perform typecasting.
+
+- But in the 1.5 version we have generic ArrayList class with the definition as follows
+
+	class ArrayList<T>	//T - Type 
+	{
+		add(T t);
+		T get(int);
+	}
+
+Based on runtime requirement the corresponding version of ArrayList will loaded.
+	ArrayList<String> l = new ArrayList<String>();
+
+For the following declarations the corresponding loaded class is
+	class ArrayList<String>
+	{
+		add(String t);
+		String get(int);
+	}
+
+- The argument to the add method is String hence we should add only String Object as the result we will get
+type safety.
+
+- The return type of get() method is String. Hence at the time of retrieval no need to perform typecasting.
+We can define our own generic classes also
+
+----------------------------------------------
+
+//upto 1.4 version 
+class GenDemo {
+
+	public boolean add(Object o){
+		return false;
+	}
+	
+	public Object get(int index){
+		return null;
+	}
+}
+
+
+- We can write our own generic class as given below.
+
+//upto 1.5 version 
+class Gen1Demo<T> {
+
+	private T o;
+	Gen1Demo(T o){
+		this.o = o;
+	}
+	
+	public T get(){
+		return o;
+	}
+	
+	public boolean set(T o){
+		this.o = o;
+		return true;
+	}
+	
+	public static void main(String args[]){
+		Gen1Demo<Integer> g = new Gen1Demo<Integer>(10);
+		g.set(20);
+		
+		Gen1Demo<String> g1 = new Gen1Demo<String>("Sudhakar");
+		g1.set("Sudha");
+		
+		System.out.println(g.get());
+		System.out.println(g1.get());
+	}
+}
+----------------------------------------------
+2. BoundedTypes:
+- We can bound the classes using 'extends' keyword. We can use 'extends' keyword for a class or an interface.
+- We can't use 'implements' keyword for bounding types. it will give compile time error.
+- In the below example, <T extends Number>, so only Number nad it's childs only allowed. If we try to add any other types then it will be compile time error.
+
+- In the below example, <T extends Object>, then it's Object childs classees are allowed.
+
+- In the below example, <T extends Runnable>, so only Runnable and its it's childs classes are allowed. If we try to add any other types then it will be compile time error.
+
+class BoundedTypesDemo<T extends Number> {
+
+	private T o;	
+	public T get(){
+		return o;
+	}
+	
+	public boolean set(T o){
+		this.o = o;
+		return true;
+	}
+	
+	public static void main(String args[]){
+		BoundedTypesDemo<Integer> g = new BoundedTypesDemo<Integer>();
+		g.set(20);
+		
+		BoundedTypesDemo<Byte> g1 = new BoundedTypesDemo<Byte>();
+		byte b = 10;
+		g1.set(b);
+		
+		// BoundedTypesDemo<String> g1 = new BoundedTypesDemo<String>();
+		// g1.set("Sudha");
+		
+		System.out.println(g.get());
+		System.out.println(g1.get());
+	}
+}
+
+class BoundedTypesDemo1<T extends Runnable> {
+
+	private T o;	
+	public T get(){
+		return o;
+	}
+	
+	public boolean set(T o){
+		this.o = o;
+		return true;
+	}
+	
+	public static void main(String args[]){
+		BoundedTypesDemo1<Thread> g = new BoundedTypesDemo1<Thread>();
+		Thread t = new Thread();
+		g.set(t);
+		
+		System.out.println(g.get().getName());
+	}
+}
+3. Generic Methods
+	Generic methods takes collection as generic arguments. Inside this method, only Strings are allowed.
+	
+	public void display(ArrayList<String> l){
+		l.add("Sudha");
+		
+		System.out.println(l);
+	}
+	
+
+4. Communication with legacy non-generic code
+- To provide compatibility with old non-generic versions sun people compromised the generics concept in
+some places, the following is one such place
+
+import java.util.*;
+
+class BoundedTypesDemo1<T extends Runnable> {
+
+	private T o;	
+	public T get(){
+		return o;
+	}
+	
+	public boolean set(T o){
+		this.o = o;
+		return true;
+	}
+	
+	public void display(ArrayList<String> l){	//generic version
+		l.add("Sudha");
+		
+		System.out.println(l);
+	}
+	
+	public static void main(String args[]){
+		BoundedTypesDemo1<Thread> g = new BoundedTypesDemo1<Thread>();
+		Thread t = new Thread();
+		g.set(t);
+		
+		ArrayList l = new ArrayList();	//normal version
+		l.add("Sudhakar");
+		l.add(20);
+		
+		g.display(l);
+		
+		System.out.println(g.get().getName());
+	}
+}
+
+
 -----------------------------
 11-02-2019
 Thread
@@ -6863,9 +7148,13 @@ E.g: Mobile is Serializable so all its child classes will be Serializable.
 Inner classes:-
 -------------
 - Declaring a class inside the another class is called inner class. There are 4 types of inner classes are available.
+
 - We can declare inner class as private/protected but we can't declare outer class as private/protected.
+
 - Outer classes valid accesss specifiers are: public, final, abstract, default
-- Inner classes valid accesss specifiers are: private,  default, protected, default, public, final, abstract, static,
+
+- Inner classes valid accesss specifiers are: private,   protected, default, public, final, abstract, static,
+
 - For every inner class java file, a separate .class file will be created with name like OuterclassName$innerClass.class
 
 Eg:
@@ -6878,7 +7167,7 @@ Eg:
  
 Advantages:-
 	- Inner classes can access private members of outer class
-	- group the relate functionlity classes into one class.
+	- group the related functionlity classes into one class.
 
 	1) Normal/Regular inner classes
 	2) Method local inner classes
@@ -6962,7 +7251,7 @@ public class MethodOuterClass {
 3. Anonymous inner class:-
 --------------------------
 - A class without any name is called anonymous inner class.
-- if we are going to only once then insteadof createing a class for that we can go for anonymous inner class.
+- if we are going to use only once then insteadof createing a class for that we can go for anonymous inner class.
 - we no need to declare any additional class as given below example.
  
  class AnonymousInnerClassDemo {
@@ -7044,9 +7333,214 @@ compiling:
 	
 run:
 java StaticOuterClass$StaticInnerWheel
+	
+
+07-04-2018
+-------------------------------
+22. GARBAGE COLLECTION
+	1. Introduction
+	2. The ways to make an object eligible for Garbage Collector
+	3. The methods to request JVM to run Garbage Collector
+	4. finalization
+
+- To free the jvm memory.
+
+In ‘C++’ the programmer is responsible for both creation and destruction of objects but usually the programmer is giving very much importance for creation of objects and he is ignoring the destruction of objects. 
+
+- Due to this at creation point of time there may not be sufficient memory for the creation of new objects and entire program may fails. But in java programmer is responsible only for creation of objects but sun people has introduced one assistance which is running continuously in the background for destruction of objects. Due to this assistance there is no chance of failing the java program due to memory problem, this assistance is nothing but “Garbage Collector”.
 
 
-Java Generics:
------------------
+important methods:	
+System.gc();
+Runtime.getRunTime().gc();
+
+The ways to make an object eligible for Garbage Collector
+Even though the programmer is not responsible for destruction of objects it’s good programming practice to
+make an object eligible for Garbage Collector if it is no longer required.
+The following are different ways for this
+
+Nullifying the reference Variable
+If an object is no longer required assign null to all its reference variables.
+Ex:
+	Student s1 = new Student();
+	Student s2 = new Student();
+	s1 = null;
+	s2 = null;
+- Two object are elegible for gc
+
+Reassigning the reference Variable
+	Ex:
+	Student s1 = new Student();
+	Student s2 = new Student();
+	s1 = s2;
+
+One Object eligible for Garbage Collector
+
+import java.util.*;
+
+class GarbageCollectorDemo {
+
+	public static void main(String[] args){
+			m1();
+			System.out.println("End main method");
+	}
+	
+	public static void m1() {
+		System.out.println(Runtime.getRuntime().freeMemory());
+		
+		Student s = new Student();
+		s.age = 20;
+		
+		Student s1 = new Student();
+		s1.age = 30;
+		
+		Student s3 = new Student();
+		s3.age = 40;
+		
+		s3 = null;
+		
+		for(int i = 0;i < 10000 ; i++){		
+			Student s4 = new Student();
+			s4.age = i;
+		}
+		
+		s1 = s;		
+		System.out.println("After creating objects: before gc " + Runtime.getRuntime().freeMemory());
+		
+		Runtime.getRuntime().gc();
+		System.out.println("After creating objects: after gc " + Runtime.getRuntime().freeMemory());
+	}
+	
+	protected void finalize() {
+		System.out.println("Demo Finalize called ");	
+	}
+}
+
+class Student {
+	int age;	//4
+	String name; //
+	
+	protected void finalize() {
+		System.out.println("Finalize called "+ age);
+		
+	}
+}
 
 
+The methods to request JVM to run Garbage Collector:-
+
+We can request JVM to run Garbage Collector but there is no guarantee whether JVM accepts our request or
+not. We can do this by using the following ways.
+By System class
+‘System’ class contains a static ‘gc’ method for requesting JVM to run Garbage Collector.
+System.gc();
+
+By Using Runtime Class
+A java application can communicate with JVM by using Runtime Object. We can get Runtime
+Object as follows.
+	Runtime r = Runtime.getRuntime();
+
+Once we get Runtime Object we can apply the following methods on that object.
+
+freeMemory(): returns the free memory available in the loop
+totalMemory(): returns heap size
+gc(): for requesting JVM to run GarbageCollector
+
+	Ex:
+	import java.util.*;
+	class RuntimeDemo
+	{
+	public static void main(String arg[])
+	{
+	Runtime r = Runtime.getRuntime();
+	System.out.println(r.totalMemory());  2031616
+	System.out.println(r.freeMemory());  1870416
+	for(int i= 0; i<= 10000; i++)
+	{
+	Date d = new Date();
+	d = null;
+	}
+	System.out.println(r.freeMemory());  1633032
+	r.gc();
+	System.out.println(r.freeMemory());  1923992
+	}
+	}
+
+Note:- gc() method available in the system class is static method but gc() method available in Runtime class
+is an instance method.
+
+Finalize:-
+--------
+- If any code has to be executed only once and that is just before destroying then we should write that code finalize method.
+Just before destroying any object Garbage Collector always calls finalize() to perform clean up activities.
+finalize() is available in the Object class which is declared as follows.
+	protected void finalize() throws Throwable
+	{
+	}
+
+case1: Garbage Collector always calls finalize() on the Object which is eligible for Garbage Collector and
+the corresponding class finalize method will be executed.
+	Ex:
+	class Test
+	{
+	public static void main(String arg[])
+	{
+	String s = new String("raju");
+	//Test s = new Test();
+	s = null;
+	System.gc();
+	System.out.println("end of main method");
+	}
+	public void finalize()
+	{
+	System.out.println("finalize method called");
+	}
+	}
+O/P:- end of main method.
+
+In this case String Object is eligible for G.C and hence String class finalize() method has been executed.
+In the above program if we are replacing String Object with Test Object then Test class finalize() will be
+executed.
+
+case2: 
+- we can call finalize() explicitly in that case it will execute just like a normal method and object won’t
+be destroyed.
+- While executing finalize() method if any exception is uncaught it is simply ignored by the JVM but if we are
+calling finalize method explicitly and if an exceptions is uncaught then the program will be terminated
+abnormally.
+	Ex:
+	class Test
+	{
+		public static void main(String arg[])
+		{
+			Test s = new Test();
+			//s.finalize();
+			s = null;
+			System.gc();
+			System.out.println("End of main method");
+		}
+		public void finalize()
+		{
+			System.out.println("finalize method");
+			System.out.println(10/0);
+		}
+	}
+O/P:- finalize method
+end of main method
+
+What is the difference between final, finally and finalize
+ final -> is a keyword
+	1. if a variable is final then we can't change
+	2. if a method is final then we can't override
+	3. if a class is final then we can't extend that class.
+	
+finally -> should be along try block.
+	-> Even execption raised or not if some has be executed alwasys then we should that code finally block.
+	
+finalize
+ -> exeucte only one time and that is just destorying that object.
+---------------------------------------------------------------------- 
+2. 2D arrays - 1 day
+
+3. static flow - 1 day
+4. instance flow - 1 day

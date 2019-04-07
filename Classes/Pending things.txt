@@ -1,26 +1,24 @@
 Pending things:
 ---------------
-1. Java features
-2. 2D arrays - 1 day
-3. static flow - 1 day
-4. instance flow - 1 day
-	
-21. Generics:- 2 days
-	1. Generic Classes
-	2. BoundedTypes
-	3. Generic Methods
-	4. Communication with legacy non-generic code
-	
-22. GARBAGE COLLECTION - 1 day
-	1. Introduction
-	2. The ways to make an object eligible for Garbage Collector
-	3. The methods to request JVM to run Garbage Collector
-	4. finalization
-	
 23. Internationalization - 2 days
 
 24. 1.5, 1.6, 1.7 new features - 1 day
+-----------------------------------------
+Java courses:-
+Java
+- 4 months
 
+jdbc - 10-20 hours
+servlets - 30 hours
+jsp - 25-30 hours
+
+html - 5 hours 
+javascript - 5 hours
+css - 5 hours
+
+SQL - 5 hours
+Spring - 30-50
+hibernate - 30 
 --------------Core Java-------------
 1. Java installation
 	1.1 Verify java installation.
