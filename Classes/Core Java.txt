@@ -867,9 +867,11 @@ Array:
 - Size/length is fixed.
 - Array is index based. the index starts 0 and last index is size-1.
 - If we are trying to get the value from array where index is greater than size, then ArrayIndexOutOfBoundsexception will occur.
+- size should be always an integer.
 
 syntax: array declaration:
 	int[] rollNos = new int[size];
+	int[] rollNos = new int[2.0];	//CE
 	
 size -- always integer
 
@@ -879,7 +881,7 @@ Steps:-
 
 2. array initilization
 	rollnos[0] = 100;
-	rollnos[29] = 130;
+	rollnos[2] = 130;
 	
 3. Display the array data
 	for(int i = 0; i < rollnos.length ; i++){
@@ -7540,7 +7542,5 @@ finally -> should be along try block.
 finalize
  -> exeucte only one time and that is just destorying that object.
 ---------------------------------------------------------------------- 
-2. 2D arrays - 1 day
-
 3. static flow - 1 day
 4. instance flow - 1 day
