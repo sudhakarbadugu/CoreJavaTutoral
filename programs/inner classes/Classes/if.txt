@@ -1,0 +1,26 @@
+if(){
+}//wrong
+
+if {
+} //wrong
+
+if(1){
+}
+
+if(1/1){
+}
+int a = 20;
+
+if(0 == 0){	//correct
+}
+
+String s = "sudha";
+
+if(s){
+}	//wrong
+
+int a = 10;
+int b = 20;
+int c = a + 10;
+if(d = b) {
+}	//wrong
