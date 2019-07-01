@@ -1,6 +1,6 @@
 class PrintNames{
 public static void main(String args[]){
-int names=4;
+int names=7;
 		if(names==1){
 		System.out.println("sudha:"+1);
 		}

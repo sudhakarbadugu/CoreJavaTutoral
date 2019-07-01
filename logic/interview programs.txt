@@ -1,0 +1,45 @@
+1. Write a program for Palindrome?
+	Murali: Pending	
+	Prasad: Pending
+2. Write a program for Fibonocci?
+	Murali: Pending	
+	Prasad: Pending
+	
+-- Arrays sort
+3. Write a program to identify big number in array
+	Eg:	int[] array = {25, 1, 45, 678, 10}
+	Output: 678
+	Murali: Pending	
+	Prasad: Pending
+
+4. Write a program to identify small number in array
+	Eg:	int[] array = {25, 1, 45, 678, 10}
+	Output: 1
+	Murali: Pending	
+	Prasad: Pending
+
+5. Write a program to identify 2nd small number in array and 3rd big number
+	Eg:	int[] array = {25, 1, 45, 678, 10}
+	Output: 10
+			25
+	Murali: Pending	
+	Prasad: Pending
+
+6. Write a program to sort an array and print in reverse order
+	Eg:	int[] array = {25, 1, 45, 678, 10}
+	Output: 678, 45, 25, 10, 1
+	Murali: Pending	
+	Prasad: Pending
+	
+7. Write a program to sort an array and print in reverse order
+	Eg:	Strin[] array = {"Sudhakar", "Abc", "abz", "Prasad", "praveen", "murali"}
+	Output: Sudhakar, praveen, Prasad, murali, Abz, Abc
+	Murali: Pending	
+	Prasad: Pending
+
+8. Write a program to sort an array and print in normal order
+	Eg:	Strin[] array = {"Sudhakar", "Abc", "abz", "Prasad", "praveen", "murali"}
+	Output:     Abc, Abz, murali,Prasad,  praveen, Sudhakar,
+	Murali: Pending	
+	Prasad: Pending
+

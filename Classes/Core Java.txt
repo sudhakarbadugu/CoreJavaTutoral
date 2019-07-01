@@ -61,7 +61,7 @@ Types:
 
 1. Java SE: Java Standard Edison
 	- Basics programming
-	- standalone appliations: It will run only on a machine.
+	- standalone appliations: It will run only on single machine.
 	- we can't write web applicatons.
 	
 2. J2EE: Java Enterprise Edition
@@ -288,6 +288,7 @@ Pre defined data type or primitive data types.
 
 Data type:
 which type of data it is.
+
 	byte a = 10;`//valid
 	byte b = false;	//invalid
 		VariableExample.java:6: error: incompatible types: boolean cannot be converted to byte
@@ -1024,7 +1025,7 @@ class ArraysDemo {
 }
 
 ----------------------------------------------|
- OOPS 01-08-2018
+ OOPS 01-08-2018                                                                        
 ----------------------------------------------|
 methods:
 -------
@@ -1034,18 +1035,18 @@ Uses:
 - To avoid the code duplicates.
 - To reuse the code.
 - we can reduce no of lines code using method.
-- To separate functionlity
-	E.g: add - add method functionlity
+- To separate functionlity.
+	E.g: add - add method functionlity.
 	swap - swap method functionlity.
 
 
 public void m1(int a){
 }
 
-public - access specfier
+public - access specfier.
 void - return type - returns nothing.
-m1 - method name
-int - parameter type
+m1 - method name.
+int - parameter type.
 a - parameter name. 
 --------------------------------
 methods are 2 types:
@@ -1434,7 +1435,7 @@ static 	var   | yes,eg: sop(a)    |yes,eg: sop(a)
 - setter should take one parameter and parameter data type is same as instance variable.
 - instance variable should be declared as private.
 - setter method should not return any value.
-- When method parameter name and property name are same, then we should specify the instance variable name with 'this' keyword. Otherwise value will not set to instance variale.
+- When method parameter name and property name are same, then we should specify the instance variable name with 'this' keyword. Otherwise value will not set to instance variable.
 
 	class Person{
 		private String name;
@@ -1481,7 +1482,7 @@ instance variables as well static variables.
 
 what is the use of constructor?
 - To perform the initilization for the instance variables.
-- If we want to call any method which has to be executed only once for object, we should call from construcor.
+- If we want to call any method which has to be executed only once for object, we should call from constructor.
 
 How many times constructor will be executed?
 For each object 1 time constructor will be executed. if we create 10 objects, 10 times will be execued.
@@ -1681,6 +1682,7 @@ Features:-
 		}
 		
 2. Abstraction
+	hiding the complexcity of code
 	Providing some service and hiding the internal implementation is called abstraction.
 	E.g Atm is providing some service, we don't know it is working, means we dont know internal implementation.
 		
@@ -2548,7 +2550,7 @@ class InstanceControlFlowDemo extends InstanceParentControl{
 interface:-
 - Interface is a specification.
 - Interface also like a class. It has methods and static variables.
-- interface should not have construcors, blocks and instance varaibles.
+- interface should not have constructors, blocks and instance varaibles.
 - we can't create objects for interfaces. so instance variables are not allowed.
 - untill java 1.7 static methods should not write interfaces.
 
