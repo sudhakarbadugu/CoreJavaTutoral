@@ -1,28 +1,28 @@
--------------------------------------------------------------
+﻿-------------------------------------------------------------
 03-07-2018 Tuesday
 -------------------------------------------------------------
 1. Install java
-	
+
 2. Verify java installation
 	1. By manual process
 		Go c drive -> program files -> java
 
 		Program files --> 64 bit os
 		Program files(x86) --> 32bit os
-	
+
 or
 	open cmd prompt
 	cmd -> type java and enter
-	
+
 	2. Verify java version by typing below command in cmd
-		java -version 
-			YOu should see the below screen.	
+		java -version
+			YOu should see the below screen.
 			java version "1.8.0_162"
 			Java(TM) SE Runtime Environment (build 1.8.0_162-b12)
 			Java HotSpot(TM) 64-Bit Server VM (build 25.162-b12, mixed mode)
 
 Opening cmd promps
-	1. win + type cmd 
+	1. win + type cmd
 	2. win+R and type cmd
 	3. shift + right click -> Open powershell window option here.
 -------------------------------------------------------------
@@ -34,23 +34,23 @@ What are java editons?
 --------------------------------
 What is Java?
 Java:
-	- Java is high level, object oriented programming language. 
+	- Java is high level, object oriented programming language.
 	- It is an API and it is an Open source.
   program:
 	- Set of line which performs a task.	E.g Adding 2 numbers
-	
+
   Object:
 	- Any things which is existing in the real world. E.g: A dog
 		- properties: which it has. 	E.g: A dog has 4 legs, A man has 2 legs
 		- Actions:	which it can performs	E.g: it can bow bow.
-	
+
   API: Application Programming Interface
 	- A set of guide lines with classes and interfaces
 
   Open source:
-	- Freely available. 
+	- Freely available.
 
-	
+
 What are java editons?
 Types:
 1. JSE: Java Standard Edison
@@ -63,15 +63,15 @@ Types:
 	- Basics programming
 	- standalone appliations: It will run only on single machine.
 	- we can't write web applicatons.
-	
+
 2. J2EE: Java Enterprise Edition
 	- To write web appliations.
 		- which runs on the internet
 			E.g: internet banking, whatapp web, facebook
-	
+
 3. J2ME: Java Micro Edition
 	- Create mobiles applications.
-	
+
 4. JavaFx
 	- To create the internet applications.
 -------------------------------------------------------------05-07-2018 Thursday
@@ -116,15 +116,15 @@ Basics
 - Simple java program
 
 Reserved/keyword words: 51
-	- It has some meaning to java compiler. 
+	- It has some meaning to java compiler.
 	- All reserved words in small letters only.
 1. class - to declare a class.
-2. public - 
-3. static - 
-4. void - It returns nothing. 
+2. public -
+3. static -
+4. void - It returns nothing.
 
 5. byte - 1byte -127 to 127
-6. short	- 2bytes 
+6. short	- 2bytes
 7. int 		-  4 bytes
 8. long		- 8 bytes
 9. float	- 4 bytes
@@ -133,10 +133,10 @@ Reserved/keyword words: 51
 12. boolean - true/false
 
 13. true
-14. false 
+14. false
 
 15. if
-16. else 
+16. else
 17. switch
 18. case
 19. break
@@ -153,12 +153,12 @@ how to compile
 
 How to run a java program
 	Syntax: java classname
-	E.g: java A	
-	
+	E.g: java A
+
 task:
 1. Write a program. HelloWorld.
 	print out: Hello Murali, welcome to chennai.
-	
+
 -----------------------------------------
 0-07-2018
 -----------------------------------------
@@ -168,11 +168,11 @@ How to write a java program?
 How to compile a java program?
 - javac file name with extension
 	E.G: javac Addition.java
-	
+
 How to run a java program?
 	Syntax: java classname
 	java Addition
-	
+
 What is platform independant?
 JRE, JDK and JVM?
 - Same program will run in linux, windows without recompiling it. It runs on anywhere.
@@ -189,26 +189,26 @@ Building blocks:
 	1. instance
 	2. static
 	3. local
-	
+
 3. methods
-	1. instace 
+	1. instace
 	2. static
 4. constructors.
 	1. default
 	2. parameter
-	
+
 5. blocks.
 	1. instance
 	2. static
-	
+
 how to declare a java class?
 1. Class:
 	- using class keyword we can declare a class.
-	Syntax: 
+	Syntax:
 	class Addition {
 	}
 
-	- All building blocks (variables, blocks, constructors and methods) should be inside a class. if we are declaring out side, compiler will give you an error. 
+	- All building blocks (variables, blocks, constructors and methods) should be inside a class. if we are declaring out side, compiler will give you an error.
 		Welcome.java:5: error: class, interface, or enum expected
 		int i = 10;
 		^
@@ -222,16 +222,16 @@ how to declare a java class?
 Identifiers: A name of class or variable or a method name called identifier.
 	class Test {
 	}
-	
+
 	eg: Here Test is identifier. It is a name of a class.
-	
+
 - A name of variable.
 	int salary = 20000;
 	-------------------
 	int - datatype
 	salary - variable name - identifier
 	200000 - value/literal.
-	
+
 - A name of method.
 	public static void main(String args[]){}
 	--------
@@ -254,10 +254,10 @@ Identifiers Naming rules:-
 1. Only a-z, 0-9,_ and $ allowed in identifiers.
 	int age = 20;
 	int #age = 30;	//invalid
-	int age$ = 40;	
+	int age$ = 40;
 	int man age = 50; //invalid: Space should not be there in identifier
-				//Error: 
-	
+				//Error:
+
 2. Identifier name should not start with numbers.
 	int sno1 = 20;
 	int sno2 = 30;
@@ -265,7 +265,7 @@ Identifiers Naming rules:-
 	int man_age = 20;
 	int $age = 60;
 	int class = 20; //invalid
-	
+
 3. should not use reserved words.
 4. Name should not contain any white spaces
 	int a b = 30; //invalid
@@ -293,21 +293,21 @@ which type of data it is.
 	byte b = false;	//invalid
 		VariableExample.java:6: error: incompatible types: boolean cannot be converted to byte
                 byte b = false;
-				
+
 1. byte:
 	Range: -128 to 127
 	memory: 1 byte = 8 bits
 	E.g: byte b = 120; //valid
 		 byte c = 140; //invalid: possible loss of precision
 		 byte d = -130; //invalid
-		 
+
 2. short
 	range -32768 to 32767
 	memory: 2 bytes = 2power16
 		E.g: short s = 200;
 			short s1 = 32769; //invalid possible loss of precision
-			
-3. int 
+
+3. int
 	range: 2147483647
 	memory: 4 bytes = 2power32
 		int i = 1;
@@ -315,40 +315,40 @@ which type of data it is.
 		int i3 = 2147493847;	//invalid
 		int i4 = b + s;	//valid.
 
-4. long	
+4. long
 	range: -9,223,372,036,854,775,808  to 9,223,372,036,854,775,807
 	memory: 8 bytes = 2power64
 	long l = i + i2;
 	byte b = i+ i2;	//invalid
-	
-	
+
+
 5. float
 	4 bytes = 32 bits.
 	up to 7 points it can store.
 	float f  = 23.011232323232323234545f;
 	float f1 = 220.2; //invalid, decimal values always referred as double value.
-	
-	
-6. double 
-	8 bytes = 64 bits	
+
+
+6. double
+	8 bytes = 64 bits
 	up to 14 points it can store.
-	double d = 12.0;	
+	double d = 12.0;
 	double c = 12;
 	double d1 = 10.0d;
 	double d1 = 10.0f;
 	double d3 = false;	//invalid
-	
+
 ------------------------------------------------------------
 byte --> short --> int --> long --> float --> double       |
 -------------------------------------------------------------
 	long l = 222222;
 	float f = l;	//valid
-	
+
 	double l = 222222;
 	float f = l;	//in valid
-	
+
 --------------------
-7. char: 
+7. char:
 	Range: 65636
 	2bytes : 2power16
 	char i = 'm';
@@ -367,17 +367,17 @@ It is a class.
 	String name = "Sudhakar";
 	String s = 100;	//invalid 	CE: incompatible types
 	String s2 = "200";
-	
+
 Tasks:
 	take a class and print the values -> PrintValues
-	
+
 		- name
 		- age
 		- dob
 		- father name
-		- village name 
+		- village name
 		- income
-		
+
 2. write programs for sum, substraction, div and mul for int, long and double.
 -------------------------------------------------------------
 Control statements:
@@ -386,50 +386,50 @@ if else
 else if
 switch
 
-1. if 
+1. if
 	If we have only one condition, then should go for if case.
 	E.g: Print whether given number is even
 		if(xx){
 		}
 xx - only boolean type or boolean result
 	if(i % 2 == 0){}	//
-	
+
 - brackets optional
 - If no brackets are there, then only one line is in if block
-- always boolean type is required 
+- always boolean type is required
 	- boolean expression
 	 1 == 2 ==> false
 	 1 == 1 ==> true
 	 1 != 1 => false
-	 int i = 10 ==> ce	
+	 int i = 10 ==> ce
 ---------------------------------------------------------------
 class IfExample {
 	public static void main(String args[]){
 		int i = 10;
 		boolean b = false;
-		
+
 		if(b){
 			System.out.println("Boolean value is true");
-		}	
-		
+		}
+
 		if( i == 10){
 			System.out.println("I value is "+ i);
 		}
-		
+
 		if(i % 2 == 0){
 			System.out.println("Even number");
 		}
-		
+
 		if(b)
 		System.out.println("First line");
-		
-		System.out.println("second line");	
+
+		System.out.println("second line");
 	}
 }
 
 ---------------------------------------------------------------
 2. if else
-	If we want show something when if condition is failed, means we have 2 condtions. 
+	If we want show something when if condition is failed, means we have 2 condtions.
 		if(age > 18){
 			SOP("You are elegible for vote");
 		}
@@ -438,27 +438,27 @@ class IfExample {
 		}
 
 - If if condition is failed then only else will be execued.
-		
+
 3. else if
 	If we have more than 2 condions , then we should go for else if.
 		if(condition){
 		}
 		else if(condions){
-		
+
 		}
 		else if(condions){
-		
+
 		}else {	//optional
-		
+
 		}
 -------------------------------------------------------------
 class IfExample {
 	public static void main(String args[]){
 		int marks = 25;
-		
+
 		if(marks >= 60 && marks < 70){
 			System.out.println("first class");
-		}		
+		}
 		else if(marks >= 70 && marks < 80 ){
 			System.out.println("Distinction");
 		}
@@ -467,11 +467,11 @@ class IfExample {
 		}
 		else if(marks < 35){
 			System.out.println("Failed");
-		}		
+		}
 		else {
 			System.out.println(" Just Pass");
 		}
-	
+
 		System.out.println("End");
 	}
 }
@@ -481,26 +481,26 @@ class IfExample {
 class IfExample {
 	public static void main(String args[]){
 		int marks = 25;
-		
+
 		if(marks >= 60 && marks < 70){
 			System.out.println("first class");
 		}
-		
+
 		if(marks >= 70 && marks < 80 ){
 			System.out.println("Distinction");
 		}
-		
+
 		if(marks >= 80 ){
 			System.out.println("Topper");
 		}
-		
+
 		if(marks < 35){
 			System.out.println("Failed");
-		}		
+		}
 		else {
 			System.out.println(" Just Pass");
 		}
-	
+
 		System.out.println("End");
 	}
 }
@@ -509,7 +509,7 @@ class IfExample {
 3. switch
 
 - If we have more than 2 condions , then we should go for switch.
-	
+
 syntax:
 	switch(xx){	//
 	}
@@ -517,7 +517,7 @@ xx - should be byte, short, int, char, String, boolean, enum.
 		int i = 10;
 		switch(i){
 		}
-		
+
 - Not allowed in case arguments - float, long, double.
 
 case: each condition is called as case.
@@ -526,18 +526,18 @@ case: each condition is called as case.
 switch(xx){
 	case 1: {
 	}
-	
+
 	case 2: {
 	}
 	default: {
 	}
 }
 points:
-- syntax: 
+- syntax:
 	switch(xx){
 		case 1: {
 		}
-		
+
 		case 2: {
 		}
 		default: {
@@ -548,7 +548,7 @@ points:
 3. case can be in any order. e.g: case 3: case 2: default
 4. case label duplicates are not allowed.
 5. default case also optional.
-6. arguments (xx) and case lables (1, 2) must be same type. 
+6. arguments (xx) and case lables (1, 2) must be same type.
 7. break - to stop the next case execution. break optional.
 8. Between 2 cases nothing is allowed. we should not write even SOP also.
 9. break should be used only in switch.
@@ -568,28 +568,28 @@ switch(name){
 
 -------------------------------------------------------------------------------------------
 class SwitchDemo {
-	
+
 	static public void main(String[] a){
-		
+
 		int age = 6;
 		String s = "1";
-		
+
 		switch(age){
 			case 1: {
 				System.out.println("Baby");
 				break;
 			}
-			
+
 			case 2: {
 				System.out.println("Pre class");
 				break;
 			}
-			
+
 			case 3: {
 				System.out.println("LKG");
 				break;
 			}
-			
+
 			case 5: {
 				System.out.println("UKG");
 				break;
@@ -598,12 +598,12 @@ class SwitchDemo {
 			case 6: {
 				int ab = 20;
 				System.out.println("First");
-				
+
 			System.out.println("middle");
-			
+
 				break;
 			}
-						
+
 			default: {
 				System.out.println("Big man");
 			}
@@ -621,13 +621,13 @@ Syntax:
 	for(i;c;id){
 		body
 	}
-	
+
 	i -- initilization:
 		int i = 1;
-		
+
 	c -- condition  - always true/false
 		i < 10 --> true
-		
+
 	id -- increment/decrement
 		i++	/ ++i / i = i+1
 		i--	/ --i
@@ -641,9 +641,9 @@ flow:
 		3
 	}
 	Sop("compeleted");
-	
-	
-	1 - init 
+
+
+	1 - init
 	2 - conditon
 	3 - body
 	4 - increment
@@ -659,11 +659,11 @@ class PrintNumbers {
 	public static void main(String[] args){
 
 		for(int i=50; i> 0; i--){
-			
+
 			if(i % 2 == 0){
 				System.out.println("Even number" + i);
 			}
-		}		
+		}
 	}
 }
 
@@ -671,11 +671,11 @@ class PrintNumbers {
 	public static void main(String[] args){
 
 		for(int i=0; i< 50; i++){
-			
+
 			if(i % 2 == 0){
 				System.out.println("Even number" + i);
 			}
-		}		
+		}
 	}
 }
 -----------------------------------------
@@ -686,7 +686,7 @@ Syntax:
 	while(conidtion){
 		//body
 	}
-	
+
 - condition: always boolean value/expression.
 - if condition is true, while body will be executed.
 - while - condition is mandatory.
@@ -701,16 +701,16 @@ Syntax:
 class WhileExample {
 	static public void main(String[] args){
 
-		
+
 		int j = 90;
 		while(j > 100){
 			if(j % 2 == 0){
 				System.out.println(j);
-			}		
-			
+			}
+
 			j = j -1;
 		}
-		
+
 	}
 }
 ---------------------------------------------------------------
@@ -720,7 +720,7 @@ syntax;
 	do {
 		//Body
 	}while(condition);
-	
+
 - do will execute atleast once even if condition wrong.
 - break - we can use in loops also.
 ----------------------------------------------------------
@@ -757,9 +757,9 @@ Unary Operator:
 1. pre increment: First increment will happen
 	++x;
 	 int x = 10;
-	 
+
 	 ++x; //11
-	 
+
 2. pre decrement: First decrement will happen
 	--x;
 	int y = 20;
@@ -769,13 +769,13 @@ Unary Operator:
 	 int x = 10;
 	 Sop(x++); 10
 	 Sop(x); 11
-	 
-	 
+
+
 4. pre decrement: It will not decrement in the current line, decrement will happen in second.
 	int y = 10;
 	 Sop(y--); 10
 	 Sop(y); 9
-	 
+
 5. not operator (!)
 - It applialbe for only boolean type.
 	Eg. boolean b = false;
@@ -791,7 +791,7 @@ Unary Operator:
 		int x = ~z; //20
 		boolean a = ~true; ce: .\UnaryOperatorsDemo.java:21: error: bad operand type boolean for unary operator '~'
                 System.out.println(~value);
-				
+
 
 2.1 Arithmetic operators
 	int a = 10;
@@ -801,55 +801,55 @@ Unary Operator:
 	*   = a * b; 30
 	/	= a/b; 3
 	%	= a%b; 1
-	
+
 3. Relational operators
 	int a = 20;
 	int b = 30;
 	<	==> a < b == true
 	>	=> a> b	==false
 	<=	=> a <=b == true
-	>=	=> a >= b = false 
-	==	=> a == b == false 
+	>=	=> a >= b = false
+	==	=> a == b == false
 	!=	=> a != b == true
-	
+
 4. Logical operatos:
 	Double AND &&
-	doble OR || 
-	
+	doble OR ||
+
 	&& -> if both conditions are true then only it will be true.
 		- If first condition is true then only second condition will be executed.
-		
+
 		int x = 30;
-		
+
 		if( x > 20 && x < 30){	//total result false. 1st condition is true but second condition is false so result is false.
 			System.out.println("more than 20 and less then 30");
 		}
-		
+
 	|| -> if both conditions are false then only it will be false, in all other scenarios it will be true.
 		- If first condition is true then second condion will not be execued.
 		int x = 25;
 		if( x > 20 || x < 30){
 			System.out.println("or operator more than 20 or less then 30");
 		}
-		
+
 Ternary operator;
 	?:
 E.g:
 	int y = 1;
-	
+
 	int age = y <0 ? 0 : y;
 	System.out.println(age);
-	
+
 Bitwise operators:
-&	- true & true = true 
+&	- true & true = true
 	- true & false = false
 	- false & false = false
-	
-|	- true | true = true 
+
+|	- true | true = true
 	- true | false = true
 	- false | false = false
-	
-^ 
+
+^
 - this is applicable only for numbers
 -----------------------------------------------------------
 30-7-18 Arrays
@@ -873,7 +873,7 @@ Array:
 syntax: array declaration:
 	int[] rollNos = new int[size];
 	int[] rollNos = new int[2.0];	//CE
-	
+
 size -- always integer
 
 Steps:-
@@ -883,7 +883,7 @@ Steps:-
 2. array initilization
 	rollnos[0] = 100;
 	rollnos[2] = 130;
-	
+
 3. Display the array data
 	for(int i = 0; i < rollnos.length ; i++){
 		Sop(rollnos[i])
@@ -891,10 +891,10 @@ Steps:-
 
 	class ArraysDemo {
 	public static void main(String[] args){
-		
+
 		//declaration
 		int[] a = new int[5];
-		
+
 		// value initilization.
 		a[0] = 100;
 		a[2] = 200;
@@ -903,17 +903,17 @@ Steps:-
 		a[4] = 500;
 		a[4] = 350;
 		// a[5] = 600; //ArrayIndexOutOfBoundsException
-		
+
 		System.out.println(a);
-		
-		
+
+
 		//value printing
 		System.out.println(a[0]);
 		// System.out.println(a[1]);
 		// System.out.println(a[2]);
 		// System.out.println(a[3]);
 		// System.out.println(a[4]);
-		
+
 
 		for(int i = 0; i < a.length ;i++){
 			System.out.println(a[i]);
@@ -923,12 +923,12 @@ Steps:-
 		for(int i = a.length - 1; i >=0  ;i--){
 			System.out.println(a[i]);
 		}
-		
+
 		String[] names = new String[4];
 		names[0] ="Sudhakar";
 		names[1] = "venky";
 		names[3] = "murali";
-		
+
 		for(int j = 0; j < names.length ; j++){
 			System.out.println(names[j]);
 		}
@@ -947,8 +947,8 @@ a[0] = 1;
 
 - Array declaration and initilization in one line
 	int[] numbers = {1,5,7,5,5,5,6};
-	
-	
+
+
 --------------------
 foreach loop:
 --------------------
@@ -963,10 +963,10 @@ for(datatype identifier: arrayName){
 
 class ArraysDemo {
 	public static void main(String[] args){
-		
+
 		//declaration
 		int[] a = new int[5];
-		
+
 		// value initilization.
 		a[0] = 100;
 		a[2] = 200;
@@ -975,17 +975,17 @@ class ArraysDemo {
 		a[4] = 500;
 		a[4] = 350;
 		// a[5] = 600; //ArrayIndexOutOfBoundsException
-		
+
 		System.out.println(a);
-		
-		
+
+
 		//value printing
 		System.out.println(a[0]);
 		// System.out.println(a[1]);
 		// System.out.println(a[2]);
 		// System.out.println(a[3]);
 		// System.out.println(a[4]);
-		
+
 
 		for(int i = 0; i < a.length ;i++){
 			System.out.println(a[i]);
@@ -995,7 +995,7 @@ class ArraysDemo {
 		for(int i = a.length - 1; i >=0  ;i--){
 			System.out.println(a[i]);
 		}
-		
+
 		String[] names = new String[4];
 		names[0] ="Sudhakar";
 		names[1] = "venky";
@@ -1003,29 +1003,29 @@ class ArraysDemo {
 		for(String name : names){
 			System.out.println(name);
 		}
-		
+
 		for(int j = 0; j < names.length ; j++){
 			System.out.println(names[j]);
 		}
-		
+
 		int[] marks = {60, 60, 70, 35, 90, 54}; //declaration and initilization
 		for(int k = 0; k < marks.length; k++){
 			System.out.println(marks[k]);
 		}
-		
-		
+
+
 		//for each only for arrays and collections
 		for(int x: marks){
 			System.out.println(x);
 		}
 		// int[] abc;
 		// abc = {34,22};	//CE
-		
+
 	}
 }
 
 ----------------------------------------------|
- OOPS 01-08-2018                                                                        
+ OOPS 01-08-2018
 ----------------------------------------------|
 methods:
 -------
@@ -1047,7 +1047,7 @@ public - access specfier.
 void - return type - returns nothing.
 m1 - method name.
 int - parameter type.
-a - parameter name. 
+a - parameter name.
 --------------------------------
 methods are 2 types:
 1. Instance method.
@@ -1062,7 +1062,7 @@ methods are 2 types:
 	Steps:
 	1. Declare a method in a class.
 		class MethodExample {
-		
+
 			public void m1(){
 				Sop("m1");
 			}
@@ -1072,13 +1072,13 @@ methods are 2 types:
 			MethodExample object = new MethodExample();
 		2. Call the method using object.
 			object.m1();
-		
+
 2. Static method:
 	A method which is declared with static keyword called static method.
  - For static methods, we no need to create object. using class name we call the static methods.
- 
+
 	public static void m1(){}
-	
+
 Steps:-
 	1. Declare a static method in a class.
 		public static void m2(){
@@ -1086,27 +1086,27 @@ Steps:-
 		}
 	2. Calling m1 method.
 		Using Class.methodname, we can call static method.
-		E.g 
+		E.g
 			MethodExample.m2();
 
-	
+
 Accessing methods:
 -----------------
 Can we call instace method from static method?
-ans: yes, we can call using object. here m2 is instance method. m1 is static method. 
+ans: yes, we can call using object. here m2 is instance method. m1 is static method.
 m1 method is calling m2 method.
 
 	public void m2(){
 		System.out.println("m2");
 	}
-	
+
 	public static void m1(){
 		System.out.println("m1");
-		
+
 		MethodCallingExample mce = new MethodCallingExample();
 		mce.m2();
 	}
-	
+
 
 Can we access static method from static method?
 yes, we can call using methodname directly or using Classname.methodname. here m1 and m3 are static methods. m3 is calling m1 method.
@@ -1114,12 +1114,12 @@ yes, we can call using methodname directly or using Classname.methodname. here m
 	public static void m1(){
 		System.out.println("m1");
 	}
-		
+
 	public static void m3(){
 		System.out.println("m3");
 		m1();
 	}
-	
+
 Can we call static method from instance method?
 yes, we call call using methodname or using Class.methodname. Here m2 is instance mehtod, m4 is static method. m2 is calling m4 method using classname.methodname.
 
@@ -1127,13 +1127,13 @@ yes, we call call using methodname or using Class.methodname. Here m2 is instanc
 		System.out.println("m2");
 		MethodCallingExample.m4();
 	}
-	
+
 	public static void m4(){
 		System.out.println("m4");
 	}
-	
+
 Can we access instace method from instance method?
-yes, we can call. here m2, m5 are instances methods. m2 method is calling m5(). 
+yes, we can call. here m2, m5 are instances methods. m2 method is calling m5().
 
 	public void m2(){
 		System.out.println("m2");
@@ -1143,27 +1143,27 @@ yes, we can call. here m2, m5 are instances methods. m2 method is calling m5().
 	public void m5(){
 		System.out.println("m5");
 	}
------------------------------------------	
+-----------------------------------------
 method type | instance method	|static 		|
 ------------|-------------------|-------		|
 instance    | yes,eg: m1()      |yes, e.g, m2()	|
 ------------|-------------------|-------		|
 static 		 no, using object   |yes. eg:m2()	|
-			  we can call. 
+			  we can call.
 			  eg: obj.m1()      |    			|
 ------------|-----------|-------|--------------	|
-	
+
 Note:
 1. If a method is calling itself then StackOverflowError will come.
 	public void m1(){
 		mce.m1();
 	}
-	
+
 2. If 2 methods are calling each other, then StackOverflowError will come.
 	p v m1(){
 		m2();
 	}
-	
+
 	p v m2(){
 		m1();
 	}
@@ -1172,42 +1172,42 @@ Note:
 -----------------------------------------------
 1. Method params.
 	Varibles which are declared inside method brackets called method parameter/variables.
-	E.g: 
+	E.g:
 		public void add(int c, int a){
 		}
 	Here: c & a are called method parameters.
-	
+
 - While declaration of method parameters, should not initilize the value for method parameters.
-	E.g: public void add(int i = 20, int c) - X 
-		 public void add(int i = 20, int c = 0) - X 
-		 public void add(int i, int c) - ok 
+	E.g: public void add(int i = 20, int c) - X
+		 public void add(int i = 20, int c = 0) - X
+		 public void add(int i, int c) - ok
 
 2. While calling this method, we need to pass only specified type values.
 	E.g:
 	m1(int a, int b){}
 	m1.add(10, 20); - Ok
-	
-	m1.add(10.0, true); - X 
+
+	m1.add(10.0, true); - X
 	- CE: expected int,int but found double and boolean.
-	
-	m1.add(int a, int b); - X 
+
+	m1.add(int a, int b); - X
 	- we should not declare variables while calling.
-	
+
 	int a = 0;
 	int b = 33;
 	m1.add(a, b); -- ok
 	m1.add(0, 30); -- ok
 	m1.sub(a, b); -- ok
-	
+
 3. Method parameter - scope
 	We can access only with in the declared method.
-		here: 
+		here:
 		public void m2(int a){
-			System.out.println(a);			
+			System.out.println(a);
 		}
-		
+
 		public void m3(){
-			System.out.println(a); -X //a is not declard in thi method. it is avaialbe only in m2 method.			
+			System.out.println(a); -X //a is not declard in thi method. it is avaialbe only in m2 method.
 		}
 --------------------------------------------------
 Method return types:
@@ -1218,18 +1218,18 @@ public int m1(int a) {
 public - access specifier/modifier
 int - return type - date type is int
 	- any data type is possible here.
-	eg. int 
+	eg. int
 		float
 		boolean
 		void
 		MethoOne
-		
+
 1. Each method must have a return type before the method name.
 	public void m1(){}
 	Here, void is the return type.
-	
+
 	public static m1(){} X//CE return type is missing.
-	
+
 2. void means, it returns nothing. so no return statment is not required in the method.
 	Eg.
 		public void m1(){};	Ok
@@ -1241,25 +1241,25 @@ int - return type - date type is int
 		public int m3(){}	X //CE: return type is missing.
 		public int m4(){return true;}	X //CE: return type is wrong.
 		public int m4(){return int a;}	X //CE: return type is wrong. we should not declare
-		public int m4(){return a;}	Ok 
-		
+		public int m4(){return a;}	Ok
+
 4. If any method return type is otherthan void, then while calling we may store the value. storing the value is not always required.
 	class A {
-	
+
 		p s v m(String[] args){
 			A a = new A()
 			int c = a.m2(); // when we required
 			a.m2(); // when we don't want the value.
-			
-			//int  a =a.m1(); X 
+
+			//int  a =a.m1(); X
 			//int a = MethodReturnTypeExample.m1(); ce:MethodReturnTypeExample.java:10: error: incompatible types: void cannot be converted to int
-			
+
 			a.m1(); Ok
 		}
 		p v m1(){
-			
+
 		}
-		
+
 		p int m2(){
 			return 1;
 		}
@@ -1268,13 +1268,13 @@ int - return type - date type is int
 5. If return type is void, we should not store that to a variable in caller method.
 		p v m2(){};
 		int a = m2(); X//CE error: incompatible types: void cannot be converted to int
-		
+
 6. return statement should be the last line of a method. Otherwise we will get compile time error as unreachable statement.
 	p int m1(){
 		return 0;
 		int a = 20;	- X; unreachable statement
 	}
-	
+
 7. If method return type is a class name, then we should return that class object in that method.
 	public static MethodReturnTypeDemo getObject(){
 		MethodReturnTypeDemo m = new MethodReturnTypeDemo();
@@ -1306,16 +1306,16 @@ a - identifier - variable name
 	class A {
 		int x = 20;
 		static int y = 35;
-		
+
 		p v m1(){
 			int z = 30;
 			System.out.println(x);
 		}
-		
+
 		p s v m2(){
-			//System.out.println(x); 
+			//System.out.println(x);
 			//C.E: error: non-static variable x cannot be referenced from a static context
-            
+
 			A a = new A();
 			System.out.println(a.x);
 		}
@@ -1340,11 +1340,11 @@ a - identifier - variable name
 	default values for instance variable:
 	primitive data types:-
 		byte, char, short, int, long ==> 0
-		boolean => false 
+		boolean => false
 		float, double => 0.0
 
 	String and other classes => null
----------------------------------------------	
+---------------------------------------------
 2. Static variable
 ---------------------------------------------
   A variable which declared in side a class but outside of the methods which declared with static keyword.
@@ -1353,7 +1353,7 @@ a - identifier - variable name
 	class A {
 		int x = 20;
 		static int y = 35;
-		
+
 		p v m1(){
 			int z = 30;
 		}
@@ -1361,7 +1361,7 @@ a - identifier - variable name
 - If more than 2 or more methods uses same variable then we can declare that variable as static variable.
 
 - static variables can be directly used instance methods as well as static methods.
- 	
+
 - which are common to all objects, those properties should be decalared as static variables. e.g collegeName, villageName.
 
 - For all objects only one copy of static variables will be there.
@@ -1373,7 +1373,7 @@ If we chage the static variable using any object, it will change to all other ob
 	default values for instance variable:
 	primitive data types:
 	byte, short, int, long ==> 0
-	boolean => false 
+	boolean => false
 	float, double => 0.0
 
 	String and other classes => null
@@ -1382,16 +1382,16 @@ If we chage the static variable using any object, it will change to all other ob
 3. Local variable:
 --------------------
  A variable which declared inside a method, or method parameters called local variable.
- 
+
  e.g: Here a and z are local variables.
 	class A {
 		int x = 20;	//instance
 		static int y = 35; //static
-		
+
 		p v m1(int a){
 			int z = 30;
 		}
-		
+
 		p v m2(){
 			Sop(z); //X:CE: can't find symbol z
 		}
@@ -1402,7 +1402,7 @@ If we chage the static variable using any object, it will change to all other ob
 		int l;
 		sop(l); //CE: can't initilize, jvn not providing the default value.
 	}
------------------------------------------------------  |	
+-----------------------------------------------------  |
 variable type | instance method	  |static method         |
 --------------|-------------------|--------------------|
 instance var  | yes,eg: sop(a)    |no, e.g, sop(obj.a);
@@ -1421,13 +1421,13 @@ static 	var   | yes,eg: sop(a)    |yes,eg: sop(a)
 
 	class Person{
 		private String name;
-		
+
 		public String getName(){
 			return name;
 		}
 	}
 
-	
+
 - Setter:
 - For each instance variable, we should have setter method.
 - setter method access specifier should be public.
@@ -1439,16 +1439,16 @@ static 	var   | yes,eg: sop(a)    |yes,eg: sop(a)
 
 	class Person{
 		private String name;
-		
+
 		public void setName(String name){
 			this.name = name;
 		}
 	}
 
-	
+
 27-09-18
 Constructor:
-- Constructor is like a method. 
+- Constructor is like a method.
 - Constructor name should be as same as class name.
 - constructor should not have any return type.
 - When ever we create an object for a class then immediately constructor will be executed.
@@ -1456,7 +1456,7 @@ Constructor:
 	class Movie {
 		public Movie(){	//default
 		}
-		
+
 		public Movie(int a){	//parameterized
 		}
 	}
@@ -1464,19 +1464,19 @@ Constructor:
 	1. default constructor:
 		A constructor which does not have any parameter
 		If no constructors are avaialbe in our class, then jvm will provide the default constructor.
-		
+
 			public Movie(){}
-			
+
 	2. parameterized constructor:
 		A constructor which has parameters.
 			public Movie(int a){}
-			
-			
+
+
 - If we add return type to constructor, then it will be considered as a method. It is no more a constructor.
 - if developer is not writing any constructor in a class then jvm will provider default constructor.
 - In one class we can have more than one constructor also.
 - From construcor we can call instance methods as well static methods.
-- In construcor we can use 
+- In construcor we can use
 instance variables as well static variables.
 
 
@@ -1491,87 +1491,87 @@ If we set value from construcor as well as from settter, which will take highest
 	- Setter method value will be availabe, because it is overriding the constructor value.
 	eg
 		Movie m = new Movie("Sudhakar", "Suma");
-		
+
 		m.setHero("Murali");
 		m.setHeroin("Kajal");
-		
+
 		op: Murali, Kajal
-	
+
 1-10-2018
 - The parameter order is very important.
 E.g: Movie(1, 1);
 	Error: incompatible types.
-	
+
 - We can have any number of constructors in our class. But we can't have 2 constructors with same type order and same number of parameters.
 	Eg : 1 - Compile time error, construcor already defined.
-		
+
 		public Movie(String fgdfgdgsdfg, String heroin){
 		}
-		
+
 		public Movie(String a, String b){
 		public Movie(String a, String b){
 		}
-	
+
 	Eg : 2 Valid. It works
 		public Movie(String fgdfgdgsdfg, String heroin){
 		}
-		
+
 		public Movie(String a, int b){
 		}
-	
+
 	Eg : 3 Valid. It works
 		public Movie(int a, String heroin){
 		}
-		
+
 		public Movie(String a, int b){
 		}
-		
+
 	Eg : 4 Compile time error:Constructor already defined.
 		public Movie(){
 		}
-		
+
 		public Movie(){
 		}
-	
-- One construcor can call another construcor using this(). But it should be first line in the construcor.
+
+- One construcor can call another constructor using this(). But it should be first line in the constructor.
 	E.g:1 Works fine.
 		public Movie(){
 			this(1);
 		}
-		
+
 		public Movie(int a){
-		
+
 		}
-		
+
 	E.g:2 Compile time error: this() should first line of a construcor.
 		public Movie(){
 			System.out.print("Defalut");
 			this(1);	//CE
 		}
-		
+
 		public Movie(int a){
-		
+
 		}
-	
+
 - Recursive construcor calling is not possible in java
 	E.g: Compile time error: Recursive calling of constructor.
 		public Movie(){
-			this(1);	
+			this(1);
 		}
-		
+
 		public Movie(int a){
 			this();
 		}
 
 - Constructor overloading: 2 constructors having different  type of parameters or different number of parameter called constructor overloading.
-	
+
 	Eg : 2 Valid. It works
 		public Movie(String fgdfgdgsdfg, String heroin){
 		}
-		
+
 		public Movie(String a, int b){
 		}
-		
+
 		public Movie(String a, int b, int c){
 		}
 -------------------------- Constructor example --------------------------------------------------
@@ -1579,97 +1579,97 @@ E.g: Movie(1, 1);
 			private String hero;
 			private String heroin;
 			private int shootingDays;
-				
+
 			private static int movieCount;
-			
+
 			public Movie(){
 				this("b", "a");
 			}
-			
+
 			public Movie(String a, String heroin){
 				System.out.println("Movie constructor");
 				hero = a;
 				this.heroin = heroin;
-				
+
 				//we can instance as well static.
 				this.init();
 			}
-			
+
 			public String getHero(){
 				return hero;
 			}
 			public void setHero(String hero){
 				this.hero = hero;
 			}
-			
+
 			public String getHeroin(){
 				return heroin;
 			}
-			
+
 			public void setHeroin(String heroin){
 				this.heroin = heroin;
 			}
-			
+
 			public static void main(String args[]){
 				Movie m = new Movie("Sudhakar", "Suma");
-				
+
 				m.setHero("Murali");
 				m.setHeroin("Kajal");
-				
-				Movie m1 = new Movie("Sudhakar2", "Suma3");	
-				
+
+				Movie m1 = new Movie("Sudhakar2", "Suma3");
+
 				Movie m2 = new Movie("Sudhakar1", "Suma2");
-				
+
 				Movie m3 = new Movie("Sudhakar1", "Suma2");
-				
-				System.out.println(m.toString());		
-				System.out.println(m1.toString());		
+
+				System.out.println(m.toString());
+				System.out.println(m1.toString());
 				System.out.println(m2.toString());
 			}
-			
+
 			public void init(){
 				System.out.println("taking rest");
 			}
-			
+
 			public String toString(){
 				return this.hero + " "+ this.heroin + " "+ this.shootingDays;
 			}
-		}		
+		}
 ----------------------------------------------------------------------------------------------
 
-this - current class 
+this - current class
 	- to call instnace methods and instnace variables.
 	this.m1();
 	this.age = age;
-	
+
 this()	- to call another constructor
 	this();
-	
-super - super class 
+
+super - super class
 	- to call instnace methods and instnace variables from super class.
 	super.m1()l
-	
-	
+
+
 super()	- to call another constructor
 	super(1);
-	
-	
+
+
 02-10-18 OOPS
 -------------
 - Object
-- class 
+- class
 - method - behivour/actions
 - variables. - state/properties
 
 Features:-
 	- Data hiding
-	- Encapsualation	
+	- Encapsualation
 	- Inheritance
 	- Abstraction
-	- Polimorphism	
+	- Polimorphism
 
 1.Data hiding:
-		Declare all instance variables as private called data hiding. 
+		Declare all instance variables as private called data hiding.
 		From outside classes, can't change these value.
 		- These variables should access only through setters and getters.
 		E.g:
@@ -1677,31 +1677,31 @@ Features:-
 			//hiding our instance variables.
 			private int age;
 			private String name;
-			
+
 			//getter and setters only
 		}
-		
+
 2. Abstraction
 	hiding the complexcity of code
 	Providing some service and hiding the internal implementation is called abstraction.
 	E.g Atm is providing some service, we don't know it is working, means we dont know internal implementation.
-		
+
 		public void setAge(int age){
-			
+
 		}
-		
+
 3. Encapsualation:
-		Data hiding + abstraction 
-		
+		Data hiding + abstraction
+
 		E.g:
 		class Person {
 			//hiding our instance variables.
 			private int age;
 			private String name;
-			
+
 			//getter and setters only
 			public void setAge(int age){
-			
+
 			}
 		}
 ------------------------------------------------------------------------------------------
@@ -1709,26 +1709,26 @@ Features:-
 		//hiding our instance variables.
 		private int age;
 		private String name;
-		
+
 		public void setAge(int age){
 			this.age = age;
 		}
-		
+
 		public int getAge(){
 			return age;
 		}
-		
+
 		public void setName(String name){
 			this.name = name;
 		}
-		
+
 		public String getName(){
 			return this.name;
 		}
 	}
-	
+
 	class PersonDemo {
-		
+
 		public static void main(String... args){
 			Person p = new Person();
 			p.setName("Sud");
@@ -1736,7 +1736,7 @@ Features:-
 			p.setAge(20);
 			System.out.println(p.getName());
 			System.out.println(p.getAge());
-			
+
 		}
 	}
 ------------------------------------------------------------------------------------------
@@ -1744,25 +1744,25 @@ Features:-
 	- Acquiring parent properties and methods.
 	- Code reusability.
 	- Reduce the code amount.
-	
+
 - Using 'extends' keyword, we can achive the inheritance.
 	class A extends B {
 	}
 	Here B - parent
 		 A - Child
-		
+
 ----------------------------------------------------------------------------------
 	class Parent{
 		int property = 100000;
 		static int cash = 1000000;
-		
+
 		public String toString(){
 			return "property "+ property;
 		}
 	}
 
 	class Child extends Parent {
-	
+
 		public static void main(String... args){
 			Child c = new Child();
 			System.out.println(c.property);
@@ -1776,13 +1776,13 @@ Inheritance types:
 2. Multiple Inheritance
 3. Multi level Inheritance
 
-	
+
 1. Single Inheritance
 	A class which extends only one class, it is called single inheritance.
 --------------------------------------------------------
 	class A {
 		int cash = 20;
-		
+
 		public int getCash(){
 			return cash;
 			}
@@ -1790,7 +1790,7 @@ Inheritance types:
 
 	//single inheritance
 	class B extends A{
-		
+
 		String property = "5 hecres";
 	}
 ----------------------------------------------------
@@ -1805,14 +1805,14 @@ Eg: In the below C class, 	When calling c.getCash() method, getCash method is av
 -------------------------------------------------
 class A {
 	int cash = 20;
-	
+
 	public int getCash(){
 		return cash;
 	}
 }
 class B {
 	int cash = 20;
-	
+
 	public int getCash(){
 		return cash;
 	}
@@ -1821,11 +1821,11 @@ class B {
 
 //multiple inheritance
 class C extends A, B{
-	
+
 	String property = "5 hecres";
 	public static void main(){
 		C c = new C();
-		c.getCash();	//jvm ambugity 
+		c.getCash();	//jvm ambugity
 	}
 }
 -------------------------------------------------
@@ -1845,23 +1845,23 @@ class B extends A {
 class C extends B{
 }
 -----------------------------------------
-	
+
 Object:
 -------
 - It is avaiable in java.lang package
 - It is super class for all classes in java.
 - If any class is not extending any other class, jvm will extends Object class by default.
 	- 11 methods.
-	notify() - 2 
+	notify() - 2
 	wait() - 3
-	
+
 	toString()
 	hashCode()
 	clone()
 	equals(): Always reference comparision.
 	getClass()
 	finalize()
-	
+
 == operator always check for reference comparision. Even though same content, it will return false.
 
 public class ObjectTest {
@@ -1869,7 +1869,7 @@ public class ObjectTest {
 		String s = "Test";
 		String s1 = new String("Test");
 		String s2 = "Test";
-		
+
 		System.out.println(s1 == s); //false
 		System.out.println(s == s2);
 		// System.out.println(s1.equals(s));	//true
@@ -1878,7 +1878,7 @@ public class ObjectTest {
 
 equals() method check for content comparision.
 - String and all wrapper classes are overriden.
-	primitives 	- 
+	primitives 	-
 	byte 		Byte
 	short		Short
 	int 		Integer
@@ -1898,25 +1898,25 @@ Method calling in inheritance:
 
 2. We can use parent class reference to hold the child class object.
 	B object = new C();
-	
+
 	- When ever we holding child class object using parent class reference, we can't call the child class methods or variables using parent class reference.
 	object.printMyValues(); gives error because parent class reference is hold child object.
-	
+
 3. If we want to call child class methods using parent class reference, we need to do type casting.
 
 Type casting:
 	Casting the type(Changing the type)
 	B objecct = new C();
-	
+
 	C obj1 = (C) object;
-	
+
 	obj1.printMyValues();
 
 	-----------------------------------------------------------------
-	
+
 	class A {
 	int cash = 20;
-	
+
 	public int getCash(){
 		return cash;
 	}
@@ -1924,25 +1924,25 @@ Type casting:
 
 //single inheritance
 class B extends A{
-	
+
 	String property = "5 hecres";
 }
 
 
 class C extends B {
 	public static void main(String args[]){
-	
+
 		B object = new C();
 		System.out.println(object.getCash());
 		System.out.println(object.hashCode());
-		
+
 		//type cast
 		// A obj1 = object;
 		 C obj1 = (C)object;
 		obj1.printMyPropery();
-		
+
 	}
-	
+
 	public void printMyPropery(){
 		System.out.println("property:"+ property);
 	}
@@ -1953,7 +1953,7 @@ overloading:-
 		public void m1(int a){}
 
 m1(int a)
---------- -> 
+--------- ->
 method signature: method name and method parameters.
 	- Return type and access specifier are not part of method signature.
 
@@ -1962,46 +1962,46 @@ Methods which have same name but with different signature is called overloading.
 
 1. same method name but different numbmer of parameters
 	class OverloadingExample {
-		
+
 		public void m1(int a){
 		}
-		
+
 		public void m1(){
 		}
 	}
 
 2. same method name but parameter type order is different.
 		class OverloadingExample {
-		
+
 		public void m1(int a){
 		}
-		
+
 		public void m1(String a){
 		}
 	}
 
 
 class OverloadingExample {
-	
+
 	public void m1(int a, String b){
 		System.out.println(" int string");
 	}
-	
+
 	public void m1(String a, int b){
 	System.out.println(" string int");
 	}
-	
+
 	public int m2(int a, String b){
 		return 1;
 	}
-	
+
 	public static void main(String[] args){
 		OverloadingExample a = new OverloadingExample();
 		a.m1(10, "10");
 	}
 }
 
-Static binding:- 
+Static binding:-
 Compiler knows which method to call based on the code, it is called static binding or compile time binding.
 
 - Mehtod overloading is early bindng or compile time binding or static binding.
@@ -2022,11 +2022,11 @@ Overriding:
 ------------------------------------------------------
 class Parent {
 	int cash = 200000;
-	
+
 	public void marry(){
 		System.out.println("marry subbalaxi");
 	}
-	
+
 }
 
 class Child extends Parent{
@@ -2034,23 +2034,23 @@ class Child extends Parent{
 	public static void main(String args[]){
 		Child c = new Child();
 		System.out.println(c.cash);
-		c.marry();		
+		c.marry();
 	}
-		
+
 	public void marry(){
 		System.out.println("I want to maryy Tamanna");
-	}	
+	}
 }
 ------------------------------------------------------
 - Even though we are holding a Child class object with parent class reference, overidding method will be called always.
 ------------------------------------------------
 class Parent {
 	int cash = 200000;
-	
+
 	public void marry(){
 		System.out.println("marry subbalaxi");
 	}
-	
+
 }
 
 class Child extends Parent{
@@ -2058,12 +2058,12 @@ class Child extends Parent{
 	public static void main(String args[]){
 		Parent c = new Child();
 		System.out.println(c.cash);
-		c.marry();		
+		c.marry();
 	}
-		
+
 	public void marry(){
 		System.out.println("I want to maryy Tamanna");
-	}	
+	}
 }
 --------------------------------------------------
 
@@ -2076,11 +2076,11 @@ When override any methods, compiler doesn't know to which method it has call, so
 	E.g:
 	class Parent {
 	int cash = 200000;
-	
+
 	public final void marry(){
 		System.out.println("marry subbalaxi");
 	}
-	 
+
 }
 
 class Child extends Parent{
@@ -2088,8 +2088,8 @@ class Child extends Parent{
 	public static void main(String args[]){
 		Parent c = new Child();
 		System.out.println(c.cash);
-		c.marry();		
-	}	
+		c.marry();
+	}
 }
 ----------------------
 - for private methods overidding is not possible.
@@ -2106,15 +2106,15 @@ class P {
 }
 class C {
 	void m1(){}
-	
+
 	//or
 	procted void m1(){}
-	
+
 	//or
 	public void m1(){}
 }
 ---------------------------
-	
+
 Not	working eg: Here we are decreasing access specfier scope in child
 ---------------------------
 class P {
@@ -2134,7 +2134,7 @@ points						Overridig					Overloading
 
 3. Can we change acces		We can the access specific 	we can change
 	specifier				but we should increase.
-	
+
 4. Single class				No, we need inheritance		Yes,it is possible.
 
 5. Binding 					Runtime binding				Static Binding
@@ -2146,11 +2146,11 @@ Polymorphism:-
 -----------------------------------------------------
 class Parent {
 	int cash = 200000;
-	
+
 	void marry(){
 		System.out.println("marry subbalaxi");
 	}
-	
+
 }
 
 
@@ -2165,29 +2165,29 @@ class Child extends Parent{
 		Parent c = new Child();
 		System.out.println(c.cash);
 		c.marry();
-		
+
 		Parent p = new Child2();
 		System.out.println(p.cash);
 		p.marry();
-		
+
 		p = new Child();
 		System.out.println(p.cash);
 		p.marry();
-				
+
 		int a = 20;
 		System.out.println(a);
-		
+
 		a = a + 5;
 		a = a + 15;
 		System.out.println(a);
 	}
-		
+
 	protected void marry(){
 		System.out.println("I want to maryy Tamanna");
-	}	
+	}
 }
 -----------------------------------------------------
-- We can achive abstraction. 
+- We can achive abstraction.
 
 14-10-2018
 Typecasting:
@@ -2204,16 +2204,16 @@ class TypeCasting {
 	public static void main(String[] args){
 		int a = 1;
 		byte b = (byte)a;
-		
+
 		System.out.println(a);
-		
+
 		TypeCasting c = new TypeCasting();
-		
+
 		A obj = new B();
 		c.display(obj);
-		
+
 	}
-	
+
 	public void display(A a){
 		System.out.println(a);
 	}
@@ -2223,19 +2223,19 @@ E.g:
 class TypeCasting {
 	public static void main(String[] args){
 		TypeCasting t = new TypeCasting();
-		
+
 		A a = new B();
 		a.m1();
-		
+
 		B b = (B) a;
 		b.m2();	//ce
-		
+
 		A a1 = new C();
 		C c = (C) a1;
-		
+
 		a1.m1();
 		c.m3(); //ce
-		
+
 		A a3 = new A();
 		a3.m1();
 	}
@@ -2261,7 +2261,7 @@ class C extends A {
 -------------------------
 	A a = new B();
 	B b = (B) a;
-	
+
 1 - B - class/interface
 2 - b - reference variable/ object reference
 3 - B - class/interface
@@ -2276,50 +2276,50 @@ Compiler rules:-
  ---------------------------------
  		A a = new B();
 		a.m1();
-		
+
 		B b = (A) a;
  ---------------------------------
- 
+
 Runtime rules
 3. 3rd type and 4th type object should be same. Otherwise we will get ClassCastException.
 
 ------------------------------
 		A a = new B();
 		a.m1();
-		
+
 		B b = (B) a;
 		// B b = (A) a;
-		
+
 		b.m2();
-		
+
 		A a1 = new C();
 		C c = (C) a;	//RE: CCE
-		
+
 ------------------------------
 instanceof:
 - To avoid the ClassCastException, we should use 'instanceof' keyword.
 - instanceof returns true only when reference is not null and object type is same.
 - To use the instanceof operator, there should be relation either parent to child or child to parent.
-Case 1:		
+Case 1:
 		A a1 = new C();
-		
+
 		//a1 = null;
 		if(a1 instanceof C){
 		}
 
-	Here:	
+	Here:
 		a1 instanceof C	returns true. Because a1 object is C.
 
-Case 2:		
+Case 2:
 		A a1 = new B();
-		
+
 		//a1 = null;
 		if(a1 instanceof C){
 		}
 
-	Here:	
+	Here:
 		a1 instanceof C	returns false. Because a1 object is B.
-Case 3:		
+Case 3:
 		A a1 = null;
 		if(a1 instanceof C){
 		}
@@ -2327,60 +2327,60 @@ Case 3:
 	Here:
 		a1 instanceof C	returns false. Because a1 is null.
 Note: null is not any type.
-	
-Case 4:		
+
+Case 4:
 		C c = new C();
 		if(c instanceof A){
 		}
 
-	Here:	
+	Here:
 		c instanceof A - returns true. Because c is child of A
-		
-Case 5:		
+
+Case 5:
 		A a= new A();
 		if(a instanceof C){
 		}
 
-	Here:	
-		c instanceof A - returns false. Because a is not child of C. 
-		
-		
+	Here:
+		c instanceof A - returns false. Because a is not child of C.
+
+
 Summary:
 	x intanceof y
 	x - object reference
 	y - Class/interface name
-	
-		true	
+
+		true
 			- x and y should be same
 			- x is child and y is parent
 		false
 			- x is null
-			- x is parent and y is child 
-	
+			- x is parent and y is child
+
 -----------------------------------------------------------------------------------------
 Pojo: Plain Old Java Object:
 	- Only instance variables
 	- only setter and getters will avaiable.
 	- constructor.
-	
+
 -----------------------------------------------------------------------------------
 	class Person {
 		//hiding our instance variables.
 		private int age;
 		private String name;
-		
+
 		public void setAge(int age){
 			this.age = age;
 		}
-		
+
 		public int getAge(){
 			return age;
 		}
-		
+
 		public void setName(String name){
 			this.name = name;
 		}
-		
+
 		public String getName(){
 			return this.name;
 		}
@@ -2392,25 +2392,25 @@ Static control flow
 
 class StaticControlFlowDemo {
 	static int i= 10;	//1 //7 value assign to 10
-	
+
 	static {	//2		//8
 		m1();
 		System.out.println("First static block");	//10
 	}
-	
+
 	public static void m1(){	//3		//9		//15
-		System.out.println("m1 method: i="+ i + " j="+ j);	
+		System.out.println("m1 method: i="+ i + " j="+ j);
 	}
-	
+
 	public static void main(String[] args){	//4		//14
 		m1();
 		System.out.println("main method");
 	}
-	
+
 	static {		//5	//11
 		System.out.println("Second static block"); //12
 	}
-	
+
 	static int j = 20;		//6	//13 value assig to 20
 }
 
@@ -2418,38 +2418,38 @@ class StaticControlFlowDemo {
 
 class StaticParentControl {
 	static int a= 10;	//1 //10 value assign to 10
-	
+
 	static {	//2		//11
 		m2();
 		System.out.println("Parent First static block");	//10
 	}
-	
+
 	public static void m2(){	//3		//12
-		System.out.println("parent m2 method: a="+ a);	
+		System.out.println("parent m2 method: a="+ a);
 	}
 }
 
 class StaticControlFlowDemo extends StaticParentControl {
 	static int i= 10;	//4 //13 value assign to 10
-	
+
 	static {	//5		//14
 		m1();
 		System.out.println("First static block");	//16
 	}
-	
+
 	public static void m1(){	//6	 //15	//21
-		System.out.println("m1 method: i="+ i + " j="+ j);	
+		System.out.println("m1 method: i="+ i + " j="+ j);
 	}
-	
+
 	public static void main(String[] args){	//7		//20
 		m1();
 		System.out.println("main method");
 	}
-	
+
 	static {		//8	//17
 		System.out.println("Second static block"); //18
 	}
-	
+
 	static int j = 20;		//9	//19 value assig to 20
 }
 
@@ -2461,87 +2461,87 @@ Instance control flow
 
 class InstanceControlFlowDemo{
 	int i= 10;	//1 //7 i=10
-	
+
 	{	//2
 		m1();
-		System.out.println("First instance block");	
+		System.out.println("First instance block");
 	}
-	
+
 	InstanceControlFlowDemo(){	//3
 		System.out.println("Constructor i=" + i +" j:"+j);
 	}
-	
+
 	public void m1(){	//4
-		System.out.println("m1 method: i="+ i + " j="+ j);	
+		System.out.println("m1 method: i="+ i + " j="+ j);
 	}
-	
+
 	public static void main(String[] args){
-		InstanceControlFlowDemo ie = new InstanceControlFlowDemo(); 
+		InstanceControlFlowDemo ie = new InstanceControlFlowDemo();
 		ie.m1();
-		
+
 		System.out.println("Second object flow");
-		InstanceControlFlowDemo ie1 = new InstanceControlFlowDemo(); 
+		InstanceControlFlowDemo ie1 = new InstanceControlFlowDemo();
 		ie1.m1();
-		
+
 		System.out.println("main method");
 	}
-	
+
 	{ //5
-		System.out.println("Second instance block"); 
+		System.out.println("Second instance block");
 	}
-	
+
 	int j = 20;	//6
 }
 
 class InstanceParentControl {
 	int a= 10;	//1 //10 value assign to 10
-	
+
 	{	//2		//11
 		m2();
 		System.out.println("Parent First instance block");	//10
 	}
-	
+
 	InstanceParentControl(){
 		System.out.println("Parent constructor");
 	}
-	
+
 	public void m2(){	//3		//12
-		System.out.println("parent m2 method: a="+ a);	
+		System.out.println("parent m2 method: a="+ a);
 	}
 }
 
 class InstanceControlFlowDemo extends InstanceParentControl{
 	int i= 10;	//1 //7 i=10
-	
+
 	{	//2
 		m1();
-		System.out.println("First instance block");	
+		System.out.println("First instance block");
 	}
-	
+
 	InstanceControlFlowDemo(int j){	//3
 		this.j = j;
 		System.out.println("Constructor i=" + i +" j:"+j);
 	}
-	
+
 	public void m1(){	//4
-		System.out.println("m1 method: i="+ i + " j="+ j);	
+		System.out.println("m1 method: i="+ i + " j="+ j);
 	}
-	
+
 	public static void main(String[] args){
-		InstanceControlFlowDemo ie = new InstanceControlFlowDemo(30); 
+		InstanceControlFlowDemo ie = new InstanceControlFlowDemo(30);
 		ie.m1();
-		
+
 		System.out.println("Second object flow");
-		InstanceControlFlowDemo ie1 = new InstanceControlFlowDemo(40); 
+		InstanceControlFlowDemo ie1 = new InstanceControlFlowDemo(40);
 		ie1.m1();
-		
+
 		System.out.println("main method");
 	}
-	
+
 	{ //5
-		System.out.println("Second instance block"); 
+		System.out.println("Second instance block");
 	}
-	
+
 	int j = 20;	//6
 }
 
@@ -2563,7 +2563,7 @@ interface:-
 - final variables can't be changed.
 - final variables can be accessed through class.variablename
 
-- in interface, only public access modifier is allowed for variable. private and protected are not allowed. 
+- in interface, only public access modifier is allowed for variable. private and protected are not allowed.
 -----------------------------------------------------
 interface Loan {
 	public static final int carLoanRate = 15;
@@ -2583,15 +2583,15 @@ class LoanTest {
 		System.out.println(Loan.peronalLoanRate);
 		System.out.println(LoanTest.a);
 	}
-	
-	
+
+
 }
 ----------------------------------------------------------
 abstract methods:-
 ----------------
  - A method which doesn't have any body is called abstract methods.
  - by using 'abstract' keyword in the method, we can abstract method.
- 
+
 - By default all methods in interface are abstract methods.
 
 - If developer explicitly declared method abstract then compiler will not add.
@@ -2604,7 +2604,7 @@ E.g:
 	interface Loan {}
 	class PLoan extends Loan {} //CE
 	class PLoan implements Loan {} //OK
-	
+
 - If any class is implementing an interface, then that class must provide the implementation (body for methods) for all abstrct methods.otherwise we will get comile time error.
 
 --------------------------------------
@@ -2612,7 +2612,7 @@ interface Loan {
 	public static final int carLoanRate = 15;
 	int peronalLoanRate = 20;
 	static int houseLoanRate = 25;
-	
+
 	void calculateIntrest();
 	public abstract void calculatePersonalIntrest();
 }
@@ -2622,7 +2622,7 @@ class PersonalLoan implements Loan{
 	public void calculateIntrest(){
 		System.out.println("Calcaulate intrest");
 	}
-	
+
 	public void calculatePersonalIntrest(){
 		System.out.println("Calcaulate personal intrest");
 	}
@@ -2636,11 +2636,11 @@ class LoanTest {
 		System.out.println(Loan.carLoanRate);
 		System.out.println(Loan.peronalLoanRate);
 		System.out.println(LoanTest.a);
-		
+
 		Loan p = new PersonalLoan();
 		p.calculateIntrest();
 		p.calculatePersonalIntrest();
-		
+
 	}
 }
 -------------------------------------
@@ -2655,7 +2655,7 @@ class LoanTest {
 - even if there is no abstract method in a class still we can declare that class as abstract.
 -----------------------------------
 abstract class AbstractExample {
-	
+
 	public void m1(){
 		System.out.println("m1");
 	}
@@ -2668,13 +2668,13 @@ methods:-
 	A method which has method body.
 2. abstract methods
 	A method which doesn't have a body.
-	
-- When ever we are extending any abstract class, then child class must provide the body for all parent class abstract methods. otherwise we have to declare child class as abstract. 
+
+- When ever we are extending any abstract class, then child class must provide the body for all parent class abstract methods. otherwise we have to declare child class as abstract.
 - In abstract class we can have instance variables, static variables, instance methods, static method and constructors.
 ----------------------------------------------------
 abstract class AbstractExample {
 	int a = 20;
-	
+
 	public abstract void calculateIntrest();
 	public void m1(){
 		System.out.println("m1");
@@ -2694,7 +2694,7 @@ class AbstractDemo {
 		AbstractExample a = new AbChild();
 		a.calculateIntrest();
 		System.out.println(a);
-		
+
 	}
 }
 ----------------------------------------------------
@@ -2741,7 +2741,7 @@ Yes, multiple inheritance is possible only through the interfaces but not with c
 --------------------------------------------------------------
 interface A {
 	void m1();
-	
+
 }
 
 interface B {
@@ -2758,19 +2758,19 @@ class InterfaceTest {
 	public static void main(String[] b){
 		A a = new C();
 		a.m1();
-		
+
 		B b = new C();
 		b.m1();
-		
+
 		C c = new C();
 		c.m1();
-		
+
 	}
 }
 --------------------------------------------------------------
 final:
 ------
-final is a keyword. it can be used for below 
+final is a keyword. it can be used for below
 1. variables
 2. methods
 3. classes
@@ -2779,22 +2779,22 @@ Final variables
 - Final variables must be initilized.
 	final int a =10; //OK
 	final int b; //CE
-	
+
 - final variables can't be changed.
 	final int a = 20;
 	a = 50; //CE:
-	
+
 Final metods:
 - final methods we can't override.
 -------------------------------------------
 	E.g:
 	class Parent {
 	int cash = 200000;
-	
+
 	public final void marry(){
 		System.out.println("marry subbalaxi");
 	}
-	 
+
 }
 
 class Child extends Parent{
@@ -2802,8 +2802,8 @@ class Child extends Parent{
 	public static void main(String args[]){
 		Parent c = new Child();
 		System.out.println(c.cash);
-		c.marry();		
-	}	
+		c.marry();
+	}
 }
 ------------------------------------------
 Final class
@@ -2813,12 +2813,12 @@ final class Parent {
 	public void cal(){
 		System.out.println("Subbamma");
 	}
-	
+
 }
 
 class Child extends Parent {
 public void marry(){
-		
+
 	}
 }
 
@@ -2835,19 +2835,19 @@ What is package?
 - package is a group of classes or interfaces.
 
 
-Why we should use package? 
+Why we should use package?
 - For easy maintainance
 - readability
 - we can avoid name collusion.
 
 - It should 1st statement.
-- package name should be like this: com.companyname.packagename 
+- package name should be like this: com.companyname.packagename
 	com.ss.math;
-	
+
 Compilation:
 Without package:
 	javac A.java
-	
+
 With package
 	javac -d . A.java
 	javac -d b A.java
@@ -2855,11 +2855,11 @@ With package
 	-d 		- directroy (destination folder)
 	. 		- current folder
 	b 		- folder name
-	
+
 Running:
 Without package:
 	java A
-	
+
 With package
 	java com.ss.pack.A
 	java 	- To call the jvm to execute our program
@@ -2871,16 +2871,16 @@ package types:
 		java.math
 		java.utils
 		java.io
-	
+
 2. user defined packages:
 	- packages which are created by us.
-	
-	
-	
+
+
+
 import:
 -------
 -To use from other package classes in our class, we have to import that class first.
-- compiler tries to check the class is available in current package, if it is not avaibabl,it gives compiler time error.
+- compiler tries to check the class is available in current package, if it is not avaible,it gives compiler time error.
 - import statement specifies to compiler to check the class in other package.
 - import should be after package statement.
 
@@ -2890,38 +2890,38 @@ Order: order of apperance
 	import
 		|
 	class
-	
+
 - If any class is public, then file name should be same.
 - In one file, only class can declare as public
 
 absolute class name:
-a class name with package name	
+a class name with package name
 	com.ss.pack1.StringUtil
 
 There are three ways to access the package from outside the package.
 
 1. import package.*;
 	- All classes will imported.
-	
+
 2. import package.classname;
 	- Only specified class will be imported.
-	
+
 3. fully qualified name.
 	- Only specified class.
 ----------------------------------------------------------------
-30-10-2018	
+30-10-2018
 Access modifier/specfier: Which specify the access from other classes.
-1. public 
+1. public
 2. protected
 3. default
 4. private
 
-1. public 
+1. public
 	We can access from anywhere
-	
+
 2. protected
 	We can access with in the class, with in the curret package  and with in the child classes from outside package.
-	
+
 3. default
 	We can access with in the class and with in the curret package (folder).
 
@@ -2937,12 +2937,12 @@ public class A {
 		a1();
 		a2();
 	}
-	
-	
+
+
 	private static void a1(){
 		System.out.println("a1 private method");
 	}
-	
+
 	static void a2(){
 		System.out.println("a2 default method");
 	}
@@ -2950,7 +2950,7 @@ public class A {
 	protected static void a3(){
 		System.out.println("a2 public method");
 	}
-	
+
 	public static void a4(){
 		System.out.println("a2 public method");
 	}
@@ -2966,13 +2966,13 @@ import com.ss.pack1.MathUtil;
 class B {
 	public static void main(String[] a){
 		System.out.println("Hello package B");
-		
+
 		int val = MathUtil.squre(10);
 		System.out.println(val);
-		
+
 		int val1 = com.ss.pack1.StringUtil.squre(10);
 		System.out.println(val1);
-		
+
 		//A.a1();
 		A.a2();
 		A.a3();
@@ -2988,13 +2988,13 @@ public class C extends A{
 		System.out.println("Hello package C");
 		//A.a2(); can't call because it default.
 		//A.a3();
-		
+
 		C c = new C();
 		// d.a1();
 		// d.a2();
 		c.a3();//C is child of A
 		c.a4();
-		
+
 	}
 }
 
@@ -3003,29 +3003,29 @@ class D{
 		System.out.println("Hello package C");
 		//A.a2(); can't call because it default.
 		//A.a3();
-		
+
 		D d = new D();
 		// d.a1();
 		// d.a2();
 		d.a3();//CE: D is not a child of A
 		d.a4();
-		
+
 	}
 }
 ------------------------------------------------------------
 Class:
 - For class only applicable modifier are:
-	1 - public 
-	2 - default 
-	3 - static 
+	1 - public
+	2 - default
+	3 - static
 	4 - abstract
-	5 - final 
-	
+	5 - final
+
 	public class A{}	//OK
 	protected class A{} //CE
 	public abstract class A{}	//OK
 	public abstract final class A{}	//CE abstract and final combination wrong.
-	
+
 -------------------------------------------------------------
 31-10-208
 java lang package:
@@ -3064,8 +3064,8 @@ Classes:
 	ThreadLocal
 	Throwable
 	Void
-	
-	
+
+
 1. String
 2. StringBuffer - 1.0
 3. StringBuilder - 1.5
@@ -3073,7 +3073,7 @@ Classes:
 5. Math
 
 ----------------------------
-Math	
+Math
 	1. min
 	2. max
 	3. abs
@@ -3081,13 +3081,13 @@ Math
 	5. round
 	6. ceil
 	7. floor
-	
-	
+
+
 String:-
 ------
-- String is a final class. So we can't extend String class. 
+- String is a final class. So we can't extend String class.
 - String is a immutability class. Once we create a String object, we can't change it. if we try to change then it will new create new object.
-- It is not a thread safe so it is faster than StringBuffer. 
+- It is not a thread safe so it is faster than StringBuffer.
 - String overrides the equals, hashCode, clone and compareTo methods override.
 
 Importance of String Constant Pool(SCP)
@@ -3106,26 +3106,26 @@ immutability of the string objects.
 - SCP is the only reason why the String Objects are immutable.
 ------------------------------------------
 class StringScpDemo {
-	
+
 	public static void main(String args[]){
 		String s = "Sudha";	//only in scp
 		s.concat("kar");
-		
+
 		String s2 = s.concat("kar");	//heap
-		
+
 		String s1 = new String("Sudhakar");	//scp and heap. s1 object points to heap
-		
-		
+
+
 		String s3 = "Sudhakar"; //scp
 		String s4 = "Sudhakar";
-		
+
 		//s3 = s3.concat("b");
-		
+
 		System.out.println(s2 == s3);
 		System.out.println(s2.equals(s3));
 		System.out.println(s3);
-		
-		
+
+
 	}
 }
 ------------------------------------------
@@ -3135,13 +3135,13 @@ What is immutability?
 When ever we are trying to change anything in the object, it will create a new object with modifications. The existing object will not change.
 	E.g:
 		String s = "Sudha";
-		
+
 	When we are calling concat method, it will create a new string as 'sudhakar' but in the s it will not change the s value.
 		s.concat("kar");
 
-	If we want to hold the changed object then 
+	If we want to hold the changed object then
 	s = s.concat("kar");
-	
+
 Constructors:
 	String()
 	String(char[] a)
@@ -3151,10 +3151,10 @@ Constructors:
 
 Methods:
 	1. length(): return no of characters
-	2. isEmpty(): true/false 
+	2. isEmpty(): true/false
 	3. contains()
 	4. concat();
-	5. 
+	5.
 
 how to instantiate string?
 String a = "Sudha";
@@ -3165,72 +3165,72 @@ a.isEmpty();	//false
 class StringTest {
 
 	public static void main(String[] args){
-		String s = "Sudha"; 
+		String s = "Sudha";
 		System.out.println(s);
-		
+
 		s = s.concat("kar");
 		System.out.println(s);
-		
+
 		int index = s.indexOf("b");
 		if(index != -1){
 			System.out.println("available "+ index);
 		}else{
 			System.out.println("not available" + index);
 		}
-		
+
 		boolean b = s.contains("k");
 		System.out.println(b);
-		
+
 		char c = s.charAt(3);
 		System.out.println(c);
-		
+
 		int compare = s.compareTo("Sudhakar1");
 		System.out.println(compare);
-		
+
 		boolean eq = s.equals("sudhakar");
 		System.out.println(eq);
-		
+
 		eq = s.equalsIgnoreCase("sudhakar");
 		System.out.println(eq);
-		
+
 		boolean startWith = s.startsWith("Su");
 		System.out.println(startWith);
-		
+
 		boolean endsWith = s.endsWith("Su");
 		 System.out.println(endsWith);
-		
+
 		s = s.replace("kar", "Badugu");
 		System.out.println(s);
-		
+
 		String name = " Murali ";
 		System.out.println(name.trim());
 		System.out.println(name.toUpperCase());
 		System.out.println(name.toLowerCase());
-		
+
 		char[] chArray = name.toCharArray();
 		for(int i=0 ;i<chArray.length; i++){
 			System.out.println(chArray[i]);
 		}
-		
+
 		StringBuffer sb = new StringBuffer(name);
 		boolean res = name.contentEquals(sb);
 		System.out.println(res);
 		System.out.println(name.hashCode());
-		
+
 		String village = "karuru yes ra";
 		System.out.println(village.indexOf('r', 6));
 		System.out.println(village.lastIndexOf('r'));
 		System.out.println(village.substring(0, 5));
 		System.out.println(village.substring(5));
-		
+
 		String names = "ram,sham,mam";
 		System.out.println(names);
-		
+
 		String[] nameArr = names.split(",");
 		for(String s1 : nameArr){
 			System.out.println(s1);
 		}
-		
+
 		// String[] s2Arr = s.split("");
 		// int count = 0;
 		// for(String s3: s2Arr){
@@ -3245,16 +3245,16 @@ class StringTest {
 				count++;
 			}
 		}
-		
+
 		// for(int i=s2Arr.length - 1; i>=0 ; i--){
 			// System.out.println(s2Arr[i]);
 		// }
-		
-		
+
+
 		for(int i=s.length() - 1; i>=0 ; i--){
 			System.out.println(s.charAt(i));
 		}
-		
+
 		System.out.println(count);
 	}
 }
@@ -3268,11 +3268,11 @@ StringBuffer
 class StringBufferTest {
 
 	public static void main(String[] args){
-		StringBuffer s = new StringBuffer("Sudha"); 
+		StringBuffer s = new StringBuffer("Sudha");
 		s.append("kar");
 		System.out.println(s.toString());
-		
-		
+
+
 	}
 }
 
@@ -3280,7 +3280,7 @@ class StringBufferTest {
 ---------------------------------------------
 StringBuilder
 - It is a mutabile class.
-- It is not a thread safe. 
+- It is not a thread safe.
 - Improves the performance
 - reverse() method available.
 - equals method doesn't override.
@@ -3288,11 +3288,11 @@ StringBuilder
 class StringBuilderTest {
 
 	public static void main(String[] args){
-		StringBuilder s = new StringBuilder("Sudha"); 
+		StringBuilder s = new StringBuilder("Sudha");
 		s.append("kar");
 		System.out.println(s.toString());
-		
-		
+
+
 	}
 }
 
@@ -3329,8 +3329,8 @@ main methods:
 	1. By using construcor
 		String s1 = "10";
 		Short s = new Short(s1);
-		
-		
+
+
 	2. By using parseXxx() methods
 		Integer.parseInt(s1);
 		Float.parseFloat(s1);
@@ -3340,8 +3340,8 @@ main methods:
 - how to convert number to string - toString
 		Integer i = 26;
 		String is = i.toString();
-		
-		
+
+
 - how to convert one value type to another value. eg. int to float or float to long
 	xxxValue() - Wrapper to primitive
 	- byteValue()
@@ -3350,55 +3350,55 @@ main methods:
 	- LongValue()
 	- floatValue()
 	- DoubleValue()
-	
 
-- Primitive to wrapper 
+
+- Primitive to wrapper
 	valueOf(primitiveValue)
-	
+
 
 public class WrapperTest {
 	public static void main(String... arg){
 		WrapperTest.stringToNumber();
-		
+
 		// int i = 20;
 		int i1 = 25;
-		
+
 		//convert number to string
 		Integer i = 26;
 		String is = i.toString();
 		System.out.println(is.contains("5"));
-		
+
 		//convert one datatype to another xxValue
 		byte b = i.byteValue();
-		
+
 		Integer ig = Integer.valueOf(i);
 		System.out.println(ig);
-		
+
 	}
-	
+
 	private static void stringToNumber(){
 		int i = 20;
 		Integer i1 = 20;
 		Integer i2 = new Integer(130);
 		Integer i3 = 130;
-		
+
 		System.out.println(i2 == i3);
 		System.out.println(i2.equals(i3));
-		
+
 		String s = "10";
 		String s1 = "20";
-		
+
 		//
 		Integer i4 = new Integer(s);
 		Integer i5 = new Integer(s);
-		
+
 		//alwasys recomened to use parseInt
 		int i6 = Integer.parseInt(s);
 		int i7 = Integer.parseInt(s1);
-		
+
 		System.out.println(i4 + i5);
 		System.out.println(i5 + i6);
-		
+
 		String s2 = "10.23";
 		// Double d = new Double(s2);
 		Double d = Double.parseDouble(s2);
@@ -3411,7 +3411,7 @@ public class WrapperTest {
 -----------------------------------------------------------
 Exception handling:
 ------------------
-- Exceptions occur at runtime. 
+- Exceptions occur at runtime.
 - In run time, an unexpected event which stops our program execution is called exception.
 - abnormal termination of a program called exception.
 - handling the exception is called exception handling.
@@ -3425,12 +3425,12 @@ Exception handling:
 	5. throws
 
 - Inside try block, we should write risky code.
-- Always try and catch blocks both should be there. 
+- Always try and catch blocks both should be there.
 - try alone or catch alone is wrong.
 	try{	//CE
-	
+
 	}
-	
+
 	catch(){}//ce
 	catch(Exception e){}//ce
 - finally is optional.
@@ -3442,7 +3442,7 @@ Exception handling:
 	}
 	Sop("hi");		//CE
 	catch(Exception e){}
-	
+
 syntax1:
 try {
 	//risky code
@@ -3451,7 +3451,7 @@ try {
 }
 finally {
 	//optional
-}	
+}
 
 syntax2:
 try {
@@ -3459,7 +3459,7 @@ try {
 } catch(Exception e) {
 
 }
-	
+
 -----------------------------------------
 class ExceptionTest {
 	public static void main(String... ar){
@@ -3468,19 +3468,19 @@ class ExceptionTest {
 
 		try{
 			int c = i/b;
-			System.out.println("First");	
+			System.out.println("First");
 		} catch(Exception e){
 			System.out.println("error handled 1 " + e);
 		}
-		
+
 		try{
 			int c = i/1;
-			System.out.println("Second");	
+			System.out.println("Second");
 		} catch(Exception e){
 			System.out.println("error handled 2" + e);
 		}
-		
-		System.out.println("transfer to youth");	
+
+		System.out.println("transfer to youth");
 	}
 }
 ---------------------------------------------------------
@@ -3490,9 +3490,9 @@ E.g:
 
 hierarchy:
 - Throwable is root exception.
-	
+
 					   Throwable
-					   -----------		
+					   -----------
 			\\\\\\\\			\\\\\
 		Exception					Error
 			|
@@ -3519,19 +3519,19 @@ throw:
 
 - If throw keyword throws a any class object which is not a child Throwable then compiler will give the following error.
 	e.g: throw new ExceptionThrowTest();
-	
+
 ExceptionThrowTest.java:16: error: incompatible types: ExceptionThrowTest cannot be converted to Throwable
                         throw new ExceptionThrowTest();
-						
-- throw should in a last line. means: after throw statement no other statements are allowed. Compiler will give error 
+
+- throw should in a last line. means: after throw statement no other statements are allowed. Compiler will give error
 			throw new RuntimeException("Lessthan 18 is not allowed");
 			System.out.println("exception raised");	//CE
-			
+
 ExceptionThrowTest.java:23: error: unreachable statement
                         System.out.println("exception raised");
-						
-						
-						
+
+
+
 Exception types:
 1. checked exception
 2. unchecked exception
@@ -3540,15 +3540,15 @@ Exception types:
 ---------------------
 - Exceptions which are checked by compiler at compile time called checked exceptions.
 	E.g: IOException
-	
+
 - What are the checked exception?
 - Which are direct child of Exception but not RuntimeException and its child.
 	Exception
 	 - SQLException
 	 - IOException
 	    - FileNotFoundException
-	 
-	 
+
+
 - Always checked exception must be handled in try/catch block. otherwise compile time error occurs.
 CheckedExceptionTest.java:11: error: unreported exception FileNotFoundException; must be caught or declared to be thrown
                                 throw new FileNotFoundException("File is not available");
@@ -3558,8 +3558,8 @@ import java.io.*;
 class CheckedExceptionTest {
 	public static void main(String... ar){
 
-	
-		// try{			
+
+		// try{
 			System.out.println("hello");
 			String file = null;
 			if(file == null){
@@ -3569,7 +3569,7 @@ class CheckedExceptionTest {
 		// catch(IOException e){
 			// System.out.println(e);
 		// }
-	}	
+	}
 }
 -----------------------------------------CE program---------
 
@@ -3579,8 +3579,8 @@ import java.io.*;
 class CheckedExceptionTest {
 	public static void main(String... ar){
 
-	
-		try{			
+
+		try{
 			System.out.println("hello");
 			String file = null;
 			if(file == null){
@@ -3591,45 +3591,45 @@ class CheckedExceptionTest {
 		catch(IOException e){
 			System.out.println(e);
 		}
-	}	
+	}
 }
 ------------------------------------Working program ---------
-								
+
 
 - a checked exception should not handle if try never throws that exception. else compile time below error occurs.
 
 D:\Java\CoreJavaTutoral\programs\exceptions>javac CheckedExceptionTest.java
 CheckedExceptionTest.java:11: error: exception SQLException is never thrown in body of corresponding try statement
                 catch(java.sql.SQLException e){
-				
+
 -------------------------CE---------------------
 import java.io.IOException;
 
 class CheckedExceptionTest {
 	public static void main(String... ar){
 
-	
-		try{			
+
+		try{
 			System.out.println("hello");
 		}
 		catch(java.sql.SQLException e){
 
 		}
 	}
-	
+
 	static void checkNumber(int num){
 		if(num < 10){
 			throw new RuntimeException("number lesstan 10");
 		}
-	}	
-}				
---------------------------CE--------------------				
+	}
+}
+--------------------------CE--------------------
 
 2. unchecked exception:
 ---------------------
 - Exceptions which are not checked by compiler at compile time called unchecked exceptions.
 	E.g: RuntimeException
-	
+
 RuntimeException and all its childs called unchecked exception.
 
 - for unchecked exception try and catch are optional. If we want to handle these we can write try/catch.
@@ -3637,14 +3637,14 @@ RuntimeException and all its childs called unchecked exception.
 import java.io.*;
 
 class CheckedExceptionTest {
-	public static void main(String... ar){			
+	public static void main(String... ar){
 			System.out.println("hello");
 			String file = null;
 			if(file == null){
 				throw new RuntimeException("File is not available");
 			}
-		
-	}	
+
+	}
 }
 --------------------------------------------
 
@@ -3655,7 +3655,7 @@ throws:
 - throws followed by Exception class name.
 	e.g:	throws FileNotFoundException
 - throws should in the last of method signature.
-		void m1() throws FileNotFoundException {} 
+		void m1() throws FileNotFoundException {}
 		void m1 throws FileNotFoundException () {} //CE
 		void m1() throws new FileNotFoundException() {} //CE
 - when we are throws, try is optional.
@@ -3670,7 +3670,7 @@ class ThrowsExceptionTest {
 		}catch(FileNotFoundException e){
 			System.out.println(e);
 		}
-		
+
 		System.out.println("transfer");
 	}
 
@@ -3685,8 +3685,8 @@ class ThrowsExceptionTest {
 			throw new FileNotFoundException("File is not available");
 		}
 	}
-	
-	
+
+
 }
 -----------------------------------------------------------
 
@@ -3704,17 +3704,17 @@ class FinallyTest {
 	public static void main(String... ar) {
 		System.out.println("register");
 		try{
-			// FinallyTest s = new FinallyTest();			
-			FinallyTest s = null;			
+			// FinallyTest s = new FinallyTest();
+			FinallyTest s = null;
 			System.out.println(s.i);
-			
+
 		}catch(NullPointerException e){
-			System.out.println(e);	
+			System.out.println(e);
 		}
 		finally {
 			System.out.println("transfer");
 		}
-	}	
+	}
 }
 ----------------------------------------------------------------
 try with different catch blocks
@@ -3731,7 +3731,7 @@ try with different catch blocks
 	}
 
 class MultipleCatchTest{
-	
+
 	public static void main(String... ar) {
 		try{
 			String s = "10";
@@ -3746,9 +3746,9 @@ class MultipleCatchTest{
 		finally{
 			System.out.println("Finally");
 		}	//only finally
-		
+
 		System.out.println("multiple catches");
-	}	
+	}
 }
 
 try with different catch order
@@ -3757,7 +3757,7 @@ try with different catch order
 - catch order should be child --> parent
 
 class CatchOrderTest{
-	
+
 	public static void main(String... ar) {
 		try{
 			String s = "10";
@@ -3772,16 +3772,16 @@ class CatchOrderTest{
 		finally{
 			System.out.println("Finally");
 		}	//only finally
-		
+
 		System.out.println("catches order");
-	}	
+	}
 }
 -------------------------------------------------------
 
 - if we write parent exception in first catch and child in second catch, compile time errror will occur. already parent catched the exception and child catch will not executed because of that compile will give error.
 ------------------Wrong example ------------
 class CatchOrderTest{
-	
+
 	public static void main(String... ar) {
 		try{
 			String s = "10";
@@ -3796,19 +3796,19 @@ class CatchOrderTest{
 		finally{
 			System.out.println("Finally");
 		}	//only finally
-		
+
 		System.out.println("catches order");
-	}	
+	}
 }
 ---------------------------------------
 try with finally without catch
 ------------------
 - finally should be there with try block.
 possible scenarios:
-	1. try, catch 
+	1. try, catch
 	2. try, finally
 	3. try, catch, catch, finally
-	
+
 Not possible scenarios. Compile time error will occur.
 	4. try --> CE
 	4. catch --> CE
@@ -3816,7 +3816,7 @@ Not possible scenarios. Compile time error will occur.
 	4. catch, finally --> CE
 
 class TryWithFinally{
-	
+
 	public static void main(String... ar) {
 		try{
 			String s = "10";
@@ -3825,9 +3825,9 @@ class TryWithFinally{
 		finally{
 			System.out.println("Finally");
 		}	//only finally
-		
+
 		System.out.println("Only with finally block");
-	}	
+	}
 }
 -------------------------------------------------------
 User defined exception:
@@ -3840,58 +3840,58 @@ Steps:-
 2. extend this class to any child of Throwable. eg: RuntimeException
 3. To print the reason, in parameterized construcor, call super class construcor with reason.
 4. Always exception class names should be end with Exception. This is not a rule. It gives more readability.
- 
-Note:- 
+
+Note:-
 	1. If our class extends RuntimeException, then our class is unchecked exception. so no need to maintain try,catch/throws keyw
 	2. If our class extends Exception, then our class is checked exception. so need to maintain try,catch/throws keyword
 
-	
+
 ----------------------------------------
 class UserDefinedExceptionTest {
 	public static void main(String... ar){
 		int age = 25;
-		
+
 		if(isElible(age)){
-			System.out.println("transfer to youth " + age);	
+			System.out.println("transfer to youth " + age);
 		}
-		
+
 		try{
 			int age1 = 20;
 			if(isElible(age1)){
-				System.out.println("transfer to youth "+ age1);	
+				System.out.println("transfer to youth "+ age1);
 			}
 		}catch(UserValidationException uve){
 			System.out.println(uve);
 		}
-	
+
 
 		int age2 = 30;
 		if(isElible(age2)){
-			System.out.println("transfer to youth "+ age2);	
+			System.out.println("transfer to youth "+ age2);
 		}
 
-		
-		System.out.println("For all transferred");	
+
+		System.out.println("For all transferred");
 	}
-	
+
 	private static boolean isElible(int age){
 		if(age >= 22 && age <= 35){
 			return true;
 		}
-		
+
 		throw new UserValidationException("He is not eligle by age "+ age);
-	}	
+	}
 }
 
 public class UserValidationException extends RuntimeException{
 
 	public UserValidationException(){
 	}
-	
+
 	public UserValidationException(String reason){
-		super(reason);//we are calling super class constructor.	
-	}	
-}	
+		super(reason);//we are calling super class constructor.
+	}
+}
 -----------------------------------------
 https://www.javatpoint.com/exception-handling-in-java
 
@@ -3905,10 +3905,10 @@ drawbacks:-
 - Array is size fixed, once we create, we can't increase or decrease it's size.
 - Array doesn't provide any implementation methods for dynamic size addition/remove.
 - We can't store heterogenious (different types) data. e.g: we can't store string and int in a single array.
-	int[] rollno = {123, 34, "Sudhakar"}; 
+	int[] rollno = {123, 34, "Sudhakar"};
 
 ------------------------------------------------------------------------------------
-29-01-2019	
+29-01-2019
 Collection frameworks:-
 ---------------------
 
@@ -3929,16 +3929,16 @@ Collection frameworks api:-
 									   |
 									Collection	(interface)
 									   |
-				--------------------------------------------------------------
-				|							|								|			
-				List					    Set								Queue		(interface)
-	------------------------------   -------------------------------  ------------------------- (class)
-    - ArrayList							- HashSet						- ArrayDeque
+				----------------------------------------------------------------------------------
+				|					     |			                 |
+				List					    Set					Queue(interface)
+	------------------------------   -------------------------------  -------------------------(class) -----------------
+    - ArrayList							- HashSet					- ArrayDeque
     - LinkedList						- LinkedHashSet					- LinkedList
-	- Vector							- TreeSet						- PriorityQueue
-	- Stack								- EnumSet						- ArrayBlockingQueue
-		
-		
+	- Vector							- TreeSet					- PriorityQueue
+	- Stack								- EnumSet					- ArrayBlockingQueue
+
+
 ---------------------------------------------------------------------------------------------------------
 
 Collection:-
@@ -3953,8 +3953,8 @@ Collection:-
 	7. removeAll
 	8. toArray
 	9. retainAll()
-	
-	
+
+
 1. List
 -------
 - Allow duplicates in collection.
@@ -3977,9 +3977,9 @@ Drawback:-
 
 RandomAccess:-
 -----------
-- It is a marker interface. 
+- It is a marker interface.
 - A interface which doesn't have any methods and gives some addditional ability to our class called marker interface.
-E.g: 
+E.g:
 	RandomAccess
 	Serializable
 
@@ -4004,40 +4004,40 @@ public class ArrayListDemo {
 		 l.add(45);
 		 l.add(45);
 		 l.add(34);
-		
+
 		l.add(11);
 		System.out.println(l);
 		 l.add(0, 1);
-		
+
 		 System.out.println(l);
 		 System.out.println(l.get(3));
 		 System.out.println(l.size());
 		 System.out.println(l.isEmpty());
-		
+
 		 l.set(0, 90);
-		 
+
 		 System.out.println(l);
-		
+
 		ArrayList l2 = new ArrayList();
 		l2.addAll(l);
 		System.out.println(l2);
-	 
+
 		Object l3 = l2.clone();
-		
+
 		System.out.println(l3);
-		
-		l2.add("Sudhakar");		
+
+		l2.add("Sudhakar");
 		System.out.println(l2);
-		
+
 	//	l2.removeAll(l);
 		l2.retainAll(l);
-		
+
 		System.out.println(l2);
 		System.out.println(l);
 
 		Object[] obj = l.toArray();
 		System.out.println(obj);
-		
+
 		for(Object o : obj){
 			System.out.println(o);
 		}
@@ -4050,7 +4050,7 @@ LinkedList:-
 - LinkedList allows dupliate elements in the list.
 - LinkedList preserves order. Store elements in give order. Order is important.
 - LinkedList doesn't the implements RandomAccess.
-- LinkedList is slower in iteration because it doesn't implement RandomAccess. 
+- LinkedList is slower in iteration because it doesn't implement RandomAccess.
 - Algorithm supported by Double ended List
 - it is very fast when adding elements.
 - LinkedList is not synchronized. It is not thread safe and faster.
@@ -4058,14 +4058,14 @@ LinkedList:-
 - null values are allowed.
 
 Drawback:-
-- LinkedList is slower in iteration elements. 
+- LinkedList is slower in iteration elements.
 
 import java.util.*;
 
 public class LinkedListDemo {
 	public static void main(String[] args){
 		List l = new LinkedList();
-		
+
 		l.add(60);
 		l.add(90);
 		l.add(60);
@@ -4076,44 +4076,44 @@ public class LinkedListDemo {
 		l.add(45);
 		l.add(45);
 		l.add(34);
-		
+
 		l.add(11);
 		System.out.println(l);
 		 l.add(0, 1);
-		
+
 		 System.out.println(l);
 		 System.out.println(l.get(3));
 		 System.out.println(l.size());
 		 System.out.println(l.isEmpty());
-		
+
 		 l.set(0, 90);
-		 
+
 		 System.out.println(l);
-		
+
 		LinkedList l2 = new LinkedList();
 		l2.addAll(l);
 		System.out.println(l2);
-	 
+
 		Object l3 = l2.clone();
-		
+
 		System.out.println(l3);
-		
-		l2.add("Sudhakar");		
+
+		l2.add("Sudhakar");
 		System.out.println(l2);
-		
+
 	//	l2.removeAll(l);
 		l2.retainAll(l);
-		
+
 		System.out.println(l2);
 		System.out.println(l);
 
 		l2.addFirst("Sudhakar");
 		l2.addLast("Sudhakar");
-		
+
 		Object[] obj = l.toArray();
 		l2.removeFirstOccurrence("Sudhakar");
 		System.out.println(l2);
-		
+
 		for(Object o : obj){
 			System.out.println(o);
 		}
@@ -4149,21 +4149,21 @@ public class VectorDemo {
 		l.add(45);
 		l.add(45);
 		l.add(34);
-		
+
 		System.out.println(l.size());
 		System.out.println(l.isEmpty());
-		
+
 		l.set(0, 90);
 		Vector v = (Vector) l;
 		v.addElement("Sudhakar");
 		v.insertElementAt("Ram", 3);
-		
+
 		v.setElementAt(90, 1);
-		
+
 		System.out.println(v.capacity());
 		System.out.println(v.elementAt(1));
 		System.out.println(v);
-		
+
 		List subList = v.subList(3, 5);
 		System.out.println(subList);
 	}
@@ -4186,22 +4186,22 @@ public class StackDemo {
 		 l.add(45);
 		 l.add(45);
 		 l.add(34);
-		
+
 		 System.out.println(l.size());
 		 System.out.println(l.isEmpty());
-		
+
 		 l.set(0, 90);
 		Stack v = (Stack) l;
 		v.addElement("Sudhakar");
-		
+
 		v.push("Push");
-		
+
 		System.out.println(v.peek());
 		System.out.println(v);
-		
+
 	}
 }
- 
+
 -----------------------------------------------------------------------------------------------
 Differencs						List											Set
 -----------------------------------------------------------------------------------------------
@@ -4238,8 +4238,8 @@ Constructor:-
 	HashSet(Collection<? extends E> c)
 	HashSet(int initialCapacity)
 	HashSet(int initialCapacity, float loadFactor)
-	
-	
+
+
 --------------------------------------------
 import java.util.*;
 class HashSetDemo{
@@ -4251,7 +4251,7 @@ class HashSetDemo{
 		for(int a : arr){
 			h.add(a);
 		}
-		
+
 		List li = new ArrayList();
 		li.add(1);
 		li.add(12);
@@ -4263,8 +4263,8 @@ class HashSetDemo{
 		li.add(null);
 		li.add(null);
 		System.out.println(li);
-		
-		
+
+
 		// h.add(34);
 		// h.add(35);
 		// h.add(37);
@@ -4273,9 +4273,9 @@ class HashSetDemo{
 		// h.add(null);
 		// h.add(null);
 		// h.add(null);
-		
+
 		System.out.println(h);
-		
+
 	}
 }
 ---------------------------------------------------
@@ -4302,7 +4302,7 @@ class LinkedHashSetDemo{
 		for(int a : arr){
 			h.add(a);
 		}
-		
+
 		List li = new ArrayList();
 		li.add(1);
 		li.add(12);
@@ -4314,8 +4314,8 @@ class LinkedHashSetDemo{
 		li.add(null);
 		li.add(null);
 		System.out.println(li);
-		
-		
+
+
 		h.add(34);
 		h.add(35);
 		h.add(37);
@@ -4324,9 +4324,9 @@ class LinkedHashSetDemo{
 		h.add(null);
 		h.add(null);
 		h.add(null);
-			
+
 		System.out.println(h);
-		
+
 	}
 }
 
@@ -4355,15 +4355,15 @@ Differencs						HashSet											LInkedHashSet
 - If we are using our own comparator, then all classes are allowed.
 
 	Collection
-	  | 
+	  |
 	 Set (i)
-      | 
+      |
 	SortedSet (i)
 	  |
 	NavigableSet (i)
 	  |
 	TreeSet (c)
-	
+
 Constructor:-
 TreeSet()
 TreeSet(Collection<? extends E> c)
@@ -4380,34 +4380,34 @@ class TreeSetDemo{
 		t.add("Murali");
 		t.add("Prasad");
 		t.add("Prasad");
-		
+
 		//t.add(12); ClassCastException
 		//t.add(null); //NullPointerException
 		System.out.println(t);
-		
+
 		int[] arr = {23, 2, 34, 56, 677, 86, 23, 2};
-		System.out.println(Arrays.toString(arr));		
+		System.out.println(Arrays.toString(arr));
 		Arrays.sort(arr);
 		System.out.println(Arrays.toString(arr));
 		System.out.println(arr[0]);
 		System.out.println(arr[arr.length-1]);
-		
+
 		Set t1 = new HashSet();
 		int count = 0;
 		for(int a : arr){
 			boolean isAdded = t1.add(a);
-			
+
 			if(isAdded == false){
 				System.out.println("Duplicte "+ a);
 				count = count + 1;
 			}
 		}
-		
+
 		System.out.println(t1);
 		System.out.println("Duplicate count:" + count);
-		
-		
-		
+
+
+
 	}
 }
 
@@ -4440,11 +4440,11 @@ Queue: (interface)
 						Queue
 						  |
 				-------- ------------------------- ---------------
-				|					| 					| 
+				|					| 					|
 				BlockingQueue	BlockingDeque			Deque (interface)
 				|					|
 				ArrayBlockingQueue	ArrayBlockingDeque	ArrayDeque
-		
+
 1. ArrayBlockingQueue
 
 2. PriorityBlockingQueue
@@ -4453,7 +4453,7 @@ Queue: (interface)
 
 ------------------------------------------
 1. ArrayBlockingQueue: class
-- fifo order. 
+- fifo order.
 - it is fixed in size. so dynamically if user adds any elements greater size, it throws exception.
 - duplicate are allowed.
 - heterogenious objects are allowed.
@@ -4464,7 +4464,7 @@ Queue: (interface)
 
 ArrayBlockingQueue(int capacity)
 ArrayBlockingQueue(int capacity, boolean fair)
- 
+
 import java.util.concurrent.*;
 class ArrayBlockingQueueDemo {
 	public static void main(String[] args){
@@ -4474,15 +4474,15 @@ class ArrayBlockingQueueDemo {
 		ab.add(2);
 		ab.add(23);
 		//ab.add(null);
-		
+
 		System.out.println(ab.peek());
 		System.out.println(ab);
-		
+
 		System.out.println(ab.poll());
 		System.out.println(ab.poll());
 		System.out.println(ab);
-		
-		
+
+
 	}
  }
 
@@ -4507,18 +4507,18 @@ class PriorityBlockingQueueDemo {
 		ab.add("CM");
 		ab.add("A");
 		//ab.add(null);
-		
+
 		System.out.println(ab.peek());
 		System.out.println(ab);
-		
+
 		System.out.println(ab.poll());
 		System.out.println(ab.poll());
 		System.out.println(ab);
-		
+
 	}
  }
 
- 
+
 -----------------------------------------------------------------------------------------------
 Differencs						ArrayBlockingDeque							PriorityBlockingQueue
 -----------------------------------------------------------------------------------------------
@@ -4550,36 +4550,36 @@ class ArrayDequeDemo {
 		ab.add("CM");
 		ab.addFirst("A");
 		//ab.add(null);
-		
+
 		System.out.println(ab.peekFirst());
 		System.out.println(ab);
-		
+
 		System.out.println(ab.pollLast());
 		System.out.println(ab);
-		
+
 	}
  }
- 
+
 ArrayBlockingDeque:-
 -----------------
 - Size is fixed.
 - It follows FIFO order.
 - we can add elements at both sides.
- 
+
 ------------------------------------------------------------------------
 09-02-19
 Enumeration:
 - The first cursor availabe in collections.
 - elements() availabe in vector class. Stack also can call this method.
 - we can iterate collection elements.
-- It is a legacy class 
-- It is one directional cursor 
+- It is a legacy class
+- It is one directional cursor
 
 Object creation:
 	Vector v = new Vector();
 	Enumeration e = v.elements();
-	
-	
+
+
 methods:
 hasMoreElements()
 nextElement()
@@ -4598,18 +4598,18 @@ class EnumenrationDemo {
 		ab.add("Sudha");
 		ab.add("MLA");
 		ab.add("CM");
-		
-		System.out.println("Before:" + ab);		
+
+		System.out.println("Before:" + ab);
 		Enumeration li = ab.elements();
-		
+
 		while(li.hasMoreElements()){
-			
+
 			Object o = li.nextElement();
 			System.out.println(o);
 		}
 
 		System.out.println("After:" + ab);
-		
+
 	}
  }
 
@@ -4618,7 +4618,7 @@ class EnumenrationDemo {
 
 Iterator (interface)
 --------
-- An iterator iterate over a collection. 
+- An iterator iterate over a collection.
 - iterator() method is available in Collection. List, Set and Queue can be used this method.
 - Universal cursor. It can be used for all collections elements.
 - One directional cursor forward direction.
@@ -4636,13 +4636,13 @@ Drawbacks:
 - we can't add any elements.
 - we can't iterate previous elements.
 - we can't replace any elements.
-	
+
 - While iterating the elements using the for each loop if we are adding/deleting then ConcurrentModificationException occurs.
 		for(Object o : ab){	//only fo reading purpose
 			if("Sudha".equals(o)){
 			//	ab.remove(o);
 			}
-			
+
 			ab.add(null);
 			System.out.println(o);
 		}
@@ -4660,28 +4660,28 @@ class IteratorDemo {
 			// if("Sudha".equals(o)){
 			// //	ab.remove(o);
 			// }
-			
+
 			// //ab.add(null);
 			// System.out.println(o);
 		// }
-		
-		
-		System.out.println("Before delete:" + ab);		
+
+
+		System.out.println("Before delete:" + ab);
 		Iterator it = ab.iterator();
-		
+
 		boolean b = it.hasNext();
 		System.out.println(b);
-		
+
 		while(it.hasNext()){
 			Object o = it.next();
 			if("Sudha".equals(o)){
 				it.remove();
-			}			
+			}
 		}
-	
+
 
 		System.out.println("After delete:" + ab);
-		
+
 	}
  }
 
@@ -4695,7 +4695,7 @@ Differencs						Enumeration									Iterator
 4. add							we can't add any elements.					we can't add any elements.
 5. replace						No											we can't replace any elements.
 -----------------------------------------------------------------------------------------------
- 
+
 -------------------------------------------------------------------
 ListIterator: interface
 ------------
@@ -4726,12 +4726,12 @@ import java.util.*;
 		ab.add("Sudha");
 		ab.add("MLA");
 		ab.add("CM");
-		
-		System.out.println("Before delete:" + ab);		
+
+		System.out.println("Before delete:" + ab);
 		ListIterator li = ab.listIterator();
-		
+
 		while(li.hasNext()){
-			
+
 		Object o = li.next();
 		if("Sudha".equals(o)){
 		li.set("Sudhakar");
@@ -4740,18 +4740,18 @@ import java.util.*;
 		if("CM".equals(o)){
 		li.add("Chandrababu");
 		}
-				
+
 		if("MLA".equals(o)){
 		li.remove();
 		}
-			
+
 		}
 
 		System.out.println("After delete:" + ab);
-		
+
 	}
  }
- 
+
 -------------------------------------------------------------------------------------------------
 Differencs						ListIterator								Iterator
 -----------------------------------------------------------------------------------------------
@@ -4787,24 +4787,24 @@ public class ComparableDemo {
 		Student s3 = new Student(7, "Midhun");
 		Student s4 = new Student(10, "Brand");
 		Student s5 = new Student(1, "Karthik");
-		
+
 		List list = new ArrayList();
 		list.add(s1);
 		list.add(s2);
 		list.add(s3);
 		list.add(s4);
 		list.add(s5);
-		
+
 		int r1 = s1.compareTo(s2);
 		System.out.println(r1);
-		
+
 		int r2 = s1.compareTo(s4);
 		System.out.println(r2);
-		
+
 		int r3 = s1.compareTo(new Student(5, "Ab"));
 		System.out.println(r3);
-		
-		
+
+
 		TreeSet ts = new TreeSet(list);
 		System.out.println(ts);
 	}
@@ -4813,21 +4813,21 @@ public class ComparableDemo {
 class Student implements Comparable{
 		int rollNo;
 		String name;
-		
+
 		Student(int rollNo, String name){
 			this.rollNo = rollNo;
 			this.name = name;
 		}
-		
+
 		public String toString(){
 			return "rollNo:"+ rollNo + " name:"+ name;
 		}
-		
+
 	// public int compareTo(Object o){
 		// Student s1 = (Student) o;
 		// int rollNo1 = s1.rollNo;
 		// //return Integer.valueOf(rollNo).compareTo(s.rollNo);
-		
+
 		// int result = 0;
 		// if(rollNo == rollNo1){
 			// result = 0;
@@ -4838,7 +4838,7 @@ class Student implements Comparable{
 		// else if(rollNo < rollNo1) {
 			// result = -1;
 		// }
-		
+
 		// return result;
 	// }
 	public int compareTo(Object o){
@@ -4879,22 +4879,22 @@ public class ComparatorDemo {
 		ts.add(new StringBuilder("bb"));
 		ts.add(new StringBuilder("xb"));
 		ts.add(new StringBuilder("Ab"));
-		ts.add(1);	//because comparator 
-		
+		ts.add(1);	//because comparator
+
 		System.out.println(ts);
-		
+
 		EmployeeSalaryComparator ec = new EmployeeSalaryComparator();
 		EmployeeNameComparator en = new EmployeeNameComparator();
 		TreeSet ts2 = new TreeSet(en);
-		
+
 		Employee e1 = new Employee("Ab", 200);
 		Employee e2 = new Employee("zd", 2000);
 		Employee e3 = new Employee("ch", 1000);
-		
+
 		ts2.add(e1);
 		ts2.add(e2);
 		ts2.add(e3);
-		
+
 		System.out.println(ts2);
 	}
 }
@@ -4904,7 +4904,7 @@ class StringBuilderComparator implements Comparator {
 	public int compare(Object o1, Object o2){
 		String s1 = o1.toString();
 		String s2 = o2.toString();
-		
+
 		return s1.compareTo(s2); //normal order
 		// return s2.compareTo(s1); //reverse order
 	}
@@ -4915,10 +4915,10 @@ class EmployeeSalaryComparator implements Comparator {
 	public int compare(Object o1, Object o2){
 		Employee e1 = (Employee) o1;
 		Employee e2 = (Employee) o2;
-		
+
 		int salary1 = e1.salary;
 		int salary2 = e2.salary;
-		
+
 		if(salary1 == salary2){
 			return 0;
 		} else if(salary1 > salary2){
@@ -4934,7 +4934,7 @@ class EmployeeNameComparator implements Comparator {
 	public int compare(Object o1, Object o2){
 		Employee e1 = (Employee) o1;
 		Employee e2 = (Employee) o2;
-		
+
 		return e1.name.compareTo(e2.name);
 	}
 }
@@ -4942,12 +4942,12 @@ class EmployeeNameComparator implements Comparator {
 class Employee {
 	String name;
 	int salary;
-	
+
 	Employee(String name, int salary){
 		this.name = name;
 		this.salary = salary;
 	}
-	
+
 	public String toString(){
 		return "name="+name + " salary="+salary;
 	}
@@ -5007,7 +5007,7 @@ import java.util.*;
 class HashMapDemo {
 	public static void main(String[] args){
 		HashMap map = new HashMap(10);
-		
+
 		map.put("Telugu", 70);
 		map.put("English", 80);
 		map.put("Math", 70);
@@ -5016,44 +5016,44 @@ class HashMapDemo {
 		map.put("Social", 95);
 		map.put("a", null);
 		map.put(null, null);
-		map.putIfAbsent(null, 1); 
-		
-		
+		map.putIfAbsent(null, 1);
+
+
 		HashMap map1 = new HashMap(map);
-		
+
 		map1.remove(null);
 		map1.put("a", 50);
-		
+
 		boolean isExist = map1.containsKey("a");
 		System.out.println(isExist);
-		
+
 		boolean valueExist = map1.containsValue(150);
 		System.out.println(valueExist);
-		
+
 		Object value = map1.get("Telugu");
 		System.out.println("Telugu " +value);
-		
+
 		Object value1 = map1.get("Phy");
-		System.out.println("Phy " + value1);		
+		System.out.println("Phy " + value1);
 
 		value1 = map1.getOrDefault("Phy", 35);
 		System.out.println("Default Phy " + value1);
-		
+
 		Collection c = map1.values();
-		
+
 		Set set = map1.keySet();
 		Iterator i = set.iterator();
-		
+
 		while(i.hasNext()){
 			String subject = (String)i.next();
 			Object subjectValue = map1.get(subject);
 			System.out.println("Subject: "+ subject + " value:"+ subjectValue);
 		}
-		
-		
+
+
 		System.out.println(c);
 		System.out.println(set);
-		
+
 		System.out.println(map);
 		System.out.println(map1);
 	}
@@ -5079,7 +5079,7 @@ import java.util.*;
 class LinkedHashMapDemo {
 	public static void main(String[] args){
 		HashMap map = new LinkedHashMap(10);
-		
+
 		map.put("Telugu", 70);
 		map.put("English", 80);
 		map.put("Math", 70);
@@ -5088,44 +5088,44 @@ class LinkedHashMapDemo {
 		map.put("Social", 95);
 		map.put("a", null);
 		map.put(null, null);
-		map.putIfAbsent(null, 1); 
-		
-		
+		map.putIfAbsent(null, 1);
+
+
 		HashMap map1 = new LinkedHashMap(map);
-		
+
 		map1.remove(null);
 		map1.put("a", 50);
-		
+
 		boolean isExist = map1.containsKey("a");
 		System.out.println(isExist);
-		
+
 		boolean valueExist = map1.containsValue(150);
 		System.out.println(valueExist);
-		
+
 		Object value = map1.get("Telugu");
 		System.out.println("Telugu " +value);
-		
+
 		Object value1 = map1.get("Phy");
-		System.out.println("Phy " + value1);		
+		System.out.println("Phy " + value1);
 
 		value1 = map1.getOrDefault("Phy", 35);
 		System.out.println("Default Phy " + value1);
-		
+
 		Collection c = map1.values();
-		
+
 		Set set = map1.keySet();
 		Iterator i = set.iterator();
-		
+
 		while(i.hasNext()){
 			String subject = (String)i.next();
 			Object subjectValue = map1.get(subject);
 			System.out.println("Subject: "+ subject + " value:"+ subjectValue);
 		}
-		
-		
+
+
 		System.out.println(c);
 		System.out.println(set);
-		
+
 		System.out.println(map);
 		System.out.println(map1);
 	}
@@ -5154,7 +5154,7 @@ class TreeMapDemo {
 		Comparator normal = String.CASE_INSENSITIVE_ORDER;
 		Comparator reversed = String.CASE_INSENSITIVE_ORDER.reversed();
 		TreeMap map = new TreeMap(normal);
-		
+
 		map.put("Telugu", 70);
 		map.put("English", 80);
 		map.put("math", 70);
@@ -5163,43 +5163,43 @@ class TreeMapDemo {
 		map.put("Social", 95);
 		map.put("a", null);
 		// map.put(null, null);
-		// map.putIfAbsent(null, 1); 
-		
-		
+		// map.putIfAbsent(null, 1);
+
+
 		TreeMap map1 = new TreeMap(map);
 
 		map1.put("a", 50);
-		
+
 		boolean isExist = map1.containsKey("a");
 		System.out.println(isExist);
-		
+
 		boolean valueExist = map1.containsValue(150);
 		System.out.println(valueExist);
-		
+
 		Object value = map1.get("Telugu");
 		System.out.println("Telugu " +value);
-		
+
 		Object value1 = map1.get("Phy");
-		System.out.println("Phy " + value1);		
+		System.out.println("Phy " + value1);
 
 		value1 = map1.getOrDefault("Phy", 35);
 		System.out.println("Default Phy " + value1);
-		
+
 		Collection c = map1.values();
-		
+
 		Set set = map1.keySet();
 		Iterator i = set.iterator();
-		
+
 		while(i.hasNext()){
 			String subject = (String)i.next();
 			Object subjectValue = map1.get(subject);
 			System.out.println("Subject: "+ subject + " value:"+ subjectValue);
 		}
-		
-		
+
+
 		System.out.println(c);
 		System.out.println(set);
-		
+
 		System.out.println(map);
 		System.out.println(map1);
 	}
@@ -5209,7 +5209,7 @@ class StringComparator implements Comparator {
 	public int compare(Object o1, Object o2){
 		String s1 = o1.toString();
 		String s2 = o2.toString();
-		
+
 		return s1.compareToIgnoreCase(s2);
 	}
 }
@@ -5248,7 +5248,7 @@ import java.util.*;
 class HashtableDemo {
 	public static void main(String[] args){
 		Hashtable map = new Hashtable();
-		
+
 		map.put("Telugu", 70);
 		map.put("English", 80);
 		map.put("math", 70);
@@ -5256,42 +5256,42 @@ class HashtableDemo {
 		map.put("Social", 90);
 		map.put("Social", 95);
 		// map.put(50, 95);
-		// map.put("a", null);		
-		
+		// map.put("a", null);
+
 		Hashtable map1 = new Hashtable(map);
 
 		map1.put("a", 50);
-		
+
 		boolean isExist = map1.containsKey("a");
 		System.out.println(isExist);
-		
+
 		boolean valueExist = map1.containsValue(150);
 		System.out.println(valueExist);
-		
+
 		Object value = map1.get("Telugu");
 		System.out.println("Telugu " +value);
-		
+
 		Object value1 = map1.get("Phy");
-		System.out.println("Phy " + value1);		
+		System.out.println("Phy " + value1);
 
 		value1 = map1.getOrDefault("Phy", 35);
 		System.out.println("Default Phy " + value1);
-		
+
 		Collection c = map1.values();
-		
+
 		Set set = map1.keySet();
 		Iterator i = set.iterator();
-		
+
 		while(i.hasNext()){
 			String subject = (String)i.next();
 			Object subjectValue = map1.get(subject);
 			System.out.println("Subject: "+ subject + " value:"+ subjectValue);
 		}
-		
-		
+
+
 		System.out.println(c);
 		System.out.println(set);
-		
+
 		System.out.println(map);
 		System.out.println(map1);
 	}
@@ -5327,7 +5327,7 @@ store(OutputStream out, String comments)
 store(Writer writer, String comments)
 
 getProperty(String key)
-getProperty(String key, String defaultValue)	
+getProperty(String key, String defaultValue)
 
 
 
@@ -5338,27 +5338,27 @@ import java.io.*;
 class PropertiesDemo{
     public static void main(String...q) {
 		 String user = "Suda";
-		 
+
 		 //1. object create for propeties
 		 Properties p = new Properties();
-		 
-		
-		 
+
+
+
 		try{
 			//read the properties file
 			Reader r = new FileReader("sample.properties");
-		 
+
 			//load reader to properties.
 			p.load(r);
 		}catch(IOException e){}
-	
+
 		 p.setProperty("lenovo", "70000");
 		 System.out.println(p);
 		 System.out.println(p.getProperty("lenovo", "6000"));
-		 
+
 		 //Get property from properties
 		 String userFromProp = p.getProperty("username");
-		 
+
 		 if("Sudha".equals(userFromProp)){
 			System.out.println("Successfully logged in");
 		 }else {
@@ -5373,45 +5373,45 @@ import java.io.*;
 class PropertiesWritingDemo{
     public static void main(String...q) {
 		 String user = "Suda";
-		 
+
 		 //1. object create for propeties
 		 Properties p = new Properties();
-		 
-		
-		 
+
+
+
 		try{
 			//read the properties file
 			Reader r = new FileReader("sample.properties");
-		 
+
 			//load reader to properties.
 			p.load(r);
 		}catch(IOException e){}
-	
+
 		 p.setProperty("lenovo", "70000");
 		 System.out.println(p);
 		 System.out.println(p.getProperty("lenovo", "6000"));
-		 
+
 		 String userFromProp = p.getProperty("username");
-		 
+
 		 if("Sudha".equals(userFromProp)){
 			System.out.println("Successfully logged in");
 		 }else {
 			System.out.println("Failed to loggin");
 		 }
-		 
-		 
+
+
 		 try{
-		 
+
 		 Writer w = new FileWriter("sample.properties");
 		 p.store(w, "store lenovo value");
 		 }
 		 catch(Exception e){}
-		 
+
 	}
 }
 
 ------------------------------------------------------------------------
-Collections:- 
+Collections:-
 - It is a utility class.
 
 synchronizedList(List<T> list): To get the synchronized list. Thread safe list.
@@ -5433,12 +5433,12 @@ class CollectionsDemo {
 		l.add(1);
 		l.add(25);
 		l.add(40);
-		
+
 		System.out.println(l);
-		
+
 		List synchronizedList = Collections.synchronizedList(l);
 		System.out.println(synchronizedList);
-		
+
 		Collections.sort(l);
 		Collections.sort(l, new NumComparator());
 		System.out.println(l);
@@ -5481,20 +5481,20 @@ Ex:
 	String [] s = new String[100];
 	s[0] = "raju";
 	s[1] = 10; C.E
-	
+
 Eg:2
 	int[] a = new int[5];
 	a[0] = 10;
 	a[1] ="Sudhaar";	//CE type safe
 
-	
+
 - But Collection objects are not typesafe by default. If our requirement is to add only integer objects to the
 ArrayList , By mistake if we r trying to insert any other element we won’t get any compile time error.
-		
+
 		ArrayList l = new ArrayList();
 		l.add(10);
 		l.add("Sudha");	//no type safe
-		
+
 - While retrieving Array elements there is no need to perform typecasting.
 	int x = a[i];  No typecasting required here.
 
@@ -5508,24 +5508,24 @@ class GenericsDemo {
 
 	public static void main(String[] args){
 		int[] a = new int[5];
-		
+
 		a[0] = 10;
 		//a[1] ="Sudhaar";	//type safe
-		
+
 		for(int i=0; i<a.length; i++) {
 			int x = a[i];
-			System.out.println(x * x);	
+			System.out.println(x * x);
 		}
 
 		ArrayList l = new ArrayList();
 		l.add(10);
 		l.add("Sudha");
-		
+
 		for(int j=0; j<l.size(); j++) {
 			int y = (Integer) l.get(j);	//type cast and cce
 			System.out.println(y * y);
 		}
-		
+
 	}
 }
 --------------------------------------------------
@@ -5554,13 +5554,13 @@ Until 1.4 version we have ArrayList class with the declarations as follows.
 		add(Object o);
 		Object get(int index);
 	}
-	
+
 - add method contain Object as argument, hence we can add any kind of object.
 - As a result we can’t get any type safety. The return type of get() method is object hence at the time of retrieval we should perform typecasting.
 
 - But in the 1.5 version we have generic ArrayList class with the definition as follows
 
-	class ArrayList<T>	//T - Type 
+	class ArrayList<T>	//T - Type
 	{
 		add(T t);
 		T get(int);
@@ -5584,13 +5584,13 @@ We can define our own generic classes also
 
 ----------------------------------------------
 
-//upto 1.4 version 
+//upto 1.4 version
 class GenDemo {
 
 	public boolean add(Object o){
 		return false;
 	}
-	
+
 	public Object get(int index){
 		return null;
 	}
@@ -5599,30 +5599,30 @@ class GenDemo {
 
 - We can write our own generic class as given below.
 
-//upto 1.5 version 
+//upto 1.5 version
 class Gen1Demo<T> {
 
 	private T o;
 	Gen1Demo(T o){
 		this.o = o;
 	}
-	
+
 	public T get(){
 		return o;
 	}
-	
+
 	public boolean set(T o){
 		this.o = o;
 		return true;
 	}
-	
+
 	public static void main(String args[]){
 		Gen1Demo<Integer> g = new Gen1Demo<Integer>(10);
 		g.set(20);
-		
+
 		Gen1Demo<String> g1 = new Gen1Demo<String>("Sudhakar");
 		g1.set("Sudha");
-		
+
 		System.out.println(g.get());
 		System.out.println(g1.get());
 	}
@@ -5639,27 +5639,27 @@ class Gen1Demo<T> {
 
 class BoundedTypesDemo<T extends Number> {
 
-	private T o;	
+	private T o;
 	public T get(){
 		return o;
 	}
-	
+
 	public boolean set(T o){
 		this.o = o;
 		return true;
 	}
-	
+
 	public static void main(String args[]){
 		BoundedTypesDemo<Integer> g = new BoundedTypesDemo<Integer>();
 		g.set(20);
-		
+
 		BoundedTypesDemo<Byte> g1 = new BoundedTypesDemo<Byte>();
 		byte b = 10;
 		g1.set(b);
-		
+
 		// BoundedTypesDemo<String> g1 = new BoundedTypesDemo<String>();
 		// g1.set("Sudha");
-		
+
 		System.out.println(g.get());
 		System.out.println(g1.get());
 	}
@@ -5667,33 +5667,33 @@ class BoundedTypesDemo<T extends Number> {
 
 class BoundedTypesDemo1<T extends Runnable> {
 
-	private T o;	
+	private T o;
 	public T get(){
 		return o;
 	}
-	
+
 	public boolean set(T o){
 		this.o = o;
 		return true;
 	}
-	
+
 	public static void main(String args[]){
 		BoundedTypesDemo1<Thread> g = new BoundedTypesDemo1<Thread>();
 		Thread t = new Thread();
 		g.set(t);
-		
+
 		System.out.println(g.get().getName());
 	}
 }
 3. Generic Methods
 	Generic methods takes collection as generic arguments. Inside this method, only Strings are allowed.
-	
+
 	public void display(ArrayList<String> l){
 		l.add("Sudha");
-		
+
 		System.out.println(l);
 	}
-	
+
 
 4. Communication with legacy non-generic code
 - To provide compatibility with old non-generic versions sun people compromised the generics concept in
@@ -5703,33 +5703,33 @@ import java.util.*;
 
 class BoundedTypesDemo1<T extends Runnable> {
 
-	private T o;	
+	private T o;
 	public T get(){
 		return o;
 	}
-	
+
 	public boolean set(T o){
 		this.o = o;
 		return true;
 	}
-	
+
 	public void display(ArrayList<String> l){	//generic version
 		l.add("Sudha");
-		
+
 		System.out.println(l);
 	}
-	
+
 	public static void main(String args[]){
 		BoundedTypesDemo1<Thread> g = new BoundedTypesDemo1<Thread>();
 		Thread t = new Thread();
 		g.set(t);
-		
+
 		ArrayList l = new ArrayList();	//normal version
 		l.add("Sudhakar");
 		l.add(20);
-		
+
 		g.display(l);
-		
+
 		System.out.println(g.get().getName());
 	}
 }
@@ -5739,10 +5739,10 @@ class BoundedTypesDemo1<T extends Runnable> {
 11-02-2019
 Thread
 - create thread
-	1. by extending Thread class 
+	1. by extending Thread class
 	2. By implements Runnable interface.
 
-- running multiple threads	
+- running multiple threads
 - runnable
 
 - life cycle
@@ -5802,7 +5802,7 @@ Thread(ThreadGroup group, Runnable target)
 Allocates a new Thread object.
 
 Thread(ThreadGroup group, Runnable target, String name)
-Allocates a new Thread object so that it has target as its run object, has the specified name as its name, and belongs to the 
+Allocates a new Thread object so that it has target as its run object, has the specified name as its name, and belongs to the
 thread group referred to by group.
 
 Thread(ThreadGroup group, Runnable target, String name, long stackSize)
@@ -5815,7 +5815,7 @@ Methods:
 run():	Work has be to defined in this method
 start(): To start the new thread
 static currentThread():	Returns current thread.
-getId():	returns id 
+getId():	returns id
 getName()	: returns thread name
 setName():
 getPriority(): Allowed priority is 1-10. Default priority 5
@@ -5827,21 +5827,21 @@ yield()
 join()
 join(long mill)
 interrupt()
-isDaemon()	
-	
+isDaemon()
+
 Steps for creating a thread using Thread class.:-
 1. Create a class which extends Thread
 	//1 create class
 	class HelloThread extends Thread {
-		
+
 	}
-	
+
 2. Override the run method in newly created class.
 
 	//1 create class
 	class HelloThread extends Thread {
-		
-		//override 
+
+		//override
 		public void run(){
 			System.out.println("Hello thread");
 		}
@@ -5852,10 +5852,10 @@ Steps for creating a thread using Thread class.:-
 
 4. Invoke start method.
 	ht.start();
-	
-- When ever we call start() method, automatically Thread class will invoke our run() method. No need to call run method directly.	
-	
-	
+
+- When ever we call start() method, automatically Thread class will invoke our run() method. No need to call run method directly.
+
+
 - Main thread is start by JVM. By default main thread priorty 5
 - By default child thread start by main thread.
 - By default all child thread get priority from parent so default priority is 5.
@@ -5866,23 +5866,23 @@ Steps for creating a thread using Thread class.:-
 
 1. Create a class which implements Runnable interface.
 	class ThreadDemo implements Runnable {
-	
+
 	}
 
 2. Override run method in our newly implemented class.
 	class NumberThread implements Runnable {
 
 		public void run(){//definition
-			
+
 			for(int i = 0; i< 10 ; i++){
 				System.out.println(i);
 			}
 		}
 	}
-	
+
 3. Create an object for our class.
 	NumberThread nt = new NumberThread();
-	
+
 4. Create object for Thread and pass our object to thread
 	Thread t = new Thread(nt);
 
@@ -5890,7 +5890,7 @@ Steps for creating a thread using Thread class.:-
 	t.start();
 
 ThreadScheduler:
-- When ever we have multiple threads, we can't predict output. Because we don't know thread execution order. 
+- When ever we have multiple threads, we can't predict output. Because we don't know thread execution order.
 ThreadScheduler will manage these thread based on priority.
 
 - All operation system may not support thread priority.
@@ -5900,19 +5900,19 @@ which is the best approch?
 	A	C
 	|	|
 	  B		- This is not possible throug classes. java is not supporting multiple inheritance.
-	  
+
 1. When we extends Thread class, only we can extend one class and we can't extend any other class because java wont suppot multiple inheritance.
 	 Thread
 	   |
 	DataStoreThread
 
 2. We are implementing Runnable interface so we can extend any other class also.
-	Runnable		
+	Runnable
 
 	BasicJob (class)
 	 |implements		| extends
 xx		DataStoreThread
-		
+
 
 Case:1 Call run method directly without calling start()
 	- New thread will not created unless we are calling start() method.
@@ -5920,68 +5920,68 @@ Case:1 Call run method directly without calling start()
 	- Only main thread will be running.
 
 class ThreadCaseDemo {
-	public static void main(String[] args){		
+	public static void main(String[] args){
 		//3 create object for our thread class
 		HelloThread ht = new HelloThread();
 
 		System.out.println("main thread");
 		// ht.start();
 		ht.run();
-		
+
 		for(int i = 100; i < 110; i++){
 			System.out.println(i);
 		}
 	}
-	
+
 
 }
 
 //1 create class
 class HelloThread extends Thread {
-	
-	//override 
+
+	//override
 	public void run(){
 		Thread t = Thread.currentThread();
 		System.out.println("Child thread" );
 		System.out.println("Name:" + t.getName());
-		
+
 		for(int i = 0; i < 10; i++){
 			System.out.println(i);
 		}
 	}
 }
-	
+
 Case:2	When we are implementing Runnable interface, call run method directly without calling start method.
 	- New thread will not created unless we are calling start() method.
 	- run() method is called on main thread only. it is like normal method.
-	- Only main thread will be running.	
-	
+	- Only main thread will be running.
+
 	class ThreadCaseDemo {
-	public static void main(String[] args){		
+	public static void main(String[] args){
 		//3 create object for our thread class
 		HelloThread ht = new HelloThread();
 
 		System.out.println("main thread");
 		// ht.start();
 		ht.run();
-		
+
 		for(int i = 100; i < 110; i++){
 			System.out.println(i);
 		}
 	}
-	
+
 
 }
 
 //1 create class
 class HelloThread implements Runnable {
-	
-	//override 
+
+	//override
 	public void run(){
 		Thread t = Thread.currentThread();
 		System.out.println("Child thread" );
 		System.out.println("Name:" + t.getName());
-		
+
 		for(int i = 0; i < 10; i++){
 			System.out.println(i);
 		}
@@ -5992,56 +5992,56 @@ Case:3 When we are implementing runnable interface, call start() directly using 
 	- We can't call start() directly using our object. because start() is availabe in Thread class only.
 	- It is a compile time error.
 class ThreadCaseDemo {
-	public static void main(String[] args){		
+	public static void main(String[] args){
 		//3 create object for our thread class
 		HelloThread ht = new HelloThread();
 
 		System.out.println("main thread");
 		ht.start();
-		
+
 		for(int i = 100; i < 110; i++){
 			System.out.println(i);
 		}
 	}
-	
+
 
 }
 
 //1 create class
 class HelloThread implements Runnable {
-	
-	//override 
+
+	//override
 	public void run(){
 		Thread t = Thread.currentThread();
 		System.out.println("Child thread" );
 		System.out.println("Name:" + t.getName());
-		
+
 		for(int i = 0; i < 10; i++){
 			System.out.println(i);
 		}
 	}
 }
-	
+
 Case:4	When we extend Thread class, not overriding run method. call start() method.
 - Thread class has run() method with empty implementation as shown below
 	public void run(){}
 
-- here 2 threads are there. 
-- When ever child thread doesn't have run(), then jvm will parent class (Thread) run method will be executed. we will not get any output for child because Thread class has run() method with empty implementation.	
-	
+- here 2 threads are there.
+- When ever child thread doesn't have run(), then jvm will parent class (Thread) run method will be executed. we will not get any output for child because Thread class has run() method with empty implementation.
+
 class ThreadCaseDemo {
-	public static void main(String[] args){		
+	public static void main(String[] args){
 		//3 create object for our thread class
 		HelloThread ht = new HelloThread();
 
 		System.out.println("main thread");
 		ht.start();
-		
+
 		for(int i = 100; i < 110; i++){
 			System.out.println(i);
 		}
 	}
-	
+
 
 }
 
@@ -6052,58 +6052,58 @@ class HelloThread extends Thread {
 	// }
 }
 
-Case:5 When we extend Thread class, not overriding run method. call run() method.				
+Case:5 When we extend Thread class, not overriding run method. call run() method.
 - New thread will not created.
 - Only main thread will be running.
-- We will not get any output because parent class run method with empty implementation. 
+- We will not get any output because parent class run method with empty implementation.
 
 
-- There is no use a class without overriding run method. Avoid this type of implementation. 
+- There is no use a class without overriding run method. Avoid this type of implementation.
 class HelloThread extends Thread {
 }
 
 Thread lifecycle:-
-	
+
 man life cycle:
 Born -> grow -> old -> death
-	
+
 Normal life cycle:
 
 	create object                 call start() and wait schedule            run method will be executed
-New ------------------------> Ready ------------------------------> Running ---------------------------> Dead 
-	                                                    
-																	
-1. New  
-	When we create a thread object	
+New ------------------------> Ready ------------------------------> Running ---------------------------> Dead
+
+
+1. New
+	When we create a thread object
 		Thread t = new Thread();
 
 2. Ready
 	t.start()
-	
+
 3. Runnnig
 	- When scheuler gives permission to execute
-	
+
 4. Dead:-
 	- After run method is executed completely, it will be dead.
-	
-	
+
+
 
 sleep:
 public static void sleep(long millis) throws InterruptedException
 
 - static method can call using Thread.sleep()
-- InterruptedException - checked exception. 
-- for check exception we must handle in try/catch block.	
+- InterruptedException - checked exception.
+- for check exception we must handle in try/catch block.
 
 class ThreadCaseDemo {
-	public static void main(String[] args){		
+	public static void main(String[] args){
 		//3 create object for our thread class
 		HelloThread ht = new HelloThread();
 
 		System.out.println("main thread");
 		ht.start();
 	}
-	
+
 
 }
 
@@ -6111,11 +6111,11 @@ class ThreadCaseDemo {
 class HelloThread extends Thread {
 	public void run(){
 		System.out.println("Child thread");
-		
+
 		for(int i = 1; i< 10; i++){
-			
+
 			System.out.println(i);
-			
+
 			try{
 				Thread.sleep(3000);
 			}catch(InterruptedException e){
@@ -6134,12 +6134,12 @@ priority. Then the same thread will get the chance immediately for the execution
 - while debugging we may use this.
 
 class YieldDemo {
-	public static void main(String[] args){	
+	public static void main(String[] args){
 		HelloThread ht = new HelloThread();
 
 		System.out.println("main thread");
 		ht.start();
-		
+
 		for(int i = 50; i<60; i++){
 			System.out.println(i);
 		}
@@ -6152,37 +6152,37 @@ class HelloThread extends Thread {
 
 		Thread.yield();
 		for(int i = 1; i< 10; i++){
-			
+
 			System.out.println(i);
-		
+
 		}
 	}
 }
 
 join:- Overloading method
-public final void join(long millis) throws InterruptedException	
-public final void join(long millis, long nanoseconds) throws InterruptedException	
-public final void join() throws InterruptedException	
-	
+public final void join(long millis) throws InterruptedException
+public final void join(long millis, long nanoseconds) throws InterruptedException
+public final void join() throws InterruptedException
+
 If a thread wants to wait until some other thread completion then we should go for join method.
 Ex:
 If a thread t1 executes t2.join(), then t1 will be entered into waiting state until t2 completion.
 
-- this method throws InterruptedException - checked exception. 
-- for check exception we must handle in try/catch block.	
-	
+- this method throws InterruptedException - checked exception.
+- for check exception we must handle in try/catch block.
+
 class JoinDemo {
-	public static void main(String[] args){	
+	public static void main(String[] args){
 		HelloThread ht = new HelloThread();
 
 		System.out.println("main thread");
 		ht.start();
-		
+
 		try{
 			ht.join(5000); //called by main thread
 		}catch(Exception e){
 		}
-		
+
 		for(int i = 50; i<60; i++){
 			System.out.println(i);
 		}
@@ -6197,23 +6197,23 @@ class HelloThread extends Thread {
 			Thread.sleep(1000); //called by child thread
 		}catch(Exception e){
 		}
-		
-		for(int i = 1; i< 10; i++){			
-			System.out.println(i);		
+
+		for(int i = 1; i< 10; i++){
+			System.out.println(i);
 		}
 	}
-}	
+}
 
-	
-	
-synchronization:-	
+
+
+synchronization:-
 ---------------
 synchronized - is a keyword to avoid multi thread problem.
 - it can be used for only methods. Can't declare varaiables with synchronized keyword.
 
 - ‘synchronized’ is the keyword applicable for the methods and blocks.
 - We can’t apply this keyword for variables and classes. If a method declared as synchronized at a time only one thread is allowed to execute that method on the given object.
-- The main advantage of synchronized keyword is we can overcome data inconsistency problem. 
+- The main advantage of synchronized keyword is we can overcome data inconsistency problem.
 - The main limitation of synchronized keyword is it may create performance problems.
 Hence if there is no specific requirement it’s not recommended to use synchronized keyword.
 
@@ -6229,13 +6229,13 @@ non-synchronized method on the same object.
 Every object in java has unique lock but a thread can acquire more than one lock at a time.
 
 class SynchorizationDemo {
-	public static void main(String[] args){	
+	public static void main(String[] args){
 		PrintText p = new PrintText();
 		HelloThread ht = new HelloThread(p);
 
 		//System.out.println("main thread");
 		ht.start();
-		
+
 		for(int i = 50; i<60; i++){
 			p.printName("Chiru");
 		}
@@ -6244,11 +6244,11 @@ class SynchorizationDemo {
 
 class HelloThread extends Thread {
 	private PrintText p;
-	
+
 	HelloThread(PrintText p){
 		this.p = p;
 	}
-	
+
 	public void run(){
 		//System.out.println("Child thread");
 		// PrintText p11= new PrintText();
@@ -6262,7 +6262,7 @@ class PrintText {
 
 	public synchronized void printName(String name){
 		System.out.print("hello:.........");
-		
+
 		try{
 			Thread.sleep(1000);
 		}catch(Exception e){
@@ -6275,13 +6275,13 @@ class PrintText {
 When we required only few lines on code synchronization then we should sychronized block.
 
 class SynchorizationDemo {
-	public static void main(String[] args){	
+	public static void main(String[] args){
 		PrintText p = new PrintText();
 		HelloThread ht = new HelloThread(p);
 
 		//System.out.println("main thread");
 		ht.start();
-		
+
 		for(int i = 50; i<60; i++){
 			p.printName("Chiru");
 		}
@@ -6290,11 +6290,11 @@ class SynchorizationDemo {
 
 class HelloThread extends Thread {
 	private PrintText p;
-	
+
 	HelloThread(PrintText p){
 		this.p = p;
 	}
-	
+
 	public void run(){
 		//System.out.println("Child thread");
 		// PrintText p11= new PrintText();
@@ -6307,10 +6307,10 @@ class HelloThread extends Thread {
 class PrintText {
 
 	public void printName(String name){
-		
+
 		synchronized(this){
 			System.out.print("hello:.........");
-			
+
 			try{
 				Thread.sleep(1000);
 			}catch(Exception e){
@@ -6329,13 +6329,13 @@ notifyAll()
 
 
 class WaitDemo {
-	public static void main(String[] args) throws Exception {	
+	public static void main(String[] args) throws Exception {
 		HelloThread ht = new HelloThread();
 
 		//System.out.println("main thread");
 		ht.start();
-		
-		synchronized(ht){		
+
+		synchronized(ht){
 			ht.wait();
 			System.out.println("Main got notification");
 			System.out.println(ht.getTotal());
@@ -6347,19 +6347,19 @@ class HelloThread extends Thread {
 	HelloThread(){
 	}
 	private int total;
-	
+
 	public void run(){
 		for(int i = 50; i<60; i++){
 			total = total + i;
 		}
-		
+
 		synchronized(this){
 			System.out.println("Notify to main");
 			this.notify();
 		}
-		
+
 	}
-	
+
 	public int getTotal(){
 		return this.total;
 	}
@@ -6370,13 +6370,13 @@ class HelloThread extends Thread {
 - waiting 2 threads for each other.
 
 class WaitDemo {
-	public static void main(String[] args) throws Exception {	
+	public static void main(String[] args) throws Exception {
 		HelloThread ht = new HelloThread();
 
 		//System.out.println("main thread");
 		ht.start();
-		
-		synchronized(ht){		
+
+		synchronized(ht){
 			ht.wait();
 			System.out.println("Main got notification");
 			System.out.println(ht.getTotal());
@@ -6388,24 +6388,24 @@ class HelloThread extends Thread {
 	HelloThread(){
 	}
 	private int total;
-	
+
 	public void run() {
 		for(int i = 50; i<60; i++){
 			total = total + i;
 		}
-		
+
 		synchronized(this){
 			System.out.println("Notify to main");
-			
+
 			try{
 				this.wait();
 			}catch(Exception e){
 			}
-			
+
 		}
-		
+
 	}
-	
+
 	public int getTotal(){
 		return this.total;
 	}
@@ -6413,7 +6413,7 @@ class HelloThread extends Thread {
 
 Deamon thread:-
 The threads which are running in the background to provide support for user defined threads are called
-“Daemon Thread”. 
+“Daemon Thread”.
 Usually daemon thread are running with low priority but based on our requirement we
 can increase their priority also.
 We can check whether the given thread is deamon or not by using the following thread class thread.
@@ -6423,27 +6423,27 @@ public void setDaemon(Boolean b)
 
 
 class DeamonDemo {
-	public static void main(String[] args) throws Exception {	
+	public static void main(String[] args) throws Exception {
 		HelloThread ht = new HelloThread();
-		
-		
+
+
 		ht.setDaemon(true);
-		
+
 		System.out.println(ht.isDaemon());
 		ht.start();
-		
+
 	}
 }
 
 class HelloThread extends Thread {
 	HelloThread(){
 	}
-	
-	
+
+
 	public void run() {
 		for(int i = 50; i<60; i++){
 			System.out.println(i);
-		}		
+		}
 	}
 }
 
@@ -6518,60 +6518,60 @@ write a program to create a file named with ‘xyz.txt’ in the current working
 
 9) getName()
 
-10) 
+10)
 
 import java.io.*;
 
 
 class FileDemo {
 	public static void main(String args[]) throws IOException{
-		
+
 		File f = new File("test.txt");
-	
+
 		boolean isFileExist = f.exists();
 		System.out.println("File available: " + isFileExist);
-		
+
 		boolean create = f.createNewFile();
 		System.out.println("File created: " + create);
-		
+
 		File folder = new File("test");
 		boolean folderCreate = folder.mkdir();
 		System.out.println("folder created: " + folderCreate);
-		
+
 		File file = new File("test", "abc.txt");
 		boolean fileCreate = file.createNewFile();
 		System.out.println("file created: " + fileCreate);
-		
+
 		System.out.println(folder.isDirectory());
 		System.out.println(f.isFile());
-		
+
 		System.out.println("Iterating file names");
 		//iterate over file NAMES
 		String[] fileNames = folder.list();
 		for(String fileName : fileNames){
 			System.out.println(fileName);
 		}
-		
+
 		System.out.println("Iterating files");
 		//iterate over files
 		File[] files = folder.listFiles();
 		int count = 0, directoryCount = 0;
 		for(File folderFile : files){
 			System.out.println(folderFile.getName() + " - "+ folderFile.isDirectory() + " parent:"+ folderFile.getParent());
-			
+
 			if(folderFile.isFile()){
 				count++;
 			}
-			
-			
+
+
 			if(folderFile.isDirectory()){
 				directoryCount++;
 			}
 		}
-		
+
 		boolean d = f.delete();
 		System.out.println(f.getName() + " Delete file:"+ d);
-		
+
 		System.out.println(count);
 		System.out.println(directoryCount);
 	}
@@ -6585,8 +6585,8 @@ FileWriter:-
 	 OutputStreamWriter
 	  |
 	  FileWriter
-	  
-	  
+
+
 - To write any content to the file.
 
 Constructors:-
@@ -6628,19 +6628,19 @@ import java.io.*;
 class FileWriterDemo {
 	public static void main(String args[]) throws IOException{
 		FileWriter fw = new FileWriter("server.log", true);
-		
+
 		fw.write("Server started successfully\n");
 		fw.write("Server restarting\n");
 		fw.write("Server restarting in 2 mins");
 		//fw.write(65);
-		
+
 		fw.flush();
-		
+
 		FileWriter fw1 = new FileWriter("server.log", true);
-		fw1.write("Server is down");		
-		fw1.flush();	
-		
-		
+		fw1.write("Server is down");
+		fw1.flush();
+
+
 		System.out.println(fw);
 	}
 }
@@ -6680,7 +6680,7 @@ class FileReaderDemo {
 	public static void main(String args[]) throws IOException{
 		File f = new File("server.log");
 		FileReader fr = new FileReader(f);
-		
+
 		int length = (int)f.length();
 		char[] content = new char[length];
 		fr.read(content);
@@ -6711,14 +6711,14 @@ class BufferedWriterDemo {
 	public static void main(String args[]) throws IOException{
 		Writer w = new FileWriter("buff.txt");
 		BufferedWriter bw = new BufferedWriter(w);
-		
+
 		bw.write("Server started successfully");
 		bw.newLine();
 		bw.write("Server restarting");
 		bw.newLine();
 		bw.write("Server restarting in 2 mins");
 		bw.flush();
-	
+
 		bw.close(); //finally
 		System.out.println(bw);
 	}
@@ -6742,20 +6742,20 @@ class BufferedReaderDemo {
 		try{
 			Reader r = new FileReader("buff.txt");
 			br = new BufferedReader(r);
-		
+
 			String line = br.readLine();
 			while(line != null ){
 				System.out.println(line);
 				line = br.readLine();
 			}
-			
+
 			//Char by char
 			// int c =  br.read();
 			// while(c >= 0 ){
 				// System.out.println((char)c);
 				// c = br.read();
 			// }
-			
+
 		}
 		catch(FileNotFoundException f){
 			System.out.println("Error occurred");
@@ -6768,12 +6768,12 @@ class BufferedReaderDemo {
 				try{
 					br.close(); //finally
 				}catch(IOException e){
-					
+
 				}
 			}
-			
+
 		}
-				
+
 		System.out.println("Close");
 	}
 }
@@ -6809,8 +6809,8 @@ class PrintWriterDemo{
 	public static void main(String...a){
 		PrintWriter pw = null;
 		try{
-			pw = new PrintWriter("E:\\Test\\abc.java");		
-			
+			pw = new PrintWriter("E:\\Test\\abc.java");
+
 			pw.println("class Test {");
 			pw.println("public void m1(){}");
 			pw.println("}");
@@ -6824,18 +6824,18 @@ class PrintWriterDemo{
 			if(pw != null){
 				pw.close();
 			}
-			
+
 		}
 	}
 }
 
-26-03-2019	
+26-03-2019
 Serialization:
 -------------
-1. Serialization 
+1. Serialization
 2. Deserialization
 
-Serialization: 
+Serialization:
 --------------
 The Process of Saving an object to a file is called “serialization”. But strictly speaking
 serialization is the process of converting an object from java supported format to network or file supported format.
@@ -6849,8 +6849,8 @@ By using FileOutPutStream, ObjectOutPutStream classes we can achieve serializati
 
 -------------------------------------------------------------------------
 				Serialization
-	Java Object =================> File or Network supportted format 
--------------------------------------------------------------------------	
+	Java Object =================> File or Network supportted format
+-------------------------------------------------------------------------
 Steps:-
 // converting java object to file or network supportted format called serialization
 1. Create an object for fileOutputstream
@@ -6863,7 +6863,7 @@ ObjectOutputStream oos = new ObjectOutputStream(fos);
 oos.writeObject(p);
 
 
-Deserialization: 
+Deserialization:
 ----------------
 The process of reading an object from a file is called deserialization. But strictly speaking it
 is the process of Converting an object from network supported format or file supported format to java
@@ -6873,8 +6873,8 @@ By using FileInputStream, ObjectInputStream we can achieve deserialization.
 -------------------------------------------------------------------------
 
 										Deserialization
-	File or Network supportted format  ================> Java Object 
--------------------------------------------------------------------------	
+	File or Network supportted format  ================> Java Object
+-------------------------------------------------------------------------
 
 Steps:-
 //converting file or network supportted format to java object called deserialization
@@ -6887,17 +6887,17 @@ ObjectInputStream ois = new ObjectInputStream(fis);
 
 3. Get the object by calling readObject method.
 Object o = ois.readObject();
-	  
+
 ----------------------------------------------------------
 import java.io.*;
 
 class SerializationDemo {
-	
+
 	public static void main(String args[]){
 		Person p = new Person("Sudhakar", 29);
 		System.out.println(p.getName());
 		System.out.println(p.getAge());
-		
+
 		try{
 			// convertig java object to file or network supportted format called serialization
 			//Create an object for fileOutputstream
@@ -6905,28 +6905,28 @@ class SerializationDemo {
 
 			//Create an object for ObjectOutputStream
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			
+
 			//Call the writeObject method of oos.
 			oos.writeObject(p);
-			
+
 			//converting file or network supportted format to java object called deserialization
-			
+
 			// Crate an object for FileInputStream
 			FileInputStream fis = new FileInputStream("person.ser");
-			
+
 			// Create an Object for ObjectInputStream
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			
+
 			//Get the object by calling readObject method.
 			Object o = ois.readObject();
-			
+
 			Person p1 = (Person) o;
-			
+
 			System.out.println("After deserialization");
 			System.out.println(p1.getName());
 			System.out.println(p1.getAge());
-			
-			
+
+
 		}catch(IOException ioe){
 			System.out.println("Exception"+ ioe);
 		}catch(ClassNotFoundException cle){
@@ -6941,33 +6941,33 @@ import java.io.Serializable;
 class Person implements Serializable {
 	String name;
 	int age;
-	
+
 	Person(String name, int age){
 		this.name = name;
 		this.age = age;
 	}
-	
+
 	public void setAge(int age){
 		this.age = age;
 	}
-	
+
 	public void setName(String name){
 		this.name = name;
 	}
-	
+
 	public int getAge(){
 		return this.age;
 	}
-	
+
 	public String getName(){
 		return this.name;
-	}	
+	}
 }
-------------------------------------------------------	 
+------------------------------------------------------
 
 We can perform serialization only for serialization objects.
 
-An Object is said to be serializable if and only if the corresponding class should implement Serializable interface. 
+An Object is said to be serializable if and only if the corresponding class should implement Serializable interface.
 Serializable interface present in java.io package and doesn’t contain any method, it is marker interface.
 
 If u r trying to perform serialization of a non serialization Object. we will get runtime exception saying
@@ -6978,23 +6978,23 @@ transient:
 - If we don’t want to Serialize the value of a particular variable (To meet security constraints) we should declare those variables as transient keyword. While performing serialization JVM ignores the value of transient variables and saves default values instead of original values.
 
 - static variables are not part of object state and hence they won’t participate in serialization process.
-- Declaring static variables as transient there is no impact similarly declaring final variables as transient creates no impact.	  
-	  
+- Declaring static variables as transient there is no impact similarly declaring final variables as transient creates no impact.
+
 
 	  import java.io.*;
 
 class SerializationDemo {
-	
+
 	public static void main(String args[]){
 		Person p = new Person("Sudhakar", 29, 50000);
 		p.address1 = "karuru1";
-		
+
 		System.out.println(p.getName());
 		System.out.println(p.getAge());
 		System.out.println(p.salary);
 		System.out.println(p.address);
 		System.out.println(p.address1);
-		
+
 		try{
 			// convertig java object to file or network supportted format called serialization
 			//Create an object for fileOutputstream
@@ -7002,30 +7002,30 @@ class SerializationDemo {
 
 			//Create an object for ObjectOutputStream
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			
+
 			//Call the writeObject method of oos.
 			oos.writeObject(p);
-			
+
 			//converting file or network supportted format to java object called deserialization
-			
+
 			// Crate an object for FileInputStream
 			FileInputStream fis = new FileInputStream("person.ser");
-			
+
 			// Create an Object for ObjectInputStream
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			
+
 			//Get the object by calling readObject method.
 			Object o = ois.readObject();
-			
+
 			Person p1 = (Person) o;
-			
+
 			System.out.println("After deserialization");
 			System.out.println(p1.getName());
 			System.out.println(p1.getAge());
-			System.out.println(p1.salary);			
+			System.out.println(p1.salary);
 			System.out.println(p.address);
 			System.out.println(p.address1);
-			
+
 		}catch(IOException ioe){
 			ioe.printStackTrace();
 			System.out.println("Exception: "+ ioe);
@@ -7044,30 +7044,30 @@ class Person implements Serializable {
 	transient int salary; //this value will not participate in serialization process.
 	transient final String address = "Karur";	//no impact
 	transient static String address1 = "Karur";	//no impact
-	
-	
-	
+
+
+
 	Person(String name, int age, int sal){
 		this.name = name;
 		this.age = age;
 		salary = sal;
 	}
-	
+
 	public void setAge(int age){
 		this.age = age;
 	}
-	
+
 	public void setName(String name){
 		this.name = name;
 	}
-	
+
 	public int getAge(){
 		return this.age;
 	}
-	
+
 	public String getName(){
 		return this.name;
-	}	
+	}
 }
 ----------------------------------------------
 Serialization in the case of Object Graphs:-
@@ -7077,35 +7077,35 @@ by default. This group of objects is called ‘Object Graph’.
 
 E.g: When ever we are saving an Person object to a file all the objects (Mobile, Telephone) which are reachable from that object will be saved by default. This group of objects (Person -> Mobile -> Telephone) is called ‘Object Graph’.
 
-In the Object Graph if any Object is non-Serialzable we will get runtime Exception saying not- serializable Exception.	  
+In the Object Graph if any Object is non-Serialzable we will get runtime Exception saying not- serializable Exception.
 
-E.g: In the below example, if Telephone is not serializable then we will get runtime Exception saying not- serializable Exception.	 
+E.g: In the below example, if Telephone is not serializable then we will get runtime Exception saying not- serializable Exception.
 
 --------------------------------------------------------
 import java.io.*;
 
 class SerializationDemo {
-	
+
 	public static void main(String args[]){
 		Person p = new Person("Sudhakar", 29, 50000);
 		p.address1 = "karuru1";
-		
+
 		Mobile m = new Mobile();
 		m.phoneNumber = 94919191;
-		
+
 		Telephone t = new Telephone();
 		t.telephoneNumber = 91213939;
 		m.tele = t;
-		
+
 		p.phone = m;
-		
+
 		System.out.println(p.getName());
 		System.out.println(p.getAge());
 		System.out.println(p.salary);
 		System.out.println(p.address);
 		System.out.println(p.address1);
 		System.out.println(p.phone.phoneNumber);
-		
+
 		try{
 			// convertig java object to file or network supportted format called serialization
 			//Create an object for fileOutputstream
@@ -7113,30 +7113,30 @@ class SerializationDemo {
 
 			//Create an object for ObjectOutputStream
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			
+
 			//Call the writeObject method of oos.
 			oos.writeObject(p);
-			
+
 			//converting file or network supportted format to java object called deserialization
-			
+
 			// Crate an object for FileInputStream
 			FileInputStream fis = new FileInputStream("person.ser");
-			
+
 			// Create an Object for ObjectInputStream
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			
+
 			//Get the object by calling readObject method.
 			Object o = ois.readObject();
-			
+
 			Person p1 = (Person) o;
-			
+
 			System.out.println("After deserialization");
 			System.out.println(p1.getName());
 			System.out.println(p1.getAge());
-			System.out.println(p1.salary);			
+			System.out.println(p1.salary);
 			System.out.println(p.address);
 			System.out.println(p.address1);
-			
+
 		System.out.println(p.phone.phoneNumber);
 		}catch(IOException ioe){
 			ioe.printStackTrace();
@@ -7157,31 +7157,31 @@ class Person implements Serializable {
 	int age;
 	transient int salary; //this value will not participate in serialization process.
 	Mobile phone;
-	
+
 	transient final String address = "Karur";	//no impact
 	transient static String address1 = "Karur";	//no impact
-	
+
 	Person(String name, int age, int sal){
 		this.name = name;
 		this.age = age;
 		salary = sal;
 	}
-	
+
 	public void setAge(int age){
 		this.age = age;
 	}
-	
+
 	public void setName(String name){
 		this.name = name;
 	}
-	
+
 	public int getAge(){
 		return this.age;
 	}
-	
+
 	public String getName(){
 		return this.name;
-	}	
+	}
 }
 
 class Mobile implements Serializable {
@@ -7212,17 +7212,17 @@ private void readObject(ObjectInputStream is)throws Exception {
 import java.io.*;
 
 class CustomSerializationDemo {
-	
+
 	public static void main(String args[]){
 		Order o = new Order();
-		
+
 		BuyOrder bo = new BuyOrder();
 		bo.orderNo = 1;
-		
+
 		o.buy = bo;
-		
+
 		System.out.println(o.buy.orderNo);
-					
+
 		try{
 			// convertig java object to file or network supportted format called serialization
 			//Create an object for fileOutputstream
@@ -7230,26 +7230,26 @@ class CustomSerializationDemo {
 
 			//Create an object for ObjectOutputStream
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			
+
 			//Call the writeObject method of oos.
 			oos.writeObject(o);
-			
+
 			//converting file or network supportted format to java object called deserialization
-			
+
 			// Crate an object for FileInputStream
 			FileInputStream fis = new FileInputStream("order.ser");
-			
+
 			// Create an Object for ObjectInputStream
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			
+
 			//Get the object by calling readObject method.
 			Object obj = ois.readObject();
-			
+
 			Order p1 = (Order) obj;
-			
+
 			System.out.println("After deserialization");
 			System.out.println(p1.buy.orderNo);
-			
+
 		}catch(IOException ioe){
 			ioe.printStackTrace();
 			System.out.println("Exception: "+ ioe);
@@ -7272,19 +7272,19 @@ class Order implements Serializable{
 		System.out.println("custom writeObject");
 		os.writeInt(buy.orderNo);
 	}
-	
+
 	private void readObject(ObjectInputStream is)throws Exception {
 		System.out.println("custom readObject");
-		
+
 		is.defaultReadObject();
-		
+
 		BuyOrder b = new BuyOrder();
 		int orderNo = is.readInt();
 		b.orderNo = orderNo;
-		
+
 		this.buy = b;
 	}
-	
+
 }
 
 class BuyOrder {
@@ -7294,8 +7294,8 @@ class BuyOrder {
 Inheritance in Serialization:-
 -----------------------------
 If the parent class is Serializable bydefault all the child classes also Serializable. i.e Serializable nature is
-inherited from parent to child.	  
-	  
+inherited from parent to child.
+
 class Mobile implements Serializable {
 	long phoneNumber;
 	Telephone tele;
@@ -7304,7 +7304,7 @@ class Mobile implements Serializable {
 class Telephone extends Mobile {
 	long telephoneNumber;
 }
-	  
+
 E.g: Mobile is Serializable so all its child classes will be Serializable.
 
 
@@ -7326,9 +7326,9 @@ Eg:
 		class B {
 		}
 	}
-	
+
 	Here: A$B.class is generated while compiling the A.java file.
- 
+
 Advantages:-
 	- Inner classes can access private members of outer class
 	- group the related functionlity classes into one class.
@@ -7338,7 +7338,7 @@ Advantages:-
 	3) Anonymous inner classes
 	4) static nested classes
 
-	
+
 
 1. Normal/Regular inner (non static) classes:-
 ------------------------------
@@ -7351,26 +7351,26 @@ public class OuterClass {
 	private int age =5;
 	static String name = "Sudhakar";
 
-	
+
 	public static void main(String[] args){
 		//1st way
 		OuterClass oc = new OuterClass();
 		OuterClass.Wheel ic = oc.new Wheel();
-		
+
 		//2nd way
 		OuterClass.Wheel ic1 = new OuterClass().new Wheel();
-		
+
 		ic.m1();
 		ic1.m1();
 	}
-	
+
 	public void outerM1(){
 		System.out.println("Outer m1");
 	}
 
 
 	class Wheel {
-		
+
 		public void m1() {
 			outerM1();
 			System.out.println("age: "+ age + " name: " + name);
@@ -7390,25 +7390,25 @@ public class MethodOuterClass {
 	private int age =5;
 	static String name = "Sudhakar";
 
-	
+
 	public static void main(String[] args){
 		MethodOuterClass oc = new MethodOuterClass();
-		
+
 		oc.outerM1();
 	}
-	
+
 	public void outerM1(){
 		class MethodWheel {
 			public void m1() {
 				System.out.println("Method inner class op: age: "+ age + " name: " + name);
 			}
 		}
-		
+
 		MethodWheel mw = new MethodWheel();
 		mw.m1();
-		
+
 		System.out.println("Outer m1");
-		
+
 	}
 }
 
@@ -7417,17 +7417,17 @@ public class MethodOuterClass {
 - A class without any name is called anonymous inner class.
 - if we are going to use only once then insteadof createing a class for that we can go for anonymous inner class.
 - we no need to declare any additional class as given below example.
- 
+
  class AnonymousInnerClassDemo {
-	
-	
+
+
 	public static void main(String[] args){
 		System.out.println("Thread name: " + Thread.currentThread().getName());
 		//Regular way of creating thread.
 		ThreadA t = new ThreadA();
 		Thread th1 = new Thread(t);
 		th1.start();
-		
+
 		//By usin anonymous inner classes.
 		Thread th = new Thread(new Runnable(){
 			public void run() {
@@ -7458,7 +7458,7 @@ class ThreadA implements Runnable {
 4. Static inner class:-
 - A class inside the another class with static keyword called static inner class.
 - Without creating outer class object, we can create static inner class object.
-- static inner class can't access the outer class instance varaibles and instance methods directly. 
+- static inner class can't access the outer class instance varaibles and instance methods directly.
 - It can access only static methods and variables of outer class.
 - Even outside of this class also we can use the static inner class.
 
@@ -7468,21 +7468,21 @@ class StaticOuterClass {
 	static String name = "Sudhakar";
 
 
-	
+
 	public void outerM1(){
 		System.out.println("StaticOuterClass Outer m1");
 	}
 
 
 	static class StaticInnerWheel {
-		
+
 		public void m1() {
 			StaticOuterClass o = new StaticOuterClass();
 			o.outerM1();
-			
+
 			System.out.println("StaticOuterClass name: " + name);
 		}
-		
+
 		public static void main(String[] args){
 
 			StaticInnerWheel siw = new StaticInnerWheel();
@@ -7494,10 +7494,10 @@ class StaticOuterClass {
 
 compiling:
 	javac StaticOuterClass.java
-	
+
 run:
 java StaticOuterClass$StaticInnerWheel
-	
+
 
 07-04-2018
 -------------------------------
@@ -7509,12 +7509,12 @@ java StaticOuterClass$StaticInnerWheel
 
 - To free the jvm memory.
 
-In ‘C++’ the programmer is responsible for both creation and destruction of objects but usually the programmer is giving very much importance for creation of objects and he is ignoring the destruction of objects. 
+In ‘C++’ the programmer is responsible for both creation and destruction of objects but usually the programmer is giving very much importance for creation of objects and he is ignoring the destruction of objects.
 
 - Due to this at creation point of time there may not be sufficient memory for the creation of new objects and entire program may fails. But in java programmer is responsible only for creation of objects but sun people has introduced one assistance which is running continuously in the background for destruction of objects. Due to this assistance there is no chance of failing the java program due to memory problem, this assistance is nothing but “Garbage Collector”.
 
 
-important methods:	
+important methods:
 System.gc();
 Runtime.getRunTime().gc();
 
@@ -7548,45 +7548,45 @@ class GarbageCollectorDemo {
 			m1();
 			System.out.println("End main method");
 	}
-	
+
 	public static void m1() {
 		System.out.println(Runtime.getRuntime().freeMemory());
-		
+
 		Student s = new Student();
 		s.age = 20;
-		
+
 		Student s1 = new Student();
 		s1.age = 30;
-		
+
 		Student s3 = new Student();
 		s3.age = 40;
-		
+
 		s3 = null;
-		
-		for(int i = 0;i < 10000 ; i++){		
+
+		for(int i = 0;i < 10000 ; i++){
 			Student s4 = new Student();
 			s4.age = i;
 		}
-		
-		s1 = s;		
+
+		s1 = s;
 		System.out.println("After creating objects: before gc " + Runtime.getRuntime().freeMemory());
-		
+
 		Runtime.getRuntime().gc();
 		System.out.println("After creating objects: after gc " + Runtime.getRuntime().freeMemory());
 	}
-	
+
 	protected void finalize() {
-		System.out.println("Demo Finalize called ");	
+		System.out.println("Demo Finalize called ");
 	}
 }
 
 class Student {
 	int age;	//4
 	String name; //
-	
+
 	protected void finalize() {
 		System.out.println("Finalize called "+ age);
-		
+
 	}
 }
 
@@ -7666,7 +7666,7 @@ In this case String Object is eligible for G.C and hence String class finalize()
 In the above program if we are replacing String Object with Test Object then Test class finalize() will be
 executed.
 
-case2: 
+case2:
 - we can call finalize() explicitly in that case it will execute just like a normal method and object won’t
 be destroyed.
 - While executing finalize() method if any exception is uncaught it is simply ignored by the JVM but if we are
@@ -7697,13 +7697,13 @@ What is the difference between final, finally and finalize
 	1. if a variable is final then we can't change
 	2. if a method is final then we can't override
 	3. if a class is final then we can't extend that class.
-	
+
 finally -> should be along try block.
 	-> Even execption raised or not if some has be executed alwasys then we should that code finally block.
-	
+
 finalize
  -> exeucte only one time and that is just destorying that object.
----------------------------------------------------------------------- 
+----------------------------------------------------------------------
 1.5, 1.6, 1.7 new features
 Enum
 for each
@@ -7717,17 +7717,17 @@ class BufferedWriterWithMultiCatchDemo {
 	public static void main(String args[]){
 		try(Reader r = new FileReader("buff.txt");
 			BufferedReader br = new BufferedReader(r)){
-		
+
 			String line = br.readLine();
 			while(line != null ){
 				System.out.println(line);
 				line = br.readLine();
-			}			
+			}
 		}
 		catch(IOException | NullPointerException f){
 			System.out.println("Error occurred");
 		}
-		
+
 		System.out.println("Close");
 	}
 }
@@ -7739,7 +7739,7 @@ methods:
 	name:
 	ordinal
 	valueOf
-	
+
 - using 'enum' keyword we will create enum class.
 - To define the constants, we use enum.
 - enums introduced in 1.5 version.
@@ -7756,13 +7756,13 @@ enum Months {
 	Months(String val){
 		this.val = val;
 	}
-	
+
 	private String val;	//must be after constants.
-	
+
 	public String getValue(){
 		return this.val;
 	}
-	
+
 }
 
 enum Hotel {
@@ -7775,17 +7775,17 @@ class EnumDemo {
 	public static void main(String[] args){
 		System.out.println("Enum demo "+ Months.JAN);
 		System.out.println("Enum demo "+ Months.JAN.ordinal());
-		
+
 		Months[] mo = Months.JAN.values();
 		for(Months m: mo){
 			System.out.println("order: "+ m.ordinal() + " name: "+ m.name() + " value: "+ m.getValue());
 		}
-		
+
 		Months m = Months.FEB;
 		Months m1 = Months.MAR;
 		System.out.println(m.ordinal() == m1.ordinal());
-		
-		
+
+
 		switch(m) {	//byte, int, short, char  => 1.4 , enum => 1.5, string => 1.7
 			case JAN: {
 				System.out.println("jan");
@@ -7806,12 +7806,12 @@ class EnumDemo {
 			case MAY: {
 				System.out.println("may");
 				break;
-			} 
+			}
 			default: {
 				System.out.println("Default");
 			}
 		}
-		
+
 	}
 }
 
@@ -7821,22 +7821,147 @@ class AutoBoxingDemo {
 	static public void main(String... ar){
 		int a = 20;
 		m1(a);
-		
+
 		Integer i = 30;
 		int b = i;
-		
+
 		// Integer I1 = new Integer(10);
 		// Integer I2 = new Integer(10);
 		// System.out.println(I1 == I2);
 
-		
+
 		Integer I1 = 128;
 		Integer I2 = 128;
 		System.out.println(I1 == I2);	//false
 
 	}
-	
+
 	public static void m1(Integer i){
 		System.out.println(i);
 	}
 }
+--------------------------------------------------------
+logical programs:
+--------------------------------------------------------
+1.palindrome program:--
+
+package com.sudhasoft.jdbc;
+
+import java.util.Scanner;
+
+public class PalindromeWithScannerEx {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("enter input");
+		Scanner sc = new Scanner(System.in);
+		String arg = sc.nextLine();
+		boolean palindrome = ispalindrome(arg);
+		System.out.println(palindrome);
+	}
+
+	private static boolean ispalindrome(String arg) {
+		int i = 0, j = arg.length() - 1;
+		while(i < j) {
+			char startingchar = arg.charAt(i);
+			char endingchar = arg.charAt(j);
+			if (startingchar != endingchar) {
+				return false;
+			}
+			i++;
+			j--;
+		}
+
+		return true;
+	}
+}
+----------
+package com.ms.logics;
+
+import java.util.Arrays;
+
+public class ArraySmallNumber {
+
+	public static void main(String[] args) {
+		int[] a= {25,190,45,678,20};
+		System.out.println(Arrays.toString(a));
+		sort(a);
+		System.out.println(a[a.length-1]);
+	}
+
+    private static void sort(int[] a) {
+    for(int i=0;i<a.length-1;i++) {
+    for(int y=i+1;y<a.length-1;y++) {
+	if(a[y]>a[i]) {
+		int t=a[y];
+		a[y]=a[i];
+		a[i]=t;
+	}
+	}
+	}
+    }
+    }
+
+
+--------------
+package com.ms.logics;
+
+import java.util.Arrays;
+
+class ArrayBigNumber {
+
+				public static void main(String[] args) {
+				int[] array = {25, 1, 45, 678, 10};
+
+			    System.out.println(Arrays.toString(array));
+			    sort(array);
+			    System.out.println(array[array.length-1]);
+				}
+			    private static void sort(int[] array) {
+			    for(int i=0;i<array.length;i++) {
+			    for(int j=i+1;j<array.length;j++) {
+			    if(array[j]<array[i]) {
+			    int temp=array[j];
+			    array[j]=array[i];
+			    array[i]=temp;
+				}
+				}
+				}
+			    }
+			    }
+----------------------		----	----------------------------------------------------
+count:--
+		class CountCharacterLogic{
+		 public static void main(String...a){
+			 String name="jckldoccnndgcddjnde";
+			 int count=0;
+			 for(int i=0;i<name.length();i++){
+				 if(name.charAt(i) !=' ')
+					 count++;
+				 }
+				 System.out.println(count);
+			 }
+		 }
+ --------------------------------------------------------------------------------------
+ fibonocii series:---
+ package com.ms.logics;
+
+public class Fibonocci {
+
+	public static void main(String[] args) {
+
+		int n1=0,n2=1,n3,count=10;
+		//System.out.println(n1+""+n2);
+		for(int j=0;j<count;j++) {
+			n3=n1+n2;
+			System.out.println(""+n3);
+			n1=n2;
+			n2=n3;
+		}
+
+	}
+
+}
+
+
+

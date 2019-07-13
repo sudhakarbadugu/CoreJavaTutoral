@@ -43,3 +43,12 @@
 	Murali: Pending	
 	Prasad: Pending
 
+9.Stock_Holiday(id number,holiday_date,holiday_name varchar2(15));
+
+
+
+Enter your date: 02-06-2019
+	String to date	
+		Date d = SimpleDateFormat.parse();
+	IF ==> sTOCK HOLIDAY	(sun or sat) 
+	ELSE ==> WORKING DAY
